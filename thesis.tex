@@ -1,0 +1,278 @@
+%-------------------------------------------------------------------------------
+% This file provides a skeleton ATLAS document.
+%-------------------------------------------------------------------------------
+% \pdfoutput=1
+% The \pdfoutput command is needed by arXiv/JHEP/JINST to ensure use of pdflatex.
+% It should be included in the first 5 lines of the file.
+%-------------------------------------------------------------------------------
+% Specify where ATLAS LaTeX style files can be found.
+\newcommand*{\ATLASLATEXPATH}{latex/}
+%-------------------------------------------------------------------------------
+%\documentclass[UKenglish,texlive=2011]{\ATLASLATEXPATH atlasdoc}
+\documentclass[letterpaper,12pt,oneside,texlive=2015]{memoir} %The memoir class is great for longer works that use separate chapters. The Dissertation Office recommends 10-pt Arial or 12-pt Times New Roman. I use 12-pt for readability.
+\usepackage[american]{babel} %Enables hyphenation and date formats according to American conventions. Change "american" to "british" (or another value) if you work outside the US.
+\hyphenpenalty=750
+\interfootnotelinepenalty=10000
+
+\renewcommand\cftappendixname{\appendixname~}
+\usepackage{todonotes}
+\usepackage{amsfonts}
+\usepackage{slashed}
+\usepackage{braket}
+\usepackage{hhline}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{bm}
+
+% \addto\captionsdutch{%
+%   \renewcommand{\appendixname}%
+%     {Appendix}%
+% }
+% \renewcommand*\cftappendixname{\appendixname}
+
+% The language of the document must be set: usually UKenglish or USenglish.
+% british and american also work!
+% Commonly used options:
+%  texlive=YYYY          Specify TeX Live version (2013 is default).
+%  atlasstyle=true|false Use ATLAS style for document (default).
+%  coverpage             Create ATLAS draft cover page for collaboration circulation.
+%                        See atlas-draft-cover.tex for a list of variables that should be defined.
+%  cernpreprint          Create front page for a CERN preprint.
+%                        See atlas-preprint-cover.tex for a list of variables that should be defined.
+%  PAPER                 The document is an ATLAS paper (draft).
+%  CONF                  The document is a CONF note (draft).
+%  PUB                   The document is a PUB note (draft).
+%  txfonts=true|false    Use txfonts rather than the default newtx - needed for arXiv submission.
+%  paper=a4|letter       Set paper size to A4 (default) or letter.
+
+%-------------------------------------------------------------------------------
+% Extra packages:
+\usepackage{\ATLASLATEXPATH atlaspackage}
+% Commonly used options:
+%  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography.
+%  backend=biber         Use the biber backend rather than bibtex.
+%  subfigure|subfig|subcaption  to use one of these packages for figures in figures.
+%  minimal               Minimal set of packages.
+%  default               Standard set of packages.
+%  full                  Full set of packages.
+%-------------------------------------------------------------------------------
+% Style file with biblatex options for ATLAS documents.
+\usepackage{\ATLASLATEXPATH atlasbiblatex}
+
+% Package for creating list of authors and contributors to the analysis.
+\usepackage{\ATLASLATEXPATH atlascontribute}
+\usepackage{\ATLASLATEXPATH atlascover}
+
+% Useful macros
+\usepackage{\ATLASLATEXPATH atlasphysics}
+\usepackage{\ATLASLATEXPATH atlasheavyion}
+% See doc/atlas-physics.pdf for a list of the defined symbols.
+% Default options are:
+%   true:  journal, misc, particle, unit, xref
+%   false: BSM, hion, math, process, other, texmf
+% See the package for details on the options.
+
+% Files with references for use with biblatex.
+% Note that biber gives an error if it finds empty bib files.
+\addbibresource{thesis.bib}
+\addbibresource{bibtex/bib/ATLAS.bib}
+\addbibresource{bibtex/bib/CMS.bib}
+
+\addbibresource{bibtex/bib/ConfNotes.bib}
+\addbibresource{bibtex/bib/PubNotes.bib}
+
+\setlength{\bibitemsep}{\baselineskip} %Skip lines between bibliography entries. Columbia requires that you skip a line between entries.
+
+% Paths for figures - do not forget the / at the end of the directory name.
+\graphicspath{{logos/}{figures/}}
+
+% Add you own definitions here (file thesis-defs.sty).
+\usepackage{thesis-defs}
+
+%% comment this out for final version
+\usepackage{lineno}
+\linenumbers
+
+\let\newfloat\undefined
+\usepackage{floatrow}
+\floatsetup[table]{capposition=bottom}
+\floatsetup[figure]{capposition=bottom}
+
+
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\makeatother
+
+\usepackage{cleveref}
+\Crefname{equation}{Eq.}{Eqs.}
+\Crefname{align}   {Eq.}{Eqs.}
+\Crefname{figure}{Fig.}{Figs.}
+\Crefname{tabular}      {Table}{Tables}
+\Crefname{sidewaystable}{Table}{Tables}
+\Crefname{table}        {Table}{Tables}
+\Crefname{section}{Sec.}{Secs.}
+\Crefname{chapter}{Ch.}{Ch.}
+\Crefname{appendix}{App.}{App.}
+\Crefname{subsection}{Sec.}{Secs.}
+
+%-------------------------------------------------------------------------------
+% Generic document information
+%-------------------------------------------------------------------------------
+
+% Author and title for the PDF file
+\hypersetup{pdftitle={ATLAS Thesis},pdfauthor={Michael (Felix) R. Clark}}
+
+%-------------------------------------------------------------------------------
+% Content
+%-------------------------------------------------------------------------------
+%Dissertation Template for Columbia University Ph.D. programs
+%By Charles McNamara, 2015
+%I posted this document under a CC0 public domain license -- do whatever you want with it!
+%It's probably a good idea to review the university guidelines just so you know what you want your dissertation to look like. You can read about those guidelines at this site: http://gsas.columbia.edu/content/formatting-guidelines.
+%Good luck writing your dissertation!
+
+
+% This is the main document file for the dissertation. You should not include any of your actual chapters or other substantive writing in this file.
+%First we have to set up the style and formatting of the pages.
+
+%\setmainfont{Linux Libertine O} %This is a really readable serif font. It renders polytonic Greek better than any other OpenType font I've found, including Times New Roman. I now use it for everything, including class handouts. Highly recommended for classicists.
+
+
+%Here is some stuff on the bibliography. You want to keep your bibliography file in the same directory as this file.
+
+%\usepackage[backend=bibtex8,style=authoryear-icomp,texencoding=utf8,bibencoding=utf8]{biblatex} %The command here uses biblatex to render your bibliography, and it tells biblatex to use Unicode fonts. You can change the style of your citations easily by changing the value for "style" -- I use authoryear-icomp which takes care of the id/ibid citations automatically. There are many styles available if you want to change it.
+%I have tried to use biber instead of biblatex many times, but it's never worked properly for me. I use biblatex, but feel free to try biber instead.
+
+%\addbibresource{./Bibliography.bib} %Your bibliography file. I use JabRef to keep track of my bibliography. Highly recommended, and free! You can use Zotero if you want, but I've had trouble exporting to .bib files from my Zotero database.
+
+
+%Here you can set margins and other page formatting
+
+\setlrmarginsandblock{3.175cm}{3.175cm}{*} %Left and right margin -- the dissertation office requires at least 1-inch margins
+\setulmarginsandblock{2.54cm}{2.54cm}{*}  %Upper and lower margin -- same thing, at least 1-inch margins
+\checkandfixthelayout %A function of the memoir class that finds the right number of lines per page and apparently tidies up the formatting in other mysterious ways...?
+
+% Below we start to set up the document itself, including how to use spacing throughout the dissertation.
+
+\begin{document}
+
+\sloppy %If I don't include sloppy, then Greek and Latin words screw up margins all over. If you don't include weird languages in your dissertation, you can probably leave this one out.
+\chapterstyle{chappell} % Nice formatting for chapter headings. Check out the documentation for the memoir class for other options.
+\footnotesep\baselineskip % Footnotes need to have a space between each one for Columbia's Dissertation Office.
+\DoubleSpacing %Set roomier body text throughout your writing. The dissertation office requires that you use double-spacing throughout your main body text.
+\expandafter\def\expandafter\quote\expandafter{\quote\SingleSpace} %Keep all block quotes single-spaced regardless of body text spacing.
+\pagestyle{plain} %Put page numbers at the bottom-center for the whole dissertation. Columbia's dissertation office requires that the numbers appear at this location on the page throughout the document.
+
+\newcommand{\thesisTitle}{Femtoscopy in $\sqrt{s_\mathrm{NN}} = 5.02~\TeV$ proton-lead collisions with the ATLAS detector at the Large Hadron Collider}
+\newcommand{\myName}{Michael R. Clark}
+\newcommand{\abstractText}{
+abstract text here
+}
+\newcommand{\yearText}{2017}
+%The section that follows renders the "Cover pages and Abstract" part of your dissertation.
+
+%We need to define a customized command to render Columbia's required title page
+%Be sure you replace the title and author with the title of your dissertation and your name!
+\newcommand*{\TitleColumbia}{\begingroup
+\begin{center}
+\thesisTitle{} \\
+\myName{} \par
+\vspace*{5 in} %This is a sloppy way to get the "Submitted in partial fulfillment" part to move to the bottom of the page
+%\begin{SingleSpace} can be used here if you want the "Submitted" text to be single-spaced.
+Submitted in partial fulfillment of the\\
+requirements for the degree of\\
+Doctor of Philosophy\\
+in the Graduate School of Arts and Sciences\par
+%\end{SingleSpace} here if you decide to use single-spacing on the "Submitted" text.
+\vfill
+COLUMBIA UNIVERSITY\\
+\yearText
+\end{center}
+\endgroup}
+
+%These four commands make sure that your title page doesn't count toward your page number counts and that there is no extra header and footer on the page. The final command here also renders the page as you've defined it above.
+\pagenumbering{gobble}
+\clearpage
+\thispagestyle{empty}
+\TitleColumbia
+
+%What follows is the copyright page
+%We make sure that LaTeX moves to the next page, doesn't use page numbers, and doesn't include any headers or footers.
+\newpage
+\pagenumbering{gobble}
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+\vspace*{7.5 in} %Another sloppy way to get the copyright notice to move to the bottom of the page.
+© \yearText{} \\
+\myName{} \\
+All rights reserved
+\end{center} %There are lots of copyright options available for your dissertation, including Creative Commons licensing. You should scope out Columbia's Dissertation Office website for more information.
+
+%Now we need the abstract
+%Again, we prevent page numbers and headers and footers from appearing on this page.
+\newpage
+\pagenumbering{gobble}
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+ABSTRACT\\ %You need to keep this text here in all capitals. Don't change it.
+\thesisTitle \\ %Do of course change this to the title of your dissertation.
+\myName \\ %Your name here
+\end{center}
+\abstractText{}
+
+%Phew, you're done with the "Cover pages and abstract" part. Now to the "Prefatory pages."
+\frontmatter %This command lets LaTeX know that you want lowercase Roman page numbers in these next sections.
+
+\tableofcontents* %LaTeX automatically renders your table of contents using your \chapter and \section commands throughout the whole document. If you don't want something to appear in the table of contents, simply use an asterisk in the command, like \chapter*{} or \section*{}
+
+%include lists of figures and tables
+\newpage
+\listoffigures
+\newpage
+\listoftables
+
+%Here I need an acknowledgments page.
+%\newpage
+\include{./acknowledgements}
+
+%\newpage
+\chapter*{Dedication} %Same here -- asterisk so that my dedication doesn't show up in the table of contents. You might want to take out "Dedication" as the title of this chapter. It's just here for a placeholder.
+\vfil
+\begin{center}
+{\large \textit{To Mick \\ and Janice}}
+\end{center}
+\vfil
+
+
+
+%What follows is the main text of your dissertation. You can comment out lines if you want to exclude them from your document for drafts. Everything after \mainmatter will get Arabic numbers centered on the bottom of the page.
+
+\mainmatter
+
+%I use subdirectories for each part of my dissertation just to keep the files tidy. LaTeX generates a lot of different files for output, and using subdirectories allows you to find your .tex files more easily.
+
+\include{Chapter-Introduction/main}       % Introduction
+\include{Chapter-Background/main}         % Theory and status of experimental results
+\include{Chapter-Experiment/main}         % Description of experimental apparatus
+\include{Chapter-Reconstruction/main}     % Reconstruction of charged particles
+\include{Chapter-Analysis/main}           % Description of analysis procedure
+\include{Chapter-Results/main}            % Presentation and discussion of results
+\include{Chapter-Conclusion/main}         % Concluding remarks
+
+%This final section includes your bibliography.
+
+\SingleSpacing %Start single-spacing text before you start the bibliography. We used \bibitemsep earlier in this document to keep bibliography items separated by one line of blank space, but we need to keep the entries themselves single-spaced.
+\printbibliography %Print the bibliography. Your bibliography file is defined as Bibliography.bib earlier in this document by the command \addbibresource. It should be kept in the same folder as this file.
+
+\DoubleSpacing %Set roomier body text throughout your writing. The dissertation office requires that you use double-spacing throughout your main body text.
+%\appendix
+%% \begin{appendices}
+%% \include{./Appendix/Appendix-AdditionalN-1Plots-CR/appendix}
+%% \include{./Appendix/Appendix-AdditionalN-1Plots/appendix}
+%% \end{appendices}
+
+\backmatter
+
+\end{document} %All done! Now you're a doctor.
