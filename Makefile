@@ -55,7 +55,7 @@ run_pdflatex: $(BASENAME).pdf
 # Specify the tex and bib file dependencies for running pdflatex
 # If your bib files are not in the main directory adjust this target accordingly
 #%.pdf:	%.tex *.tex bibtex/bib/*.bib
-%.pdf:	%.tex *.tex *.bib
+%.pdf:	%.tex *.tex *.bib Chapter-*/main.tex
 	$(PDFLATEX) $<
 	-$(BIBTEX)  $(basename $<)
 	$(PDFLATEX) $<
@@ -94,10 +94,6 @@ draftcover:
 	  echo "Invalid value for TEXLIVE: $(TEXLIVE)"; \
 	  cp  template/$(BASENAME)-draft-cover.tex $(BASENAME)-draft-cover.tex; \
 	fi
-
-preprintcover:
-	sed 's/texlive=20[0-9][0-9]/texlive=$(TEXLIVE)/' template/atlas-preprint-cover.tex >$(BASENAME)-preprint-cover.tex
-	#cp template/atlas-preprint-cover.tex $(BASENAME)-preprint-cover.tex
 
 auxmat:
 	sed s/atlas-document/$(BASENAME)/ template/atlas-auxmat.tex | \
