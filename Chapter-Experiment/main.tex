@@ -1,7 +1,36 @@
-\chapter{Experimental apparatuses}
+\graphicspath{{Chapter-Experiment/figures/}}
+\chapter{Experimental design and apparatus}
+
+\section{Scattering experiments}
+The first modern scattering experiment could be said to be the Geiger-Marsden experiments in the early 1910s, in which the Rutherford scattering of alpha ($\alpha$) particles by gold foil was observed \cite{Rutherford:1911zz}.
+While most $\alpha$ particles pass through the foil with little deflection, a small fraction of them are deflected to extreme angles (\Fig{\ref{fig:rutherford}}).
+This result provided evidence that electric charge within the foil was not distributed uniformly, but localized in very small clusters -- the nuclei of the gold atoms.
+\begin{figure}
+  %% https://www.chegg.com/homework-help/questions-and-answers/rutherford-s-experiment-studied-deflection-scattering-ofalpha-particles-known-helium-nucle-q458296
+  \includegraphics[width=0.8\linewidth]{BLB-1070873-Rutherford_v2.jpg}
+  \caption{Rutherford scattering of alpha particles by gold foil, demonstrating the existence of the atomic nucleus.}
+  \label{fig:rutherford}
+\end{figure}
+
+With elementary quantum mechanics, this type of elastic scattering can be understood a little more precisely.
+In the Born approximation, which is essentially the weak-potential limit, the quantum amplitude $f$ of a particle with incoming momentum $\mathbf{p}_{i}$ scattering elastically off a target potential $V(\mathbf{x})$ with outgoing momentum $\mathbf{p}_{f}$ is proportional to the Fourier transform of the potential:
+
+\begin{equation}
+  f\left(\mathbf{p}_f ; \mathbf{p}_i\right) \propto - \int d^3 x \, V(\mathbf{x}) e^{-i \Delta \mathbf{p} \cdot \mathbf{x}}
+  \label{eqn:born}
+\end{equation}
+where $\Delta \mathbf{p} \equiv \mathbf{p}_f - \mathbf{p}_i$ is the momentum transferred to the projectile particle.
+The differential scattering cross section $d\sigma/d\Omega$ (the scattering probability density per unit area) is given by the square of the quantum amplitude, so it is proportional to the squared magnitude of the Fourier transform of the potential.
+
+\begin{equation}
+  \frac{d\sigma}{d\Omega} \propto \left| \int d^3 x \, V(\mathbf{x}) e^{-i \Delta \mathbf{p} \cdot \mathbf{x} / \hbar} \right|^2
+\end{equation}
+Because the net momentum transfer is constrained by the relative momentum between projectile and target, larger momentum (or equivalently, energy) is required to probe finer structure of the target.
+
+\subsection{Accelerator physics}
+
 
 \section{The Large Hadron Collider}
-\subsection{Accelerator physics}
 \subsection{Injection chain}
 \subsection{LHC Experiments}
 The two largest LHC experiments, ATLAS (A Toroidal LHC Apparatus) \cite{Aad:2008zzm} and CMS (Compact Muon Solenoid) \cite{Chatrchyan:2008aa}, are general-purpose detectors that fulfilled one of their primary objectives with the joint discovery of the Higgs boson in 2012 \cite{Aad:2012tfa,Chatrchyan:2012xdj}. They continue to be used in the search for physics beyond the Standard Model such as supersymmetry or large extra dimensions. The large rapidity coverage of their calorimeter and tracking systems also make them highly capable of measuring both low- and high-energy probes of heavy ion collisions. The ATLAS detector, which provided the data used in this thesis, will be discussed in more detail in \Sect{\ref{sec:atlas}}.
