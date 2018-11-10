@@ -23,12 +23,32 @@ where $\Delta \mathbf{p} \equiv \mathbf{p}_f - \mathbf{p}_i$ is the momentum tra
 The differential scattering cross section $d\sigma/d\Omega$ (the scattering probability density per unit area) is given by the square of the quantum amplitude, so it is proportional to the squared magnitude of the Fourier transform of the potential.
 
 \begin{equation}
-  \frac{d\sigma}{d\Omega} \propto \left| \int d^3 x \, V(\mathbf{x}) e^{-i \Delta \mathbf{p} \cdot \mathbf{x} / \hbar} \right|^2
+  \frac{d\sigma}{d\Omega} \propto \left| \int d^3 x \, V(\mathbf{x}) e^{-i \Delta \mathbf{p} \cdot \mathbf{x} / \hbar} \right|^2 = \left| \tilde{V}(\mathbf{\Delta \mathbf{p}}) \right|^2
 \end{equation}
-Because the net momentum transfer is constrained by the relative momentum between projectile and target, larger momentum (or equivalently, energy) is required to probe finer structure of the target.
+Because the net momentum transfer is constrained by the relative momentum between projectile and target, larger momentum -- or equivalently, higher energy -- is required to probe finer structure of the target.
+This correspondence between center-of-mass energy and the spatial resolution of the probe remains valid even for inelastic collisions and strong interactions.
+The required energy to probe a distance scale can be estimated with dimensional analysis.
+To resolve the structure of a target down to a distance scale $l$, the center-of-mass energy $E$ is
+
+\begin{equation}
+E = \frac{\hbar c}{l} \approx \frac{0.2 \GeV \fm}{l} \; .
+\end{equation}
+Resolving individual atoms requires collisions with energy of order \keV, resolving the nucleus requires at least \MeV, and resolving sub-nucleic structure requires collisions of at least \GeV energies.
 
 \subsection{Accelerator physics}
+In a fixed-target experiment using target particles of mass $m_t$ at rest and a projectile beam with particles of mass $m_p$ and energy $E$, the center-of-momentum energy $\sqrt{s}$ is given by
 
+\begin{equation}
+\sqrt{s} = \sqrt{(m_t+m_p)^2 + 2 m_t (E - m_p)} \; ,
+\end{equation}
+which scales with the square root of the beam energy even for large energies.
+On the other hand, if two beams are accelerated and directed into each other, the center-of-momentum energy of each collision is
+
+\begin{equation}
+\sqrt{s} = \sqrt{(E_t + E_p)^2 - (|\mathbf{p}_t| - |\mathbf{p}_p|)^2} \; ,
+\end{equation}
+which scales linearly with the total energy, and is equal to $2E$ in the case where the beams are identical.
+While fixed-target experiments (such as SLAC) were the first to be developed, they are not as efficient at reaching high energies as dual-beam colliders.
 
 \section{The Large Hadron Collider}
 \subsection{Injection chain}

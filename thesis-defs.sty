@@ -21,9 +21,9 @@
 \newcommand{\trigtt}[1] {\ensuremath{{\texttt{ \small #1}}}}
 \newcommand{\mdr}{\ensuremath{M_{\Delta}^{R}}\xspace}
 \newcommand{\calosig}{\ensuremath{\xi_{\text{cell}}}}
-\newcommand{\kt}{\ensuremath{k_T}}
-\newcommand{\Emiss}[1]{\ensuremath{E^\text{miss}_{#1}}}
-\newcommand{\Emisscomp}[2]{\ensuremath{E^{\text{miss, }{#2}}_{#1}}}
+\newcommand{\kt}{\ensuremath{k_\mathrm{T}}}
+%% \newcommand{\Emiss}[1]{\ensuremath{E^\text{miss}_{#1}}}
+%% \newcommand{\Emisscomp}[2]{\ensuremath{E^{\text{miss, }{#2}}_{#1}}}
 \newcommand{\HFnm}[3]{\ensuremath{H^{{#1}}_{#2,#3}}}
 \newcommand{\HTFnm}[3]{\ensuremath{H^{{#1}}_{T,#2,#3}}}
 \newcommand{\mheavy}{\ensuremath{m_{\mathrm{Heavy}}}}
@@ -86,20 +86,6 @@ $\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
 
 \newcommand{\ETmisssoft}{\ensuremath{E_{\text{T,soft}}^{\text{miss}}}}
 
-\newcommand{\mettrue}{\ensuremath{E_{\mathrm T}^\text{miss,Truth}}}
-\newcommand{\mettruevec}{\ensuremath{\vec{E}_{\mathrm T}^\text{miss,Truth}}}
-\def\metvec{\ensuremath{\vec{E}_{\mathrm{T}}^{\mathrm{miss}}\xspace}}
-\def\methat{\ensuremath{\hat{E}_{\mathrm{T}}^{\mathrm{miss}}}}
-\def\metsoft{\ensuremath{E_{\mathrm T}^{\mathrm miss,Soft Term}}}
-\def\metsoftvec{\ensuremath{\vec{E}_{\mathrm T}^{\mathrm miss,Soft Term}}}
-\def\metsoftpara{\ensuremath{E_{\parallel}^{\mathrm{miss,Soft Term}}}}
-\def\metsoftperp{\ensuremath{E_{\perp}^{\mathrm{miss,Soft Term}}}}
-\def\metsoftparaperp{\ensuremath{E_{\parallel (\perp)}^{\mathrm{miss,Soft Term}}}}
-\def\metsoftxy{\ensuremath{E_{x (y)}^{\mathrm{miss,Soft Term}}}}
-\def\metsoftsysreso{\ensuremath{E_{\parallel (\perp), {\mathrm reso}}^{\mathrm{miss,Soft Term}}}}
-\def\mexysoftsysreso{\ensuremath{E_{x (y), {\mathrm reso}}^{\mathrm{miss,Soft Term}}}}
-\def\metsoftsysscale{\ensuremath{E_{\parallel, {\mathrm scale}\pm}^{\mathrm{miss,Soft Term}}}}
-\def\metv{$\textbf{\textit{E}}_{\mathrm T}^{\mathrm miss}$}
 \def\sumve{\ensuremath{\sum\vec{E}_{\mathrm T}^{\mathrm e}}\xspace}
 \def\sumvtrk{\ensuremath{\sum\vec{E}_{\mathrm T}^{\mathrm trk}}\xspace}
 \def\sumvnu{\ensuremath{\sum\vec{E}_{\mathrm T}^{\mathrm \nu}}\xspace}
@@ -142,9 +128,7 @@ $\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
 \def \sumjetet{\ensuremath{\Sigma E_{T}^{\mathrm jets}}\xspace}
 \def \summuonet{\ensuremath{\Sigma E_{T}^{\mathrm \mu}}\xspace}
 \def \sumelecet{\ensuremath{\Sigma E_{T}^{\mathrm \text{e}}}\xspace}
-\def \dphi{$\Delta \phi\;$}
-\def \central{$\abseta < 2.0\;$}
-\def \forward{$\abseta > 3.0\;$}
+%% \def \dphi{$\Delta \phi\;$}
 \def \dET{$\Delta E_{T}\;$}
 \def\Npv{$N_{\mathrm{PV}}$}
 \def\npv{$N_{\mathrm{PV}}$}
@@ -157,47 +141,9 @@ $\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
 \def\pthardvec{\ensuremath{\vec{p}_{\mathrm T}^\text{hard}}\xspace}
 \def\pthardhat{\ensuremath{\hat{\vec{p}}_{\mathrm T}^\text{hard}}\xspace}
 
-\newcommand{\zzero}{\ensuremath{z_{0}\xspace}}
-
-\def\recoil{\ensuremath{\textbf{\textit{Recoil}}}}
-\def\Az{\ensuremath{\mathbf { \textbf{ \textit {A}}}_Z}}
-
-\newcommand{\ptmiss}{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss,track}}}}
-\newcommand{\jcorrptmiss}{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss,track,jetCorr}}}}
-\newcommand{\ptmissRel}{\ensuremath{E_{\mathrm{T, Rel}}^{\mathrm{miss,trk}}}}
-\newcommand{\njet}{\ensuremath{N_{\text{jets}}}}
-\def\ptsofttrk{\ensuremath{p_{\mathrm{T,soft}}^{\mathrm{miss,trk}}}}
-\def\pthardtrk{\ensuremath{p_{\mathrm{T,hard}}^{\mathrm{miss,trk}}}}
-\def\trkmetx{\ensuremath{p_{\mathrm{x,soft}}^{\mathrm{miss,trk}}}}
-\def\trkmety{\ensuremath{p_{\mathrm{y,soft}}^{\mathrm{miss,trk}}}}
-\def\trkmet{\ensuremath{p_{\mathrm{T,soft}}^{\mathrm{miss,trk}}}}
-\def\trkmetori{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss,trk}}}}
-\def\trkmetrel{\ensuremath{E_{\mathrm{T,rel}}^{\mathrm{miss,trk}}}}
-\def\trkmetv{\ensuremath{\textbf{\textit{p}}_{\mathrm T,soft}^{\mathrm miss,trk}}}
-\def\trkmetL{\ensuremath{p_{\mathrm{T,soft}}^{\mathrm{L,miss,trk}}}}
-\def\trkmetT{\ensuremath{p_{\mathrm{T,soft}}^{\mathrm{T,miss,trk}}}}
-\def\trkmetLT{\ensuremath{p_{\mathrm{L,P,soft}}^{\mathrm{L,miss,trk}}}}
-\def\trkmetLTcorr{\ensuremath{p_{\mathrm{L,P,soft}}^{\mathrm{miss,trk\pm}}}}
-\def\trkmetLcorr{\ensuremath{p_{\mathrm{L,soft}}^{\mathrm{miss,trk\pm}}}}
-\def\mll{\ensuremath{m_{\ell\ell}}}
-\def\mtt{\ensuremath{m_{\tau\tau}}}
-\newcommand{\sumpTsq}{\ensuremath{\Sigma \pt^2}}
-\newcommand{\Zjets}{\ensuremath{Z\mathrm{+jets}}}
-\newcommand{\gammajets}{\ensuremath{\gamma\mathrm{+jets}}}
-\newcommand{\Wjets}{\ensuremath{W\mathrm{+jets}}}
-
-\newcommand{\gammajet}{\gammajets}
-\newcommand{\zjets}{\ensuremath{Z\mathrm{+jets}}}
-\newcommand{\wjets}{\ensuremath{W\mathrm{+jets}}}
-
-\newcommand{\zjet}{\zjets}
-\newcommand{\wjet}{\wjets}
-
 \newcommand{\WW}{\ensuremath{WW}\xspace}
 \newcommand{\jvf}{\ensuremath{\text{JVF}}}
 \newcommand{\absjvf}{\ensuremath{\lvert \text{JVF} \rvert}}
-
-\newcommand{\RestFrames}{\textsc{RestFrames}}
 
 \newcommand{\PYTHIASix}{\textsc{Pythia6}}
 \newcommand{\PYTHIAEight}{\textsc{Pythia8}}
@@ -244,12 +190,6 @@ $\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
 \def\ptlone{\ensuremath{p_{\mathrm{T}}^{\ell_1}}}
 \def\ptltwo{\ensuremath{p_{\mathrm{T}}^{\ell_2}}}
 \def\ptj{\ensuremath{p_{\mathrm{T}}^{jet}}}
-%\newcommand{\alphat}{\ensuremath{\ensuremath{\alpha_{T}}}}
-%\newcommand{\etmiss}{\ensuremath{\slashed{E}_T}}
-%\newcommand{\pmiss}{\ensuremath{\slashed{p}}}
-%\newcommand{\ptmiss}{\ensuremath{\slashed{p}_T}}
-%\newcommand{\Ptmiss}{\ensuremath{{\slashed{\bf p}}_T}}
-\def\Ptmiss{\ensuremath{\bm{E}\mathrm{^{miss}_T}}}
 
 \def\lsim{\mathrel{\rlap{\lower4pt\hbox{\hskip1pt$\sim$}}
     \raise1pt\hbox{$<$}}}                % less than or approx. symbol
@@ -286,33 +226,99 @@ $\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
 \newcommand{\acermc}{{\textsc{AcerMC}}}
 \newcommand{\tauola}{{\tt Tauola}}
 
-
-\newcommand{\lumi}[2]{$#1 \times 10^{#2} \mathrm{cm}^{-2} \mathrm{s}^{-1}$}
-\newcommand{\mettopo}{MET\_Topo\xspace}
-\newcommand{\metlhtopo}{MET\_Loc\-Had\-Topo\xspace}
-\newcommand{\metsrf}{Simplified MET\_Ref\-Final\xspace}
-\newcommand{\metrf}{MET\_Ref\-Final\xspace}
-\newcommand{\wen}{W $\rightarrow$ e$\nu$ }
-\newcommand{\wmn}{W $\rightarrow$ $\mu\nu$ }
-\newcommand{\wln}{W $\rightarrow$ $\ell\nu$ }
-\newcommand{\jetmet}{{jet + \met}\xspace}
-\newcommand{\jetmetj}[1]{EF\_j75\_jetNoEF\_EFxe#1\_noMu\xspace}
-\newcommand{\jetmetf}[1]{EF\_j50\_jetNoEF\_xe#1\_noMu\xspace}
-\newcommand{\mymet}[2]{({\met})_{\mathrm{#1}}^{\mathrm{#2}}}
-
-\newcommand{\mvetmiss}{\ensuremath{\vec{E}_{\rm T}^{\rm miss}}}
-\newcommand{\trackmet}{\ensuremath{E_{\mathrm{T,track}}^{\mathrm{miss}}}}
-\newcommand{\dphitrackmet}{\ensuremath{\Delta\phi(\met,\trackmet)}}
-
-\newcommand{\anactualptmissvecwithapinit}{{\vec{P}}_\mathrm{T}^\mathrm{\; miss}}
-\newcommand{\anactualptmissmagwithapinit}{P_\mathrm{T}^\mathrm{\; miss}}
-
-\newcommand{\ourvecptmiss}{\ensuremath{\bm{E}\mathrm{^{miss}_T}}}
-\newcommand{\ourmagptmiss}{\MET}
-\newcommand{\peoplecallit}{\MET}
-
-\newcommand{\ourdeltaphishort}{\Delta\phi}
-\newcommand{\ourdeltaphifull}{\Delta\phi(\textrm{jet},\ourvecptmiss)_\mathrm{min}}
-\newcommand{\ourpt}{p_\mathrm{T}}
+%% \newcommand{\lumi}[2]{$#1 \times 10^{#2} \mathrm{cm}^{-2} \mathrm{s}^{-1}$}
 
 \def\mean#1{\left< #1 \right>}
+
+
+%% my additions
+
+%% \newcommand{\PbPbenergy}{$\sqrt{s_{\mathrm{NN}}}=2.76~\tev$\xspace}
+\newcommand{\pPbenergy}{$\sqrt{s_{\mathrm{NN}}}=5.02~\tev$\xspace}
+\newcommand{\ppenergy}{$\sqs =13$~\TeV\xspace}
+\renewcommand{\AA}{\mbox{A+A}\xspace}
+%% \newcommand{\PbPb}{\mbox{Pb+Pb}\xspace} %% these are defined in atlasheavyion.sty.
+%% \newcommand{\pPb}{\mbox{$p$+Pb}\xspace}
+%%\newcommand{\pp}{\mbox{$pp$}\xspace}
+%% \newcommand{\AuAu}{\mbox{Au+Au}\xspace}
+%% \newcommand{\dAu}{\mbox{$d$+Au}\xspace}
+%% \newcommand{\HeAu}{\mbox{${}^3$He+Au}\xspace}
+%%\newcommand{\ppbar}{\mbox{$\emph{p\overline{p}}$}}
+\newcommand{\Nch}{\mbox{$N_{\mathrm{ch}}$}\xspace}
+\newcommand{\Ntrk}{\ensuremath{N_{\mathrm{ch}}^{\mathrm{rec}}}\xspace}
+%\newcommand{\nchrec}{\mbox{$N_{\mathrm{ch}}^{\mathrm{rec}}$}}
+\newcommand{\dphi}{\ensuremath{\Delta \phi}\xspace}
+\newcommand{\dphimin}{\ensuremath{\Delta \phi_{\mathrm{ZYAM}}}\xspace}
+\newcommand{\deta}{\ensuremath{\Delta \eta}\xspace}
+\newcommand{\ctwo}{\ensuremath{C(\Delta\eta, \Delta\phi)}\xspace}
+\newcommand{\ctwophi}{\ensuremath{C(\Delta\phi)}\xspace}
+\newcommand{\Yphi}{\ensuremath{Y(\Delta\phi)}\xspace}
+\newcommand{\Ycphi}{\ensuremath{Y^{\mathrm{corr}}(\Delta\phi)}\xspace}
+\newcommand{\pTab}{\ensuremath{p_{\mathrm{T}}^{\mathrm{a,b}}\xspace}}
+\newcommand{\ptab}{\ensuremath{p_{\mathrm{T}}^{\mathrm{a,b}}\xspace}}
+\newcommand{\pta}{\ensuremath{p_{\mathrm{T}}^{\mathrm{a}}\xspace}}
+\newcommand{\ptb}{\ensuremath{p_{\mathrm{T}}^{\mathrm{b}}\xspace}}
+\newcommand{\Yint}{\ensuremath{Y_{\mathrm{int}}}\xspace}
+%\newcommand{\IntLum}{14~\inb\xspace}
+\newcommand{\PYEight}{\textsc{Pythia$\,$8}\xspace}
+%\newcommand{\zvtx}{\mbox{$z_{\mathrm{vtx}}$}}
+
+%% the above are leftover from the pp Flow note. Below are additions from the HBT int note
+
+\newcommand{\qinv}{\ensuremath{q_{\mathrm{inv}}}\xspace}
+\newcommand{\qout}{\ensuremath{q_{\mathrm{out}}}\xspace}
+\newcommand{\qside}{\ensuremath{q_{\mathrm{side}}}\xspace}
+\newcommand{\qlong}{\ensuremath{q_{\mathrm{long}}}\xspace}
+\newcommand{\qsl}{\ensuremath{q_{\mathrm{sl}}}\xspace}
+%% \renewcommand{\kt}{\ensuremath{k_{\mathrm{T}}}\xspace}
+%%\newcommand{\kys}{\ensuremath{y^{*}_{k}}\xspace}
+\newcommand{\kys}{\ensuremath{y^{\star}_{\pi\pi}}\xspace}
+\newcommand{\kphi}{\ensuremath{\phi_{k}}\xspace}
+\newcommand{\ycm}{\ensuremath{y_{\mathrm{CM}}}\xspace}
+\newcommand{\Rinv}{\ensuremath{R_{\mathrm{inv}}}\xspace}
+\newcommand{\Rout}{\ensuremath{R_{\mathrm{out}}}\xspace}
+\newcommand{\Rside}{\ensuremath{R_{\mathrm{side}}}\xspace}
+\newcommand{\Rlong}{\ensuremath{R_{\mathrm{long}}}\xspace}
+\newcommand{\Rol}{\ensuremath{R_{\mathrm{ol}}}\xspace}
+\newcommand{\Ros}{\ensuremath{R_{\mathrm{os}}}\xspace}
+\newcommand{\linv}{\ensuremath{\lambda_{\mathrm{inv}}}\xspace}
+\newcommand{\losl}{\ensuremath{\lambda_{\mathrm{osl}}}\xspace}
+\newcommand{\Reff}{\ensuremath{R_{\mathrm{eff}}}\xspace}
+\newcommand{\Rbkgd}{\ensuremath{R_{\mathrm{bkgd}}}\xspace}
+\newcommand{\Rbkgdinv}{\ensuremath{R_{\mathrm{bkgd}}^{\mathrm{inv}}}\xspace}
+\newcommand{\Rbkgdsl}{\ensuremath{R_{\mathrm{bkgd}}^{\mathrm{sl}}}\xspace}
+\newcommand{\Rbkgdout}{\ensuremath{R_{\mathrm{bkgd}}^{\mathrm{out}}}\xspace}
+\newcommand{\lbkgd}{\ensuremath{\lambda_{\mathrm{bkgd}}}\xspace}
+\newcommand{\lbkgdinv}{\ensuremath{\lambda_{\mathrm{bkgd}}^{\mathrm{inv}}}\xspace}
+\newcommand{\lbkgdosl}{\ensuremath{\lambda_{\mathrm{bkgd}}^{\mathrm{osl}}}\xspace}
+\newcommand{\abkgd}{\ensuremath{\alpha_{\mathrm{bkgd}}}\xspace}
+\newcommand{\abkgdinv}{\ensuremath{\abkgd^{\mathrm{inv}}}\xspace}
+\newcommand{\abkgdout}{\ensuremath{\abkgd^{\mathrm{out}}}\xspace}
+\newcommand{\abkgdsl}{\ensuremath{\abkgd^{\mathrm{sl}}}\xspace}
+\newcommand{\detR}{\ensuremath{\mathrm{det}\left(R\right)}\xspace}
+\newcommand{\detRt}{\ensuremath{\mathrm{det}\left(R_\mathrm{T}\right)}\xspace}
+\newcommand{\RoutOverRside}{\ensuremath{\Rout/\Rside}\xspace}
+
+%% \newcommand{\Npart}{\ensuremath{N_{\mathrm{part}}}\xspace}
+%% \newcommand{\avgNpart}{\ensuremath{\langle\Npart\rangle}\xspace}
+\newcommand{\dNdeta}{\ensuremath{\mathrm{d}\Nch/\mathrm{d}\eta}\xspace}
+\newcommand{\dNdy}{\ensuremath{\mathrm{d}\Nch/\mathrm{d}y^{\star}}\xspace}
+\newcommand{\avgdNdeta}{\ensuremath{\langle\dNdeta\rangle}\xspace}
+\newcommand{\avgdNdy}{\ensuremath{\langle\dNdy\rangle}\xspace}
+\newcommand{\dEdx}{\ensuremath{\mathrm{d}E/\mathrm{d}x}\xspace}
+%% \newcommand{\ystar}{\ensuremath{y^{\star}}\xspace}
+
+\newcommand{\Hijing}{\textsc{Hijing}\xspace}
+\newcommand{\Pythia}{\textsc{Pythia}\xspace}
+%\newcommand{\Herwig}{\textsc{Herwig}\xspace}
+
+\newcommand{\qt}{\ensuremath{q_{2}}\xspace}
+\newcommand{\psit}{\ensuremath{\Psi_{2}}\xspace}
+\newcommand{\tdpk}{\ensuremath{2\left(\kphi-\psit\right)}\xspace}
+%% \newcommand{\tdpk}{\ensuremath{2\Delta\kphi_2}\xspace} % another alternative?
+\newcommand{\tdpp}{\ensuremath{2\left(\phi-\psit\right)}\xspace}
+\newcommand{\qtx}{\ensuremath{q_{2,x}}\xspace}
+\newcommand{\qty}{\ensuremath{q_{2,y}}\xspace}
+\newcommand{\Ntoy}{\ensuremath{N_\textrm{toy}}\xspace}
+
+\newcommand{\fm}{\ensuremath{\mathrm{fm}}\xspace}
