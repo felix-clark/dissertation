@@ -36,21 +36,20 @@ E = \frac{\hbar c}{l} \approx \frac{0.2 \GeV \fm}{l} \; .
 Resolving individual atoms requires collisions with energy of order \keV, resolving the nucleus requires at least \MeV, and resolving sub-nucleic structure requires collisions of at least \GeV energies.
 
 \subsection{Accelerator physics}
-In a fixed-target experiment using target particles of mass $m_t$ at rest and a projectile beam with particles of mass $m_p$ and energy $E$, the center-of-momentum energy $\sqrt{s}$ is given by
 
+In a fixed-target experiment using target particles of mass $m_t$ at rest and a projectile beam with particles of mass $m_p$ and energy $E$, the center-of-momentum energy $\sqrt{s}$ is given by
 \begin{equation}
 \sqrt{s} = \sqrt{(m_t+m_p)^2 + 2 m_t (E - m_p)} \; ,
 \end{equation}
 which scales with the square root of the beam energy even for large energies.
 On the other hand, if two beams are accelerated and directed into each other, the center-of-momentum energy of each collision is
-
 \begin{equation}
 \sqrt{s} = \sqrt{(E_t + E_p)^2 - (|\mathbf{p}_t| - |\mathbf{p}_p|)^2} \; ,
 \end{equation}
 which scales linearly with the total energy, and is equal to $2E$ in the case where the beams are identical.
 While fixed-target experiments were the first to be developed, they are not as efficient at reaching high energies as dual-beam colliders.
 
-\begin{figure}[ht]
+\begin{figure}[t]
   %%  https://www.cyberphysics.co.uk/topics/atomic/Accelerators/LINAC/Linac.htm
   \includegraphics[width=0.8\linewidth]{LINAC.png}
   \caption{A linear accelerator.}
@@ -61,14 +60,39 @@ The most straightforward method to accelerate charged particles to high energies
 A large voltage can be produced, for instance, with a Van de Graaff generator \cite{PhysRev.43.149}.
 The voltage differential is limited by the insulation breakdown, which in practice caps the energy of accelerated particles with charge $Ze$ to a few $\MeV Z$.
 A modern linear particle accelerator (linac) circumvents this issue by passing ions through a series of drift tubes with alternating positive and negative potentials (\Fig{\ref{fig:linac}}).
-The drift tubes are constructed with conducting material, so they shield the ions traveling through them from external electromagnetic acceleration.
+The drift tubes are constructed with conducting material, so they shield the ions traveling through them from external electric acceleration.
 Between the drift tubes, however, strong electric fields are induced by the alternating potentials.
 This voltage difference is oscillated with radio frequency and the apparatus is constructed such that ions injected at a given velocity can pass through each gap with acceleration in the forward direction.
 The Stanford Linear Accelerator Center (SLAC) hosts the largest linear accelerator, which began operation in 1966.
 The 3 km long machine was capable of accelerating electrons and positrons to energies of up to 50 \GeV.
 While this is several orders of magnitude higher than the energies accessible with simple voltage differential, increasing the energy further requires proportional increases to the length of the accelerator, exacerbating technical difficulties in its placement, construction, and maintenance.
 
-next up: synchrotrons
+\begin{figure}[t]
+ %% https://www.mpoweruk.com/figs/cyclotron.htm
+  \includegraphics[width=0.8\linewidth]{cyclotron.png}
+  \caption{A cyclotron.}
+  \label{fig:cyclotron}
+\end{figure}
+The cyclotron is the next fundamental progression in accelerator technology.
+Ions in a cyclotron are passed between two semi-cylindrical electrodes (``dees'') that are driven with an alternating voltage (\Fig{\ref{fig:cyclotron}}).
+A large electromagnet keeps the particles traveling in a circular path contained within the dees.
+At non-relativistic energies, the velocity of the ions is proportional to the radius of their path, so the time taken for one revolution is independent of the velocity.
+If the voltage between the electrodes is oscillated with a frequency equal to the cyclotron resonance frequency $f_\textrm{cyclo} = q B / 2\pi m$, then ions are accelerated to higher energies with each pass between the dees.
+At a fixed radius (and therefore fixed energy), the ion beam is allowed to exit the cyclotron.
+Classically, the kinetic energy is proportional to the square of the radius, inviting a comparison to a hypothetically coiled linac.
+Relativistic energies can be attained with more sophisticated designs that vary either the frequency over time or the magnetic field with the radial position, but as the velocity approaches $c$ the energy is only linearly proportional to the radius:
+\begin{align}
+\label{eqn:gyroradius}
+E =& \; \frac{q B R c^2}{v}\\
+\overrightarrow{{}_{v \rightarrow c}}& \; q B R c
+\end{align}
+This shows that the energies accessible from a circular accelerator are directly limited by the maximum strength of the magnetic field and the radius of the path.
+
+The radius of a cyclotron design can only be increased so much before it becomes infeasible.
+The synchrotron is a toroidal accelerator through which ions travel in a set circular path.
+This layout does not permit it to accelerate particles from an arbitrarily small energy, so a synchrotron is generally filled with a linac first, then the energy of the ions in its ring are increased.
+The limiting factor for synchrotron performance depends on the mass of the particle; for electrons the power lost via synchrotron radiation $P_\textrm{synch-rad} \propto e^2 E^4 / m^4 R^2 $ is the limiting factor in the maximum energy.
+
 
 \section{The Large Hadron Collider}
 
@@ -83,7 +107,7 @@ The Large Hadron Collider (LHC) is a high-energy particle ring collider located 
 \end{figure}
 
 \subsection{LHC Experiments}
-The two largest LHC experiments, ATLAS (A Toroidal LHC Apparatus) \cite{Aad:2008zzm} and CMS (Compact Muon Solenoid) \cite{Chatrchyan:2008aa}, are general-purpose detectors that fulfilled one of their primary objectives with the joint discovery of the Higgs boson in 2012 \cite{Aad:2012tfa,Chatrchyan:2012xdj}. They continue to be used in the search for physics beyond the Standard Model such as supersymmetry or large extra dimensions. The large rapidity coverage of their calorimeter and tracking systems also make them highly capable of measuring both low- and high-energy probes of heavy ion collisions. The ATLAS detector, which provided the data used in this thesis, will be discussed in more detail in \Sect{\ref{sec:atlas}}.
+The two largest LHC experiments, ATLAS (A Toroidal LHC Apparatus) \cite{Aad:2008zzm} and CMS (Compact Muon Solenoid) \cite{Chatrchyan:2008aa}, are general-purpose detectors that fulfilled one of their primary objectives with the joint discovery of the Higgs boson in 2012 \cite{Aad:2012tfa,Chatrchyan:2012xdj}. They continue to be used in the search for physics beyond the Standard Model such as supersymmetry or large extra dimensions. The large rapidity coverage of their calorimeter and tracking systems also make them highly capable of measuring both low- and high-energy probes of heavy ion collisions. The ATLAS detector, which provided the data used in this thesis, is discussed in more detail in \Sect{\ref{sec:atlas}}.
 
 ALICE (A Large Ion Collider Experiment) \cite{Aamodt:2008zz} is a dedicated heavy-ion detector that is particularly adept at the identification of particle species.
 
