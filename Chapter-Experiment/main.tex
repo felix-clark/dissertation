@@ -1,6 +1,5 @@
 \graphicspath{{Chapter-Experiment/figures/}}
 \chapter{Experimental design and apparatus}
-
 \section{Scattering experiments}
 
 \subsection{History and motivation}
@@ -103,6 +102,19 @@ The limiting factor for synchrotron performance depends on the mass of the parti
 
 \subsubsection{Luminosity}
 
+The capability of an accelerator to provide collision events to a detector is chacterized by its luminosity.
+The rate of inelastic collisions $dN/dt$ is proprotional to the total inelastic cross-section of the collision participants $\sigma$.
+The proportionality factor is defined as the \emph{instantaneous luminosity} $\mathcal{L}$.
+\begin{equation}
+\label{eqn:rate_lumi}
+\frac{dN}{dt} = \sigma \mathcal{L}
+\end{equation}
+The total number of events is proportional to the \emph{total luminosity} $L = \int \mathcal{L} \, dt$.
+\begin{equation}
+N = \sigma L
+\end{equation}
+This definition is useful because it separates the contributions to the observations ($N$) into the independent contributions from physics ($\sigma$) and from the accelerator ($L$).
+
 \section{The Large Hadron Collider}
 
 The Large Hadron Collider (LHC) is a high-energy particle ring collider located near Geneva on the Swiss-French border \cite{LHCMachine}.
@@ -171,7 +183,7 @@ The electromagnets use niobium-titanium (NbTi) as the conducting material, which
 They are cooled with superfluid liquid helium (${}^{4}\textrm{He}$) at a temperature of 1.8 K.
 A failure in the cooling system that allows the magnet temperature to raise above its critical temperature causes it to quench.
 The increase in resistance from the loss of superconductivity causes a rapid temperature increase.
-This is especially disastrous if the helium is heated to its gaseous phase, causing it to explode\footnote{This occurred at the LHC in September of 2008, delaying operations for over a year.}.
+This is particularly disastrous if the helium is heated to its gaseous phase, causing it to explode\footnote{This occurred at the LHC in September of 2008, delaying operations for over a year.}.
 
 
 \subsection{LHC experiments}
@@ -191,6 +203,9 @@ The LHCf (Large Hadron Collider Forward) experiment \cite{Adriani:2008zz} has tw
 
 The latest experiment to join the ring is MoEDAL, the Monopole and Exotics Detector at the LHC \cite{Acharya:2014nyr}.
 It is a mostly passive detector located next to LHCb, with the goal of direct detector of magnetic monopoles or other stable massive particles beyond the Standard Model.
+
+\subsection{Dataset provided}
+The results in this thesis use the 2013 \pPb dataset at a center-of-mass energy per nucleon of \pPbenergy. 28.1 \inb
 
 \section{The ATLAS detector}
 \label{sec:atlas}
