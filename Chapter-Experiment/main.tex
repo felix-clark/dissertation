@@ -9,7 +9,7 @@ While most $\alpha$ particles pass through the foil with little deflection, a sm
 This result provided evidence that electric charge within the foil was not distributed uniformly, but localized in very small clusters -- the nuclei of the gold atoms.
 \begin{figure}[t]
   %% https://www.chegg.com/homework-help/questions-and-answers/rutherford-s-experiment-studied-deflection-scattering-ofalpha-particles-known-helium-nucle-q458296
-  \includegraphics[width=0.8\linewidth]{BLB-1070873-Rutherford_v2.jpg}
+  \includegraphics{BLB-1070873-Rutherford_v2.jpg}
   \caption{Rutherford scattering of alpha particles by gold foil, demonstrating the existence of the atomic nucleus.}
   \label{fig:rutherford}
 \end{figure}
@@ -56,7 +56,7 @@ Modern high-energy experiments therefore accelerate two particle beams and gener
 
 \begin{figure}[t]
   %%  https://www.cyberphysics.co.uk/topics/atomic/Accelerators/LINAC/Linac.htm
-  \includegraphics[width=0.8\linewidth]{LINAC.png}
+  \includegraphics{LINAC.png}
   \caption{A linear accelerator.}
   \label{fig:linac}
 \end{figure}
@@ -74,7 +74,7 @@ While this is several orders of magnitude higher than the energies accessible wi
 
 \begin{figure}[t]
  %% https://www.mpoweruk.com/figs/cyclotron.htm
-  \includegraphics[width=0.8\linewidth]{cyclotron.png}
+  \includegraphics{cyclotron.png}
   \caption{A cyclotron.}
   \label{fig:cyclotron}
 \end{figure}
@@ -114,7 +114,7 @@ The results of this thesis will use data collected from the 2013 \pPb collisions
 \subsection{Injection chain}
 
 \begin{figure}[t]
-\includegraphics[width=0.8\linewidth]{CCC-v2018-print-v2.jpg}
+\includegraphics{CCC-v2018-print-v2.jpg}
 \caption{The LHC is the last ring (dark blue line) in a complex chain of particle accelerators. The smaller machines are used in a chain to help boost the particles to their final energies and provide beams to a whole set of smaller experiments. (Copyright CERN \cite{Mobs:2636343})}
 \label{fig:injection_chain}
 \end{figure}
@@ -140,7 +140,7 @@ Finally, the beam is injected into the LHC, where it is accelerated to a few \Te
 \subsection{LHC main ring}
 
 \begin{figure}[t]
-\includegraphics[width=0.8\linewidth]{LHC_schematic.png}
+\includegraphics{LHC_schematic.png}
 \caption{Schematic layout of the two beams of the LHC \cite{Bruning:2004ej}.}
 \label{fig:lhc_schematic}
 \end{figure}
@@ -157,7 +157,7 @@ The LHC can thus fit a maximum of 3560 bunches in each of its rings, but it is n
 The smallest bunch spacing used for lead ions is 150 ns.
 
 \begin{figure}[t]
-\includegraphics[width=0.8\linewidth]{LHC-PHO-2001-187.jpg}
+\includegraphics{LHC-PHO-2001-187.jpg}
 \caption{A dipole magnet used to turn the beams along an arc. The two beams travel in the evacuated beam pipes running anti-parallel to each other, which requires the magnetic field in each to be opposite. (Copyright CERN \cite{Valeriane:843195})}
 \label{fig:dipole_cross_section}
 \end{figure}
@@ -195,9 +195,61 @@ It is a mostly passive detector located next to LHCb, with the goal of direct de
 \section{The ATLAS detector}
 \label{sec:atlas}
 
-\subsection{Trigger system}
+The ATLAS\footnote{an ``acronym'' for \textbf{A} \textbf{T}oroidal \textbf{L}HC \textbf{A}pparatu\textbf{S}} experiment is a general purpose particle detector \cite{Aad:2008zzm} located at Point 1 on the LHC ring, across the street from the main entrance to the CERN site at Meyrin, Switzerland.
+Currently the largest volume accelerator detector in operation, it encompasses 44 m along the beam axis and has a diameter of 25 m, weighing about 7 kilotonnes (\Fig{\ref{fig:atlas_layout}}).
+Broadly speaking, the major subsystems of the ATLAS detector are (from inner- to outer-most): the inner detector (\Sect{\ref{sec:atlas:id}}), the magnet system (\Sect{\ref{sec:atlas:magnet}}), the calorimeters (\Sect{\ref{sec:atlas:calo}}), and the muon spectrometer.
+The muon spectrometer is essential for reconstructing a number of massive and exotic particles \cite{ATLAS:1997ad}; however, it will not be discussed in detail here as it is not used in the analyses presented in this thesis.
+The extensive trigger and data acquisition system is also crucial for successful operation (\Cref{subsec:atlas_trigger}). %% MBTS?
+
+
+\begin{figure}[t]
+\includegraphics{ATLAS_layout.jpg}
+\caption{The ATLAS detector and major subsystems. (Copyright CERN \cite{Pequenao:1095924})}
+\label{fig:atlas_layout}
+\end{figure}
+
+
+\subsection{Trigger and data acquisition systems}
+\label{subsec:atlas_trigger}
+
+\cite{ATLAS:1998ad} %% low-level (``first''?)
+\cite{ATLAS:2003aa} %% high-level trigger and DAQ
+\cite{Aad:2012xs} %% performance
+
 \subsection{Inner detector}
+\label{sec:atlas:id}
+
+\cite{ATLAS:1997ag,ATLAS:1997af} %% technical design report
+\cite{Aad:2010bx} %% commissioning & calibration
+
+\begin{figure}[t]
+\includegraphics[width=0.57\linewidth]{id_whole.jpg}
+\includegraphics[width=0.42\linewidth]{id_slice.jpg}
+\caption{Computer-generated images of the ATLAS inner detector. The left figure is a labeled graphic of the entire inner detector, and the right figure shows a cross-section of the barrel region. (Copyright CERN \cite{Pequenao:1095926})}
+\label{fig:atlas_id}
+\end{figure}
+
+\begin{figure}[t]
+\includegraphics{pixel.jpg}
+\caption{Computer-generated cutaway of the Pixel subdetector of the ATLAS inner detector. (Copyright CERN \cite{Pequenao:1095925})}
+\label{fig:atlas_pixel}
+\end{figure}
+
+\subsection{Magnets}
+\label{sec:atlas:magnet}
+
+\cite{ATLAS:1997ae} %% tech design report
+
 \subsection{Calorimeter system}
-%% \subsection{Muon spectrometer}
-%% This section is maybe not required, since these analyses don't actually use the muon spectrometer.
+\label{sec:atlas:calo}
+
+\begin{figure}[t]
+\includegraphics{calorimeter.jpg}
+\caption{Computer-generated image of the ATLAS calorimeter systems. (Copyright CERN \cite{Pequenao:1095927})}
+\label{fig:atlas_calorimeter}
+\end{figure}
+
+\cite{ATLAS:1996aa} %% tile
+\cite{ATLAS:1996ab} %% liquid argon
+\cite{Airapetian:1996iv} %% performance tech design report
 

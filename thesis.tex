@@ -87,13 +87,13 @@
 
 \setlength{\bibitemsep}{\baselineskip} %Skip lines between bibliography entries. Columbia requires that you skip a line between entries.
 
+% Add you own definitions here (file thesis-defs.sty).
+\usepackage{thesis-defs}
+
 % Paths for figures - do not forget the / at the end of the directory name.
 \graphicspath{{logos/}{figures/}}
 % default figure width of 0.8 linewidth
 \setkeys{Gin}{width=0.8\linewidth}
-
-% Add you own definitions here (file thesis-defs.sty).
-\usepackage{thesis-defs}
 
 %% comment this out for final version
 \usepackage{lineno}
@@ -121,6 +121,9 @@
 \Crefname{chapter}{Ch.}{Ch.}
 \Crefname{appendix}{App.}{App.}
 \Crefname{subsection}{Sec.}{Secs.}
+%% number down to sub-sections
+\setcounter{secnumdepth}{4} %% default is 2
+
 
 %-------------------------------------------------------------------------------
 % Generic document information
