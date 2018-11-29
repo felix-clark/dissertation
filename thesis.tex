@@ -74,17 +74,23 @@
 
 % Files with references for use with biblatex.
 % Note that biber gives an error if it finds empty bib files.
-\addbibresource{thesis.bib}
+%% \addbibresource{thesis.bib} % obsolete: now sorting new references by type
 \addbibresource{bibtex/bib/ATLAS.bib}
 \addbibresource{bibtex/bib/CMS.bib}
-
 \addbibresource{bibtex/bib/ConfNotes.bib}
 \addbibresource{bibtex/bib/PubNotes.bib}
+%% custom additions, sorted by type
+\addbibresource{bibtex/bib/theory.bib}
+\addbibresource{bibtex/bib/experiment.bib}
+\addbibresource{bibtex/bib/techreport.bib}
+\addbibresource{bibtex/bib/images.bib}
 
 \setlength{\bibitemsep}{\baselineskip} %Skip lines between bibliography entries. Columbia requires that you skip a line between entries.
 
 % Paths for figures - do not forget the / at the end of the directory name.
 \graphicspath{{logos/}{figures/}}
+% default figure width of 0.8 linewidth
+\setkeys{Gin}{width=0.8\linewidth}
 
 % Add you own definitions here (file thesis-defs.sty).
 \usepackage{thesis-defs}
