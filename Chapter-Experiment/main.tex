@@ -4,7 +4,7 @@
 
 \subsection{History and motivation}
 The first modern scattering experiment could be said to be the Geiger-Marsden experiments in the early 1910s, in which the Rutherford scattering of alpha ($\alpha$) particles by gold foil was observed \cite{Rutherford:1911zz}.
-While most $\alpha$ particles pass through the foil with little deflection, a small fraction of them are deflected to extreme angles (\Fig{\ref{fig:rutherford}}).
+While most $\alpha$ particles pass through the foil with little deflection, a small fraction of them are deflected to extreme angles (\Cref{fig:rutherford}).
 This result provided evidence that electric charge within the foil was not distributed uniformly, but localized in very small clusters -- the nuclei of the gold atoms.
 \begin{figure}[t]
   %% https://www.chegg.com/homework-help/questions-and-answers/rutherford-s-experiment-studied-deflection-scattering-ofalpha-particles-known-helium-nucle-q458296
@@ -18,7 +18,7 @@ In the Born approximation, which is essentially the weak-potential limit, the qu
 
 \begin{equation}
   f\left(\mathbf{p}_f ; \mathbf{p}_i\right) \propto - \int d^3 x \, V(\mathbf{x}) e^{-i \Delta \mathbf{p} \cdot \mathbf{x}}
-  \label{eqn:born}
+  \label{eq:born}
 \end{equation}
 where $\Delta \mathbf{p} \equiv \mathbf{p}_f - \mathbf{p}_i$ is the momentum transferred to the projectile particle.
 The differential scattering cross section $d\sigma/d\Omega$ (the scattering probability density per unit area) is given by the square of the quantum amplitude, so it is proportional to the squared magnitude of the Fourier transform of the potential.
@@ -63,7 +63,7 @@ Modern high-energy experiments therefore accelerate two particle beams and gener
 The most straightforward method to accelerate charged particles to high energies is to allow them to pass through a large voltage differential.
 A large voltage can be produced, for instance, with a Van de Graaff generator \cite{PhysRev.43.149}.
 The voltage differential is limited by the insulation breakdown, which in practice caps the energy of accelerated particles with charge $Ze$ to a few $Z \cdot\MeV$.
-A modern linear particle accelerator (linac) circumvents this issue by passing ions through a series of drift tubes with alternating positive and negative potentials (\Fig{\ref{fig:linac}}).
+A modern linear particle accelerator (linac) circumvents this issue by passing ions through a series of drift tubes with alternating positive and negative potentials (\Cref{fig:linac}).
 The drift tubes are constructed with conducting material, so they shield the ions traveling through them from external electric acceleration.
 Between the drift tubes, however, strong electric fields are induced by the alternating potentials.
 This voltage difference is oscillated with radio frequency (RF) and the apparatus is constructed such that ions injected at a given velocity can pass through each gap with acceleration in the forward direction.
@@ -78,7 +78,7 @@ While this is several orders of magnitude higher than the energies accessible wi
   \label{fig:cyclotron}
 \end{figure}
 The cyclotron is the next fundamental progression in accelerator technology.
-Ions in a cyclotron are passed between two semi-cylindrical electrodes (``dees'') that are driven with an alternating voltage (\Fig{\ref{fig:cyclotron}}).
+Ions in a cyclotron are passed between two semi-cylindrical electrodes (``dees'') that are driven with an alternating voltage (\Cref{fig:cyclotron}).
 A large electromagnet keeps the particles traveling in a circular path contained within the dees.
 At non-relativistic energies, the velocity of the ions is proportional to the radius of their path, so the time taken for one revolution is independent of the velocity.
 If the voltage between the electrodes is oscillated with a frequency equal to the cyclotron resonance frequency $f_\textrm{cyclo} = q B / 2\pi m$, then ions are accelerated to higher energies with each pass between the dees.
@@ -86,7 +86,7 @@ At a fixed radius (and therefore fixed energy), the ion beam is allowed to exit 
 Classically, the kinetic energy is proportional to the square of the radius, inviting a comparison to a hypothetically coiled linac.
 Relativistic energies can be attained with more sophisticated designs that vary either the frequency over time or the magnetic field with the radial position, but as the velocity approaches $c$ the energy is only linearly proportional to the radius:
 \begin{align}
-\label{eqn:gyroradius}
+\label{eq:gyroradius}
 E =& \; \frac{q B R c^2}{v}\\
 \overrightarrow{{}_{v \rightarrow c}}& \; q B R c
 \end{align}
@@ -106,7 +106,7 @@ The capability of an accelerator to provide collision events to a detector is ch
 The rate of events $dN/dt$ of a given set of processes is proportional to the relevant cross-section of the collision participants $\sigma$.
 The proportionality factor is defined as the instantaneous \emph{luminosity} \Lumi.
 \begin{equation}
-\label{eqn:rate_lumi}
+\label{eq:rate_lumi}
 \frac{dN}{dt} = \sigma \Lumi
 \end{equation}
 This definition is useful because it separates the contributions to the rate of observations into the independent contributions from physics ($\sigma$) and from the accelerator (\Lumi).
@@ -136,11 +136,11 @@ The emittance $\epsilon$ is defined as this phase space area,
 and similarly for the $y$ direction.
 Then the luminosity can be expressed as a function of the emittance and $\beta^*$, the value of $\beta$ at the beam crossing.
 \begin{equation}
-\label{eqn:lumi}
+\label{eq:lumi}
 \Lumi = f_\mathrm{coll} \frac{n_1 n_2}{4 \pi \sqrt{\epsilon_x \epsilon_y \beta_x^* \beta_y^*}}
 \end{equation}
 If the crossing angle is non-zero, $\beta$ is not minimized at the interaction point, or other effects deviate from the ideal case, then the real luminosity will be smaller than this optimal value.
-\Eqn{\ref{eqn:lumi}} shows that the keys to increasing the efficiency of data-taking are to make highly-populated bunches cross at high frequency, with low-emittance beams and optics that minimize the amplitude functions at the interaction point.
+\Cref{eq:lumi} shows that the keys to increasing the efficiency of data-taking are to make highly-populated bunches cross at high frequency, with low-emittance beams and optics that minimize the amplitude functions at the interaction point.
 
 \section{The Large Hadron Collider}
 
@@ -160,7 +160,7 @@ The results of this thesis will use data collected from the 2013 \pPb collisions
 
 Before being injected into the LHC, ion beams pass through a series of increasingly large accelerators, incrementally raising their energy \cite{Benedikt:2004wm}.
 These lower-energy accelerators predate the LHC and have each been used for many collision experiments throughout the history of CERN.
-The CERN accelerator complex is sketched in \Fig{\ref{fig:injection_chain}}.
+The CERN accelerator complex is sketched in \Cref{fig:injection_chain}.
 
 Protons are first collected by ionizing hydrogen gas, then accelerated to a kinetic energy of 50 \MeV by the Linac 2 linear accelerator.
 The Proton Synchrotron Booster (PSB) increases their energy to the relativistic level of 1.4 \GeV.
@@ -184,7 +184,7 @@ Finally, the beam is injected into the LHC, where it is accelerated to a few \Te
 \label{fig:lhc_schematic}
 \end{figure}
 
-The LHC ring does not trace a perfect circle, but is actually composed of eight alternating straight and curved arc sections (\Fig{\ref{lhc_schematic}}) \cite{Bruning:2004ej}.
+The LHC ring does not trace a perfect circle, but is actually composed of eight alternating straight and curved arc sections (\Cref{lhc_schematic}) \cite{Bruning:2004ej}.
 Two parallel beam pipes 
 The straight sections are each 528 m in length and carry the RF cavities for acceleration, interaction points for detector experiments, and other features like injection spots and beam dumps.
 The arc portions have a radius of curvature of $R = 2.8$ km, using a total of 1232 superconducting dipole magnets to turn the beams along the path.
@@ -201,7 +201,7 @@ The smallest bunch spacing used for lead ions is 150 ns.
 \label{fig:dipole_cross_section}
 \end{figure}
 
-The dipole magnets (\Fig{\ref{fig:dipole_cross_section}}) have a maximum design strength of 10 T, though the active field strength must remain proportional to the current energy of the beam fill.
+The dipole magnets (\Cref{fig:dipole_cross_section}) have a maximum design strength of 10 T, though the active field strength must remain proportional to the current energy of the beam fill.
 For the \pPbenergy \pPb run they operated at 6.0 T with fully energetic beams.
 To keep the beams focused, 392 quadrupole magnets are arranged in an alternating-polarity orientation.
 This scheme alternately squeezes the beams horizontally and vertically, with a net effect of keeping the beam radius small.
@@ -217,7 +217,7 @@ This is particularly disastrous if the helium is heated to its gaseous phase, ca
 The two largest LHC experiments, ATLAS (A Toroidal LHC Apparatus) \cite{Aad:2008zzm} and CMS (Compact Muon Solenoid) \cite{Chatrchyan:2008aa}, are general-purpose detectors that fulfilled one of their primary objectives with the joint discovery of the Higgs boson in 2012 \cite{Aad:2012tfa,Chatrchyan:2012xdj}.
 They continue to be used in the search for physics beyond the Standard Model such as supersymmetry and large extra dimensions.
 The large rapidity coverage of their calorimeter and tracking systems also make them highly capable of measuring both low- and high-energy probes of heavy ion collisions.
-The ATLAS detector, which provided the data used in this thesis, is discussed in more detail in \Sect{\ref{sec:atlas}}.
+The ATLAS detector, which provided the data used in this thesis, is discussed in more detail in \Cref{sec:atlas}.
 
 ALICE (A Large Ion Collider Experiment) \cite{Aamodt:2008zz} is a dedicated heavy-ion detector that is particularly adept at the identification of particle species.
 
@@ -238,10 +238,10 @@ The results in this thesis use the 2013 \pPb dataset at a center-of-mass energy 
 \label{sec:atlas}
 
 The ATLAS\footnote{an ``acronym'' for \textbf{A} \textbf{T}oroidal \textbf{L}HC \textbf{A}pparatu\textbf{S}} experiment is a general purpose particle detector \cite{Aad:2008zzm} located at Point 1 on the LHC ring, across the street from the main entrance to the CERN site at Meyrin, Switzerland.
-Currently the largest volume accelerator detector in operation, it encompasses 44 m along the beam axis and has a diameter of 25 m, weighing about 7 kilotonnes (\Fig{\ref{fig:atlas_layout}}).
-Broadly speaking, the major subsystems of the ATLAS detector are (from inner- to outer-most): the inner detector (\Sect{\ref{sec:atlas:id}}), the magnet system (\Sect{\ref{sec:atlas:magnet}}), the calorimeters (\Sect{\ref{sec:atlas:calo}}), and the muon spectrometer.
+Currently the largest volume accelerator detector in operation, it encompasses 44 m along the beam axis and has a diameter of 25 m, weighing about 7 kilotonnes (\Cref{fig:atlas_layout}).
+Broadly speaking, the major subsystems of the ATLAS detector are (from inner- to outer-most): the inner detector, the magnet system, the calorimeters, and the muon spectrometer.
 The muon spectrometer is essential for reconstructing a number of massive and exotic particles \cite{ATLAS:1997ad}; however, it will not be discussed in detail here as it is not used in the analyses presented in this thesis.
-The extensive trigger and data acquisition system is also crucial for successful operation (\Cref{subsec:atlas_trigger}). %% MBTS?
+The extensive trigger and data acquisition system is also crucial for successful operation. %% MBTS?
 
 
 \begin{figure}[t]
@@ -259,7 +259,7 @@ The extensive trigger and data acquisition system is also crucial for successful
 \cite{Aad:2012xs} %% performance
 
 \subsection{Inner detector}
-\label{sec:atlas:id}
+\label{subsec:atlas_id}
 
 \cite{ATLAS:1997ag,ATLAS:1997af} %% technical design report
 \cite{Aad:2010bx} %% commissioning & calibration
@@ -278,7 +278,7 @@ The extensive trigger and data acquisition system is also crucial for successful
 \end{figure}
 
 \subsection{Magnets}
-\label{sec:atlas:magnet}
+\label{subsec:atlas_magnet}
 
 \cite{ATLAS:1997ae} %% tech design report
 
