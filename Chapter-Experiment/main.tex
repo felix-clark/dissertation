@@ -1,6 +1,5 @@
 \graphicspath{{Chapter-Experiment/figures/}}
 \chapter{Experimental design and apparatus}
-
 \section{Scattering experiments}
 
 \subsection{History and motivation}
@@ -103,6 +102,46 @@ The limiting factor for synchrotron performance depends on the mass of the parti
 
 \subsubsection{Luminosity}
 
+The capability of an accelerator to provide collision events to a detector is chacterized by its luminosity.
+The rate of events $dN/dt$ of a given set of processes is proportional to the relevant cross-section of the collision participants $\sigma$.
+The proportionality factor is defined as the instantaneous \emph{luminosity} \Lumi.
+\begin{equation}
+\label{eqn:rate_lumi}
+\frac{dN}{dt} = \sigma \Lumi
+\end{equation}
+This definition is useful because it separates the contributions to the rate of observations into the independent contributions from physics ($\sigma$) and from the accelerator (\Lumi).
+The total number of events is proportional to the \emph{integrated luminosity} $\Lint = \int \Lumi \, dt$.
+\begin{equation}
+N = \sigma \Lint
+\end{equation}
+The quantity of data recorded in a time period is typically reported in terms of \Lint.
+
+For two bunched beams colliding head-on with identical Gaussian transverse profiles the luminosity is
+\begin{equation}
+\Lumi = f_\mathrm{coll} \frac{n_1 n_2}{4 \pi \sigma_x^* \sigma_y^*}
+\end{equation}
+where the bunch crossings occur with frequency $f_\mathrm{col}$, there are $n_1$ and $n_2$ particles in each bunch, and $\sigma_x^*$ and $\sigma_y^*$ characterize the transverse beam size in the horizontal and vertical directions at the interaction point.
+The quadrupole focusing magnets are placed to alternatively squeeze the beam in the $x$ and $y$ directions.
+This leads to oscillatory motion in the path $s$ following the Hill equation \cite{Tanabashi:2018oca}:
+\begin{align}
+x(s) =& \; A \sqrt{\beta(s)} \cos (\psi) \\
+x'(s) =& \; \frac{A}{\sqrt{\beta(s)}} \left( \frac{1}{2} \frac{d\beta(s)}{ds} \cos(\psi) - \sin(\psi) \right)
+\end{align}
+where the phase $\psi$ is a function of $s$ and $d\psi(s)/ds = 1/\beta(s)$.
+So long as the energy of the beam is constant, this trajectory traces a closed path in the phase space for each transverse direction, and the area of phase space is constant.
+The emittance $\epsilon$ is defined as this phase space area,
+\begin{equation}
+\epsilon_x = \frac{\pi \sigma_x^2}{\beta_x} \; ,
+\end{equation}
+and similarly for the $y$ direction.
+Then the luminosity can be expressed as a function of the emittance and $\beta^*$, the value of $\beta$ at the beam crossing.
+\begin{equation}
+\label{eqn:lumi}
+\Lumi = f_\mathrm{coll} \frac{n_1 n_2}{4 \pi \sqrt{\epsilon_x \epsilon_y \beta_x^* \beta_y^*}}
+\end{equation}
+If the crossing angle is non-zero, $\beta$ is not minimized at the interaction point, or other effects deviate from the ideal case, then the real luminosity will be smaller than this optimal value.
+\Eqn{\ref{eqn:lumi}} shows that the keys to increasing the efficiency of data-taking are to make highly-populated bunches cross at high frequency, with low-emittance beams and optics that minimize the amplitude functions at the interaction point.
+
 \section{The Large Hadron Collider}
 
 The Large Hadron Collider (LHC) is a high-energy particle ring collider located near Geneva on the Swiss-French border \cite{LHCMachine}.
@@ -171,7 +210,7 @@ The electromagnets use niobium-titanium (NbTi) as the conducting material, which
 They are cooled with superfluid liquid helium (${}^{4}\textrm{He}$) at a temperature of 1.8 K.
 A failure in the cooling system that allows the magnet temperature to raise above its critical temperature causes it to quench.
 The increase in resistance from the loss of superconductivity causes a rapid temperature increase.
-This is especially disastrous if the helium is heated to its gaseous phase, causing it to explode\footnote{This occurred at the LHC in September of 2008, delaying operations for over a year.}.
+This is particularly disastrous if the helium is heated to its gaseous phase, causing it to explode\footnote{This occurred at the LHC in September of 2008, delaying operations for over a year.}.
 
 
 \subsection{LHC experiments}
@@ -191,6 +230,9 @@ The LHCf (Large Hadron Collider Forward) experiment \cite{Adriani:2008zz} has tw
 
 The latest experiment to join the ring is MoEDAL, the Monopole and Exotics Detector at the LHC \cite{Acharya:2014nyr}.
 It is a mostly passive detector located next to LHCb, with the goal of direct detector of magnetic monopoles or other stable massive particles beyond the Standard Model.
+
+\subsection{Dataset provided}
+The results in this thesis use the 2013 \pPb dataset at a center-of-mass energy per nucleon of \pPbenergy. 28.1 \inb
 
 \section{The ATLAS detector}
 \label{sec:atlas}
