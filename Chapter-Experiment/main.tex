@@ -193,7 +193,7 @@ The RF cavities operate at 400 MHz, which corresponds to RF buckets of 2.5 ns.
 For ultra-relativistic beams, this corresponds to a minimum length spacing between bunches of 0.75 m.
 Practically, however, the injection from the SPS limits the bunch spacing to multiples of 25 ns, or 7.5 m separation.
 The LHC can thus fit a maximum of 3560 bunches in each of its rings, but it is not completely filled because gaps need to be left to allow safe beam dumps.
-The smallest bunch spacing used for lead ions is 150 ns.
+As of 2018, the smallest bunch spacing used for lead ions is 75 ns.
 
 \begin{figure}[t]
 \includegraphics{LHC-PHO-2001-187.jpg}
@@ -232,7 +232,19 @@ The latest experiment to join the ring is MoEDAL, the Monopole and Exotics Detec
 It is a mostly passive detector located next to LHCb, with the goal of direct detector of magnetic monopoles or other stable massive particles beyond the Standard Model.
 
 \subsection{Dataset provided}
-The results in this thesis use the 2013 \pPb dataset at a center-of-mass energy per nucleon of \pPbenergy. 28.1 \inb
+
+\begin{figure}[t]
+\includegraphics{sumLumiByDayUrgent.png}
+\caption{The total integrated luminosity over the 2013 \pPb data taking period.}
+\label{fig:int_lumi}
+\end{figure}
+
+The results in this thesis use the 2013 LHC \pPb dataset at a center-of-mass energy per nucleon of \pPbenergy.
+The proton beam had an energy of 4 \TeV and the Pb ions had an energy per nucleon of $Z/A \cdot 4 \TeV = 1.57 \TeV$, so the center-of-mass of a proton and any one Pb nucleon has a longitudinal rapidity boost of $\ycm = 0.465$.
+The \pPb run was divided into two periods between which the directions of the proton and lead beams were reversed.
+The maximum luminosity was $\Lumi_\textrm{peak} = 110 \times 10^{27} \, \textrm{cm}^{-2} \, \textrm{s}^{-1}$ over the 32 stable beam runs (16 in each period), though depending on the run $\Lumi_\textrm{peak}$ was as low as $22 \times 10^{27} \, \textrm{cm}^{-2} \, \textrm{s}^{-1}$.
+The integrated luminosity of the data taking period from January 21 to February 10 is $\Lint = 28.1~\inb$ (\Cref{fig:int_lumi}).
+The bunch spacing of the beams was 200 ns, so the maximum bunch crossing rate was 5 MHz.
 
 \section{The ATLAS detector}
 \label{sec:atlas}
@@ -242,7 +254,7 @@ Currently the largest volume accelerator detector in operation, it encompasses 4
 Broadly speaking, the major subsystems of the ATLAS detector are (from inner- to outer-most): the inner detector, the magnet system, the calorimeters, and the muon spectrometer.
 The muon spectrometer is essential for reconstructing a number of massive and exotic particles \cite{ATLAS:1997ad}; however, it will not be discussed in detail here as it is not used in the analyses presented in this thesis.
 The extensive trigger and data acquisition system is also crucial for successful operation. %% MBTS?
-
+%% forward detectors? ZDC?
 
 \begin{figure}[t]
 \includegraphics{ATLAS_layout.jpg}
@@ -252,9 +264,14 @@ The extensive trigger and data acquisition system is also crucial for successful
 
 
 \subsection{Trigger and data acquisition systems}
-\label{subsec:atlas_trigger}
+\label{subsec:atlas_trigger} % is it even worth labeling these if they're not numbered?
 
-\cite{ATLAS:1998ad} %% low-level (``first''?)
+%% 200 ns for Pb; low mu reduces collisions
+The LHC can deliver a bunch crossing as often as the bunch spacing, which was 200 ns for the \pPb run but can be as rapid as 25 ns for \pp collisions.
+Therefore the ATLAS detector needs to be capable of evaluating whether the data from an event is worth recording, and if so record it, at a rate of up to 40 Mhz.
+The trigger system is divided into levels, each of which processes the data and filters events for the next level.
+
+\cite{ATLAS:1998ad} %% low-level (``first''?) . yes: level-1 trigger
 \cite{ATLAS:2003aa} %% high-level trigger and DAQ
 \cite{Aad:2012xs} %% performance
 
