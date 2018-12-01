@@ -120,7 +120,7 @@ For two bunched beams colliding head-on with identical Gaussian transverse profi
 \begin{equation}
 \Lumi = f_\mathrm{coll} \frac{n_1 n_2}{4 \pi \sigma_x^* \sigma_y^*}
 \end{equation}
-where the bunch crossings occur with frequency $f_\mathrm{col}$, there are $n_1$ and $n_2$ particles in each bunch, and $\sigma_x^*$ and $\sigma_y^*$ characterize the transverse beam size in the horizontal and vertical directions at the interaction point.
+where the bunch crossings occur with frequency $f_\mathrm{col}$, there are $n_1$ and $n_2$ particles in each bunch, and $\sigma_x^*$ and $\sigma_y^*$ characterize the transverse beam size in the horizontal and vertical directions at the interaction point (IP).
 The quadrupole focusing magnets are placed to alternatively squeeze the beam in the $x$ and $y$ directions.
 This leads to oscillatory motion in the path $s$ following the Hill equation \cite{Tanabashi:2018oca}:
 \begin{align}
@@ -139,8 +139,8 @@ Then the luminosity can be expressed as a function of the emittance and $\beta^*
 \label{eq:lumi}
 \Lumi = f_\mathrm{coll} \frac{n_1 n_2}{4 \pi \sqrt{\epsilon_x \epsilon_y \beta_x^* \beta_y^*}}
 \end{equation}
-If the crossing angle is non-zero, $\beta$ is not minimized at the interaction point, or other effects deviate from the ideal case, then the real luminosity will be smaller than this optimal value.
-\Cref{eq:lumi} shows that the keys to increasing the efficiency of data-taking are to make highly-populated bunches cross at high frequency, with low-emittance beams and optics that minimize the amplitude functions at the interaction point.
+If the crossing angle is non-zero, $\beta$ is not minimized at the IP, or other effects deviate from the ideal case, then the real luminosity will be smaller than this optimal value.
+\Cref{eq:lumi} shows that the keys to increasing the efficiency of data-taking are to make highly-populated bunches cross at high frequency, with low-emittance beams and optics that minimize the amplitude functions at the IP.
 
 \section{The Large Hadron Collider}
 
@@ -186,7 +186,7 @@ Finally, the beam is injected into the LHC, where it is accelerated to a few \Te
 
 The LHC ring does not trace a perfect circle, but is actually composed of eight alternating straight and curved arc sections (\Cref{lhc_schematic}) \cite{Bruning:2004ej}.
 Two parallel beam pipes 
-The straight sections are each 528 m in length and carry the RF cavities for acceleration, interaction points for detector experiments, and other features like injection spots and beam dumps.
+The straight sections are each 528 m in length and carry the RF cavities for acceleration, IPs for detector experiments, and other features like injection spots and beam dumps.
 The arc portions have a radius of curvature of $R = 2.8$ km, using a total of 1232 superconducting dipole magnets to turn the beams along the path.
 
 The RF cavities operate at 400 MHz, which corresponds to RF buckets of 2.5 ns.
@@ -221,12 +221,12 @@ The ATLAS detector, which provided the data used in this thesis, is discussed in
 
 ALICE (A Large Ion Collider Experiment) \cite{Aamodt:2008zz} is a dedicated heavy-ion detector that is particularly adept at the identification of particle species.
 
-With many subdetectors spread over a forward region from its interaction point, the LHCb (Large Hadron Collider Beauty) experiment \cite{Alves:2008zz} can make detailed measurements of the decay products of b-quarks. Recently it has led to the observation of possible pentaquark states \cite{Aaij:2015tga}.
+With many subdetectors spread over a forward region from its IP, the LHCb (Large Hadron Collider Beauty) experiment \cite{Alves:2008zz} can make detailed measurements of the decay products of b-quarks. Recently it has led to the observation of possible pentaquark states \cite{Aaij:2015tga}.
 
-TOTEM (Total Cross Section, Elastic Scattering and Diffraction Dissociation Measurement at the LHC) \cite{Anelli:2008zza} has detectors in the forward region over 200 m on either side of the CMS interaction point.
+TOTEM (Total Cross Section, Elastic Scattering and Diffraction Dissociation Measurement at the LHC) \cite{Anelli:2008zza} has detectors in the forward region over 200 m on either side of the CMS IP.
 Its location near the beam pipe puts it in a position to detect the products of elastic and diffractive collisions, which are characterized by a lack of color connection that would otherwise produce particles in the mid-rapidity region.
 
-The LHCf (Large Hadron Collider Forward) experiment \cite{Adriani:2008zz} has two detectors along LHC beamline, at 140 m away from the ATLAS interaction point on either side.
+The LHCf (Large Hadron Collider Forward) experiment \cite{Adriani:2008zz} has two detectors along LHC beamline, at 140 m away from the ATLAS IP on either side.
 
 The latest experiment to join the ring is MoEDAL, the Monopole and Exotics Detector at the LHC \cite{Acharya:2014nyr}.
 It is a mostly passive detector located next to LHCb, with the goal of direct detector of magnetic monopoles or other stable massive particles beyond the Standard Model.
@@ -249,31 +249,30 @@ The bunch spacing of the beams was 200 ns, so the maximum bunch crossing rate wa
 \section{The ATLAS detector}
 \label{sec:atlas}
 
-The ATLAS\footnote{an ``acronym'' for \textbf{A} \textbf{T}oroidal \textbf{L}HC \textbf{A}pparatu\textbf{S}} experiment is a general purpose particle detector \cite{Aad:2008zzm} located at Point 1 on the LHC ring, across the street from the main entrance to the CERN site at Meyrin, Switzerland.
-Currently the largest volume accelerator detector in operation, it encompasses 44 m along the beam axis and has a diameter of 25 m, weighing about 7 kilotonnes (\Cref{fig:atlas_layout}).
-Broadly speaking, the major subsystems of the ATLAS detector are (from inner- to outer-most): the inner detector, the magnet system, the calorimeters, and the muon spectrometer.
-The muon spectrometer is essential for reconstructing a number of massive and exotic particles \cite{ATLAS:1997ad}; however, it will not be discussed in detail here as it is not used in the analyses presented in this thesis.
-The extensive trigger and data acquisition system is also crucial for successful operation. %% MBTS?
-%% forward detectors? ZDC?
-
 \begin{figure}[t]
 \includegraphics{ATLAS_layout.jpg}
 \caption{The ATLAS detector and major subsystems. (Copyright CERN \cite{Pequenao:1095924})}
 \label{fig:atlas_layout}
 \end{figure}
 
+The ATLAS\footnote{an ``acronym'' for \textbf{A} \textbf{T}oroidal \textbf{L}HC \textbf{A}pparatu\textbf{S}} experiment is a general purpose particle detector \cite{Aad:2008zzm} located at Point 1 on the LHC ring, across the street from the main entrance to the CERN site at Meyrin, Switzerland.
+Currently the largest volume accelerator detector in operation, it encompasses 44 m along the beam axis and has a diameter of 25 m, weighing about 7 kilotonnes (\Cref{fig:atlas_layout}).
+Broadly speaking, the major subsystems of the ATLAS detector are (from inner- to outer-most): the inner detector, the magnet system, the calorimeters, and the muon spectrometer.
+The muon spectrometer is essential for reconstructing a number of massive and exotic particles \cite{ATLAS:1997ad}; however, it will not be discussed in detail here as it is not used in the analyses presented in this thesis.
+The extensive trigger and data acquisition system is also crucial for successful operation.
+A Minimum Bias Trigger Scintillator (MBTS) detector sits on each side at a rapidity of $2.1 < |\eta| < 3.84$.
+It is used to identify and trigger on minimum bias collisions.
+The Zero Degree Calorimeters (ZDC) are placed approximately 140 m on either side of the nominal IP with a pseudorapidity of $|\eta| > 8.3$.
+They are used to distinguish pileup events by detecting spectator nucleons that do not participate in the interaction.
 
-\subsection{Trigger and data acquisition systems}
-\label{subsec:atlas_trigger} % is it even worth labeling these if they're not numbered?
 
-%% 200 ns for Pb; low mu reduces collisions
-The LHC can deliver a bunch crossing as often as the bunch spacing, which was 200 ns for the \pPb run but can be as rapid as 25 ns for \pp collisions.
-Therefore the ATLAS detector needs to be capable of evaluating whether the data from an event is worth recording, and if so record it, at a rate of up to 40 Mhz.
-The trigger system is divided into levels, each of which processes the data and filters events for the next level.
+\subsection{Magnets}
+\label{subsec:atlas_magnet}
 
-\cite{ATLAS:1998ad} %% low-level (``first''?) . yes: level-1 trigger
-\cite{ATLAS:2003aa} %% high-level trigger and DAQ
-\cite{Aad:2012xs} %% performance
+Two superconducting magnet systems are used to generate a large magnetic field with field lines parallel to the beam axis \cite{ATLAS:1997ae}. %% tech design report
+This magnetic field causes charged particles to follow a curved path through the detector, allowing their charge and transverse momentum to be measured according to \(  \pt = q B_z R\) where $R$ is the radius of curvature in the transverse plane.
+A large solenoid surrounds the inner detector and produces a 2 T magnetic field.
+...
 
 \subsection{Inner detector}
 \label{subsec:atlas_id}
@@ -288,16 +287,25 @@ The trigger system is divided into levels, each of which processes the data and 
 \label{fig:atlas_id}
 \end{figure}
 
+\subsubsection{Silicon pixel detector}
+
 \begin{figure}[t]
 \includegraphics{pixel.jpg}
 \caption{Computer-generated cutaway of the Pixel subdetector of the ATLAS inner detector. (Copyright CERN \cite{Pequenao:1095925})}
 \label{fig:atlas_pixel}
 \end{figure}
 
-\subsection{Magnets}
-\label{subsec:atlas_magnet}
+\cite{Aad:2008zz}
 
-\cite{ATLAS:1997ae} %% tech design report
+\subsubsection{Semiconductor tracker}
+
+\cite{Aad:2014mta}
+
+\subsubsection{Transition radiation tracker}
+
+\cite{Abat:2008zza} %% TRT drift tube
+
+
 
 \subsection{Calorimeter system}
 \label{sec:atlas:calo}
@@ -312,3 +320,15 @@ The trigger system is divided into levels, each of which processes the data and 
 \cite{ATLAS:1996ab} %% liquid argon
 \cite{Airapetian:1996iv} %% performance tech design report
 
+\subsection{Trigger and data acquisition systems}
+\label{subsec:atlas_trigger} % is it even worth labeling these if they're not numbered?
+
+%% 200 ns for Pb; low mu reduces collisions
+The LHC can deliver a bunch crossing as often as the bunch spacing, which was 200 ns for the \pPb run but can be as rapid as 25 ns for \pp collisions.
+Therefore the ATLAS detector needs to be capable of evaluating whether the data from an event is worth recording, and if so record it, at a rate of up to 40 Mhz.
+The trigger system has three levels, each of which processes the data and filters events for the next level.
+The Level-1 trigger is a low-level hardware system that makes rapid determinations based on activity in the calorimeters, MBTS, ZDC, and muon spectrometers.
+
+\cite{ATLAS:1998ad} %% low-level (``first''?) . yes: level-1 trigger
+\cite{ATLAS:2003aa} %% high-level trigger and DAQ
+\cite{Aad:2012xs} %% performance
