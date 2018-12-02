@@ -137,7 +137,7 @@ and similarly for the $y$ direction.
 Then the luminosity can be expressed as a function of the emittance and $\beta^*$, the value of $\beta$ at the beam crossing.
 \begin{equation}
 \label{eq:lumi}
-\Lumi = f_\mathrm{coll} \frac{n_1 n_2}{4 \pi \sqrt{\epsilon_x \epsilon_y \beta_x^* \beta_y^*}}
+\Lumi = f_\mathrm{coll} \frac{n_1 n_2}{4 \sqrt{\epsilon_x \epsilon_y \beta_x^* \beta_y^*}}
 \end{equation}
 If the crossing angle is non-zero, $\beta$ is not minimized at the IP, or other effects deviate from the ideal case, then the real luminosity will be smaller than this optimal value.
 \Cref{eq:lumi} shows that the keys to increasing the efficiency of data-taking are to make highly-populated bunches cross at high frequency, with low-emittance beams and optics that minimize the amplitude functions at the IP.
@@ -257,7 +257,7 @@ The bunch spacing of the beams was 200 ns, so the maximum bunch crossing rate wa
 
 The ATLAS\footnote{an ``acronym'' for \textbf{A} \textbf{T}oroidal \textbf{L}HC \textbf{A}pparatu\textbf{S}} experiment is a general purpose particle detector \cite{Aad:2008zzm} located at Point 1 on the LHC ring, across the street from the main entrance to the CERN site at Meyrin, Switzerland.
 Currently the largest volume accelerator detector in operation, it encompasses 44 m along the beam axis and has a diameter of 25 m, weighing about 7 kilotonnes (\Cref{fig:atlas_layout}).
-Broadly speaking, the major subsystems of the ATLAS detector are (from inner- to outer-most): the inner detector, the magnet system, the calorimeters, and the muon spectrometer.
+Broadly speaking, the major subsystems of the ATLAS detector are (from inner- to outer-most): the inner detector (ID), the magnet system, the calorimeters, and the muon spectrometer.
 The muon spectrometer is essential for reconstructing a number of massive and exotic particles \cite{ATLAS:1997ad}; however, it will not be discussed in detail here as it is not used in the analyses presented in this thesis.
 The extensive trigger and data acquisition system is also crucial for successful operation.
 A Minimum Bias Trigger Scintillator (MBTS) detector sits on each side at a rapidity of $2.1 < |\eta| < 3.84$.
@@ -269,10 +269,18 @@ They are used to distinguish pileup events by detecting spectator nucleons that 
 \subsection{Magnets}
 \label{subsec:atlas_magnet}
 
-Two superconducting magnet systems are used to generate a large magnetic field with field lines parallel to the beam axis \cite{ATLAS:1997ae}. %% tech design report
+\begin{figure}[t]
+\includegraphics{atlas_magnets.png}
+\caption{A schematic of the ATLAS magnet system. Copyright CERN}
+\label{fig:atlas_magnets}
+\end{figure}
+
+Two superconducting magnet systems are used to generate a large magnetic field with field lines parallel to the beam axis (\Cref{fig:atlas_magnets}) \cite{ATLAS:1997ae}. %% tech design report
 This magnetic field causes charged particles to follow a curved path through the detector, allowing their charge and transverse momentum to be measured according to \(  \pt = q B_z R\) where $R$ is the radius of curvature in the transverse plane.
-A large solenoid surrounds the inner detector and produces a 2 T magnetic field.
-...
+A large solenoid 5.3 m in length and 2.3 m in diameter surrounds the ID and produces a 2 T magnetic field.
+It is designed to produce as uniform of a magnetic field as is possible to allow precise measurements of the momentum of charged particles in the ID.
+The toroid magnet system consists of 8 air-core coils in the barrel and two sets of 8 air-cored toroids in each of the end-caps.
+The magnetic field from these is non-uniform but bends charged particles outside of the ID for measurements by the muon spectrometer.
 
 \subsection{Inner detector}
 \label{subsec:atlas_id}
