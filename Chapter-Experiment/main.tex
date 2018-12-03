@@ -285,9 +285,6 @@ The magnetic field from these is non-uniform but bends charged particles outside
 \subsection{Inner detector}
 \label{subsec:atlas_id}
 
-\cite{ATLAS:1997ag,ATLAS:1997af} %% technical design report
-\cite{Aad:2010bx} %% commissioning & calibration
-
 \begin{figure}[t]
 \includegraphics[width=0.57\linewidth]{id_whole.jpg}
 \includegraphics[width=0.42\linewidth]{id_slice.jpg}
@@ -295,7 +292,14 @@ The magnetic field from these is non-uniform but bends charged particles outside
 \label{fig:atlas_id}
 \end{figure}
 
-\subsubsection{Silicon pixel detector}
+The ATLAS inner detector is designed to track the particle results of collisions on their path from the beam pipe to the calorimeters, thereby inferring their charge and momentum \cite{ATLAS:1997ag,ATLAS:1997af,Aad:2010bx}.
+It has a wide pseudorapidity coverage of \(\left| \eta \right| < 2.5\) and full azimuthal coverage in $\phi$.
+The design resolution for the transverse momentum is \( \sigma_{\pt}/\pt = 0.05\% \, \pt /1 \GeV \oplus 1\% \), with a transverse impact parameter resolution of \( \sigma_{d_0} = 10 \mu\textrm{m}\) for tracks with a central rapidity.
+Three sub-detectors are used, each in their own layer.
+From innermost to outermost, these are the silicon pixel detector, the semi-conductor tracker (SCT), and the transition radiation tracker (TRT).
+
+
+\subsubsection{Pixel detector}
 
 \begin{figure}[t]
 \includegraphics{pixel.jpg}
@@ -303,17 +307,30 @@ The magnetic field from these is non-uniform but bends charged particles outside
 \label{fig:atlas_pixel}
 \end{figure}
 
-\cite{Aad:2008zz}
+The silicon pixel detector surrounds the beam pipe, covering radial distances from 50 mm to 150 mm, and is composed of 1744 silicon pixel modules \cite{Aad:2008zz}.
+These are distributed over three concentric barrel layers and three disk layers on each endcap (\Cref{fig:atlas_pixel}), so that the trajectory of a typical charged particle passes through three points in the pixel detector.
+Each module is 16.4 mm by 60.8 mm and has 47 232 pixels of size 50 $\mu$m by 400 $\mu$m.
+A total of 80.4 million readout channels are supported by 16 radiation-hardened front-end chips bump-bonded to each sensor.
+A hit is recorded in each pixel when the signal exceeds a tunable threshold, and the time over threshold can be used to provide a measurement of ionization energy loss \dEdx used for particle identification.
 
-\subsubsection{Semiconductor tracker}
+\subsubsection{Semi-conductor tracker}
 
-\cite{Aad:2014mta}
+The SCT consists of 4088 silicon-strip modules and covers a radial distance of 299 mm to 560 mm \cite{Aad:2014mta}.
+These are placed in four concentric barrel layers and two endcaps of nine disks each.
+A typical particle originating from the beam interaction region gets eight strip measurements in four space-points.
+Most modules have four silicon-strip sensors, with two on each side glued back-to-back at a stereo angle of 40 mrad.
+The relative angle between strips give space-points at the crossings.
+The sensors are daisy-chained together to form 768 strips each with a length of 12 cm.
+A total of 6.3 million readout channels are provided by radiation-hardened front-end readout chips.
 
 \subsubsection{Transition radiation tracker}
 
-\cite{Abat:2008zza} %% TRT drift tube
-
-
+The TRT covers the region from 563 mm to 1066 mm away from the beam line.
+It consists of 298 304 proportional drift tubes (straws) each 4 mm in diameter \cite{Abat:2008zza}.
+The straws are arranged in three cylindrical layers in the barrel region and are radially oriented in 80 wheel-like modules in the endcaps.
+A typical track with $\pt > 0.5~\GeV$ and $|\eta| < 2.0$ crosses more than 30 straws.
+There are a total of 350 848 readout channels.
+The TRT hits are generally useful to refine the transverse momentum measurements of tracks seeded in the inner sub-detectors.
 
 \subsection{Calorimeter system}
 \label{sec:atlas:calo}
@@ -333,7 +350,7 @@ The magnetic field from these is non-uniform but bends charged particles outside
 
 %% 200 ns for Pb; low mu reduces collisions
 The LHC can deliver a bunch crossing as often as the bunch spacing, which was 200 ns for the \pPb run but can be as rapid as 25 ns for \pp collisions.
-Therefore the ATLAS detector needs to be capable of evaluating whether the data from an event is worth recording, and if so record it, at a rate of up to 40 Mhz.
+Therefore the ATLAS detector needs to be capable of evaluating whether the data from an event is worth recording, and if so record it, at a rate of up to 40 MHz.
 The trigger system has three levels, each of which processes the data and filters events for the next level.
 The Level-1 trigger is a low-level hardware system that makes rapid determinations based on activity in the calorimeters, MBTS, ZDC, and muon spectrometers.
 
