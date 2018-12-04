@@ -345,15 +345,30 @@ The TRT hits are generally useful to refine the transverse momentum measurements
 \cite{ATLAS:1996ab} %% liquid argon
 \cite{Airapetian:1996iv} %% performance tech design report
 
-\subsection{Trigger and data acquisition systems}
+\subsection{Trigger}
+%% \subsection{Trigger and data acquisition systems} %% maybe we don't need to get into DAQ
 \label{subsec:atlas_trigger} % is it even worth labeling these if they're not numbered?
 
 %% 200 ns for Pb; low mu reduces collisions
-The LHC can deliver a bunch crossing as often as the bunch spacing, which was 200 ns for the \pPb run but can be as rapid as 25 ns for \pp collisions.
-Therefore the ATLAS detector needs to be capable of evaluating whether the data from an event is worth recording, and if so record it, at a rate of up to 40 MHz.
+The LHC can deliver a bunch crossing as often as the bunch spacing time, which was 200 ns for the \pPb run but can be as rapid as 25 ns for \pp collisions.
+It is infeasible to record full events at the corresponding rate of up to 40 MHz, and many of the bunch crossings have cosmic backgrounds, out-of-time pileup\footnote{The LHC RF has a frequency of 2.5 ns, but the timing is designed to only fill a bunch every 25 ns. Stray particles can still find their way into unintended RF buckets, causing out-of-time pileup when they collide at the IP.}, or no collision at all.
+Therefore the ATLAS trigger system needs to be capable of rapidly evaluating whether the data from an event is worth recording \cite{Aad:2012xs}. %% reference to performance paper
 The trigger system has three levels, each of which processes the data and filters events for the next level.
-The Level-1 trigger is a low-level hardware system that makes rapid determinations based on activity in the calorimeters, MBTS, ZDC, and muon spectrometers.
 
-\cite{ATLAS:1998ad} %% low-level (``first''?) . yes: level-1 trigger
-\cite{ATLAS:2003aa} %% high-level trigger and DAQ
-\cite{Aad:2012xs} %% performance
+The Level-1 (L1) trigger is a low-level hardware system that makes rapid determinations based on activity in the calorimeters, MBTS, ZDC, and muon spectrometers \cite{ATLAS:1998ad}.
+It uses parallel data pathways separate from the regular readout path, with electronics optimized for speed over precision.
+The Central Trigger Processor (CTP) combines the L1 trigger signals into combinations of L1 bits which are used to seed the Level-2 (L2) trigger.
+
+The software-based High Level Trigger (HLT) is composed of the remaining two trigger levels, the Level-2 (L2) trigger and Event Filter (EF) \cite{ATLAS:2003aa}.  %% high-level trigger and DAQ
+The L2 trigger uses regions of interest determined by the L1 trigger to seed algorithms that perform a more precise evaluation of the events.
+The items from the L2 trigger processing are passed to the EF, which uses the full offline readout path in order to mitigate biases from the ultra-fast L1 response.
+An event is potentially recorded if it is selected by a trigger chain, which is defined by a L1 seed with HLT items.
+Recording every event that satisfies a trigger chain would still overwhelm the data acquisition system.
+Prescales can be applied for items at any level in a trigger chain.
+A trigger item with a prescale of $N$ is only flagged to be recorded at every $N$th instance of the trigger item firing.
+The prescales of each trigger item are adjusted based on the physics goals of the run.
+
+While many analyses of high energy data focus on the behavior of exceptional or rare events, the results presented in this thesis are concerned primarily with minimum-bias (MinBias) events.
+The physics of interest is the bulk dynamics of the events on average rather than jets or rare particle decays.
+General high-multiplicity and high-transverse-energy triggers are used to supplement the size of the data sample for central events.
+These triggers are only used in the regime where their efficiency is practically 100\%, so the details of their performance are not as crucial here as they might be elsewhere.
