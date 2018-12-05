@@ -106,6 +106,9 @@
 \floatsetup[table]{capposition=bottom}
 \floatsetup[figure]{capposition=bottom}
 
+\usepackage[printonlyused]{acronym} %% options like footnote, nohyperlinks, dua (don't use acronyms)
+\usepackage{acronym-defs}
+%% use glossaries package instead to include page numbers in the acronym list, or do fancier things
 
 \makeatletter
 \g@addto@macro\@floatboxreset\centering
@@ -262,15 +265,17 @@ ABSTRACT\\ %You need to keep this text here in all capitals. Don't change it.
 
 \mainmatter
 
-%I use subdirectories for each part of my dissertation just to keep the files tidy. LaTeX generates a lot of different files for output, and using subdirectories allows you to find your .tex files more easily.
+%% we can use the \acresetall command in between chapters to reset the acronym memory
 
 \include{Chapter-Introduction/main}       % Introduction
 \include{Chapter-Background/main}         % Theory and status of experimental results
 \include{Chapter-Experiment/main}         % Description of experimental apparatus
 \include{Chapter-Reconstruction/main}     % Reconstruction of charged particles
+%% consider dedicated chapter on femtoscopy
 \include{Chapter-Analysis/main}           % Description of analysis procedure
 \include{Chapter-Results/main}            % Presentation and discussion of results
 \include{Chapter-Conclusion/main}         % Concluding remarks
+
 
 %This final section includes your bibliography.
 
@@ -278,11 +283,12 @@ ABSTRACT\\ %You need to keep this text here in all capitals. Don't change it.
 \printbibliography %Print the bibliography. Your bibliography file is defined as Bibliography.bib earlier in this document by the command \addbibresource. It should be kept in the same folder as this file.
 
 \DoubleSpacing %Set roomier body text throughout your writing. The dissertation office requires that you use double-spacing throughout your main body text.
-%\appendix
-%% \begin{appendices}
+\appendix
+\begin{appendices}
+\include{acronyms}
 %% \include{./Appendix/Appendix-AdditionalN-1Plots-CR/appendix}
 %% \include{./Appendix/Appendix-AdditionalN-1Plots/appendix}
-%% \end{appendices}
+\end{appendices}
 
 \backmatter
 

@@ -1,5 +1,6 @@
-\graphicspath{{Chapter-Experiment/figures/}}
 \chapter{Experimental design and apparatus}
+\graphicspath{{Chapter-Experiment/figures/}}
+
 \section{Scattering experiments}
 
 \subsection{History and motivation}
@@ -63,11 +64,11 @@ Modern high-energy experiments therefore accelerate two particle beams and gener
 The most straightforward method to accelerate charged particles to high energies is to allow them to pass through a large voltage differential.
 A large voltage can be produced, for instance, with a Van de Graaff generator \cite{PhysRev.43.149}.
 The voltage differential is limited by the insulation breakdown, which in practice caps the energy of accelerated particles with charge $Ze$ to a few $Z \cdot\MeV$.
-A modern linear particle accelerator (linac) circumvents this issue by passing ions through a series of drift tubes with alternating positive and negative potentials (\Cref{fig:linac}).
+A modern \linac circumvents this issue by passing ions through a series of drift tubes with alternating positive and negative potentials (\Cref{fig:linac}).
 The drift tubes are constructed with conducting material, so they shield the ions traveling through them from external electric acceleration.
 Between the drift tubes, however, strong electric fields are induced by the alternating potentials.
-This voltage difference is oscillated with radio frequency (RF) and the apparatus is constructed such that ions injected at a given velocity can pass through each gap with acceleration in the forward direction.
-The Stanford Linear Accelerator Center (SLAC) hosts the largest linear accelerator, which began operation in 1966.
+This voltage difference is oscillated with \rf and the apparatus is constructed such that ions injected at a given velocity can pass through each gap with acceleration in the forward direction.
+The \ac{SLAC} hosts the largest linear accelerator, which began operation in 1966.
 The 3 km long machine was capable of accelerating electrons and positrons to energies of up to 50 \GeV.
 While this is several orders of magnitude higher than the energies accessible with simple voltage differential, increasing the energy further requires proportional increases to the length of the accelerator, exacerbating technical difficulties in its placement, construction, and maintenance.
 
@@ -83,7 +84,7 @@ A large electromagnet keeps the particles traveling in a circular path contained
 At non-relativistic energies, the velocity of the ions is proportional to the radius of their path, so the time taken for one revolution is independent of the velocity.
 If the voltage between the electrodes is oscillated with a frequency equal to the cyclotron resonance frequency $f_\textrm{cyclo} = q B / 2\pi m$, then ions are accelerated to higher energies with each pass between the dees.
 At a fixed radius (and therefore fixed energy), the ion beam is allowed to exit the cyclotron.
-Classically, the kinetic energy is proportional to the square of the radius, inviting a comparison to a hypothetically coiled linac.
+Classically, the kinetic energy is proportional to the square of the radius, inviting a comparison to a hypothetically coiled \linac.
 Relativistic energies can be attained with more sophisticated designs that vary either the frequency over time or the magnetic field with the radial position, but as the velocity approaches $c$ the energy is only linearly proportional to the radius:
 \begin{align}
 \label{eq:gyroradius}
@@ -95,9 +96,9 @@ This shows that the energies accessible from a circular accelerator are directly
 The radius of a cyclotron design can only be increased so much before it becomes infeasible.
 The synchrotron is a toroidal accelerator in which ion beams travel around the torus, turned by dipole magnets along the path.
 Quadrupole and higher-multipole magnets are used to maintain the focus of the beam and make fine-tuning adjustments to the magnetic fields.
-This layout does not permit it to accelerate particles from an arbitrarily small energy, so a synchrotron is generally filled with a linac first, with the ions circling the path at a constant energy.
-Once the beam pipe is filled, the energy of the ion beam is gradually increased by RF cavities that oscillate to apply an acceleration to the particles.
-The oscillation of the RF cavities groups the ions into bunches along the beam.
+This layout does not permit it to accelerate particles from an arbitrarily small energy, so a synchrotron is generally filled with a \linac first, with the ions circling the path at a constant energy.
+Once the beam pipe is filled, the energy of the ion beam is gradually increased by \rf cavities that oscillate to apply an acceleration to the particles.
+The oscillation of the \rf cavities groups the ions into bunches along the beam.
 The limiting factor for synchrotron performance depends on the mass of the particle; for electrons the power lost via synchrotron radiation $P_\textrm{synch-rad} \propto e^2 E^4 / m^4 R^2 $ is the limiting factor in the maximum energy.
 
 \subsubsection{Luminosity}
@@ -144,7 +145,7 @@ If the crossing angle is non-zero, $\beta$ is not minimized at the IP, or other 
 
 \section{The Large Hadron Collider}
 
-The Large Hadron Collider (LHC) is a high-energy particle ring collider located near Geneva on the Swiss-French border \cite{LHCMachine}.
+The \lhc is a high-energy particle ring collider located near Geneva on the Swiss-French border \cite{LHCMachine}.
 It was constructed by the European Organization for Nuclear Research (CERN, for ``Conseil européen pour la recherche nucléaire'') and is currently the highest energy particle accelerator in the world, with a design center-of-mass energy for proton collisions of \ppenergy.
 Two adjacent beam pipes lay in a 26.7 km circumference, and are filled in anti-aligned orientation so that the beams can be crossed to generate collisions.
 While it was primarily designed to provide proton-proton (\pp) collisions, it is also capable of colliding lead (${}^{208}_{\ 82}\textrm{Pb}$) and xenon (${}^{129}_{\ 54}\textrm{Xe}$) ions with themselves and with protons.
@@ -158,41 +159,41 @@ The results of this thesis will use data collected from the 2013 \pPb collisions
 \label{fig:injection_chain}
 \end{figure}
 
-Before being injected into the LHC, ion beams pass through a series of increasingly large accelerators, incrementally raising their energy \cite{Benedikt:2004wm}.
-These lower-energy accelerators predate the LHC and have each been used for many collision experiments throughout the history of CERN.
+Before being injected into the \lhc, ion beams pass through a series of increasingly large accelerators, incrementally raising their energy \cite{Benedikt:2004wm}.
+These lower-energy accelerators predate the \lhc and have each been used for many collision experiments throughout the history of CERN.
 The CERN accelerator complex is sketched in \Cref{fig:injection_chain}.
 
 Protons are first collected by ionizing hydrogen gas, then accelerated to a kinetic energy of 50 \MeV by the Linac 2 linear accelerator.
-The Proton Synchrotron Booster (PSB) increases their energy to the relativistic level of 1.4 \GeV.
-From there, the beam is energized in the Proton Synchrotron (PS) to 25 \GeV, then the Super Proton Synchrotron (SPS) to 450 \GeV.
-These proton beams from the SPS are used to fill the LHC, where they are again accelerated to collision energies of a few \TeV each.
+The \ac{PSB} increases their energy to the relativistic level of 1.4 \GeV.
+From there, the beam is energized in the \ac{PS} to 25 \GeV, then the \ac{SPS} to 450 \GeV.
+These proton beams from the \ac{SPS} are used to fill the \lhc, where they are again accelerated to collision energies of a few \TeV each.
 
-Lead ions are accelerated from rest by the Linac 3 linear accelerator, a dedicated ion linac, to a kinetic energy of 4.2 \MeV per nucleon (\MeVn).
-The Low Energy Ion Ring (LEIR) raises the energy to 72 \MeVn and also applies electron cooling to the ion beam.
+Lead ions are accelerated from rest by the Linac 3 linear accelerator, a dedicated ion \linac, to a kinetic energy of 4.2 \MeV per nucleon (\MeVn).
+The \ac{LEIR} raises the energy to 72 \MeVn and also applies electron cooling to the ion beam.
 This process involves merging the ions with an electron beam and allowing the mixture to come to thermal equilibrium, so that the electron cloud absorbs thermal energy from the ions.
 The ions are then re-separated from the electrons as they pass through a dipole magnet.
 This cooling step, which effectively reduces the phase space volume of each bunch, is necessary to counteract the higher charge of the ions pushing them apart. %% equivalently, reducing the ``emittance'' of the beam
-From the LEIR the lead ion beam is injected into the PS, which raises its energy to 5.9 \GeVn, then the SPS, which raises it to 177 \GeVn.
-Finally, the beam is injected into the LHC, where it is accelerated to a few \TeVn depending on the intended collision system.
+From the \ac{LEIR} the lead ion beam is injected into the PS, which raises its energy to 5.9 \GeVn, then the \ac{SPS}, which raises it to 177 \GeVn.
+Finally, the beam is injected into the \lhc, where it is accelerated to a few \TeVn depending on the intended collision system.
 
 
 \subsection{LHC main ring}
 
 \begin{figure}[t]
 \includegraphics{LHC_schematic.png}
-\caption{Schematic layout of the two beams of the LHC \cite{Bruning:2004ej}.}
+\caption{Schematic layout of the two beams of the \lhc \cite{Bruning:2004ej}.}
 \label{fig:lhc_schematic}
 \end{figure}
 
-The LHC ring does not trace a perfect circle, but is actually composed of eight alternating straight and curved arc sections (\Cref{lhc_schematic}) \cite{Bruning:2004ej}.
+The \lhc ring does not trace a perfect circle, but is actually composed of eight alternating straight and curved arc sections (\Cref{lhc_schematic}) \cite{Bruning:2004ej}.
 Two parallel beam pipes 
-The straight sections are each 528 m in length and carry the RF cavities for acceleration, IPs for detector experiments, and other features like injection spots and beam dumps.
+The straight sections are each 528 m in length and carry the \rf cavities for acceleration, IPs for detector experiments, and other features like injection spots and beam dumps.
 The arc portions have a radius of curvature of $R = 2.8$ km, using a total of 1232 superconducting dipole magnets to turn the beams along the path.
 
-The RF cavities operate at 400 MHz, which corresponds to RF buckets of 2.5 ns.
+The \rf cavities operate at 400 MHz, which corresponds to \rf buckets of 2.5 ns.
 For ultra-relativistic beams, this corresponds to a minimum length spacing between bunches of 0.75 m.
-Practically, however, the injection from the SPS limits the bunch spacing to multiples of 25 ns, or 7.5 m separation.
-The LHC can thus fit a maximum of 3560 bunches in each of its rings, but it is not completely filled because gaps need to be left to allow safe beam dumps.
+Practically, however, the injection from the \ac{SPS} limits the bunch spacing to multiples of 25 ns, or 7.5 m separation.
+The \lhc can thus fit a maximum of 3560 bunches in each of its rings, but it is not completely filled because gaps need to be left to allow safe beam dumps.
 As of 2018, the smallest bunch spacing used for lead ions is 75 ns.
 
 \begin{figure}[t]
@@ -210,11 +211,11 @@ The electromagnets use niobium-titanium (NbTi) as the conducting material, which
 They are cooled with superfluid liquid helium (${}^{4}\textrm{He}$) at a temperature of 1.8 K.
 A failure in the cooling system that allows the magnet temperature to raise above its critical temperature causes it to quench.
 The increase in resistance from the loss of superconductivity causes a rapid temperature increase.
-This is particularly disastrous if the helium is heated to its gaseous phase, causing it to explode\footnote{This occurred at the LHC in September of 2008, delaying operations for over a year.}.
+This is particularly disastrous if the helium is heated to its gaseous phase, causing it to explode\footnote{This occurred at the \lhc in September of 2008, delaying operations for over a year.}.
 
 
 \subsection{LHC experiments}
-The two largest LHC experiments, ATLAS (A Toroidal LHC Apparatus) \cite{Aad:2008zzm} and CMS (Compact Muon Solenoid) \cite{Chatrchyan:2008aa}, are general-purpose detectors that fulfilled one of their primary objectives with the joint discovery of the Higgs boson in 2012 \cite{Aad:2012tfa,Chatrchyan:2012xdj}.
+The two largest \lhc experiments, ATLAS (A Toroidal LHC Apparatus) \cite{Aad:2008zzm} and CMS (Compact Muon Solenoid) \cite{Chatrchyan:2008aa}, are general-purpose detectors that fulfilled one of their primary objectives with the joint discovery of the Higgs boson in 2012 \cite{Aad:2012tfa,Chatrchyan:2012xdj}.
 They continue to be used in the search for physics beyond the Standard Model such as supersymmetry and large extra dimensions.
 The large rapidity coverage of their calorimeter and tracking systems also make them highly capable of measuring both low- and high-energy probes of heavy ion collisions.
 The ATLAS detector, which provided the data used in this thesis, is discussed in more detail in \Cref{sec:atlas}.
@@ -239,7 +240,7 @@ It is a mostly passive detector located next to LHCb, with the goal of direct de
 \label{fig:int_lumi}
 \end{figure}
 
-The results in this thesis use the 2013 LHC \pPb dataset at a center-of-mass energy per nucleon of \pPbenergy.
+The results in this thesis use the 2013 \lhc \pPb dataset at a center-of-mass energy per nucleon of \pPbenergy.
 The proton beam had an energy of 4 \TeV and the Pb ions had an energy per nucleon of $Z/A \cdot 4 \TeV = 1.57 \TeV$, so the center-of-mass of a proton and any one Pb nucleon has a longitudinal rapidity boost of $\ycm = 0.465$.
 The \pPb run was divided into two periods between which the directions of the proton and lead beams were reversed.
 The maximum luminosity was $\Lumi_\textrm{peak} = 110 \times 10^{27} \, \textrm{cm}^{-2} \, \textrm{s}^{-1}$ over the 32 stable beam runs (16 in each period), though depending on the run $\Lumi_\textrm{peak}$ was as low as $22 \times 10^{27} \, \textrm{cm}^{-2} \, \textrm{s}^{-1}$.
@@ -255,14 +256,14 @@ The bunch spacing of the beams was 200 ns, so the maximum bunch crossing rate wa
 \label{fig:atlas_layout}
 \end{figure}
 
-The ATLAS\footnote{an ``acronym'' for \textbf{A} \textbf{T}oroidal \textbf{L}HC \textbf{A}pparatu\textbf{S}} experiment is a general purpose particle detector \cite{Aad:2008zzm} located at Point 1 on the LHC ring, across the street from the main entrance to the CERN site at Meyrin, Switzerland.
+The ATLAS\footnote{an ``acronym'' for \textbf{A} \textbf{T}oroidal \textbf{L}HC \textbf{A}pparatu\textbf{S}} experiment is a general purpose particle detector \cite{Aad:2008zzm} located at Point 1 on the \lhc ring, across the street from the main entrance to the CERN site at Meyrin, Switzerland.
 Currently the largest volume accelerator detector in operation, it encompasses 44 m along the beam axis and has a diameter of 25 m, weighing about 7 kilotonnes (\Cref{fig:atlas_layout}).
-Broadly speaking, the major subsystems of the ATLAS detector are (from inner- to outer-most): the inner detector (ID), the magnet system, the calorimeters, and the muon spectrometer.
+Broadly speaking, the major subsystems of the ATLAS detector are (from inner- to outer-most): the \id, the magnet system, the calorimeters, and the muon spectrometer.
 The muon spectrometer is essential for reconstructing a number of massive and exotic particles \cite{ATLAS:1997ad}; however, it will not be discussed in detail here as it is not used in the analyses presented in this thesis.
 The extensive trigger and data acquisition system is also crucial for successful operation.
-A Minimum Bias Trigger Scintillator (MBTS) detector sits on each side at a rapidity of $2.1 < |\eta| < 3.84$.
+The \mbts detector sits on each side at a rapidity of $2.1 < |\eta| < 3.84$.
 It is used to identify and trigger on minimum bias collisions.
-The Zero Degree Calorimeters (ZDC) are placed approximately 140 m on either side of the nominal IP with a pseudorapidity of $|\eta| > 8.3$.
+The \zdc are placed approximately 140 m on either side of the nominal IP with a pseudorapidity of $|\eta| > 8.3$.
 They are used to distinguish pileup events by detecting spectator nucleons that do not participate in the interaction.
 
 
@@ -292,11 +293,11 @@ The magnetic field from these is non-uniform but bends charged particles outside
 \label{fig:atlas_id}
 \end{figure}
 
-The ATLAS inner detector is designed to track the particle results of collisions on their path from the beam pipe to the calorimeters, thereby inferring their charge and momentum \cite{ATLAS:1997ag,ATLAS:1997af,Aad:2010bx}.
+The ATLAS \id is designed to track the particle results of collisions on their path from the beam pipe to the calorimeters, thereby inferring their charge and momentum \cite{ATLAS:1997ag,ATLAS:1997af,Aad:2010bx}.
 It has a wide pseudorapidity coverage of \(\left| \eta \right| < 2.5\) and full azimuthal coverage in $\phi$.
 The design resolution for the transverse momentum is \( \sigma_{\pt}/\pt = 0.05\% \, \pt /1 \GeV \oplus 1\% \), with a transverse impact parameter resolution of \( \sigma_{d_0} = 10 \mu\textrm{m}\) for tracks with a central rapidity.
 Three sub-detectors are used, each in their own layer.
-From innermost to outermost, these are the silicon pixel detector, the semi-conductor tracker (SCT), and the transition radiation tracker (TRT).
+From innermost to outermost, these are the silicon pixel detector, the \sct, and the \trt.
 
 
 \subsubsection{Pixel detector}
@@ -315,7 +316,7 @@ A hit is recorded in each pixel when the signal exceeds a tunable threshold, and
 
 \subsubsection{Semi-conductor tracker}
 
-The SCT consists of 4088 silicon-strip modules and covers a radial distance of 299 mm to 560 mm \cite{Aad:2014mta}.
+The \sct consists of 4088 silicon-strip modules and covers a radial distance of 299 mm to 560 mm \cite{Aad:2014mta}.
 These are placed in four concentric barrel layers and two endcaps of nine disks each.
 A typical particle originating from the beam interaction region gets eight strip measurements in four space-points.
 Most modules have four silicon-strip sensors, with two on each side glued back-to-back at a stereo angle of 40 mrad.
@@ -325,12 +326,12 @@ A total of 6.3 million readout channels are provided by radiation-hardened front
 
 \subsubsection{Transition radiation tracker}
 
-The TRT covers the region from 563 mm to 1066 mm away from the beam line.
+The \trt covers the region from 563 mm to 1066 mm away from the beam line.
 It consists of 298 304 proportional drift tubes (straws) each 4 mm in diameter \cite{Abat:2008zza}.
 The straws are arranged in three cylindrical layers in the barrel region and are radially oriented in 80 wheel-like modules in the endcaps.
 A typical track with $\pt > 0.5~\GeV$ and $|\eta| < 2.0$ crosses more than 30 straws.
 There are a total of 350 848 readout channels.
-The TRT hits are generally useful to refine the transverse momentum measurements of tracks seeded in the inner sub-detectors.
+The \trt hits are generally useful to refine the transverse momentum measurements of tracks seeded in the inner sub-detectors.
 
 \subsection{Calorimetry}
 \label{sec:atlas:calo}
@@ -344,15 +345,15 @@ The TRT hits are generally useful to refine the transverse momentum measurements
 The ATLAS calorimetry system (\Cref{fig:atlas_calorimeter}) covers nearly ten units of pseudorapidity at $|\eta| < 4.9$.
 It provides measurements of high-energy particles by sampling the energy deposited in the calorimeters' dense active material \cite{Airapetian:1996iv}. %% performance tech design report
 An absorbing material, placed in alternating layers with the active material, collects this energy from the showers.
-ATLAS has two main categories of calorimeter, \emph{electromagnetic} and \emph{hadronic}, the former designed to induce electromagnetic (EM) showers from electrons and photons, and the latter designed to stop hadrons like protons and neutrons with both strong and EM interactions.
+ATLAS has two main categories of calorimeter, \emph{electromagnetic} and \emph{hadronic}, the former designed to induce \ac{EM} showers from electrons and photons, and the latter designed to stop hadrons like protons and neutrons with both strong and \ac{EM} interactions.
 
 \subsubsection{Electromagnetic calorimeter}
 
 The electromagnetic calorimeter is the innermost calorimeter layer and covers the region $|\eta| < 3.2$.
-It is divided into a barrel region at $|\eta| < 1.475$ and an end-cap at $1.375 < |\eta| < 3.2$, both of which use liquid argon (LAr) as an absorbing material \cite{ATLAS:1996ab} and lead as an active material. %% liquid argon
+It is divided into a barrel region at $|\eta| < 1.475$ and an end-cap at $1.375 < |\eta| < 3.2$, both of which use \ac{LAr} as an absorbing material \cite{ATLAS:1996ab} and lead as an active material. %% liquid argon
 Electrons and positrons lose energy primarily through bremsstrahlung, radiating photons as they are slowed \cite{Fabjan:2003aq}.
-Photons are stopped by the EM calorimeter via pair production of electron-positron pairs.
-A single electron or photon passing through the EM calorimeter causes an electromagnetic cascade as these processes are repeated by product particles with progressively smaller energies.
+Photons are stopped by the \ac{EM} calorimeter via pair production of electron-positron pairs.
+A single electron or photon passing through the \ac{EM} calorimeter causes an electromagnetic cascade as these processes are repeated by product particles with progressively smaller energies.
 As the energy is dispersed through the increasing number of shower particles, they are eventually slowed to a critical energy below which they interact through ionization and excitation, depositing their energy in the material.
 The energy as a function of path length $\Delta l$ can be described by exponential decay \(E = E_0 e^{-\Delta l / X_0} \).
 A typical photon or electron has a trajectory that, if extended beyond absorption, would cross a minimum of about 25 radiation lengths $X_0$ (\Cref{fig:atlas_em_rad_length}).
@@ -360,7 +361,7 @@ A typical photon or electron has a trajectory that, if extended beyond absorptio
 \begin{figure}[t]
 \includegraphics[width=0.49\linewidth]{x0_layers_barrel.pdf}
 \includegraphics[width=0.49\linewidth]{x0_layers_endcap.pdf}
-\caption{Thickness of the EM calorimeters in radiation lengths $X_0$ as a function of absolute pseudorapidity $|\eta|$ in the barrel (left) and end-cap (right) regions.}
+\caption{Thickness of the electromagnetic calorimeters in radiation lengths $X_0$ as a function of absolute pseudorapidity $|\eta|$ in the barrel (left) and end-cap (right) regions.}
 \label{fig:atlas_em_rad_length}
 \end{figure}
 
@@ -368,10 +369,10 @@ A typical photon or electron has a trajectory that, if extended beyond absorptio
 
 \subsubsection{Hadronic calorimeter}
 
-The hadronic calorimeter lies outside the EM calorimeter and is designed to stop protons and neutrons as well as the remnants of EM cascades that are not completely absorbed by the EM calorimeter.
+The hadronic calorimeter lies outside the \ac{EM} calorimeter and is designed to stop protons and neutrons as well as the remnants of \ac{EM} cascades that are not completely absorbed by the \ac{EM} calorimeter.
 The barrel region, along with the extended barrel region which encompasses the end-cap, cover $|\eta| < 1.7$ and comprise the tile system \cite{ATLAS:1996aa}.
-The tile system does not use a LAr active material, but rather is made of alternating steel plates and polystyrene scintillating tiles.
-The hadronic end-cap (HEC) detector covers $1.5 < |\eta| < 3.2$ and uses a LAr active material with copper absorbers.
+The tile system does not use a \ac{LAr} active material, but rather is made of alternating steel plates and polystyrene scintillating tiles.
+The \ac{HEC} detector covers $1.5 < |\eta| < 3.2$ and uses a \ac{LAr} active material with copper absorbers.
 Most hadrons take a path that, if extended beyond the cascade, would cross at least 10 nuclear interaction lengths (\Cref{fig:atlas_calo_nuclear_int_length}).
 
 \begin{figure}[t]
@@ -380,42 +381,42 @@ Most hadrons take a path that, if extended beyond the cascade, would cross at le
 \label{fig:atlas_calo_nuclear_int_length}
 \end{figure}
 
-The hadronic cascade produced in the hadronic calorimeter is in some ways analogous to an EM shower, though the interactions are mostly through the strong force.
+The hadronic cascade produced in the hadronic calorimeter is in some ways analogous to an \ac{EM} shower, though the interactions are mostly through the strong force.
 Hadrons interact with the material produce secondary particles that in turn produce their own shower, and energy is successively dispersed throughout the products.
 The relative complexity of hadronic and nuclear processes makes a precise description more difficult, however, as there are a greater number of relevant particles and nuclear resonances.
-Sophisticated Monte Carlo simulations, using detailed models of the nuclear interactions, are required to accurately describe the physics of hadronic calorimeters.
+Sophisticated \mc simulations, using detailed models of the nuclear interactions, are required to accurately describe the physics of hadronic calorimeters.
 
 \subsubsection{Forward calorimeter}
-The forward calorimeter (FCal) consists of three layers situated underneath the endcap calorimeters at $3.1 < |eta| < 4.9$.
-It uses LAr as its active material.
+The \fcal consists of three layers situated underneath the endcap calorimeters at $3.1 < |eta| < 4.9$.
+It uses \ac{LAr} as its active material.
 The first layer is designed for electromagnetic calorimetry and uses copper as its absorbing material, while the remaining two layers at larger $|z|$ are intended primarily for hadronic calorimetry and use tungsten as their absorbing material.
-Due to its location in the forward region near the beam pipe the FCal receives a greater amount of radiation than the other calorimeters.
-In heavy ion collisions the FCal is useful for measuring the centrality and reaction plane of events.
+Due to its location in the forward region near the beam pipe the \fcal receives a greater amount of radiation than the other calorimeters.
+In heavy ion collisions the \fcal is useful for measuring the centrality and reaction plane of events.
 
 \subsection{Trigger}
 %% \subsection{Trigger and data acquisition systems} %% maybe we don't need to get into DAQ
 \label{subsec:atlas_trigger} % is it even worth labeling these if they're not numbered?
 
 %% 200 ns for Pb; low mu reduces collisions
-The LHC can deliver a bunch crossing as often as the bunch spacing time, which was 200 ns for the \pPb run but can be as rapid as 25 ns for \pp collisions.
-It is infeasible to record full events at the corresponding rate of up to 40 MHz, and many of the bunch crossings have cosmic backgrounds, out-of-time pileup\footnote{The LHC RF has a frequency of 2.5 ns, but the timing is designed to only fill a bunch every 25 ns. Stray particles can still find their way into unintended RF buckets, causing out-of-time pileup when they collide at the IP.}, or no collision at all.
+The \lhc can deliver a bunch crossing as often as the bunch spacing time, which was 200 ns for the \pPb run but can be as rapid as 25 ns for \pp collisions.
+It is infeasible to record full events at the corresponding rate of up to 40 MHz, and many of the bunch crossings have cosmic backgrounds, out-of-time pileup\footnote{The \lhc \rf has a frequency of 2.5 ns, but the timing is designed to only fill a bunch every 25 ns. Stray particles can still find their way into unintended \rf buckets, causing out-of-time pileup when they collide at the IP.}, or no collision at all.
 Therefore the ATLAS trigger system needs to be capable of rapidly evaluating whether the data from an event is worth recording \cite{Aad:2012xs}. %% reference to performance paper
 The trigger system has three levels, each of which processes the data and filters events for the next level.
 
-The Level-1 (L1) trigger is a low-level hardware system that makes rapid determinations based on activity in the calorimeters, MBTS, ZDC, and muon spectrometers \cite{ATLAS:1998ad}.
+The \ac{L1} trigger is a low-level hardware system that makes rapid determinations based on activity in the calorimeters, \mbts, \zdc, and muon spectrometers \cite{ATLAS:1998ad}.
 It uses parallel data pathways separate from the regular readout path, with electronics optimized for speed over precision.
-The Central Trigger Processor (CTP) combines the L1 trigger signals into combinations of L1 bits which are used to seed the Level-2 (L2) trigger.
+The \ac{CTP} combines the \ac{L1} trigger signals into combinations of \ac{L1} bits which are used to seed the \ac{L2} trigger.
 
-The software-based High Level Trigger (HLT) is composed of the remaining two trigger levels, the Level-2 (L2) trigger and Event Filter (EF) \cite{ATLAS:2003aa}.  %% high-level trigger and DAQ
-The L2 trigger uses regions of interest determined by the L1 trigger to seed algorithms that perform a more precise evaluation of the events.
-The items from the L2 trigger processing are passed to the EF, which uses the full offline readout path in order to mitigate biases from the ultra-fast L1 response.
-An event is potentially recorded if it is selected by a trigger chain, which is defined by a L1 seed with HLT items.
+The software-based \ac{HLT} is composed of the remaining two trigger levels, the \ac{L2} trigger and \ac{EF} \cite{ATLAS:2003aa}.  %% high-level trigger and DAQ
+The \ac{L2} trigger uses regions of interest determined by the \ac{L1} trigger to seed algorithms that perform a more precise evaluation of the events.
+The items from the \ac{L2} trigger processing are passed to the \ac{EF}, which uses the full offline readout path in order to mitigate biases from the ultra-fast \ac{L1} response.
+An event is potentially recorded if it is selected by a trigger chain, which is defined by a \ac{L1} seed with \ac{HLT} items.
 Recording every event that satisfies a trigger chain would still overwhelm the data acquisition system.
 Prescales can be applied for items at any level in a trigger chain.
 A trigger item with a prescale of $N$ is only flagged to be recorded at every $N$th instance of the trigger item firing.
 The prescales of each trigger item are adjusted based on the physics goals of the run.
 
-While many analyses of high energy data focus on the behavior of exceptional or rare events, the results presented in this thesis are concerned primarily with minimum-bias (MinBias) events.
+While many analyses of high energy data focus on the behavior of exceptional or rare events, the results presented in this thesis are concerned primarily with \minbias events.
 The physics of interest is the bulk dynamics of the events on average rather than jets or rare particle decays.
 General high-multiplicity and high-transverse-energy triggers are used to supplement the size of the data sample for central events.
 These triggers are only used in the regime where their efficiency is practically 100\%, so the details of their performance are not as crucial here as they might be elsewhere.
