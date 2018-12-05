@@ -332,7 +332,7 @@ A typical track with $\pt > 0.5~\GeV$ and $|\eta| < 2.0$ crosses more than 30 st
 There are a total of 350 848 readout channels.
 The TRT hits are generally useful to refine the transverse momentum measurements of tracks seeded in the inner sub-detectors.
 
-\subsection{Calorimeter system}
+\subsection{Calorimetry}
 \label{sec:atlas:calo}
 
 \begin{figure}[t]
@@ -341,9 +341,56 @@ The TRT hits are generally useful to refine the transverse momentum measurements
 \label{fig:atlas_calorimeter}
 \end{figure}
 
-\cite{ATLAS:1996aa} %% tile
-\cite{ATLAS:1996ab} %% liquid argon
-\cite{Airapetian:1996iv} %% performance tech design report
+The ATLAS calorimetry system (\Cref{fig:atlas_calorimeter}) covers nearly ten units of pseudorapidity at $|\eta| < 4.9$.
+It provides measurements of high-energy particles by sampling the energy deposited in the calorimeters' dense active material \cite{Airapetian:1996iv}. %% performance tech design report
+An absorbing material, placed in alternating layers with the active material, collects this energy from the showers.
+ATLAS has two main categories of calorimeter, \emph{electromagnetic} and \emph{hadronic}, the former designed to induce electromagnetic (EM) showers from electrons and photons, and the latter designed to stop hadrons like protons and neutrons with both strong and EM interactions.
+
+\subsubsection{Electromagnetic calorimeter}
+
+The electromagnetic calorimeter is the innermost calorimeter layer and covers the region $|\eta| < 3.2$.
+It is divided into a barrel region at $|\eta| < 1.475$ and an end-cap at $1.375 < |\eta| < 3.2$, both of which use liquid argon (LAr) as an absorbing material \cite{ATLAS:1996ab} and lead as an active material. %% liquid argon
+Electrons and positrons lose energy primarily through bremsstrahlung, radiating photons as they are slowed \cite{Fabjan:2003aq}.
+Photons are stopped by the EM calorimeter via pair production of electron-positron pairs.
+A single electron or photon passing through the EM calorimeter causes an electromagnetic cascade as these processes are repeated by product particles with progressively smaller energies.
+As the energy is dispersed through the increasing number of shower particles, they are eventually slowed to a critical energy below which they interact through ionization and excitation, depositing their energy in the material.
+The energy as a function of path length $\Delta l$ can be described by exponential decay \(E = E_0 e^{-\Delta l / X_0} \).
+A typical photon or electron has a trajectory that, if extended beyond absorption, would cross a minimum of about 25 radiation lengths $X_0$ (\Cref{fig:atlas_em_rad_length}).
+
+\begin{figure}[t]
+\includegraphics[width=0.49\linewidth]{x0_layers_barrel.pdf}
+\includegraphics[width=0.49\linewidth]{x0_layers_endcap.pdf}
+\caption{Thickness of the EM calorimeters in radiation lengths $X_0$ as a function of absolute pseudorapidity $|\eta|$ in the barrel (left) and end-cap (right) regions.}
+\label{fig:atlas_em_rad_length}
+\end{figure}
+
+%% could talk about resolution following the Fabjan:2003aq ref
+
+\subsubsection{Hadronic calorimeter}
+
+The hadronic calorimeter lies outside the EM calorimeter and is designed to stop protons and neutrons as well as the remnants of EM cascades that are not completely absorbed by the EM calorimeter.
+The barrel region, along with the extended barrel region which encompasses the end-cap, cover $|\eta| < 1.7$ and comprise the tile system \cite{ATLAS:1996aa}.
+The tile system does not use a LAr active material, but rather is made of alternating steel plates and polystyrene scintillating tiles.
+The hadronic end-cap (HEC) detector covers $1.5 < |\eta| < 3.2$ and uses a LAr active material with copper absorbers.
+Most hadrons take a path that, if extended beyond the cascade, would cross at least 10 nuclear interaction lengths (\Cref{fig:atlas_calo_nuclear_int_length}).
+
+\begin{figure}[t]
+\includegraphics{calo_nuclear_int_length.pdf}
+\caption{Nuclear interaction lengths for the combined ATLAS calorimetry system as a function of absolute pseudorapidity $|\eta|$.}
+\label{fig:atlas_calo_nuclear_int_length}
+\end{figure}
+
+The hadronic cascade produced in the hadronic calorimeter is in some ways analogous to an EM shower, though the interactions are mostly through the strong force.
+Hadrons interact with the material produce secondary particles that in turn produce their own shower, and energy is successively dispersed throughout the products.
+The relative complexity of hadronic and nuclear processes makes a precise description more difficult, however, as there are a greater number of relevant particles and nuclear resonances.
+Sophisticated Monte Carlo simulations, using detailed models of the nuclear interactions, are required to accurately describe the physics of hadronic calorimeters.
+
+\subsubsection{Forward calorimeter}
+The forward calorimeter (FCal) consists of three layers situated underneath the endcap calorimeters at $3.1 < |eta| < 4.9$.
+It uses LAr as its active material.
+The first layer is designed for electromagnetic calorimetry and uses copper as its absorbing material, while the remaining two layers at larger $|z|$ are intended primarily for hadronic calorimetry and use tungsten as their absorbing material.
+Due to its location in the forward region near the beam pipe the FCal receives a greater amount of radiation than the other calorimeters.
+In heavy ion collisions the FCal is useful for measuring the centrality and reaction plane of events.
 
 \subsection{Trigger}
 %% \subsection{Trigger and data acquisition systems} %% maybe we don't need to get into DAQ
