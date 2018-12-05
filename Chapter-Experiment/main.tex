@@ -121,7 +121,7 @@ For two bunched beams colliding head-on with identical Gaussian transverse profi
 \begin{equation}
 \Lumi = f_\mathrm{coll} \frac{n_1 n_2}{4 \pi \sigma_x^* \sigma_y^*}
 \end{equation}
-where the bunch crossings occur with frequency $f_\mathrm{col}$, there are $n_1$ and $n_2$ particles in each bunch, and $\sigma_x^*$ and $\sigma_y^*$ characterize the transverse beam size in the horizontal and vertical directions at the interaction point (IP).
+where the bunch crossings occur with frequency $f_\mathrm{col}$, there are $n_1$ and $n_2$ particles in each bunch, and $\sigma_x^*$ and $\sigma_y^*$ characterize the transverse beam size in the horizontal and vertical directions at the \ac{IP}.
 The quadrupole focusing magnets are placed to alternatively squeeze the beam in the $x$ and $y$ directions.
 This leads to oscillatory motion in the path $s$ following the Hill equation \cite{Tanabashi:2018oca}:
 \begin{align}
@@ -140,8 +140,8 @@ Then the luminosity can be expressed as a function of the emittance and $\beta^*
 \label{eq:lumi}
 \Lumi = f_\mathrm{coll} \frac{n_1 n_2}{4 \sqrt{\epsilon_x \epsilon_y \beta_x^* \beta_y^*}}
 \end{equation}
-If the crossing angle is non-zero, $\beta$ is not minimized at the IP, or other effects deviate from the ideal case, then the real luminosity will be smaller than this optimal value.
-\Cref{eq:lumi} shows that the keys to increasing the efficiency of data-taking are to make highly-populated bunches cross at high frequency, with low-emittance beams and optics that minimize the amplitude functions at the IP.
+If the crossing angle is non-zero, $\beta$ is not minimized at the \ac{IP}, or other effects deviate from the ideal case, then the real luminosity will be smaller than this optimal value.
+\Cref{eq:lumi} shows that the keys to increasing the efficiency of data-taking are to make highly-populated bunches cross at high frequency, with low-emittance beams and optics that minimize the amplitude functions at the \ac{IP}.
 
 \section{The Large Hadron Collider}
 
@@ -185,9 +185,9 @@ Finally, the beam is injected into the \lhc, where it is accelerated to a few \T
 \label{fig:lhc_schematic}
 \end{figure}
 
-The \lhc ring does not trace a perfect circle, but is actually composed of eight alternating straight and curved arc sections (\Cref{lhc_schematic}) \cite{Bruning:2004ej}.
+The \lhc ring does not trace a perfect circle, but is actually composed of eight alternating straight and curved arc sections (\Cref{fig:lhc_schematic}) \cite{Bruning:2004ej}.
 Two parallel beam pipes 
-The straight sections are each 528 m in length and carry the \rf cavities for acceleration, IPs for detector experiments, and other features like injection spots and beam dumps.
+The straight sections are each 528 m in length and carry the \rf cavities for acceleration, \acp{IP} for detector experiments, and other features like injection spots and beam dumps.
 The arc portions have a radius of curvature of $R = 2.8$ km, using a total of 1232 superconducting dipole magnets to turn the beams along the path.
 
 The \rf cavities operate at 400 MHz, which corresponds to \rf buckets of 2.5 ns.
@@ -222,12 +222,12 @@ The ATLAS detector, which provided the data used in this thesis, is discussed in
 
 ALICE (A Large Ion Collider Experiment) \cite{Aamodt:2008zz} is a dedicated heavy-ion detector that is particularly adept at the identification of particle species.
 
-With many subdetectors spread over a forward region from its IP, the LHCb (Large Hadron Collider Beauty) experiment \cite{Alves:2008zz} can make detailed measurements of the decay products of b-quarks. Recently it has led to the observation of possible pentaquark states \cite{Aaij:2015tga}.
+With many subdetectors spread over a forward region from its \ac{IP}, the LHCb (Large Hadron Collider Beauty) experiment \cite{Alves:2008zz} can make detailed measurements of the decay products of b-quarks. Recently it has led to the observation of possible pentaquark states \cite{Aaij:2015tga}.
 
-TOTEM (Total Cross Section, Elastic Scattering and Diffraction Dissociation Measurement at the LHC) \cite{Anelli:2008zza} has detectors in the forward region over 200 m on either side of the CMS IP.
+TOTEM (Total Cross Section, Elastic Scattering and Diffraction Dissociation Measurement at the LHC) \cite{Anelli:2008zza} has detectors in the forward region over 200 m on either side of the CMS \ac{IP}.
 Its location near the beam pipe puts it in a position to detect the products of elastic and diffractive collisions, which are characterized by a lack of color connection that would otherwise produce particles in the mid-rapidity region.
 
-The LHCf (Large Hadron Collider Forward) experiment \cite{Adriani:2008zz} has two detectors along LHC beamline, at 140 m away from the ATLAS IP on either side.
+The LHCf (Large Hadron Collider Forward) experiment \cite{Adriani:2008zz} has two detectors along LHC beamline, at 140 m away from the ATLAS \ac{IP} on either side.
 
 The latest experiment to join the ring is MoEDAL, the Monopole and Exotics Detector at the LHC \cite{Acharya:2014nyr}.
 It is a mostly passive detector located next to LHCb, with the goal of direct detector of magnetic monopoles or other stable massive particles beyond the Standard Model.
@@ -263,7 +263,7 @@ The muon spectrometer is essential for reconstructing a number of massive and ex
 The extensive trigger and data acquisition system is also crucial for successful operation.
 The \mbts detector sits on each side at a rapidity of $2.1 < |\eta| < 3.84$.
 It is used to identify and trigger on minimum bias collisions.
-The \zdc are placed approximately 140 m on either side of the nominal IP with a pseudorapidity of $|\eta| > 8.3$.
+The \zdc are placed approximately 140 m on either side of the nominal \ac{IP} with a pseudorapidity of $|\eta| > 8.3$.
 They are used to distinguish pileup events by detecting spectator nucleons that do not participate in the interaction.
 
 
@@ -399,7 +399,7 @@ In heavy ion collisions the \fcal is useful for measuring the centrality and rea
 
 %% 200 ns for Pb; low mu reduces collisions
 The \lhc can deliver a bunch crossing as often as the bunch spacing time, which was 200 ns for the \pPb run but can be as rapid as 25 ns for \pp collisions.
-It is infeasible to record full events at the corresponding rate of up to 40 MHz, and many of the bunch crossings have cosmic backgrounds, out-of-time pileup\footnote{The \lhc \rf has a frequency of 2.5 ns, but the timing is designed to only fill a bunch every 25 ns. Stray particles can still find their way into unintended \rf buckets, causing out-of-time pileup when they collide at the IP.}, or no collision at all.
+It is infeasible to record full events at the corresponding rate of up to 40 MHz, and many of the bunch crossings have cosmic backgrounds, out-of-time pileup\footnote{The \lhc \rf has a frequency of 2.5 ns, but the timing is designed to only fill a bunch every 25 ns. Stray particles can still find their way into unintended \rf buckets, causing out-of-time pileup when they collide at the \ac{IP}.}, or no collision at all.
 Therefore the ATLAS trigger system needs to be capable of rapidly evaluating whether the data from an event is worth recording \cite{Aad:2012xs}. %% reference to performance paper
 The trigger system has three levels, each of which processes the data and filters events for the next level.
 
