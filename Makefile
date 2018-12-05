@@ -55,7 +55,13 @@ run_pdflatex: $(BASENAME).pdf
 # Specify the tex and bib file dependencies for running pdflatex
 # If your bib files are not in the main directory adjust this target accordingly
 #%.pdf:	%.tex *.tex bibtex/bib/*.bib
-%.pdf:	%.tex *.tex *.bib Chapter-*/main.tex
+# %.pdf:	%.tex *.tex *.bib Chapter-*/main.tex
+# 	$(PDFLATEX) $<
+# 	-$(BIBTEX)  $(basename $<)
+# 	$(PDFLATEX) $<
+# 	$(PDFLATEX) $<
+
+$(BASENAME).pdf:	$(BASENAME).tex *.tex bibtex/bib/*.bib Chapter-*/main.tex
 	$(PDFLATEX) $<
 	-$(BIBTEX)  $(basename $<)
 	$(PDFLATEX) $<
