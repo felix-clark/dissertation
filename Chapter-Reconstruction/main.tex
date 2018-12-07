@@ -15,8 +15,25 @@ This procedure is non-trivial and computationally intensive, particularly becaus
 %% from \cite{ATLAS:2012jma}
 
 %% discuss seeding before kalman filter?
+%% i.e. split into ``pattern finding'' and ``track fitting'', though with NEWT there is ``no clear border'' between these modules
+%% discuss inside-out and outside-in separately?
 
-\subsection{Kalman filter}
+While the classification is not absolute, the ATLAS track reconstruction procedure can be divided roughly into two parts: first track seeds are identified, then tracks are extended and evaluated with a global fit \cite{Cornelissen:2007vba}. %% ATLAS new tracking (NEWT)
+Each of these procedures will be described separately in the following sections.
+Overall, the reconstruction of collision vertices and the charged-particle products has very good performance, even in the high-luminosity environment of the \lhc with tens of simultaneous collisions along the beamline \cite{ATLAS:2012jma}. %% performance of tracking and vertexing (2012), w/ description of reconstruction
+
+\subsection{Seeding track candidates}
+
+The baseline track finding algorithm uses inside-out reconstruction.
+
+An additional round of seeding is performed using an outside-in algorithm called back-tracking.
+This process is designed to reconstruct secondary particles, which are generated in the decays of primary particles and so do not necessarily originate from near the beam line.
+The \trt drift tube hits do not provide fine-scale information along the straw direction, so seeds are built in the $r - \phi$ plane in the \trt barrel and the $r - z$ plane in the \trt end-cap.
+Back-tracking is not well-suited for low-\pt particles, which spiral out of the \id without making it to the \trt, so the targeted particles have reasonably straight-line trajectories.
+The Hough transform \cite{Duda:1972:UHT:361237.361242} is used to detect straight-line sets of three \trt hits which are used as track candidate seeds.
+The extension of these \trt segments are evaluated in multiple $\eta$ slices to accommodate the fact that the seed-finding is done in the transverse plane.
+
+\subsection{Track fitting}
 
 \begin{figure}[t]
   \includegraphics{track_schematic.png}
@@ -32,11 +49,9 @@ However, every interaction with a detector element modifies a charged particle's
 Since there are tens of hits in most tracks, a typical track has $\mathcal{O}(100)$ parameters in its description, and the parameters before and after a hit are not independent.
 It is computationally infeasible to process a single global fit for each track candidate with this many correlated parameters.
 
+\cite{Cornelissen:2008zza} %% global chi^2 track fitter
 
 %% \cite{Aad:2010bx} %% ID commissioning and calibration - good summary (already referenced -- not as much detail on the track alg)
-\cite{Cornelissen:2007vba} %% ATLAS new tracking (NEWT)
-\cite{Cornelissen:2008zza} %% global chi^2 track fitter
-\cite{ATLAS:2012jma}
 
 \section{Track reconstruction performance}
 
