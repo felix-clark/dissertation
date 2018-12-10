@@ -22,20 +22,6 @@ While the classification is not absolute, the ATLAS track reconstruction procedu
 Each of these procedures will be described separately in the following sections.
 Overall, the reconstruction of collision vertices and the charged-particle products has very good performance, even in the high-luminosity environment of the \lhc with tens of simultaneous collisions along the beamline \cite{ATLAS:2012jma}. %% performance of tracking and vertexing (2012), w/ description of reconstruction
 
-\subsection{Seeding track candidates}
-
-The baseline track finding algorithm uses inside-out reconstruction.
-
-
-An additional round of seeding is performed using an outside-in algorithm called back-tracking.
-This process is designed to reconstruct secondary particles, which are generated in the decays of primary particles and so do not necessarily originate from near the beam line.
-The \trt drift tube hits do not provide fine-scale information along the straw direction, so seeds are built in the $r - \phi$ plane in the \trt barrel and the $r - z$ plane in the \trt end-cap.
-Back-tracking is not well-suited for low-\pt particles, which spiral out of the \id without making it to the \trt, so the targeted particles have reasonably straight-line trajectories.
-The Hough transform \cite{Duda:1972:UHT:361237.361242} is used to detect straight-line sets of three \trt hits which are used as track candidate seeds.
-The extension of these \trt segments are evaluated in multiple $\eta$ slices to accommodate the fact that the seed-finding is done in the transverse plane.
-
-\subsection{Track fitting}
-
 \begin{figure}[t]
   \includegraphics{track_schematic.png}
   \caption{The track parameters defining a helical trajectory.}
@@ -49,10 +35,38 @@ where $d_0$ and $z_0$ are the transverse and longitudinal distance from the beam
 However, every interaction with a detector element modifies a charged particle's trajectory through ionization energy loss and multiple scattering.
 Since there are tens of hits in most tracks, a typical track has $\mathcal{O}(100)$ parameters in its description, and the parameters before and after a hit are not independent.
 It is computationally infeasible to process a single global fit for each track candidate with this many correlated parameters.
+A Kalman filter approach is taken instead, which processes a track from one end to the other, updating the parameters and covariance matrix along the way.
+
+\subsection{Seeding track candidates}
+
+\begin{figure}[t]
+  \includegraphics[width=\linewidth]{soft-pub-2007-007_sp_seeds.png}
+  \caption{Space-point seeds constructed from two (short, in red) or three (long, in blue) hits in the barrel region of the pixel and \sct. Short seeds are used to determine the $z$-coordinates of predicted vertex positions, which are used to constrain extensions to three or more space points.  (From \Ref{\cite{Cornelissen:2007vba}})}
+  \label{fig:trk_seeds}
+\end{figure}
+
+The baseline track finding algorithm uses inside-out reconstruction.
+Space-points are collected by hits in the silicon detectors by the 3D location of pixel hits and by the crossing point of back-to-back \sct strip pairs with simultaneous hits.
+Pairs of space-points from the pixel detector are used to construct short track seeds, which are used to find the longitudinal position of vertices.
+A histogram is filled with the $z$-coordinate of straight-line extensions of these track seeds to the beam line and peaks in this distribution are identified with the $z$ position of the vertices.
+These $z$-vertices constrain the extension of seeds from two space-points to three (\Cref{fig:trk_seeds}).
+The seed search can also be done without the $z$ vertex constraint, inducing a significant increase in computational demands but allows for a greater efficiency to reconstruct decays from certain events.
+The seeds with three space-points are fed to the track extension and fitting algorithm.
+
+After the inside-out track reconstruction is completed, an additional round of seeding is performed using an outside-in algorithm called back-tracking.
+This process is designed to reconstruct secondary particles, which are generated in the decays of primary particles and so do not necessarily originate from near the beam line.
+The \trt drift tube hits do not provide fine-scale information along the straw direction, so seeds are built in the $r - \phi$ plane in the \trt barrel and the $r - z$ plane in the \trt end-cap.
+Back-tracking is not well-suited for low-\pt particles, which spiral out of the \id without making it to the \trt, so the targeted particles have reasonably straight-line trajectories.
+The Hough transform \cite{Duda:1972:UHT:361237.361242} is used to detect straight-line sets of three \trt hits which are used as track candidate seeds.
+The extension of these \trt segments into the silicon detectors are evaluated in multiple $\eta$ slices to accommodate the fact that the seed-finding is done in the transverse plane.
+
+\subsection{Track extension and fitting}
+
 
 \cite{Cornelissen:2008zza} %% global chi^2 track fitter
 
-%% \cite{Aad:2010bx} %% ID commissioning and calibration - good summary (already referenced -- not as much detail on the track alg)
+\subsection{Ambiguity solver} %% does this deserve a separate section?
+\subsection{TRT track extension}
 
 \section{Track reconstruction performance}
 
