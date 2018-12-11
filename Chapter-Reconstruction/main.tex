@@ -45,6 +45,11 @@ Back-tracking is not well-suited for low-\pt particles, which spiral out of the 
 The Hough transform \cite{Duda:1972:UHT:361237.361242} is used to detect straight-line sets of three \trt hits which are used as track candidate seeds.
 The extension of these \trt segments into the silicon detectors are evaluated in multiple $\eta$ slices to accommodate the fact that the seed-finding is done in the transverse plane.
 
+Finally, the remaining silicon hits that have not been used in the inside-out or back-tracking algorithms are used to seed an additional low-\pt track reconstruction.%% ATL-COM-INDET-2012-052 for minbias
+These tracks can have a transverse momentum as low as 100 \MeV~ so their transverse radius of curvature is small.
+Charged particles with $\pt < 400 \MeV$ do not make it through every layer of the \sct.
+%% TODO: finish this paragraph
+
 \subsection{Track extension and fitting}
 
 \begin{figure}[t]
@@ -84,17 +89,27 @@ If a possible extension is found, the track is refit and re-scored with the \trt
 If the extended track has a higher score than the silicon-only track, then the track is updated with the extension.
 Otherwise the original silicon track is kept and the \trt hits are kept as outliers.
 
+\section{Track selection} %% ? does this need its own section? possibly in analysis section
+
+The tracks 
+
 \section{Track reconstruction performance}
 
+High-energy \pp and heavy ion collisions are generated with \mc simulations to study the performance of the track reconstruction algorithm.
+
+
 \begin{figure}[t]
-  \includegraphics[width=0.49\linewidth]{atl_com_phys_2012_1541_fig_07_eff_pt.png}
-  \includegraphics[width=0.49\linewidth]{atl_com_phys_2012_1541_fig_08_eff_eta.png}
-  \caption{The Run-1 track reconstruction efficiency as a function of transverse momentum (left) and pseudorapidity (right).}
+  \includegraphics[width=\linewidth]{ATL-COM-PHYS-2013-1017_sihits.png}
+  \caption{The mean number of silicon hits on track in Run-1 \pPb collisions as a function of pseudorapidity (top) and azimuthal angle (bottom).}
+  \label{fig:trk_si_hits}
+\end{figure}
+
+\begin{figure}[t]
+  \includegraphics[width=\linewidth]{ATL-COM-PHYS-2013-011_trk_eff.png}
+  \caption{The track reconstruction efficiency in Run-1 \pPb collisions as a function of transverse momentum (left) and pseudorapidity (right).}
   \label{fig:trk_eff}
 \end{figure}
 
-\section{Track selection} %% ? does this need its own section? possibly in analysis section
-
 \section{Pion identification}
 
-
+\cite{ATLAS-CONF-2011-016}
