@@ -46,9 +46,10 @@ The Hough transform \cite{Duda:1972:UHT:361237.361242} is used to detect straigh
 The extension of these \trt segments into the silicon detectors are evaluated in multiple $\eta$ slices to accommodate the fact that the seed-finding is done in the transverse plane.
 
 Finally, the remaining silicon hits that have not been used in the inside-out or back-tracking algorithms are used to seed an additional low-\pt track reconstruction.%% ATL-COM-INDET-2012-052 for minbias
+Charged particles with $\pt < 400 \MeV$ do not necessarily pass through every layer of the \sct.
 These tracks can have a transverse momentum as low as 100 \MeV~ so their transverse radius of curvature is small.
-Charged particles with $\pt < 400 \MeV$ do not make it through every layer of the \sct.
-%% TODO: finish this paragraph
+Without a trajectory that is close to a straight line in the transverse plane, a larger set of possible track seeds must be evaluated, so it is only computationally feasible to seed the low-\pt tracking with leftover space-points from the other two tracking algorithms.
+The efficiency below $\pt = 400 \MeV$ begins do fall rapidly with decreasing \pt, but a significant fraction of particles in this kinematic region are reconstructed.
 
 \subsection{Track extension and fitting}
 
@@ -91,12 +92,16 @@ Otherwise the original silicon track is kept and the \trt hits are kept as outli
 
 \section{Track selection} %% ? does this need its own section? possibly in analysis section
 
-The tracks 
+The tracks used for the results in this thesis are inside-out and low-\pt tracks.
+Tracks from back-tracking are not used because they are typically secondary particles.
+The offline tracking cuts are those used in the \pPb multiplicity analysis \cite{HION-2012-15}, which is based on the \pp \minbias spectra analysis \cite{STDM-2010-06} with some additional cuts on impact parameter ($d_0$ and $z_0$) significance.
+
 
 \section{Track reconstruction performance}
 
 High-energy \pp and heavy ion collisions are generated with \mc simulations to study the performance of the track reconstruction algorithm.
-
+\cite{Gyulassy:1994ew} %% hijing
+\cite{Agostinelli:2002hh} %% GEANT
 
 \begin{figure}[t]
   \includegraphics[width=\linewidth]{ATL-COM-PHYS-2013-1017_sihits.png}
