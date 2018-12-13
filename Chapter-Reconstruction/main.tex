@@ -94,7 +94,20 @@ Otherwise the original silicon track is kept and the \trt hits are kept as outli
 
 The tracks used for the results in this thesis are inside-out and low-\pt tracks.
 Tracks from back-tracking are not used because they are typically secondary particles.
-The offline tracking cuts are those used in the \pPb multiplicity analysis \cite{HION-2012-15}, which is based on the \pp \minbias spectra analysis \cite{STDM-2010-06} with some additional cuts on impact parameter ($d_0$ and $z_0$) significance.
+The offline track selection is that used in the \pPb multiplicity analysis \cite{HION-2012-15}, which is based on the \pp \minbias spectra analysis \cite{STDM-2010-06} with some additional cuts on impact parameter ($d_0$ and $z_0$) significance.
+\begin{itemize}
+\item
+  The track must have $\pt \geq 0.1 \GeV$ and $|\eta| < 2.5$.
+\item
+  A track with $\pt \geq $ 0.1/0.2/0.3 \GeV must have at least 2/4/6 \sct hits.
+  These transverse momentum cutoffs correspond approximately to thresholds after which the track is expected to pass through the next \sct layer.
+\item
+  At least one physical pixel hit is required, and if a B-Layer hit is expected based on the trajectory then there is at least one physical B-Layer hit.
+\item
+  The transverse and longitudinal impact parameters with respect to the \ac{PV} must satisfy $|d_0^\textrm{PV}| < 1.5 \textrm{ mm}$ and $|z_0^\textrm{PV} \sin\theta| < 1.5 \textrm{ mm}$.
+\item
+  A significance cut is also placed on the impact parameters such that $|d_0^\textrm{PV}| < 3\sigma_{d_0^\textrm{PV}}$ and $|z_0^\textrm{PV} \sin\theta| < 3\sigma_{z_0^\textrm{PV} \sin\theta}$.
+\end{itemize}
 
 
 \section{Track reconstruction performance}
