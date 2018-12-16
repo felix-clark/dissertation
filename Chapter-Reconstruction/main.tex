@@ -114,8 +114,11 @@ The offline track selection is that used in the \pPb multiplicity analysis \cite
 
 High-energy \pp and heavy ion collisions are generated with \mc simulations to study the performance of the track reconstruction algorithm.
 Proton-lead collision events are generated with \Hijing \cite{Gyulassy:1994ew} and the detector material is simulated with \GEANTFour \cite{Agostinelli:2002hh}.
-These simulations are able to provide an accurate description of many track properties, for example the silicon hits per track shown in \Cref{fig:trk_si_hits}.
+These simulations are able to provide a very precise description of many track properties, such as the silicon hits per track shown in \Cref{fig:trk_si_hits}.
 The track reconstruction efficiency is studied in these \mc samples, with results shown in \Cref{fig:trk_eff}.
+The probability to reconstruct a track at $\pt > 500 \MeV$ is roughly constant in the range of 75--80\%.
+Below that the efficiency drops rapidly with \pt, down to the minimum of 100 \MeV.
+The efficiency is slightly higher around 80\% in the barrel region $|\eta| < 1$, dropping to 70--75\% throughout most of the end-cap.
 
 \begin{figure}[t]
   \includegraphics[width=\linewidth]{ATL-COM-PHYS-2013-1017_sihits.png}
@@ -130,5 +133,76 @@ The track reconstruction efficiency is studied in these \mc samples, with result
 \end{figure}
 
 \section{Pion identification}
+\label{sec:pid}
 
-\cite{ATLAS-CONF-2011-016}
+Charged particles are identified using a measurement of the ionization energy loss (\dEdx) from the time-over-threshold of charge deposited in the pixel hits of a track.
+Three working \pid cut levels are defined based on \dEdx approximations from hits in the pixel detector.
+A nominal selection is chosen, and a looser selection (with high efficiency) a tight selection (with high purity) are used as systematic variations.
+The variables used for \pid defined in \Ref{\cite{ATLAS-CONF-2011-016}}: $L(X)$ is the likelihood of the particle being species $X$ where $X$ is $\pi$, $K$, or $p$, and we define $P(X) \equiv \frac{L(X)}{L(\pi^{\pm}) + L(K^{\pm}) +L(p^{\pm})}$.
+Note that $P(X)$ are not probabilities per se, but are still found to be useful to cut on.
+
+For all cut levels it is required that the likelihood be positive for each particle species, as a negative value indicates an error in the attempt to assign a likelihood to that track.
+It is also required that the track has at least 1 good pixel \dEdx hit.
+The \pid selections used in this analysis are the same as those in \Ref{\cite{HION-2015-11}}.
+The efficiency relative to tracks passing all other tracking selections are shown in \Fig{\ref{fig:pid_eff}}, while the purity of each is shown in \Fig{\ref{fig:pid_purity}}.
+
+\begin{figure}[ht]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{pid_eff_pt.pdf}
+\includegraphics[width=.49\linewidth]{pid_eff_eta.pdf}\\
+\end{minipage}
+\caption{The fraction of truth-identified pions and non-pions that pass each \pid cut level, as a function of \pt (left) and $\eta$ (right). The fractions are constructed from tracks that otherwise pass all cuts.}
+\label{fig:pid_eff}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.49\linewidth]{pid_pur_loose_kt_eta.pdf}
+\includegraphics[width=.49\linewidth]{pid_pur_tight_kt_eta.pdf}\\
+\includegraphics[width=.6\linewidth]{pid_pur_mid_kt_eta.pdf}\\
+\caption{Purity of identified pion pairs with the loose (top left), tight (top right), and nominal (bottom) \pid selections. The purities are estimated using fully simulated \Hijing \pPb events, as a function of the pair's average transverse momentum \kt and rapidity \kys. The rapidity is calculated using the pion mass for both reconstructed charged particles.}
+\label{fig:pid_purity}
+\end{figure}
+
+
+\subsection{Cut Definitions}
+\subsubsection{Loose}
+\begin{itemize}
+  \item
+    $P(\pi^{\pm}) > 0.05$
+  \item
+    if $\left|\mathbf{p}\right| < 1~\GeV$ then $P(K^{\pm}) < 0.85$
+  \item
+    $P(p^{\pm}) < \max\left(0.5, 0.95 - 0.15~\GeV^{-2}\left|\mathbf{p}\right|^{2} \right)$
+  \item
+    $\frac{dE}{dx} \; [\MeV \textrm{ g}^{-1} \textrm{ cm}^{2}] < 1.4 + \frac{0.4~\GeV^2}{\left|\mathbf{p}\right|^{2}}$
+\end{itemize}
+The Loose cut level removes tracks that are very likely to be kaons or protons while retaining a high efficiency for pions.
+
+\subsubsection{Middle}
+\begin{itemize}
+\item %% not quite replaced by extension of P(p) cut. should figure that out...
+  $\left|\mathbf{p}\right| < 2.25~\GeV$
+\item
+  $P(\pi^{\pm}) > 0.05$
+\item
+  if $\left|\mathbf{p}\right| < 1~\GeV$ then $P(K^{\pm}) < 0.85$
+\item
+  $P(p^{\pm}) < 0.95 - 0.15~\GeV^{-2}\left|\mathbf{p}\right|^{2}$
+\item
+  $\frac{dE}{dx} \; [\MeV \textrm{ g}^{-1} \textrm{ cm}^{2}]< 1.1 + \frac{0.2~\GeV^2}{\left|\mathbf{p}\right|^{2}}$
+\end{itemize}
+The middle level is used as the nominal selection in the analysis. It achieves a higher purity than the Loose definition without maintaining a reasonably high pion efficiency.
+
+\subsubsection{Tight}
+\begin{itemize}
+\item
+  At least 2 good pixel $dE/dx$ hits.
+\item
+  $\left|\mathbf{p}\right| < 1.25~\GeV$
+\item
+  $P(\pi^{\pm}) > 0.6$
+\end{itemize}
+The Tight definition prioritizes getting a sample with a high concentration of pions.
+
