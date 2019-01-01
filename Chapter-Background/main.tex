@@ -26,13 +26,13 @@ The electron scatters through a virtual photon that interacts directly with the 
   \label{fig:dis}
 \end{figure}
 
-Under the constraints of Lorentz and gauge invariance, the cross-section of a \ac{DIS} process with incoming lepton and proton momenta $k$ and $P$ respectively and momentum transfer $q$ can be expressed as \cite{Tanabashi:2018oca}
+Under the constraints of Lorentz and gauge invariance, the cross-section of an unpolarized \ac{DIS} process with incoming lepton and proton momenta $k$ and $P$ respectively and momentum transfer $q$ can be expressed as \cite{Tanabashi:2018oca}
 \begin{equation}
   \frac{d^2 \sigma}{dx \, dQ^2} = \frac{4\pi\alpha^2_\textrm{EM}}{2xQ^4}\left[ \left(1+(1-y)^2\right) F_2\left(x, Q^2\right) - y^2 F_L \left(x, Q^2\right) \right]
   \label{eq:dis}
 \end{equation}
-where $Q^2 = -q^2$ is the absolute magnitude momentum transfer, $x = \frac{Q^2}{2q \cdot P}$, and $y = \frac{q \cdot P}{k \cdot P}$ is the fraction of the lepton's energy lost in the nucleon's rest frame.
-In the parton model, $x$ is interpreted as the fraction of the target proton's momentum carried by a struck parton.
+where $Q^2 = -q^2$ is the absolute magnitude squared of the photon's virtuality, $x = \frac{Q^2}{2q \cdot P}$, and $y = \frac{q \cdot P}{k \cdot P}$ is the fraction of the lepton's energy lost in the nucleon's rest frame.
+In the parton model, which describes the proton as approximately-free point-like quarks in the infinite longitudinal momentum frame, $x$ is interpreted as the fraction of the target proton's momentum carried by a struck parton.
 The structure functions $F_i(x, Q^2)$ describe the inherent internal structure of the proton.
 The longitudinal structure function $F_L = F_2 - 2xF_1$ is zero by the Callan-Gross relation \cite{Callan:1969uq}, and experimentally the ratio $2xF_1 / F_2$ is consistent with 1 independent of $x$.
 In the parton model, where the proton is described in terms of free point-like quarks constituents, the structure function $F_2$ is decomposed into \acp{PDF}
@@ -40,39 +40,56 @@ In the parton model, where the proton is described in terms of free point-like q
 F_2 \left(x, Q^2\right) = x \sum_q e_q^2 f_{q/p}(x)
 \end{equation}
 to lowest order in the strong coupling constant $\alpha_s$.
-The independence of $Q^2$ of the \acp{PDF} is a manifestation of their point-like description.
-Higher-order corrections contribute variations in $Q^2$, as the scale of interactions between the quarks becomes relevant (\Cref{fig:proton_f2}).
+The independence of $Q^2$ of the \acp{PDF} is a manifestation of their point-like description in the parton model and is known as \emph{Bjorken scaling}.
+Logarithmic corrections are understood theoretically and come from as gluon radiation from the quarks becomes relevant, particularly at small $x$ (\Cref{fig:proton_f2}).
 
 \begin{figure}[t]
   %% page 326 of particle review
-  \includegraphics{proton_f2.png}
-  \caption{The structure function $F_2\left(x, Q^2\right)$ of the proton.}
+  \includegraphics[width=0.45\linewidth]{proton_f2.png}
+  \includegraphics[width=0.54\linewidth]{proton_f2_vs_x.png}
+  \caption{The structure function $F_2\left(x, Q^2\right)$ of the proton as a function of $Q^2$ (left) and of $x$ (right).}
   \label{fig:proton_f2}
 \end{figure}
 
-%% motivated by the success of QED and SU(2) electroweak gauge theory, a gauge group of SU(3) color symmetry is a natural choice to attempt to describe the strong nuclear interaction.
+%% TODO: could discuss R_had as evidence for spin-1/2 quarks
+
+An experimental and phenomenological description of the nucleon structure functions does not provide a complete description of the interactions among nucleon constituents.
+The success of gauge theories in describing \ac{QED} ($U(1)$) and electroweak theory ($U(2) = SU(2) \otimes U(1)$) suggests that some gauge theory may be able to describe the nuclear interaction.
+A quantum field theory with an $SU(3)$ ``color'' symmetry, called \qcd, is one such candidate.
+For it to be a believable description of the strong interaction, it must of course be consistent with experimental observations, and in particular it must explain why free quarks have never been observed.
+Though it's non-abelian nature makes many practical calculations difficult, it has shown remarkable success in describing the strong interaction, as will be discussed in the remainder of this section.
 
 \subsection{The QCD Lagrangian}
-The lagrangian density of QCD is given by
+The gauge-invariant lagrangian density of \qcd \cite{Gross:1973ju,Wilczek:2000ih} is given by
 \begin{equation}
   \Lagr_\mathrm{QCD} \equiv -\frac{1}{4} G^a_{\mu\nu}G^{a\mu\nu} + \bar{\psi} \left( i \slashed{D} - m \right) \psi \; .
 \end{equation}
-Here repeated indices are summed, where $\mu$ and $\nu$ indicate spacetime indices and $a$, $b$, and $c$ indicate color indices.
+Here repeated indices are summed, where $\mu$ and $\nu$ indicate spacetime indices, $a$, $b$, and $c$ indicate color indices in the fundamental ($N=3$) representation, and $A$, $B$, and $C$ indicated color indices in the adjoint ($N=8$) representation.
+The slash notation refers to contraction with the gamma matrices $\{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu\nu}$\footnote{with Minkowski signature $(+---)$}.
 The covariant derivative
-\[ D_\mu \equiv \partial_\mu - i g A^a_\mu t^a\]
-where $A^a_\mu$ is the gluon field, $t^a$ are the generators of the $SU(3)$ gauge group, and $g$ is the coupling constant.
+\[ D_\mu \equiv \partial_\mu - i g A^C_\mu t^C\]
+where $A^C_\mu$ is the gluon field, $t^C$ are the generators of the $SU(3)$ gauge group, and $g$ is the coupling constant.
 The gluon field strength tensor is
-\[ G^a_{\mu\nu} \equiv \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g f^{abc} A^b_\mu A^c_\nu \]
+\[ G^A_{\mu\nu} \equiv \partial_\mu A^A_\nu - \partial_\nu A^A_\mu + g f^{ABC} A^B_\mu A^C_\nu \]
 with the $SU(3)$ structure constants defined such that
-\[ [t^a,t^b] = if^{abc}t^c \; .\]
+\[ [t^A,t^B] = if^{ABC}t^C \; \footnote{In the $SU(2)$ gauge group the adjoint representation is three-dimensional and the structure constants are given by the anti-symmetric Levi-Civita symbol $\epsilon^{ABC}$}.\]
 The quark fields are defined such that the mass matrix $m$ is diagonal:
 \[ \bar{\psi}m\psi = \sum_{q = u,d,s,\ldots} m_{q}\bar{q}q \]
 The quark masses $m_q$ are generated by the mechanism of spontaneous electro-weak symmetry breaking in which the Higgs field, coupling to fermions and electro-weak gauge bosons, acquires a nonzero vacuum expectation value.
-This procedure induces a breaking of chiral symmetry $SU(N_f) \times SU(N_f) \rarrow SU(N_f)$ in the massless Lagrangian. %% reword. original lagrangian has chiral symmetry, but vacuum does not.
+This procedure induces in the \qcd vacuum a breaking of the chiral symmetry $SU(N_f) \times SU(N_f) \rarrow SU(N_f)$ in the massless Lagrangian.
 
-The QCD Lagrangian has a symmetry under the gauge transformation defined as...
+%% The QCD Lagrangian has a symmetry under the gauge transformation defined as...
+The physical interaction vertices of \qcd are a 3-point quark-gluon vertex analogous to he \ac{QED} vertex, a 3-gluon vertex and a 4-gluon vertex.
+A scalar ghost field\footnote{which has a spin of 0 yet anti-commutes like a fermion} also couples to the gluon as is generally necessary in non-abelian gauge theories.
 
 \subsection{Running of the coupling constant} %% maybe doesn't deserve its own section
+\begin{figure}[t]
+  %% page 155 of particle review
+  \includegraphics{running_as.png}
+  \caption{Measurements of the strong coupling constant $\alpha_s$ as a function of the energy scale $Q$.}
+  \label{fig:running_coupling}
+\end{figure}
+
 \subsection{Color confinement}
 \subsection{Asymptotic freedom}
 
