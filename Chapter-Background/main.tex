@@ -105,6 +105,52 @@ The highly-nontrivial gluon self-interaction is a crucial ingredient in the rich
 
 
 \subsection{Running of the coupling constant} %% maybe doesn't deserve its own section
+
+As is the case in all quantum field theories, the calculation of higher-order (in $\alpha_s$) loop diagram integrals contain divergences.
+In many theories, including \qcd \cite{Gross:1973ju}, these infinities can be dealt with with a process called \emph{renormalization}.
+One description of renormalization is the introduction of an energy/momentum cutoff scale.
+Physical calculations cannot depend on any such scales, so amplitude calculations must be organized such that any dependence on the renormalization scale cancels in a physical result, which can be done order-by-order in perturbation theory.
+This process induces a scale-dependence of the coupling constant $\alpha_s$ on the arbitrary renormalization scale $\mu$.
+If the value of $\alpha_s$ is known at a particular $\mu = \mu_0$, its dependence on the scale can be determined by calculating the beta function
+\begin{equation}
+  \beta(\alpha_s) \equiv  \frac{\partial \alpha_s}{\partial \ln \mu^2}
+\end{equation}
+which to one loop is given by \cite{Gross:1973id}
+\begin{equation}
+  \beta(\alpha_s) = -\frac{\beta_1  \alpha_s^2}{4\pi}
+\end{equation}
+where
+\[
+\beta_1 = \frac{11 N_c - 2 N_f}{3}
+\]
+for $N_c$ colors and $N_f$ relevant quark flavors at the scale of the process.
+The solution is
+\begin{equation}
+  \alpha_s(\mu^2) = \frac{4\pi}{\beta_1 \ln\left(\mu^2 / \lqcd^2\right)}
+  \label{eq:running_as}
+\end{equation}
+where \lqcd is defined by a given value for $\alpha_s$ at a scale $\mu_0$
+\[
+\lqcd = \mu_0 \exp \left( -\frac{2\pi}{\beta_1 \alpha_s(\mu_0^2)} \right) \; .
+\]
+The above expression for \lqcd changes depending on the order of the perturbative expansion and the renormalization scheme, but the physical meaning of \lqcd is still apparent.
+It is the energy scale below which the strong coupling diverges, showing an explicit breakdown of perturbation theory.
+It is noteworthy that \qcd predicts the emergence of such a scale, even in the conformal\footnote{i.e. a scale-invariant lagrangian with massless quarks} theory.
+In experiments it turns out to have a value around
+\[
+\lqcd \approx 200 \MeV \;,
+\]
+but the precise value can differ by a factor of 2 or more depending on a number of technical details.
+
+A convenient choice for the renormalization scale $\mu$ in \Cref{eq:running_as} is to set $\mu^2 = Q^2$ for a physical process with momentum transfer $Q$.
+This choice introduces some theoretical and computational wrinkles but gives a simple and direct relationship to experimental data.
+Experimental values of the strong coupling constant are typically reported at the mass of the $Z$ boson, with a current world average value of
+\[
+\alpha_s(m_Z^2) = 0.1181 \pm 0.0011
+\]
+where $m_Z = 91.187 \GeV$.
+The running of the coupling is demonstrated by the summary of experimental measurements in \Cref{fig:running_coupling}.
+
 \begin{figure}[t]
   %% page 155 of particle review
   \includegraphics{running_as.png}
@@ -112,33 +158,10 @@ The highly-nontrivial gluon self-interaction is a crucial ingredient in the rich
   \label{fig:running_coupling}
 \end{figure}
 
-As is the case in all quantum field theories, the calculation of higher-order (in $\alpha_s$) loop diagram integrals contain divergences.
-In many theories, including \qcd \cite{Gross:1973ju}, these infinities can be dealt with with a process called \emph{renormalization}.
-One description of renormalization is the introduction of an energy/momentum cutoff scale.
-Physical calculations cannot depend on any such scales, so amplitude calculations must be organized such that any dependence on the renormalization scale cancels in a physical result, which can be done order-by-order in perturbation theory.
-This process induces a scale-dependence of the coupling constant $\alpha_s$ on the arbitrary renormalization scale $\mu$.
-If the value of $\alpha_s$ is known at a particular $\mu = \mu_0$, its dependence on the scale can be determined by calculating the beta-function
-\begin{equation}
-  \frac{\partial \alpha_s}{\partial \ln \mu^2} \equiv \beta(\alpha_s)
-\end{equation}
-which to one loop is given by \cite{Gross:1973id}
-\begin{equation}
-  \beta(\alpha_s) = -\frac{11 N_c - 2 N_f}{12\pi} \alpha_s^2
-\end{equation}
-for $N_c$ colors and $N_f$ quark flavors.
-The solution is
-\begin{equation}
-  \alpha_s(\mu) = \frac{12\pi}{\left(11N_c - 2N_f\right)\ln\left(\mu^2 / \lqcd^2\right)}
-\end{equation}
-where \lqcd is defined by a given value for $\alpha_s$ at a scale $\mu_0$
-\[
-\lqcd = \mu_0 \exp \left( -\frac{6\pi}{\left(11N_c - 2N_f\right)\alpha_s(\mu_0)} \right) \; .
-\]
-Written this way, the physical meaning of \lqcd becomes apparent: it is the energy scale below which the strong coupling diverges, showing an explicit breakdown of perturbation theory.
-
 \subsection{Color confinement}
-\subsection{Asymptotic freedom}
+\subsection{Asymptotic freedom} %% subsection of running coupling?
 asymptotic freedom explains Bjorken scaling
+
 \section{QCD at high temperatures: the quark-gluon plasma}
 \subsection{Experimental evidence for the existence of the QGP}
 \subsection{Equation of state from lattice calculations}
