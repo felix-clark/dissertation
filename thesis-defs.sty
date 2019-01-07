@@ -101,33 +101,6 @@ $\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
 
 \def\stvf{\ensuremath{\alpha_{\text{STVF}}}\xspace}
 
-\def \ptmis{$p^{\mathrm{miss}}_{\mathrm{T}}\;$}
-\def \ptsoft{$p^{\mathrm{soft}}_{\mathrm{T}}\;$}
-\def \ptmisSoft{$p^{\mathrm{miss}}_{\mathrm{T,soft}}\;$}
-\def \ptmisSoftL{$p^{\mathrm{miss}}_{\mathrm{T,soft,L}}\;$}
-\def \ptmisSoftP{$p^{\mathrm{miss}}_{\mathrm{T,soft,P}}\;$}
-\def \ptLep{$p^{\mathrm{Lep}}_{\mathrm{T}}\;$}
-\def \ptTrkHard{$p^{\mathrm{hard,trk}}_{\mathrm{T}}\;$}
-\def \sumpt{$\sum p_{\mathrm{T}}\;$}
-\def\phimiss{\ensuremath{\phi^{\text{miss}}}}
-\def \EtmisT{$E^{\mathrm{miss,\; track}}_{\mathrm{T}}\;$}
-\def \EtmisC{$E^{\mathrm{miss, \; calo}}_{\mathrm{T}}\;$}
-
-\def\metx{\ensuremath{E_{\text{x}}^{\text{miss}}}\xspace}
-\def\mety{\ensuremath{E_{\text{y}}^{\text{miss}}}\xspace}
-%% \def\metx{\ensuremath{E_{\mathrm x}^{\mathrm miss}}}
-%% \def\mety{\ensuremath{E_{\mathrm y}^{\mathrm miss}}}
-\def\metphi{\ensuremath{E_{\mathrm \phi}^{\mathrm miss}}}
-\def \ptZ{\ensuremath{p_{\mathrm{T}}^{Z}}}
-\def \ptW{\ensuremath{p_{\mathrm{T}}^{W}}}
-\def \ptZvec{\ensuremath{\mathbf{p}_{\mathrm{T}}^{Z}\xspace}}
-\def \ptmisparl{\ensuremath{p^{\mathrm{miss}}_{\mathrm{T,||}}\;}}
-\def \sumpt{\ensuremath{\Sigma p_{T}}\xspace}
-\def \sumetsoft{\ensuremath{\Sigma E_{T}^{\text{Soft Term}}}\xspace}
-\def \sumetevt{\ensuremath{\Sigma E_{T}}\xspace}
-\def \sumjetet{\ensuremath{\Sigma E_{T}^{\mathrm jets}}\xspace}
-\def \summuonet{\ensuremath{\Sigma E_{T}^{\mathrm \mu}}\xspace}
-\def \sumelecet{\ensuremath{\Sigma E_{T}^{\mathrm \text{e}}}\xspace}
 %% \def \dphi{$\Delta \phi\;$}
 \def \dET{$\Delta E_{T}\;$}
 \def\Npv{$N_{\mathrm{PV}}$}
@@ -140,10 +113,6 @@ $\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
 \def\ptvec{\ensuremath{\vec{\pt}}\xspace}
 \def\pthardvec{\ensuremath{\vec{p}_{\mathrm T}^\text{hard}}\xspace}
 \def\pthardhat{\ensuremath{\hat{\vec{p}}_{\mathrm T}^\text{hard}}\xspace}
-
-\newcommand{\WW}{\ensuremath{WW}\xspace}
-\newcommand{\jvf}{\ensuremath{\text{JVF}}}
-\newcommand{\absjvf}{\ensuremath{\lvert \text{JVF} \rvert}}
 
 \newcommand{\PYTHIASix}{\textsc{Pythia6}}
 \newcommand{\PYTHIAEight}{\textsc{Pythia8}}
@@ -170,26 +139,11 @@ $\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
 \newcommand{\bslash}{\ensuremath{\backslash}}
 \newcommand{\BibTeX}{{\sc Bib\TeX}}
 
-\newcommand{\figref}[1]{Figure~\ref{#1}}
-\newcommand{\figsref}[1]{Figures.~\ref{#1}}
-%\newcommand{\partref}[1]{part~\ref{#1}}
-\newcommand{\Secref}[1]{Section~\ref{#1}}
-\newcommand{\tabref}[1]{Table~\ref{#1}}
-
-% susy-specific variables
-\newcommand{\meff}{\ensuremath{m_{\mathrm{eff}}}} % This was an M, but all our other m's are in lower case and M_eff sticks out like a sore thumb.  So I've changed it to something more relaxing.
-\newcommand{\meffincl}{\ensuremath{m_{\mathrm{eff}}^{\mathrm{inc}}}}
-\newcommand{\meffexcl}{\ensuremath{m_{\mathrm{eff}}^{\mathrm{excl}}}}
-\newcommand{\mt}{\ensuremath{m_\mathrm{T}}}
-\newcommand{\mttwo}{\ensuremath{m_\mathrm{T2}}}
-\newcommand{\amttwo}{\ensuremath{m_\mathrm{T2}^{a}}}
-\newcommand{\mc}{\ensuremath{m_\mathrm{C}}}
-\newcommand{\mct}{\ensuremath{m_\mathrm{CT}}}
-
-\def\ptl{\ensuremath{p_{\mathrm{T}}^\ell}}
-\def\ptlone{\ensuremath{p_{\mathrm{T}}^{\ell_1}}}
-\def\ptltwo{\ensuremath{p_{\mathrm{T}}^{\ell_2}}}
-\def\ptj{\ensuremath{p_{\mathrm{T}}^{jet}}}
+%% \newcommand{\figref}[1]{Figure~\ref{#1}}
+%% \newcommand{\figsref}[1]{Figures.~\ref{#1}}
+%% %\newcommand{\partref}[1]{part~\ref{#1}}
+%% \newcommand{\Secref}[1]{Section~\ref{#1}}
+%% \newcommand{\tabref}[1]{Table~\ref{#1}}
 
 \def\lsim{\mathrel{\rlap{\lower4pt\hbox{\hskip1pt$\sim$}}
     \raise1pt\hbox{$<$}}}                % less than or approx. symbol
@@ -202,36 +156,21 @@ $\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
 %\renewcommand{\thesubfigure}{\alph{subfigure}}
 %\renewcommand{\@thesubfigure}{(\thesubfigure)}
 %\makeatother
-\newcommand{\alpgen}{\textsc{Alpgen}}
-\newcommand{\histfitter}{\textsc{HistFitter}}
 \newcommand{\powheg}{\textsc{Powheg}}
-\newcommand{\powhegbox}{\textsc{PowhegBox}}
-\newcommand{\prospino}{\textsc{Prospino}}
 \newcommand{\herwig}{\textsc{Herwig}}
 \newcommand{\pythia}{\textsc{Pythia}}
-\newcommand{\mcatnlo}{\textsc{Mc@Nlo}}
-\newcommand{\fewz}{\textsc{Fewz}}
-\newcommand{\mcfm}{\textsc{Mcfm}}
-\newcommand{\isajet}{\textsc{Isajet}}
 \newcommand{\madgraph}{\textsc{Madgraph}}
-\newcommand{\isasugra}{\textsc{Isasugra}}
-\newcommand{\isasusy}{\textsc{Isasusy}}
-\newcommand{\jimmy}{\textsc{Jimmy}}
 \newcommand{\sherpa}{\textsc{Sherpa}}
 \newcommand{\cteqVER}[1]{\textsc{CTEQ#1}}
 \newcommand{\mrstVER}[1]{\textsc{MRST#1}}
 \newcommand{\cteq}{\textsc{CTEQ6.6}}
-\newcommand{\mstw}{\textsc{Mstw2008}}
-\newcommand{\perugia}{{\textsc{Perugia2011C}}}
-\newcommand{\acermc}{{\textsc{AcerMC}}}
-\newcommand{\tauola}{{\tt Tauola}}
-
-%% \newcommand{\lumi}[2]{$#1 \times 10^{#2} \mathrm{cm}^{-2} \mathrm{s}^{-1}$}
 
 \def\mean#1{\left< #1 \right>}
 
 
 %% my additions
+
+\newcommand{\bigo}[1]{\ensuremath{\mathcal{O}\left( #1 \right)}\xspace}
 
 \newcommand{\MeVn}{\MeV/\textrm{n}}
 \newcommand{\GeVn}{\GeV/\textrm{n}}

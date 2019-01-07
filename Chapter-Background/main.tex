@@ -91,7 +91,7 @@ This procedure induces in the \qcd vacuum a breaking of the chiral symmetry $SU(
 \begin{figure}[t]
   %% page 155 of particle review
   \includegraphics{qcd_feynman.png}
-  \caption{Vertices in \qcd along with the corresponding Feynman rules for the amplitude factors. The strong coupling charge is written here as $e_s = \sqrt{4\pi\alpha_s}$, and the gauge parameter is denoted by $\lambda$. Figure from \Ref{\cite{Altarelli:2013tya}}.}
+  \caption{The propagators and vertices in \qcd along with the corresponding Feynman rules for the amplitude factors. The strong coupling charge is written here as $e_s = \sqrt{4\pi\alpha_s}$, and the gauge parameter is denoted by $\lambda$. Figure from \Ref{\cite{Altarelli:2013tya}}.}
   \label{fig:qcd_feynman}
 \end{figure}
 
@@ -104,7 +104,9 @@ In a classical theory, they prevent the principle of superposition from being ap
 The highly-nontrivial gluon self-interaction is a crucial ingredient in the richness of nuclear physics.
 
 
-\subsection{Running of the coupling constant} %% maybe doesn't deserve its own section
+\subsection{Running of the coupling constant} %% maybe doesn't deserve its own section, instead split into UV and IR?
+
+%% https://arxiv.org/pdf/1604.08082.pdf
 
 As is the case in all quantum field theories, the calculation of higher-order (in $\alpha_s$) loop diagram integrals contain divergences.
 In many theories, including \qcd \cite{Gross:1973ju}, these infinities can be dealt with with a process called \emph{renormalization}.
@@ -117,30 +119,31 @@ If the value of $\alpha_s$ is known at a particular $\mu = \mu_0$, its dependenc
 \end{equation}
 which to one loop is given by \cite{Gross:1973id}
 \begin{equation}
-  \beta(\alpha_s) = -\frac{\beta_1  \alpha_s^2}{4\pi}
+  \beta(\alpha_s) = -b_0 \alpha_s^2 + \bigo{\alpha_s^3}
 \end{equation}
 where
 \[
-\beta_1 = \frac{11 N_c - 2 N_f}{3}
+%% \beta_1 = \frac{11 N_c - 2 N_f}{3}
+b_0 = \frac{11 N_c - 2 N_f}{12\pi}
 \]
 for $N_c$ colors and $N_f$ relevant quark flavors at the scale of the process.
 The solution is
 \begin{equation}
-  \alpha_s(\mu^2) = \frac{4\pi}{\beta_1 \ln\left(\mu^2 / \lqcd^2\right)}
+  \alpha_s(\mu^2) = \frac{1}{b_0 \ln\left(\mu^2 / \lqcd^2\right)}
   \label{eq:running_as}
 \end{equation}
 where \lqcd is defined by a given value for $\alpha_s$ at a scale $\mu_0$
 \[
-\lqcd = \mu_0 \exp \left( -\frac{2\pi}{\beta_1 \alpha_s(\mu_0^2)} \right) \; .
+\lqcd = \mu_0 \exp \left( -\frac{1}{2 b_0 \alpha_s(\mu_0^2)} \right) \; .
 \]
 The above expression for \lqcd changes depending on the order of the perturbative expansion and the renormalization scheme, but the physical meaning of \lqcd is still apparent.
 It is the energy scale below which the strong coupling diverges, showing an explicit breakdown of perturbation theory.
 It is noteworthy that \qcd predicts the emergence of such a scale, even in the conformal\footnote{i.e. a scale-invariant lagrangian with massless quarks} theory.
-Experimentally it turns out to have a value around
+Practically the \qcd scale is often quoted around a value of %% at the 5-quark level, where \mu ~ m_Z
 \[
 \lqcd \approx 200 \MeV \;,
 \]
-but the precise value can differ by a factor of 2 or more depending on the exact application and interpretation.
+but the precise value can differ by a factor of 2 or more depending on arbitrary choices such as scheme, order, and gauge.
 
 A convenient choice for the renormalization scale $\mu$ in \Cref{eq:running_as} is to set $\mu^2 = Q^2$ for a physical process with momentum transfer $Q$.
 This choice introduces some theoretical and computational wrinkles but gives a simple and direct relationship to experimental data.
@@ -160,14 +163,28 @@ The running of the coupling is demonstrated by the summary of experimental measu
 
 \subsection{Asymptotic freedom}
 
-The strong coupling constant decreases with rising energy\footnote{In theory, many additional undiscovered quarks at higher energies could eventually cause $\alpha_s$ to increase again if there is ever a point where $N_f > 16$.} as shown in \Cref{eq:running_as} and \Cref{fig:running_coupling}.
-This phenomenon is known as \emph{asymptotic freedom} and is necessary to explain Bjorken scaling.
+The strong coupling constant decreases with rising energy as shown in \Cref{eq:running_as} and \Cref{fig:running_coupling}.
+This phenomenon is known as \emph{asymptotic freedom} and is necessary to explain Bjorken scaling, since without this feature the interaction between quarks bound in a hadron could not be approximately ignored in a \ac{DIS} process.
+It requires $b_0 > 0$, which for $N_c = 3$ \qcd is true so long as there is no scale at which additional quark fields become relevant such that $N_f > 16$.
+Physically this is understood as arising from the fact that the contributions to $\alpha_s$ from gluon loops dominate those from quark loops \cite{Wilczek:2005az}.
 
-An interesting note is that asymptotic freedom is not present in abelian gauge theories like \ac{QED}; there the screening of a bare electric charge makes the effective charge decrease at large distances, so the effective electric charge increases with higher energy.
+Asymptotic freedom is not present in abelian gauge theories like \ac{QED}, where the screening of a bare electric charge causes the effective charge to decrease at large distances, or equivalently the effective electric charge increases at higher energy.
+In \qcd the color field reinforces itself to induce an even stronger field, so the effective field strength does not decrease with increasing separation.
+
+The phenomenology of jets relies heavily on asymptotic freedom.
+In high energy hadronic and nuclear collisions, partons from each participant nucleon scatter with large momentum transfer.
+Because the effective $\alpha_s$ is small, the product quarks and gluons are ejected with large transverse momentum and are not strongly coupled to other partons in the collision.
+The decay products of these high-energy partons are produced in a \emph{parton shower} and generate clumps of final-state particles.
 
 \subsection{Color confinement}
 
+The feature of \qcd known as \emph{color confinement} is complementary to asymptotic freedom.
+
 \section{QCD at high temperatures: the quark-gluon plasma}
+ gylassy: 1985 eta/s \cite{Danielewicz:1984ww}
+ eta/s from ADS/CFT \cite{Kovtun:2004de}
+ romatchke: non-equilibrium hydro \cite{Romatschke:2016hle,Romatschke:2017vte} (review: arxiv:1712.05815)
+ 
 \subsection{Experimental evidence for the existence of the QGP}
 \subsection{Equation of state from lattice calculations}
 \subsection{AdS-CFT correspondence}
@@ -178,6 +195,7 @@ low viscosity: large cross-section, low mfp
 \subsection{Fourier decomposition of particle production}
 \subsection{Success of hydrodynamics}
 \subsection{Flow in small systems}
+ review of small-systems hydro: \cite{Nagle:2018nvi}
 
 \section{Jet production and fragmentation}
 Though the focus of this thesis is not on the physics of jet fragmentation, control of hard processes is essential to correctly extract observable quantities of interest.
