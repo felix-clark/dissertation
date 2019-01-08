@@ -41,7 +41,7 @@ F_2 \left(x, Q^2\right) = x \sum_q e_q^2 f_{q/p}(x)
 \end{equation}
 to lowest order in the strong coupling constant $\alpha_s$.
 The independence of $Q^2$ of the \acp{PDF} is a manifestation of their point-like description in the parton model and is known as \emph{Bjorken scaling}.
-Logarithmic corrections are understood theoretically and come from as gluon radiation from the quarks becomes relevant, particularly at small $x$ (\Cref{fig:proton_f2}).
+Logarithmic corrections are understood theoretically and arise as gluon radiation from the quarks becomes relevant, particularly at small $x$ (\Cref{fig:proton_f2}).
 
 \begin{figure}[t]
   %% page 326 of particle review
@@ -65,7 +65,7 @@ have been made to determine the number of colors, showing very good agreement wi
 Though the non-abelian character of \qcd makes many practical calculations difficult, it has shown remarkable success in describing the strong interaction, as will be discussed in the remainder of this section.
 
 \subsection{The QCD Lagrangian}
-The gauge-invariant lagrangian density of \qcd \cite{Wilczek:2000ih} is given by
+The gauge-invariant lagrangian density of \qcd \cite{Wilczek:2000ih} is that of an $N_c=3$ Yang-Mills theory given by
 \begin{equation}
   \Lagr_\mathrm{QCD} \equiv -\frac{1}{4} G^a_{\mu\nu}G^{a\mu\nu} + \bar{\psi} \left( i \slashed{D} - m \right) \psi \; .
 \end{equation}
@@ -108,7 +108,7 @@ The highly-nontrivial gluon self-interaction is a crucial ingredient in the rich
 
 %% https://arxiv.org/pdf/1604.08082.pdf
 
-As is the case in all quantum field theories, the calculation of higher-order (in $\alpha_s$) loop diagram integrals contain divergences.
+As is the case in all quantum field theories, the naive calculation of higher-order (in $\alpha_s$) loop diagram integrals contain divergences in the amplitudes.
 In many theories, including \qcd \cite{Gross:1973ju}, these infinities can be dealt with with a process called \emph{renormalization}.
 One description of renormalization is the introduction of an energy/momentum cutoff scale.
 Physical calculations cannot depend on any such scales, so amplitude calculations must be organized such that any dependence on the renormalization scale cancels in a physical result, which can be done order-by-order in perturbation theory.
@@ -174,22 +174,74 @@ In \qcd the color field reinforces itself to induce an even stronger field, so t
 The phenomenology of jets relies heavily on asymptotic freedom.
 In high energy hadronic and nuclear collisions, partons from each participant nucleon scatter with large momentum transfer.
 Because the effective $\alpha_s$ is small, the product quarks and gluons are ejected with large transverse momentum and are not strongly coupled to other partons in the collision.
-The decay products of these high-energy partons are produced in a \emph{parton shower} and generate clumps of final-state particles.
+The stronger coupling at low $Q^2$ also means that the \qcd radiation is emitted at small relative momentum from the hard parton.
+Thus the decay products of these high-energy partons are produced in a \emph{parton shower} and generate clumps of final-state particles known as jets.
 
 \subsection{Color confinement}
 
-The feature of \qcd known as \emph{color confinement} is complementary to asymptotic freedom.
+In order to be trusted as a fundamental theory of nuclear interactions, \qcd must provide an understanding of the lack of experimental observation of free quarks or gluons.
+Indeed the infrared divergence of $\alpha_s(Q^2)$ suggests that there is some nontrivial behavior as the separation between two colored particles is increased.
+Predictions from \qcd in this region cannot be investigated using perturbation theory, since the rapidly rising coupling constant precludes the convergence of any diagram expansion.
+The modern numerical approach of \emph{lattice \qcd} \cite{Aoki:2016frl} is successful at reproducing a number of experimental measurements such as the light hadron mass spectrum \cite{Durr:2008zz}.
+Lattice \qcd introduces a discrete grid spacing $a$ along both spatial and temporal dimensions, which acts as a regularization parameter.
+An extrapolation of vanish grid spacing $a \rightarrow 0$ is performed in order to recover the continuous theory of \qcd.
+
+\begin{figure}[t]
+  \includegraphics{ccbar_potential.png}
+  \caption{Charmonium ($c\bar{c}$) potential from a combination of perturbative \qcd (small $r$) and lattice \qcd (large $r$). Figure from \Ref{\cite{Laschka:2011zr}}.}
+  \label{fig:charmonium_potential}
+\end{figure}
+
+The heavy quark-antiquark potential can be computed on the lattice, as shown in \Cref{fig:charmonium_potential}.
+The charmonium lattice QCD potential with three light quarks and charm-quark mass effects is well-described to the 4-loop level by the parameterization \cite{Laschka:2011zr}
+\begin{equation}
+V_{c\bar{c}}(r) = - \frac{A}{r} + \sigma r
+\end{equation}
+with $A = 0.160 \pm 0.004 \GeV\,\fm$ and $\sigma = 0.79 \pm 0.03 \GeV/\fm$ (\Cref{fig:charmonium_potential}).
+The first term has the same form as an attractive Coulomb potential, albeit with a coupling constant about 2 orders of magnitude larger than the \ac{EM} coupling\footnote{where $\alpha_\textrm{EM} \hbar c \approx 0.00144 \GeV\,\fm$}.
+The latter term resembles the potential from the force by a string of constant tension $\sigma$, which invokes a description by color ``flux tubes'' between the two quarks of constant energy per length.
+This ``string'' term increases without bound at large separations, so a quark-antiquark pair cannot be separated with a finite amount of energy.
+At some point it becomes more energetically favorable to produce a quark-antiquark pair out of the vacuum than to maintain a long flux tube (\Cref{fig:qqbar_flux}).
+This property is responsible for the phenomenon of \emph{confinement}, which is the absence in nature of bare color charges.
+
+\begin{figure}[t]
+  \includegraphics{qqbar_flux.png}
+  \caption{The color flux tube between a quark-antiquark pair and the breaking of the flux tube into a new $q\bar{q}$ pair from the vacuum.}
+  \label{fig:qqbar_flux}
+\end{figure}
+
 
 \section{QCD at high temperatures: the quark-gluon plasma}
+%% phase diagram figure ?
  gylassy: 1985 eta/s \cite{Danielewicz:1984ww}
- eta/s from ADS/CFT \cite{Kovtun:2004de}
  romatchke: non-equilibrium hydro \cite{Romatschke:2016hle,Romatschke:2017vte} (review: arxiv:1712.05815)
  
 \subsection{Experimental evidence for the existence of the QGP}
 \subsection{Equation of state from lattice calculations}
+\cite{Aoki:2016frl} %% low-energy latice results; best as general latice reference probably
+\cite{Huovinen:2009yb} %% QCD equation of state and hadron resonance gas
+\cite{Borsanyi:2013bia,Bazavov:2014pvz} %% full QCD equation of state. the latter one is slightly more recent and has many good plots including static potential (no 1/m corrections?)
+%% TODO: possibly replace some of these eos plots with Bazavov:2014pvz plots
+
+\begin{figure}[t]
+  \includegraphics{lattice_ta.png}
+  \caption{The trace anomaly from lattice QCD as a function of the temperature for a variety of lattice spacings. The continuum limit with systematic uncertainties is shown by the shaded green band. Figure from \Ref{\cite{Borsanyi:2013bia}}.}
+  \label{fig:lattice_ta}
+\end{figure}
+
+\begin{figure}[t]
+  \includegraphics[width=\linewidth]{lattice_eos.png}
+  \caption{Lattice continuum extrapolated results for pressure $p$ (left) and entropy $s$ and energy density $\varepsilon$ (right). The hadron resonance gas prediction for the pressure is shown at low temperatures by the dashed line, and the hard thermal loop results to NNLO at three renormalization scales are shown at high temperatures by the dash-dotted line. The Stefan-Boltzmann limit of each quantity is indicated by the arrows. Figure from \Ref{\cite{Borsanyi:2013bia}}.}
+  \label{fig:lattice_eos}
+\end{figure}
+
+
 \subsection{AdS-CFT correspondence}
+\cite{Maldacena:1997re} %% original AdS/CFT paper
+eta/s from ADS/CFT \cite{Kovtun:2004de}
 
 \section{Hydrodynamic description of heavy ion collisions}
+\subsection{Relativistic hydrodynamics}
 \subsection{Applicability of hydrodynamics}
 low viscosity: large cross-section, low mfp
 \subsection{Fourier decomposition of particle production}
@@ -197,15 +249,14 @@ low viscosity: large cross-section, low mfp
 \subsection{Flow in small systems}
  review of small-systems hydro: \cite{Nagle:2018nvi}
 
-\section{Jet production and fragmentation}
-Though the focus of this thesis is not on the physics of jet fragmentation, control of hard processes is essential to correctly extract observable quantities of interest.
-This section will describe the physics behind jets.
-
-TODO: Some of this discussion may be better moved elsewhere; for instance, nuclear modification may be appropriate in ``evidence for QGP''
-\subsection{Parton model}
-lorentz contraction in infinite momentum frame, transverse freeze-out, factorization
-\subsection{Fragmentation function}
-\subsection{Nuclear modification}
+%% \section{Jet production and fragmentation} %% not the higher priority for us
+%% Though the focus of this thesis is not on the physics of jet fragmentation, control of hard processes is essential to correctly extract observable quantities of interest.
+%% This section will describe the physics behind jets.
+%% TODO: Some of this discussion may be better moved elsewhere; for instance, nuclear modification may be appropriate in ``evidence for QGP''
+%% \subsection{Parton model}
+%% lorentz contraction in infinite momentum frame, transverse freeze-out, factorization
+%% \subsection{Fragmentation function}
+%% \subsection{Nuclear modification}
 
 
 \section{Femtoscopy in heavy ion collisions}
