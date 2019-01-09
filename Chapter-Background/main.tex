@@ -182,8 +182,8 @@ Thus the decay products of these high-energy partons are produced in a \emph{par
 In order to be trusted as a fundamental theory of nuclear interactions, \qcd must provide an understanding of the lack of experimental observation of free quarks or gluons.
 Indeed the infrared divergence of $\alpha_s(Q^2)$ suggests that there is some nontrivial behavior as the separation between two colored particles is increased.
 Predictions from \qcd in this region cannot be investigated using perturbation theory, since the rapidly rising coupling constant precludes the convergence of any diagram expansion.
-The modern numerical approach of \emph{lattice \qcd} \cite{Aoki:2016frl} is successful at reproducing a number of experimental measurements such as the light hadron mass spectrum \cite{Durr:2008zz}.
-Lattice \qcd introduces a discrete grid spacing $a$ along both spatial and temporal dimensions, which acts as a regularization parameter.
+The numerical approach of \emph{lattice gauge theory} \cite{Aoki:2016frl} is successful at reproducing a number of experimental measurements such as the light hadron mass spectrum \cite{Durr:2008zz}.
+Lattice gauge theory introduces a discrete grid spacing $a$ along both spatial and temporal dimensions, which acts as a regularization parameter.
 An extrapolation of vanish grid spacing $a \rightarrow 0$ is performed in order to recover the continuous theory of \qcd.
 
 \begin{figure}[t]
@@ -211,52 +211,130 @@ This property is responsible for the phenomenon of \emph{confinement}, which is 
 \end{figure}
 
 
-\section{QCD at high temperatures: the quark-gluon plasma}
+\section{QCD at high temperatures}
 
 Given the observed properties of asymptotic freedom and color confinement, a natural question is whether nuclear matter has a phase transition at large density and/or temperature.
 In a system with a low number of quarks, the color connection keeps each bound tightly to others.
 At high densities, however, individual flux tubes are not discernible, and individual color charges are easily balanced by nearby color sources.
 Such a state could exhibit deconfinement, with color charge free to move as electric charge does in a conventional plasma.
 This \qgp is expected to have different properties than hadronic matter.
-%% phase diagram figure ?
+
+\begin{figure}[t]
+  %% https://homepages.uni-regensburg.de/~sow28704/ftd_lqcd_ss2012/ftd_lqcd_ss2012.html
+  \includegraphics{qcd_phase.jpg}
+  \caption{A conjectured phase diagram for QCD matter. The transition from hadronic matter to QGP at low baryon density is a smooth crossover. A critical point is hypothesized but not established.}
+  \label{fig:qcd_phase}
+\end{figure}
 
 Dimensional analysis suggests that the critical temperature $T_c$ (at zero chemical potential) should be close to the only possibly relevant scale
 \[
 T_c \sim \lqcd \sim 10^{12}~\mathrm{K}\; .
 \]
- 
-\subsection{Experimental evidence for the existence of the QGP}
-\subsection{Equation of state from lattice calculations}
-\cite{Aoki:2016frl} %% low-energy latice results; best as general latice reference probably
-\cite{Huovinen:2009yb} %% QCD equation of state and hadron resonance gas
-\cite{Borsanyi:2013bia,Bazavov:2014pvz} %% full QCD equation of state. the latter one is slightly more recent and has many good plots including static potential (no 1/m corrections?)
-%% TODO: possibly replace some of these eos plots with Bazavov:2014pvz plots
+\Cref{fig:qcd_phase} shows a conjectured phase diagram for \qcd matter.
+The transition between hadronic matter and the QGP is a smooth crossover at low baryon density \cite{Aoki:2006we}.
+Above some critical baryon density the transition is hypothesized to be first-order based on a number of model approaches, but this has not been established.
 
-\begin{figure}[t]
-  \includegraphics{lattice_ta.png}
-  \caption{The trace anomaly from lattice QCD as a function of the temperature for a variety of lattice spacings. The continuum limit with systematic uncertainties is shown by the shaded green band. Figure from \Ref{\cite{Borsanyi:2013bia}}.}
-  \label{fig:lattice_ta}
-\end{figure}
+\subsection{Equation of state from lattice calculations}
+
+%% the latter HotQCD ref is slightly more recent and has many good plots including static potential (no 1/m corrections?)
+Thermodynamic quantities can be computed in lattice \qcd at small chemical potential \cite{Borsanyi:2013bia,Bazavov:2014pvz}.
+The results are clearly distinct from the \ac{HRG} model \cite{Huovinen:2009yb}, indicating that deconfinement is a fundamental property of the transition.
+The trace anomaly $T_\mu^\mu = \varepsilon - 3 p$, where $\varepsilon$ is the energy density and $p$ is the pressure, is computed in lattice calculations as a function of temperature.
+It vanishes in a conformal theory, so the appearance of a significant trace anomaly with a peak around $200 \MeV$ suggests the emergence of a scale-dependence.
+The pressure is related to the derivative of the trace anomaly up to factors of the temperature.
+From there, the remaining combinations of thermodynamic quantities such as $\varepsilon(T)$ and the entropy density $s = \frac{\varepsilon + p}{T}$ are determined  (\Cref{fig:lattice_eos}).
+A smooth crossover is observed, with a critical temperature of \( T_c = 170 \pm 4 \MeV \) \cite{Aoki:2009sc}, which is indeed close to \lqcd as predicted by dimensional analysis.
+Above the critical temperature, clear deviations are shown from the predictions of the \ac{HRG} model.
 
 \begin{figure}[t]
   \includegraphics[width=\linewidth]{lattice_eos.png}
-  \caption{Lattice continuum extrapolated results for pressure $p$ (left) and entropy $s$ and energy density $\varepsilon$ (right). The hadron resonance gas prediction for the pressure is shown at low temperatures by the dashed line, and the hard thermal loop results to NNLO at three renormalization scales are shown at high temperatures by the dash-dotted line. The Stefan-Boltzmann limit of each quantity is indicated by the arrows. Figure from \Ref{\cite{Borsanyi:2013bia}}.}
+  \caption{The trace anomaly for several values of lattice spacing $N_\tau = 1/aT$ and the continuum extrapolation (left), and thermodynamic quantities in the continuum limit (right), both shown as a function of temperature. The solid lines show the predictions from the HRG model, and the Stefan-Boltzmann limit at $95\pi^2/60$ is shown by the straight dashed line. Figure from \Ref{\cite{Bazavov:2014pvz}}.}
   \label{fig:lattice_eos}
 \end{figure}
 
+%% The Stefan-Boltzmann limit of \(\varepsilon = \frac{g \pi^2 T^4}{30}\) where g is a degeneracy factor is not reached in lattice calculations.
 
-\subsection{AdS-CFT correspondence}
+\subsection{Experimental evidence for the existence of the QGP}
+glauber model: this shouldn't go here per se: \cite{Miller:2007ri} %%  glauber model in HI. where does this go?
+separate section on HI collisions? with p+Pb maybe not so necessary
+
+
+\section{Hydrodynamic description of heavy ion collisions}
+
+\subsection{Relativistic fluid dynamics}
+
+%% Poincar\'e instead of Lorentz?
+Under the constraints of Lorentz symmetry and neglecting fluctuations, the stress-energy tensor of a perfect fluid described by flow four-velocity $u^\mu(x^\nu)$ is
+\begin{equation}
+%% T^{\mu\nu} = \left( \varepsilon + p \right) u^\mu u^\nu - p g^{\mu\nu} %% metric term has opposite sign for time-positive metric
+T^{\mu\nu}_{(0)} = \varepsilon u^\mu u^\nu + p \Delta^{\mu\nu}
+\end{equation}
+where $\varepsilon$ and $p(\varepsilon)$ are respectively the energy density and pressure in the local rest frame and \( \Delta^{\mu\nu} \equiv -g^{\mu\nu} + u^\mu u^\nu \) is the space-like projection operator\footnote{The four-velocity $u^\mu$ is itself the time-like projection operator.}.
+In the absence of sources there are four conserved quantities corresponding to energy and three components of momentum.
+\begin{equation}
+  \label{eq:em_cons}
+  \nabla_\mu T^{\mu\nu} = 0
+\end{equation}
+Projecting this equation into time and space components yields the relativistic Euler equations
+\begin{align}
+  D\varepsilon + \left(\varepsilon + p\right)\nabla^\perp_\mu u^\mu &= 0 \\
+  \left(\varepsilon + p\right)Du^\mu + c_s^2 \nabla_\perp^\mu \varepsilon &= 0 
+\end{align}
+where \(D \equiv u^\mu \nabla_\mu\) is the co-moving time-like derivative, \( \nabla_\perp^\mu \equiv \Delta^{\mu\nu} \nabla_\nu \) is the co-moving space-like derivative, and \(c_s(\varepsilon) \equiv \sqrt{\frac{\partial p}{\partial \varepsilon}} \) can be identified with the speed of sound.
+
+The assumption of perfect fluidity can be relaxed by adding the terms
+\begin{equation}
+T^{\mu\nu} = T^{\mu\nu}_{(0)} + \pi^{\mu\nu} + \Delta^{\mu\nu}\Pi
+\end{equation}
+where $\pi^{\mu\nu}$ and $\Pi$ are the shear stress and bulk stress and split the corrections into a traceless and trace part respectively.
+To first order in gradients of $u^\mu$ and $\varepsilon$,
+\begin{align}
+  \label{eq:shear_stress}
+  \pi^{\mu\nu} &= - \eta \sigma^{\mu\nu} \\
+  \label{eq:bulk_stress}
+  \Pi          &= - \zeta \nabla^\perp_\mu u^\mu
+\end{align}
+with
+\begin{equation}
+  \label{eq:sigma_tensor}
+  \sigma^{\mu\nu} \equiv \nabla_\perp^\mu u^\nu + \nabla_\perp^\nu u^\mu - \frac{2}{3} \Delta^{\mu\nu}\nabla^\perp_\alpha u^\alpha \; ,
+\end{equation}
+, and $\eta$ and $\zeta$ are the first order \emph{transport coefficients} and are called respectively the shear viscosity and bulk viscosity.
+Applying energy-momentum conservation (\Cref{eq:em_cons}) with these 1st-order corrections yields the relativistic Navier-Stokes equations, but these equations violate causality by instantaneously propagating gradients to viscous stresses.
+This causes instabilities in the solutions to these equations.
+Causality can be recovered by expanding to second-order in the gradients \cite{Israel:1976tn} at the cost of introducing 15 second-order transport coefficients, four of which vanish in flat spacetime.
+State-of-the-art simulations of the \qgp rely on second-order relativistic hydrodynamics \cite{Israel:1979wp}.
+
+\subsection{Applicability of hydrodynamics}
+%% low viscosity: large cross-section, low mfp
+
+In order for hydrodynamics to be capable of a valid description, additional terms in the expansion of $T^{\mu\nu}$ must be small compared to existing terms.
+The magnitude of the $\sigma^{\mu\nu}$ gradients in \Cref{eq:sigma_tensor} can be estimated by the inverse system size $L^{-1}$.
+The 1st-order term must be small compared to the 0th-order term, so a condition for the validity of hydrodynamics is
+\begin{equation}
+  \frac{\eta}{(\varepsilon + p)L} = \frac{\lambda_\textrm{mfp}}{L} \ll 1
+\end{equation}
+where $\lambda_\textrm{mfp}$ is the mean free path. %% eta/(ep+p) from arxiv:1712.05815 \cite{Romatschke:2017ejr} pg. 28
+This condition is often expressed in terms of the Knudsen number, defined as $\textrm{Kn} \equiv \frac{\lambda_\textrm{mfp}}{L}$.
+
+The series produced in the hydrodynamic gradient expansion is not convergent \cite{Denicol:2016bjh}.
+This is because the number of terms grows like the factorial of the order of the expansion, and there is no lucky magic that exponentially suppresses the magnitude of the transport coefficients.
+The Knudsen number in heavy ion simulations is not typically orders of magnitudes below unity \cite{Niemi:2014wta}; however, low-order viscous hydrodynamics has had ``unreasonable success'' at describing many global properties of heavy ion collisions.
+
+Recent work has shown that the hydrodynamic expansion can be Borel-resummed \cite{Romatschke:2016hle,Romatschke:2017vte}, a method that produces an analytic continuation of the series.
+The stress-energy tensor is split into a hydrodynamic attractor and a non-hydrodynamic component, with the cost that the transport coefficients become explicit functions of $\varepsilon$ and the gradients of $\varepsilon$ and $u^\mu$.
+The condition for the applicability of hydrodynamics is weakened to the statement that the non-hydro modes are negligible.
+It appears in many examples that the non-hydro modes decrease exponentially quickly, which potentially explains the ``unreasonable success'' of viscous hydrodynamics.
+This also helps to explain the observations of some hydro-like phenomena in \pPb and even \pp collisions, where the small system size results in Knudsen numbers that are often greater than unity.
+
+
+\subsection{Viscosity of the QGP and the AdS-CFT correspondence}
+gylassy: 1985 eta/s \cite{Danielewicz:1984ww} %% from uncertainty principle
+
 \cite{Maldacena:1997re} %% original AdS/CFT paper
 eta/s from ADS/CFT \cite{Kovtun:2004de}
 
-\section{Hydrodynamic description of heavy ion collisions}
- gylassy: 1985 eta/s \cite{Danielewicz:1984ww} %% elsewhere?
- romatchke: non-equilibrium hydro \cite{Romatschke:2016hle,Romatschke:2017vte} (review: arxiv:1712.05815)
-
-\subsection{Relativistic hydrodynamics}
-\subsection{Applicability of hydrodynamics}
-low viscosity: large cross-section, low mfp
-\subsection{Fourier decomposition of particle production}
+%% \subsection{Fourier decomposition of particle production}
 \subsection{Success of hydrodynamics}
 \subsection{Flow in small systems}
  review of small-systems hydro: \cite{Nagle:2018nvi}
