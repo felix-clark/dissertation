@@ -299,7 +299,7 @@ with
   \label{eq:sigma_tensor}
   \sigma^{\mu\nu} \equiv \nabla_\perp^\mu u^\nu + \nabla_\perp^\nu u^\mu - \frac{2}{3} \Delta^{\mu\nu}\nabla^\perp_\alpha u^\alpha \; ,
 \end{equation}
-, and $\eta$ and $\zeta$ are the first order \emph{transport coefficients} and are called respectively the shear viscosity and bulk viscosity.
+and $\eta$ and $\zeta$ are the first order \emph{transport coefficients} and are called respectively the shear viscosity and bulk viscosity.
 Applying energy-momentum conservation (\Cref{eq:em_cons}) with these 1st-order corrections yields the relativistic Navier-Stokes equations, but these equations violate causality by instantaneously propagating gradients to viscous stresses.
 This causes instabilities in the solutions to these equations.
 Causality can be recovered by expanding to second-order in the gradients \cite{Israel:1976tn} at the cost of introducing 15 second-order transport coefficients, four of which vanish in flat spacetime.
@@ -310,12 +310,14 @@ State-of-the-art simulations of the \qgp rely on second-order relativistic hydro
 
 In order for hydrodynamics to be capable of a valid description, additional terms in the expansion of $T^{\mu\nu}$ must be small compared to existing terms.
 The magnitude of the $\sigma^{\mu\nu}$ gradients in \Cref{eq:sigma_tensor} can be estimated by the inverse system size $L^{-1}$.
-The 1st-order term must be small compared to the 0th-order term, so a condition for the validity of hydrodynamics is
+The 1st-order term must be small compared to the 0th-order term, so a condition for the validity of hydrodynamics is %% eta/(ep+p) from arxiv:1712.05815 \cite{Romatschke:2017ejr} pg. 28
 \begin{equation}
-  \frac{\eta}{(\varepsilon + p)L} = \frac{\lambda_\textrm{mfp}}{L} \ll 1
+  \frac{\eta}{(\varepsilon + p)L} \ll 1 \;.
 \end{equation}
-where $\lambda_\textrm{mfp}$ is the mean free path. %% eta/(ep+p) from arxiv:1712.05815 \cite{Romatschke:2017ejr} pg. 28
-This condition is often expressed in terms of the Knudsen number, defined as $\textrm{Kn} \equiv \frac{\lambda_\textrm{mfp}}{L}$.
+With the approximation that the mean free path is \(\lambda_\textrm{mfp} = \frac{\eta}{\varepsilon + p} \), the condition is expressed in terms of the Knudsen number
+\begin{equation}
+  \mathrm{Kn} \equiv \frac{\lambda_\textrm{mfp}}{L} \ll 1 \;.
+\end{equation}
 
 The series produced in the hydrodynamic gradient expansion is not convergent \cite{Denicol:2016bjh}.
 This is because the number of terms grows like the factorial of the order of the expansion, and there is no lucky magic that exponentially suppresses the magnitude of the transport coefficients.
@@ -328,10 +330,14 @@ It appears in many examples that the non-hydro modes decrease exponentially quic
 This also helps to explain the observations of some hydro-like phenomena in \pPb and even \pp collisions, where the small system size results in Knudsen numbers that are often greater than unity.
 
 
-\subsection{Viscosity of the QGP and the AdS-CFT correspondence}
+\subsection{Viscosity of the QGP and the AdS/CFT correspondence}
+
+first discuss calculation of transport coefficients from ``first principles'', possibly show result from kinetic theory?
 gylassy: 1985 eta/s \cite{Danielewicz:1984ww} %% from uncertainty principle
 
-\cite{Maldacena:1997re} %% original AdS/CFT paper
+One of the most influential theoretical developments of the past few decades is the conjectured relationship between quantum gravity in an \ac{AdS} space and a strongly-coupled \ac{CFT} \cite{Maldacena:1997re}.
+This so-called \emph{\ac{AdS}/\ac{CFT} correspondence} allows calculations in a non-perturbative \ac{CFT} to be replaced by an associated calculation in weakly-coupled gravity.
+
 eta/s from ADS/CFT \cite{Kovtun:2004de}
 
 %% \subsection{Fourier decomposition of particle production}
