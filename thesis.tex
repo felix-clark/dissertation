@@ -9,13 +9,14 @@
 \newcommand*{\ATLASLATEXPATH}{latex/}
 %-------------------------------------------------------------------------------
 %\documentclass[UKenglish,texlive=2011]{\ATLASLATEXPATH atlasdoc}
-\documentclass[letterpaper,12pt,oneside,texlive=2015]{memoir} %The memoir class is great for longer works that use separate chapters. The Dissertation Office recommends 10-pt Arial or 12-pt Times New Roman. I use 12-pt for readability.
+\documentclass[letterpaper,12pt,oneside,texlive=2018]{memoir} %The memoir class is great for longer works that use separate chapters. The Dissertation Office recommends 10-pt Arial or 12-pt Times New Roman. I use 12-pt for readability.
 \usepackage[american]{babel} %Enables hyphenation and date formats according to American conventions. Change "american" to "british" (or another value) if you work outside the US.
 \hyphenpenalty=750
 \interfootnotelinepenalty=10000
 
 \renewcommand\cftappendixname{\appendixname~}
 \usepackage{todonotes}
+\usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{slashed}
 \usepackage{braket}
@@ -177,12 +178,12 @@
 \expandafter\def\expandafter\quote\expandafter{\quote\SingleSpace} %Keep all block quotes single-spaced regardless of body text spacing.
 \pagestyle{plain} %Put page numbers at the bottom-center for the whole dissertation. Columbia's dissertation office requires that the numbers appear at this location on the page throughout the document.
 
-\newcommand{\thesisTitle}{Femtoscopic signatures of hydrodynamics in central proton-lead collisions at $\sqrt{s_\mathrm{NN}} = 5.02~\TeV$ with the ATLAS detector at the Large Hadron Collider}
-\newcommand{\myName}{Michael R. Clark}
+\newcommand{\thesisTitle}{Femtoscopic signatures of small QGP droplets in proton-lead collisions at the Large Hadron Collider with the ATLAS detector} %%  at $\sqrt{s_\mathrm{NN}} = 5.02~\TeV$ %% energy necessary?
+\newcommand{\myName}{Michael (Felix) Clark}
 \newcommand{\abstractText}{
 abstract text here
 }
-\newcommand{\yearText}{2018}
+\newcommand{\yearText}{2019}
 %The section that follows renders the "Cover pages and Abstract" part of your dissertation.
 
 %We need to define a customized command to render Columbia's required title page

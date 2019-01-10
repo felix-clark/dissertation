@@ -210,6 +210,7 @@ This property is responsible for the phenomenon of \emph{confinement}, which is 
   \label{fig:qqbar_flux}
 \end{figure}
 
+%% TODO: possible sections to add (time permitting): high-temp thermal field theory, detail on lattice gauge theory
 
 \section{QCD at high temperatures}
 
@@ -255,6 +256,8 @@ Above the critical temperature, clear deviations are shown from the predictions 
 \end{figure}
 
 %% The Stefan-Boltzmann limit of \(\varepsilon = \frac{g \pi^2 T^4}{30}\) where g is a degeneracy factor is not reached in lattice calculations.
+The large step in the ratios $\varepsilon/T^4$ and $s/T^3$ around the critical temperature is an indication of an increase in the effective number of degrees of freedom in \qcd matter.
+This is interpreted as clear evidence for a phase transition.
 
 \subsection{Experimental evidence for the existence of the QGP}
 glauber model: this shouldn't go here per se: \cite{Miller:2007ri} %%  glauber model in HI. where does this go?
@@ -269,9 +272,9 @@ separate section on HI collisions? with p+Pb maybe not so necessary
 Under the constraints of Lorentz symmetry and neglecting fluctuations, the stress-energy tensor of a perfect fluid described by flow four-velocity $u^\mu(x^\nu)$ is
 \begin{equation}
 %% T^{\mu\nu} = \left( \varepsilon + p \right) u^\mu u^\nu - p g^{\mu\nu} %% metric term has opposite sign for time-positive metric
-T^{\mu\nu}_{(0)} = \varepsilon u^\mu u^\nu + p \Delta^{\mu\nu}
+T^{\mu\nu}_{(0)} = \varepsilon u^\mu u^\nu - p \Delta^{\mu\nu}
 \end{equation}
-where $\varepsilon$ and $p(\varepsilon)$ are respectively the energy density and pressure in the local rest frame and \( \Delta^{\mu\nu} \equiv -g^{\mu\nu} + u^\mu u^\nu \) is the space-like projection operator\footnote{The four-velocity $u^\mu$ is itself the time-like projection operator.}.
+where $\varepsilon$ and $p(\varepsilon)$ are respectively the energy density and pressure in the local rest frame and \( \Delta^{\mu\nu} \equiv g^{\mu\nu} - u^\mu u^\nu \) is the space-like projection operator\footnote{The four-velocity $u^\mu$ is itself the time-like projection operator.}.
 In the absence of sources there are four conserved quantities corresponding to energy and three components of momentum.
 \begin{equation}
   \label{eq:em_cons}
@@ -283,8 +286,13 @@ Projecting this equation into time and space components yields the relativistic 
   \left(\varepsilon + p\right)Du^\mu + c_s^2 \nabla_\perp^\mu \varepsilon &= 0 
 \end{align}
 where \(D \equiv u^\mu \nabla_\mu\) is the co-moving time-like derivative, \( \nabla_\perp^\mu \equiv \Delta^{\mu\nu} \nabla_\nu \) is the co-moving space-like derivative, and \(c_s(\varepsilon) \equiv \sqrt{\frac{\partial p}{\partial \varepsilon}} \) can be identified with the speed of sound.
+With a toy \ac{EoS} of $p = c_s^2 \varepsilon$, the Euler equation is written
+\begin{equation}
+\dot{u}^\mu = \frac{c_s^2}{1+c_s^2} \frac{\nabla^\mu p}{p}
+\end{equation}
+which demonstrates that acceleration of the fluid is driven by pressure gradients.
 
-The assumption of perfect fluidity can be relaxed by adding the terms
+The assumption of perfect fluidity is relaxed with the addition of the terms
 \begin{equation}
 T^{\mu\nu} = T^{\mu\nu}_{(0)} + \pi^{\mu\nu} + \Delta^{\mu\nu}\Pi
 \end{equation}
@@ -302,10 +310,16 @@ with
   \sigma^{\mu\nu} \equiv \nabla_\perp^\mu u^\nu + \nabla_\perp^\nu u^\mu - \frac{2}{3} \Delta^{\mu\nu}\nabla^\perp_\alpha u^\alpha \; ,
 \end{equation}
 and $\eta$ and $\zeta$ are the first order \emph{transport coefficients} and are called respectively the shear viscosity and bulk viscosity.
-Applying energy-momentum conservation (\Cref{eq:em_cons}) with these 1st-order corrections yields the relativistic Navier-Stokes equations, but these equations violate causality by instantaneously propagating gradients to viscous stresses.
+Applying energy-momentum conservation (\Cref{eq:em_cons}) with these 1st-order corrections yields the relativistic Navier-Stokes equations
+\begin{align}
+  D\varepsilon + \left(\varepsilon + p\right)\nabla^\perp_\mu u^\mu &= \frac{\eta}{2}\sigma^{\mu\nu}\sigma_{\mu\nu} + \zeta \left( \nabla^\perp_\mu u^\mu \right)^2 \\
+  \left(\varepsilon + p\right)Du^\mu + c_s^2 \nabla_\perp^\mu \varepsilon &= \Delta^\mu_\beta \nabla_\alpha \left( \eta \sigma^{\alpha\beta} + \zeta \Delta^{\alpha\beta} \nabla^\perp_\nu u^\nu \right) \;,
+\end{align}
+but these equations violate causality by instantaneously propagating gradients to viscous stresses.
 This causes instabilities in the solutions to these equations.
 Causality can be recovered by expanding to second-order in the gradients \cite{Israel:1976tn} at the cost of introducing 15 second-order transport coefficients, four of which vanish in flat spacetime.
-State-of-the-art simulations of the \qgp rely on second-order relativistic hydrodynamics \cite{Israel:1979wp}.
+State-of-the-art simulations of the \qgp rely on second-order relativistic hydrodynamics \cite{Israel:1979wp}, though in practical applications many second-order coefficients are still fixed to zero.
+In the conformal limit, for instance, $\zeta \rightarrow 0$ and there are five nonzero second-order transport coefficients \cite{Baier:2007ix}.
 
 \subsection{Applicability of hydrodynamics}
 %% low viscosity: large cross-section, low mfp
@@ -316,9 +330,9 @@ The 1st-order term must be small compared to the 0th-order term, so a condition 
 \begin{equation}
   \frac{\eta}{(\varepsilon + p)L} \ll 1 \;.
 \end{equation}
-With the approximation that the mean free path is \(\lambda_\textrm{mfp} = \frac{\eta}{\varepsilon + p} \), the condition is expressed in terms of the Knudsen number
+With the approximation that the mean free path is \(\mfp = \frac{\eta}{\varepsilon + p} \), the condition is expressed in terms of the Knudsen number
 \begin{equation}
-  \mathrm{Kn} \equiv \frac{\lambda_\textrm{mfp}}{L} \ll 1 \;.
+  \mathrm{Kn} \equiv \frac{\mfp}{L} \ll 1 \;.
 \end{equation}
 
 The series produced in the hydrodynamic gradient expansion is not convergent \cite{Denicol:2016bjh}.
@@ -332,23 +346,58 @@ It appears in many examples that the non-hydro modes decrease exponentially quic
 This also helps to explain the observations of some hydro-like phenomena in \pPb and even \pp collisions, where the small system size results in Knudsen numbers that are often greater than unity.
 
 
-\subsection{Viscosity of the QGP and the AdS/CFT correspondence}
+\subsection{Transport coefficients of the QGP} %% was titled ``and the AdS/CFT correspondence''
 
-Hydrodynamics provides the framework for describing the bulk motion of fluid matter, but on its own it is incapable of determining the \ac{EoS} or the transport coefficients.
+Hydrodynamics provides the framework for describing the bulk motion of fluid matter, but is not capable of independent determination of the \ac{EoS} or the transport coefficients.
 Assumptions or results from microscopic theory are required to say anything about these quantities.
 The \qcd \ac{EoS} is under control from lattice calculations, as discussed in \Cref{subsec:lattice}. %% need to number subsections to have proper section number reference.
-... 
 
-first discuss calculation of transport coefficients from ``first principles'', possibly show result from kinetic theory?
-gylassy: 1985 eta/s \cite{Danielewicz:1984ww} %% from uncertainty principle
+At high temperatures, the typical momentum is large, so the coupling is weak, and perturbative calculations might be expected to apply.
+To leading order, the \ac{pQCD} shear viscosity is \cite{Arnold:2000dr}
+\begin{equation}
+\eta \propto \frac{T^3}{\alpha_s^2 \ln \left( 1/\alpha_s\right) }
+\end{equation}
+with a constant of proportionality dependent on the number of active quark flavors.
+Perturbative calculations of the bulk viscosity at high temperature show that \cite{Arnold:2006fz}
+\begin{equation}
+\zeta \propto \frac{\alpha_s^2 T^3}{\ln \left(1/\alpha_s\right)}
+\end{equation}
+to leading order.
+The bulk viscosity is suppressed by four powers of $\alpha_s$ relative to the shear viscosity, and is expected to vanish for conformal theories and in both in the low and high temperature limits.
+It is therefore often neglected in discussions of the \qgp viscosity, though it can be relevant near the transition temperature.
+
+The entropy density $s = (\varepsilon + p)/T$ also scales with the cube of temperature, so the shear viscosity is often normalized by the entropy density.
+In \ac{pQCD} the value of the ratio $\eta/s$ is close to unity near the critical point.
+As an aside, note that the condition for the validity of hydrodynamics from the previous discussion can be expressed as
+\begin{equation}
+  \frac{\eta}{s} \ll LT \;,
+\end{equation}
+which supports the intuition that matter with a small ratio $\eta/s$ is expected to behave like a perfect fluid.
+A lower bound can be placed on the viscosity based on arguments from the uncertainty principle \cite{Danielewicz:1984ww}, with $\eta \gtrsim 2T^3$.
+With the Stefan-Boltzmann entropy this places a bound on the ratio
+\begin{equation}
+  \label{eq:eta_over_s_uncertainty}
+  \frac{\eta}{s} \gtrsim 0.1 \; ,
+\end{equation}
+so a perfect fluid is understood as one with viscosity that is not zero but is at the lower bound.
+The $\eta/s$ of the \qgp is expected to have a minimum near the critical temperature \cite{Csernai:2006zz}.
 
 One of the most influential theoretical developments of the past few decades is the conjectured relationship between quantum gravity in an \ac{AdS} space and a strongly-coupled \ac{CFT} \cite{Maldacena:1997re}.
-This so-called \emph{\ac{AdS}/\ac{CFT} correspondence} allows calculations in a non-perturbative \ac{CFT} to be replaced by an associated calculation in weakly-coupled gravity.
+This so-called \emph{\ac{AdS}/\ac{CFT} correspondence} allows calculations in a non-perturbative \ac{CFT} to be replaced by an associated calculation in weakly-coupled gravity, and is one of the only methods available to complete analytic calculations in the completely non-perturbative region.
+The calculation of the shear viscosity in the strongly-coupled conformal limit gives a bound of \cite{Kovtun:2004de}
+\begin{equation}
+  \frac{\eta}{s} \geq \frac{1}{4\pi} \approx 0.08
+\end{equation}
+which is remarkably close to the bound from the uncertainty principle in \Cref{eq:eta_over_s_uncertainty}.
+This bound is not expected to be exact in \qcd, because it does not have all the symmetries of the corresponding supersymmetric \ac{CFT}.
 
-eta/s from ADS/CFT \cite{Kovtun:2004de}
+Experimental measurements of collective flow anisotropies have been used to extract an experimental value of $\eta/s \approx 0.2 \approx 2.5\frac{1}{4\pi}$ \cite{Heinz:2013th}.
+Recent simulations using the Kubo relations on the lattice for pure glue also report $\eta/s \approx 0.2$ near the critical point \cite{Astrakhantsev:2017nrs}, with hints that it rises slowly with the temperature.
+The \qgp is quite close to a perfect fluid.
 
 %% \subsection{Fourier decomposition of particle production}
 \subsection{Success of hydrodynamics}
+
 \subsection{Flow in small systems}
  review of small-systems hydro: \cite{Nagle:2018nvi}
 
