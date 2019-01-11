@@ -82,7 +82,7 @@ A sketch of the relationship of event plane angle to transverse momentum is show
 
 \begin{figure}[t]
   \centering
-  \includegraphics{event_plane_cartoon.png}
+  \includegraphics[width=\linewidth]{event_plane_cartoon.png}
   \caption{The event plane angle $\psit$ in relation to the elliptic moment of transverse energy. An exaggerated example of the transverse profile in a hydrodynamic system is shown in blue. The pressure gradients are larger along the axis of narrower extent, leading to greater final momentum in that direction.}
 \label{fig:ep_cartoon}
 \end{figure}
@@ -90,14 +90,13 @@ A sketch of the relationship of event plane angle to transverse momentum is show
 \subsection{First-order correction}
 Due to non-uniformities in the calorimeter response in azimuth, the measurement of the \qt vector may be biased. This leads to a non-uniform distribution of event plane angle \psit which goes like $\cos (2(\psit - \phi_0))$ which is obviously not physical. This bias is corrected by subtracting off the mean \qt on a run-by-run basis. The mean components of the \qt vector are shown in \Fig{\ref{fig:mean_q2}}. The correction factors are statistically consistent in different multiplicity intervals, so all multiplicities are combined to increase their statistical significance.
 
-\begin{figure}[h]
+\begin{figure}[t]
 \centering
 \includegraphics[width=.49\linewidth]{can_qx.eps}
 \includegraphics[width=.49\linewidth]{can_qy.eps}
 \caption{The average components of the \qt vector $\langle\qtx\rangle$ (left) and $\langle\qty\rangle$ (right) for each run. Runs up to 218589 are from period A, and use $\eta > 2.5$, while runs after this are from period B and use $\eta < -2.5$.}
 \label{fig:mean_q2}
 \end{figure}
-
 
 \subsection{Second-order correction}
 
@@ -162,7 +161,60 @@ Systematic uncertainties in the event plane resolution are taken from two source
 \end{figure}
 
 
-\section{Correlation function construction} %% the general discussion will probably happen in the introduction
+\section{Correlation function}
+
+\subsection{Coulomb correction}
+The residual strong force between charged pions is subdominant to the Coulomb effect and can be neglected \cite{Lednicky:2005tb} in final-state effects.
+In heavy ion collisions the Bohr radius of a pair of pions ($a_{\pi} = 387.5 \textrm{ fm}$) is significantly larger than the source size, which is on the order of a few fermi.
+The nonrelativistic limit is appropriate since in the region of interest the pions have low relative momentum.
+In the limit where the pions come from a point source, their outgoing wavefunction squared is given by the Gamow factor
+
+\begin{equation} \frac{\left| \psi (q, r=0) \right|^2}{\left| \psi (q, r\rightarrow\infty) \right|^2} = G(\qinv) \equiv \frac{4\pi}{a \qinv}\frac{1}{e^{\frac{4\pi}{a \qinv}} - 1} \end{equation}
+
+where $a$ is the Bohr radius.
+(The literature contains various conventions for the factors of 2.
+Here the Bohr radius contains the reduced mass and this definition of $q$ has no factor of $1/2$.)
+For opposite-charged pairs, the correction can be applied by taking $a \to -a$, as this effectively flips the sign of the coupling constant $\alpha_{EM}$.
+
+For a source that is extended in space, a correction to this expression is required.
+For a spherical Gaussian source of effective size \Reff, the formula for a more precise correction factor $K(\qinv)$ is calculated in \Ref{\cite{Maj:2009ue}} in terms of a generalized hypergeometric function ${}_2 F_2$.
+\begin{equation} K(\qinv) = G(\qinv) \left[ 1 + \frac{8\Reff}{\sqrt{\pi}a} {}_2 F_2 \left( \frac{1}{2}, 1; \frac{3}{2}, \frac{3}{2}; -\Reff^2 \qinv^2 \right) \right] \end{equation}
+The analytic gradient of the correlation function parameterization is used in the fitting algorithm, so the derivative with respect to \Reff is also required:
+\begin{equation}
+  \frac{\partial K(\qinv)}{\partial \Reff} = G(\qinv) \frac{8}{\sqrt{\pi}a} {}_1 F_1 \left( 1; \frac{3}{2}; -\Reff^2 \qinv^2 \right) \; .
+\end{equation}
+The effective size \Reff described here cannot be connected \emph{a priori} to the HBT radii without additional model-dependent assumptions.
+It is taken to be proportional to \Rinv with the constant of proportionality adjusted as a systematic variation.
+
+Implementations of ${}_2F_2 (a_1, a_2; b_1, b_2; z)$ are not generally available.
+%% Series approximations for this function are produced here at small and large negative $z$ (used with a cutoff around $z \approx -18$), respectively.
+A series expansion around small $z$ follows direction from the definition.
+\begin{equation} {}_2F_2 \left( \frac{1}{2}, 1; \frac{3}{2}, \frac{3}{2}; z \right) = \sum_{n=0}^{\infty} \frac{z^n}{(2n+1) \left(\frac{3}{2}\right)_n} \end{equation}
+The Pochhammer symbol $(a)_n$ is used to denote the rising factorial $(a)_n \equiv a(a+1)...(a+n-1) = \frac{\Gamma(a+n)}{\Gamma(a)}$.
+An asymptotic expansion around $z \to - \infty$ can be derived.
+\begin{equation} {}_2F_2 \left( \frac{1}{2}, 1; \frac{3}{2}, \frac{3}{2}; z \right) \approx \frac{\pi^{3/2}}{4\sqrt{-z}} - \sum_{n=1}^{n < |z| + 3/2} \frac{(2n-3)!!}{(2n-1) 2^n |z|^n}  \end{equation}
+This expression is a formally divergent asymptotic series for large negative $z$, so the cutoff is chosen after the smallest term.
+In practice it agrees to within several digits of precision relatively quickly.
+
+Corresponding expressions for the confluent hypergeometric function appearing in the derivative are given by:
+\begin{equation}
+ {}_1F_1 \left( 1;\frac{3}{2}; z \right) = \sum_{n=0}^{\infty} \frac{z^n}{\left(\frac{3}{2}\right)_n} 
+\end{equation}
+\begin{equation}
+  {}_1F_1 \left( 1; \frac{3}{2}; z \right) \approx \sum_{n=1}^{n < |z| + 3/2} \frac{(2n-3)!!}{2^n |z|^n} \; \textrm{for } z \rightarrow -\infty
+\end{equation}
+
+To apply the Coulomb correction in 3D out-side-long coordinates, the average \kt in each bin is used to contract compute \qinv from $\mathbf{q}$.
+The following expression takes advantage of working in the \ac{LCMF} so that $k_L = 0$.
+\begin{equation}
+\qinv^2 = |\mathbf{q}|^2 - \Gamma^2 + \sqrt{\Gamma^4 - 4 |\mathbf{k}_\mathrm{T}|^2 \qout^2} \label{eqn:q3_to_qinv}
+\end{equation}
+where
+\begin{equation}
+\Gamma^2 = 2 m_{\pi}^2 + 2 |\mathbf{k}_\mathrm{T}|^2 + \frac{1}{2}|\mathbf{q}|^2 \; .
+\end{equation}
+
+
 \section{Fragmentation background}
 \section{Fit procedure}
 \section{Systematic uncertainties}
