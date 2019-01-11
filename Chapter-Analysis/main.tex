@@ -40,7 +40,7 @@ In addition, events are discarded if an error flag is recorded in the \ac{LAr} o
 \end{figure}
 
 The centralities of the \pPb\ events are characterized following the procedures described in \Ref{\cite{HION-2012-15}}, using the total transverse energy in the Pb-going side of the \ac{FCal}, \sumETPb.
-The use of the \ac{FCal} for measuring centrality has the advantage that it is not sensitive to multiplicity fluctuations in the kinematic region covered by the inner detector, where the measurements are performed.
+The use of the \ac{FCal} for measuring centrality has the advantage that it is not sensitive to multiplicity flvuctuations in the kinematic region covered by the inner detector, where the measurements are performed.
 Measurements are presented in this paper for the centrality intervals listed in \Cref{table:npart}.
 The events selected using the \ac{HighET} trigger are used only in the 0--1\% centrality interval.
 \Cref{fig:fcal_et} shows the distribution of \sumETPb\ values obtained from events included in this
@@ -55,9 +55,114 @@ The values and uncertainties from this procedure are listed in \Cref{table:npart
 
 \input{Chapter-Analysis/tables/npart} 
 
-
 \section{Flow vector determination}
-%% \section{Correlation function analysis} %% the general discussion will probably happen in the introduction
+
+The 2nd-order azimuthal Fourier components $Q_2$ of the energy flow are defined by
+\begin{equation}
+  Q_2 = \sum_{i}  \et{}_i \begin{pmatrix} \cos 2\phi_i \\ \sin 2\phi_i \end{pmatrix} \; ,\\
+\end{equation}
+where the sum is taken over calorimeter cells and $\phi_i$ is the ATLAS detector coordinate $\phi$ of the $i$th calorimeter cell.
+The two-component elliptic flow vector \qt is defined in terms of $Q_2$, normalized by the 0th-order Fourier component
+\begin{equation}
+  \qt = \frac{Q_2}{\sum_i \et{}_i } \; .\\
+\end{equation}
+
+The elliptic flow used in this analysis is taken from calorimeter cells on the Pb-going side of the detector with $\eta < -2.5$ for period B or $\eta > 2.5$ for period A, which has the beam orientation reversed. This forward cut is made so as to not overlap with the inner detector.
+
+The second-order event plane angle \psit is defined as
+\begin{equation}
+2\psit = \mathrm{atan2}(\qt{}_{,y},\qt{}_{,x})
+\end{equation}
+and the magnitude of the flow vector is $|\qt| = \sqrt{\qtx^2 + \qty^2}$.
+An equivalent expression of these equations is
+\[
+\qt = |\qt| e^{i2\psit} = \frac{\sum_i \et{}_i e^{i2\phi_i}}{\sum_i \et{}_i} \; .
+\]
+A sketch of the relationship of event plane angle to transverse momentum is shown in \Fig{\ref{fig:ep_cartoon}}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics{event_plane_cartoon.png}
+  \caption{The event plane angle $\psit$ in relation to the elliptic moment of transverse energy. An exaggerated example of the transverse profile in a hydrodynamic system is shown in blue. The pressure gradients are larger along the axis of narrower extent, leading to greater final momentum in that direction.}
+\label{fig:ep_cartoon}
+\end{figure}
+
+\subsection{First-order correction}
+Due to non-uniformities in the calorimeter response in azimuth, the measurement of the \qt vector may be biased. This leads to a non-uniform distribution of event plane angle \psit which goes like $\cos (2(\psit - \phi_0))$ which is obviously not physical. This bias is corrected by subtracting off the mean \qt on a run-by-run basis. The mean components of the \qt vector are shown in \Fig{\ref{fig:mean_q2}}. The correction factors are statistically consistent in different multiplicity intervals, so all multiplicities are combined to increase their statistical significance.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.49\linewidth]{can_qx.eps}
+\includegraphics[width=.49\linewidth]{can_qy.eps}
+\caption{The average components of the \qt vector $\langle\qtx\rangle$ (left) and $\langle\qty\rangle$ (right) for each run. Runs up to 218589 are from period A, and use $\eta > 2.5$, while runs after this are from period B and use $\eta < -2.5$.}
+\label{fig:mean_q2}
+\end{figure}
+
+
+\subsection{Second-order correction}
+
+Some additional non-uniformities persist in the \psit distribution even after correcting for the nonvanishing $\langle\qt\rangle$.
+These show up in higher-order Fourier terms like $\cos (4\psit)$ and $\sin(4\psit)$ in the distribution of the event plane angle \psit.
+They arise because detector irregularities can lead to higher-order distortions in the distribution of the matrix of products $\qt{}_i \qt{}_j$.
+In order to correct for these and make $\langle \qt{}_i \qt{}_j \rangle$ proportional to the identity matrix, the mean-corrected \qt vector is multiplied by the normalized inverse square root of the covariance matrix
+\begin{equation}
+\frac{1}{\sqrt{N}} \left( \begin{array}{ccc}
+  \langle \qty^2 \rangle + D & -\langle\qtx\qty\rangle \\
+  -\langle\qtx\qty\rangle & \langle \qtx^2 \rangle + D
+  \end{array} \right) \; ,
+\end{equation}
+where $D = \sqrt{\langle \qtx^2 \rangle \langle \qty^2 \rangle - \langle \qtx \qty \rangle ^2}$ and $N = D\left(\langle \qtx^2 \rangle + \langle\qty^2\rangle + 2D\right)$. The components of the covariance matrix are shown in \Fig{\ref{fig:mean_q2_cov}}. This multiplication causes the corrected \qt vector to have no skew and have the same width in the \qtx and \qty axes.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=.49\linewidth]{can_qxx.eps}
+\includegraphics[width=.49\linewidth]{can_qyy.eps}\\
+\includegraphics[width=.49\linewidth]{can_qxy.eps}
+\caption{The average components of the $<\qt{}_i \qt{}_j>$ matrix for each run. Runs up to 218589 are from period A, and use $\eta > 2.5$, while runs after this are from period B and use $\eta < -2.5$.}
+\label{fig:mean_q2_cov}
+\end{figure}
+
+As is the case for the mean subtraction correction, the correction factors are consistent over multiplicity so the events are combined for improved statistical significance in the correction.
+Once these two corrections are applied run-by-run, the \psit distribution is flat (\Figs{\ref{fig:dNdpsi2_corr}}{\ref{fig:dNdpsi2_corr_binned}}).
+
+\begin{figure}[t]
+\centering
+\includegraphics{dNdpsi2.eps}\\
+\caption{The distribution of second-order event plane angle after first- and second-order flow vector corrections.}
+\label{fig:dNdpsi2_corr}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=.49\linewidth]{can_psi2_Nch150to179.png}
+\includegraphics[width=.49\linewidth]{can_psi2_Nch180to199.png}
+\includegraphics[width=.49\linewidth]{can_psi2_Nch200to224.png}
+\includegraphics[width=.49\linewidth]{can_psi2_Nch225.png}
+\caption{The distribution of second-order event plane angle, in bins of flow vector magnitude $|\qt|$. Each panel shows a different interval of reconstructed charged particle multiplicity \Nch.}
+\label{fig:dNdpsi2_corr_binned}
+\end{figure}
+
+
+\subsection{Event plane angular resolution}
+\label{subsubsec:epres}
+
+The event plane angular resolution, defined as $\langle \cos(2 \delta \psit) \rangle$ where $\delta \psit$ is the difference between true and measured \psit, is shown in \Fig{\ref{fig:ep_res}} for the calorimeters at $\eta < -2.5$. The resolution is shown separately for periods A and B, but since they are comparable only the combined resolution is used. This quantity can be calculated from data using the three-sub-detector method, where two other subdetectors are chosen with rapidity ranges $-2 < \eta< -0.5$ and $0 < \eta < 1.5$. Here explicit pseudorapidity ranges define each subdetector, with a pseudorapidity gap of 0.5 left in between each subdetector so that biases are not introduced from jets overlapping two subdetectors. The event plane resolution of the nominal subdetector can be calculated with the following expression.
+
+\begin{equation}
+\langle \cos(2 \delta \psit) \rangle = \sqrt{ \frac{\langle \cos(2\psit^A - 2\psit) \rangle \langle \cos(2\psit^B - 2\psit) \rangle }{\langle \cos(2\psit^A - 2\psit^B) \rangle} }\\
+\end{equation}
+Here $\psit^A$ refers to the event plane measured using calorimeters with $-2 < \eta< -0.5$ and $\psit^B$ refers to that with $0 < \eta < 1.5$. Each of these additional subdetectors has first- and second-order corrections applied, which are derived for each subdetector in the same way that the corrections are derived for the nominal subdetector with $\eta < -2.5$.
+Systematic uncertainties in the event plane resolution are taken from two sources. The alternate subdetectors are shifted by $\Delta\eta = +0.5$, and the difference in the EP resolution is symmetrized. Also, the alternate subdetectors are calculated using the \qt from tracks, weighted by their \pt. This difference is also symmetrized, and these two contributions are added in quadrature.
+
+\begin{figure}[t]
+\centering
+\includegraphics{epRes.pdf}\\
+\caption{The event plane resolution as a function of the magnitude of the flow vector $|\qt|$ calculated using calorimeter cells with $\eta < -2.5$. Four different intervals of reconstructed track multiplicity \Nch used in the analysis are shown. The systematic uncertainties are shown in the bands, and statistical uncertainties are too small to be visible.}
+\label{fig:ep_res}
+\end{figure}
+
+
+\section{Correlation function construction} %% the general discussion will probably happen in the introduction
 \section{Fragmentation background}
 \section{Fit procedure}
 \section{Systematic uncertainties}
