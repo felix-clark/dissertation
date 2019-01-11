@@ -26,7 +26,7 @@ Overall, the reconstruction of collision vertices and the charged-particle produ
 
 \begin{figure}[t]
   \includegraphics[width=\linewidth]{soft-pub-2007-007_sp_seeds.png}
-  \caption{Space-point seeds constructed from two (short, in red) or three (long, in blue) hits in the barrel region of the pixel and \sct. Short seeds are used to determine the $z$-coordinates of predicted vertex positions, which are used to constrain extensions to three or more space points.  (From \Ref{\cite{Cornelissen:2007vba}})}
+  \caption{Space-point seeds constructed from two (short, in red) or three (long, in blue) hits in the barrel region of the pixel and \sct. Short seeds are used to determine the $z$-coordinates of predicted vertex positions, which are used to constrain extensions to three or more space points.  Figure from \Ref{\cite{Cornelissen:2007vba}}.}
   \label{fig:trk_seeds}
 \end{figure}
 
@@ -139,11 +139,10 @@ Charged particles are identified using a measurement of the ionization energy lo
 Three working \pid cut levels are defined based on \dEdx approximations from hits in the pixel detector.
 A nominal selection is chosen, and a looser selection (with high efficiency) a tight selection (with high purity) are used as systematic variations.
 The variables used for \pid defined in \Ref{\cite{ATLAS-CONF-2011-016}}: $L(X)$ is the likelihood of the particle being species $X$ where $X$ is $\pi$, $K$, or $p$, and we define $P(X) \equiv \frac{L(X)}{L(\pi^{\pm}) + L(K^{\pm}) +L(p^{\pm})}$.
-Note that $P(X)$ are not probabilities per se, but are still found to be useful to cut on.
+Note that $P(X)$ are not probabilities per se, but are effective quantities to use in the selections.
 
 For all cut levels it is required that the likelihood be positive for each particle species, as a negative value indicates an error in the attempt to assign a likelihood to that track.
 It is also required that the track has at least 1 good pixel \dEdx hit.
-The three \pid selections used in this analysis are the same as those in \Ref{\cite{HION-2015-11}}.
 
 \subsection{Cut Definitions}
 \subsubsection{Loose}
@@ -239,7 +238,7 @@ The momentum-dependent cut is intended to cut out a large number of protons alon
 \label{fig:dedx}
 \end{figure}
 
-The Loose and Middle cut level definitions include an additional cut on $dE/dx$, as illustrated in \Cref{fig:dedx}.
+The Loose and Middle cut level definitions include an additional cut on \dEdx, as illustrated in \Cref{fig:dedx}.
 The cut is applied in the Loose level to reject the high-momentum tracks that are far from the pion band but not rejected from the other cuts.
 In the Middle cut level it is taken further, and an additional slice is removed.
 The Tight level requires no such additional cut on \dEdx, as the requirement that $P(\pi) > 0.6$ is stringent enough.
@@ -298,7 +297,7 @@ In interpreting these purities, it is important to keep in mind that the majorit
 \includegraphics[width=.49\linewidth]{pid_pur_mid.pdf}
 \includegraphics[width=.49\linewidth]{pid_pur_tight.pdf}\\
 \end{minipage}
-\caption{The pion purity from each PID cut level as a function of $p_{T}$ and $\eta$.}
+\caption{The pion purity from each PID cut level as a function of \pt and $\eta$.}
 \label{fig:pid_purity_2d}
 \end{figure}
 
