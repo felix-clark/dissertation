@@ -1,9 +1,63 @@
 \chapter{Analysis}
 \label{ch:analysis}
+\graphicspath{{Chapter-Analysis/figures/}}
 
-\section{Minimum-bias event selection}
-\section{Centrality definition}
-\section{Correlation function analysis}
-\subsection{Fit procedure}
+\section{Data set}
+
+The analyses presented in this thesis use the data from the \ac{LHC} 2013 \pPb at a center-of-mass energy of \pPbenergy with an integrated luminosity of \pPblumi.
+The Pb ions had an energy per nucleon of 1.57 \TeV and collided with the 4 \TeV proton beam resulting in a net longitudinal boost of the center-of-mass system of $\ycm = 0.465$ in the proton direction relative to the ATLAS laboratory frame.
+The \pPb\ run was divided into two periods between which the directions of the proton and lead beams were
+reversed. 
+The data are presented using the convention that the proton beam travels in the forward ($+z$) direction and the lead beam travels in the backward ($-z$) direction.
+When the data from these two periods are combined, the \minbias triggers sampled a total luminosity, after prescale, of $24.5~\mu\textrm{b}^{-1}$ and yielded a total of 44 million events over the full centrality.
+
+For results reported as a function of centrality, an additional \ac{HighET} trigger selection is included in the most central bin that requires the total transverse energy in both sides of the \ac{FCal} to be at least 65 \GeV.
+The \ac{HighET} trigger sampled a total luminosity of $41.4~\mu\textrm{b}^{-1}$ after prescale and yielded 700 thousand events to the sample.
+Events from this trigger are only included in the 0--1\% centrality interval, where the \ac{HighET} trigger is fully efficient.
+
+The azimuthally-dependent results use central events with offline charged-particle multiplicity \Nch of at least 150, where only tracks with $\pt > 400~\MeV$ are counted in this number.
+Several \acp{HMT} are included to boost the sample, with offline \Nch cutoffs at 100, 130, 150, 180, 200, and 225 tracks.
+These \acp{HMT} provide a crucial 6.7 million events, as the \minbias triggers provide only 200 000 events at $\Nch > 150$.
+
+All events are required to pass a set of \minbias selection criteria.
+Events are required to be included in the latest Good Runs List from ATLAS, which rejects events recorded in conjunction with a technical difficulty in the detector.
+The \minbias trigger requires either one hit in both sides of the \ac{MBTS} or two hits in one side.
+Additional \ac{HighET} and high multiplicity triggers are included in some analysis bins as discussed above.
+%% Events with an offline multiplicity lower than the nominal trigger threshold are excluded, as each of these HMTs reaches an efficiency near 1 near their nominal turn-on. This rejects events that fire a trigger in its turn-on region, as these samples can in principle be biased.
+%% In practice no significant difference in the results is observed whether or not events in the HMT triggers' turn-ons are included, so using the nominal turn-on multiplicity is sufficient.
+A timing cut is placed on the \ac{MBTS} hits in each side such that $|\Delta t_{AC}| < 10~\textrm{ns}$.
+No more than one reconstructed \ac{PV} or strong vertex (where a strong vertex has more than 10 tracks or a total \pt of tracks greater than $6~\GeV$) is permitted in each event.
+Diffractive events are identified for rejection by a gap of two units of pseudorapidity in event activity on the Pb-going side of the calorimeters \cite{HION-2012-15}.
+Pileup events are also discarded using a run-dependent upper limit on the Pb-going \ac{ZDC}.
+In addition, events are discarded if an error flag is recorded in the \ac{LAr} or tile calorimeter systems, or if there is an indication that the event was not completely recorded.
+
+\section{Centrality determination}
+
+\begin{figure}[t]
+\includegraphics{fcal_et_total.pdf}
+\caption{The distribution of the total transverse energy in the \ac{FCal} in the Pb-going direction (\sumETPb) for the events used in the centrality-dependent analysis. Dashed lines are shown at the boundaries of the centrality intervals, and the discontinuity at $\sumETPb = 91.08~\GeV$ corresponds to the lower \sumETPb boundary of the 0--1\% centrality interval.}
+\label{fig:fcal_et}
+\end{figure}
+
+The centralities of the \pPb\ events are characterized following the procedures described in \Ref{\cite{HION-2012-15}}, using the total transverse energy in the Pb-going side of the \ac{FCal}, \sumETPb.
+The use of the \ac{FCal} for measuring centrality has the advantage that it is not sensitive to multiplicity fluctuations in the kinematic region covered by the inner detector, where the measurements are performed.
+Measurements are presented in this paper for the centrality intervals listed in \Cref{table:npart}.
+The events selected using the \ac{HighET} trigger are used only in the 0--1\% centrality interval.
+\Cref{fig:fcal_et} shows the distribution of \sumETPb\ values obtained from events included in this
+measurement.
+The discontinuity in the spectrum occurs at the low edge of the 0--1\% centrality interval, above which the \ac{HighET} events are included.
+
+For each centrality interval, the average multiplicity of charged particles with $\pt > 100~\MeV$ and $|\eta| < 1.5$, \avgdNdeta, and the corresponding average number of participating nucleons, \avgNpart, are obtained from a previous publication \cite{HION-2012-15}.
+Since this analysis uses finer centrality intervals (no wider than 10\% of the total centrality range) than
+those used in \Ref{\cite{HION-2012-15}}, a linear interpolation over the Glauber \avgNpart is used to construct additional values for \avgdNdeta based on the published results.
+This interpolation is justified by the result in \Ref{\cite{HION-2012-15}} that charged-particle multiplicity is proportional to \avgNpart in the peripheral region.
+The values and uncertainties from this procedure are listed in \Cref{table:npart}.
+
+\input{Chapter-Analysis/tables/npart} 
+
+
+\section{Flow vector determination}
+%% \section{Correlation function analysis} %% the general discussion will probably happen in the introduction
 \section{Fragmentation background}
-\section{Summary of systematic uncertainties}
+\section{Fit procedure}
+\section{Systematic uncertainties}
