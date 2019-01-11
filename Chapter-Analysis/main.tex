@@ -5,7 +5,7 @@
 \section{Data set}
 
 The analyses presented in this thesis use the data from the \ac{LHC} 2013 \pPb at a center-of-mass energy of \pPbenergy with an integrated luminosity of \pPblumi.
-The Pb ions had an energy per nucleon of 1.57 \TeV and collided with the 4 \TeV proton beam resulting in a net longitudinal boost of the center-of-mass system of $\ycm = 0.465$ in the proton direction relative to the ATLAS laboratory frame.
+The Pb ions had an energy per nucleon of $1.57 \TeV$ and collided with the $4 \TeV$ proton beam resulting in a net longitudinal boost of the center-of-mass system of $\ycm = 0.465$ in the proton direction relative to the ATLAS laboratory frame.
 The \pPb\ run was divided into two periods between which the directions of the proton and lead beams were
 reversed. 
 The data are presented using the convention that the proton beam travels in the forward ($+z$) direction and the lead beam travels in the backward ($-z$) direction.
@@ -88,7 +88,10 @@ A sketch of the relationship of event plane angle to transverse momentum is show
 \end{figure}
 
 \subsection{First-order correction}
-Due to non-uniformities in the calorimeter response in azimuth, the measurement of the \qt vector may be biased. This leads to a non-uniform distribution of event plane angle \psit which goes like $\cos (2(\psit - \phi_0))$ which is obviously not physical. This bias is corrected by subtracting off the mean \qt on a run-by-run basis. The mean components of the \qt vector are shown in \Fig{\ref{fig:mean_q2}}. The correction factors are statistically consistent in different multiplicity intervals, so all multiplicities are combined to increase their statistical significance.
+Due to non-uniformities in the calorimeter response in azimuth, the measurement of the \qt vector may be biased. This leads to a non-uniform distribution of event plane angle \psit with an additive term proportional to $\cos (2(\psit - \phi_0))$ which is obviously not physical.
+This bias is corrected by subtracting off the mean \qt on a run-by-run basis.
+The mean components of the \qt vector are shown in \Fig{\ref{fig:mean_q2}}.
+The correction factors are statistically consistent in different multiplicity intervals, so all multiplicities are combined to increase their statistical significance.
 
 \begin{figure}[t]
 \centering
@@ -145,13 +148,20 @@ Once these two corrections are applied run-by-run, the \psit distribution is fla
 \subsection{Event plane angular resolution}
 \label{subsubsec:epres}
 
-The event plane angular resolution, defined as $\langle \cos(2 \delta \psit) \rangle$ where $\delta \psit$ is the difference between true and measured \psit, is shown in \Fig{\ref{fig:ep_res}} for the calorimeters at $\eta < -2.5$. The resolution is shown separately for periods A and B, but since they are comparable only the combined resolution is used. This quantity can be calculated from data using the three-sub-detector method, where two other subdetectors are chosen with rapidity ranges $-2 < \eta< -0.5$ and $0 < \eta < 1.5$. Here explicit pseudorapidity ranges define each subdetector, with a pseudorapidity gap of 0.5 left in between each subdetector so that biases are not introduced from jets overlapping two subdetectors. The event plane resolution of the nominal subdetector can be calculated with the following expression.
+The event plane angular resolution, defined as $\langle \cos(2 \delta \psit) \rangle$ where $\delta \psit$ is the difference between true and measured \psit, is shown in \Fig{\ref{fig:ep_res}} for the calorimeters at $\eta < -2.5$.
+The resolution is shown separately for periods A and B, but since they are comparable only the combined resolution is used.
+This quantity can be calculated from data using the three-sub-detector method, where two other subdetectors are chosen with rapidity ranges $-2 < \eta< -0.5$ and $0 < \eta < 1.5$.
+Here explicit pseudorapidity ranges define each subdetector, with a pseudorapidity gap of 0.5 left in between each subdetector so that biases are not introduced from jets overlapping two subdetectors.
+The event plane resolution of the nominal subdetector can be calculated with the following expression.
 
 \begin{equation}
 \langle \cos(2 \delta \psit) \rangle = \sqrt{ \frac{\langle \cos(2\psit^A - 2\psit) \rangle \langle \cos(2\psit^B - 2\psit) \rangle }{\langle \cos(2\psit^A - 2\psit^B) \rangle} }\\
 \end{equation}
-Here $\psit^A$ refers to the event plane measured using calorimeters with $-2 < \eta< -0.5$ and $\psit^B$ refers to that with $0 < \eta < 1.5$. Each of these additional subdetectors has first- and second-order corrections applied, which are derived for each subdetector in the same way that the corrections are derived for the nominal subdetector with $\eta < -2.5$.
-Systematic uncertainties in the event plane resolution are taken from two sources. The alternate subdetectors are shifted by $\Delta\eta = +0.5$, and the difference in the EP resolution is symmetrized. Also, the alternate subdetectors are calculated using the \qt from tracks, weighted by their \pt. This difference is also symmetrized, and these two contributions are added in quadrature.
+Here $\psit^A$ refers to the event plane measured using calorimeters with $-2 < \eta< -0.5$ and $\psit^B$ refers to that with $0 < \eta < 1.5$.
+Each of these additional subdetectors has first- and second-order corrections applied, which are derived for each subdetector in the same way that the corrections are derived for the nominal subdetector with $\eta < -2.5$.
+Systematic uncertainties in the event plane resolution are taken from two sources.
+The alternate subdetectors are shifted by $\Delta\eta = +0.5$, and the difference in the EP resolution is symmetrized.
+Also, the alternate subdetectors are calculated using the \qt from tracks, weighted by their \pt. This difference is also symmetrized, and these two contributions are added in quadrature.
 
 \begin{figure}[t]
 \centering
