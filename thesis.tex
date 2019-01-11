@@ -32,21 +32,6 @@
 % }
 % \renewcommand*\cftappendixname{\appendixname}
 
-% The language of the document must be set: usually UKenglish or USenglish.
-% british and american also work!
-% Commonly used options:
-%  texlive=YYYY          Specify TeX Live version (2013 is default).
-%  atlasstyle=true|false Use ATLAS style for document (default).
-%  coverpage             Create ATLAS draft cover page for collaboration circulation.
-%                        See atlas-draft-cover.tex for a list of variables that should be defined.
-%  cernpreprint          Create front page for a CERN preprint.
-%                        See atlas-preprint-cover.tex for a list of variables that should be defined.
-%  PAPER                 The document is an ATLAS paper (draft).
-%  CONF                  The document is a CONF note (draft).
-%  PUB                   The document is a PUB note (draft).
-%  txfonts=true|false    Use txfonts rather than the default newtx - needed for arXiv submission.
-%  paper=a4|letter       Set paper size to A4 (default) or letter.
-
 %-------------------------------------------------------------------------------
 % Extra packages:
 \usepackage{\ATLASLATEXPATH atlaspackage}
@@ -61,10 +46,6 @@
 % Style file with biblatex options for ATLAS documents.
 \usepackage{\ATLASLATEXPATH atlasbiblatex}
 
-% Package for creating list of authors and contributors to the analysis.
-\usepackage{\ATLASLATEXPATH atlascontribute}
-\usepackage{\ATLASLATEXPATH atlascover}
-
 % Useful macros
 \usepackage{\ATLASLATEXPATH atlasphysics}
 \usepackage{\ATLASLATEXPATH atlasheavyion}
@@ -76,7 +57,6 @@
 
 % Files with references for use with biblatex.
 % Note that biber gives an error if it finds empty bib files.
-%% \addbibresource{thesis.bib} % obsolete: now sorting new references by type
 \addbibresource{bibtex/bib/ATLAS.bib}
 \addbibresource{bibtex/bib/CMS.bib}
 \addbibresource{bibtex/bib/ConfNotes.bib}
@@ -126,9 +106,10 @@
 \Crefname{chapter}{Ch.}{Ch.}
 \Crefname{appendix}{App.}{App.}
 \Crefname{subsection}{Sec.}{Secs.}
-%% we want to number down to sub-sections
-\setcounter{secnumdepth}{2} %% default is 2
 
+%% we want to number down to sub-sections, however this doesn't add numbers on its own
+\setsecnumdepth{subsection} %% \setcounter{secnumdepth} doesn't work for some reason
+\setcounter{tocdepth}{3} %% this gives a deeper drop-down navigation depth
 
 %-------------------------------------------------------------------------------
 % Generic document information
