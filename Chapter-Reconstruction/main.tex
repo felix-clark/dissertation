@@ -144,8 +144,9 @@ Note that $P(X)$ are not probabilities per se, but are effective quantities to u
 For all cut levels it is required that the likelihood be positive for each particle species, as a negative value indicates an error in the attempt to assign a likelihood to that track.
 It is also required that the track has at least 1 good pixel \dEdx hit.
 
-\subsection{Cut Definitions}
-\subsubsection{Loose}
+\subsection{PID selection definitions}
+
+The ``Loose'' selection is defined by the following set of cuts:
 \begin{itemize}
   \item
     $P(\pi^{\pm}) > 0.05$
@@ -158,7 +159,7 @@ It is also required that the track has at least 1 good pixel \dEdx hit.
 \end{itemize}
 The Loose cut level removes tracks that are very likely to be kaons or protons while retaining a high efficiency for pions.
 
-\subsubsection{Middle}
+The ``Middle'' cut level is defined by:
 \begin{itemize}
 \item %% not quite replaced by extension of P(p) cut. should figure that out...
   $\left|\mathbf{p}\right| < 2.25~\GeV$
@@ -171,9 +172,9 @@ The Loose cut level removes tracks that are very likely to be kaons or protons w
 \item
   $\frac{dE}{dx} \; [\MeV \textrm{ g}^{-1} \textrm{ cm}^{2}]< 1.1 + \frac{0.2~\GeV^2}{\left|\mathbf{p}\right|^{2}}$
 \end{itemize}
-The middle level is used as the nominal selection in the analysis. It achieves a higher purity than the Loose definition without maintaining a reasonably high pion efficiency.
+The Middle level is used as the nominal selection in the analysis. It achieves a higher purity than the Loose definition without maintaining a reasonably high pion efficiency.
 
-\subsubsection{Tight}
+The ``Tight'' selection is defined by:
 \begin{itemize}
 \item
   At least 2 good pixel $dE/dx$ hits.
@@ -312,5 +313,5 @@ In interpreting these purities, it is important to keep in mind that the majorit
 \end{figure}
 
 The efficiency of each PID selection level for pions and other particles are shown in \Cref{fig:pid_eff_2d}, and the purity in \Cref{fig:pid_purity_2d}.
-The purity of pairs (i.e. fraction of pairs in which \emph{both} particles are pions) is shown in \Cref{fig:pid_purity_kt_eta}.
+The purity of pairs (i.e. fraction of pairs in which both particles are pions) is shown in \Cref{fig:pid_purity_kt_eta}.
 
