@@ -45,7 +45,8 @@ Back-tracking is not well-suited for low-\pt particles, which spiral out of the 
 The Hough transform \cite{Duda:1972:UHT:361237.361242} is used to detect straight-line sets of three \trt hits which are used as track candidate seeds.
 The extension of these \trt segments into the silicon detectors are evaluated in multiple $\eta$ slices to accommodate the fact that the seed-finding is done in the transverse plane.
 
-Finally, the remaining silicon hits that have not been used in the inside-out or back-tracking algorithms are used to seed an additional low-\pt track reconstruction.%% ATL-COM-INDET-2012-052 for minbias
+%% ATL-COM-INDET-2012-052 for minbias
+Finally, the remaining silicon hits that have not been used in the inside-out or back-tracking algorithms are used to seed an additional low-\pt track reconstruction.
 Charged particles with $\pt < 400 \MeV$ do not necessarily pass through every layer of the \sct.
 These tracks can have a transverse momentum as low as 100 \MeV~ so their transverse radius of curvature is small.
 Without a trajectory that is close to a straight line in the transverse plane, a larger set of possible track seeds must be evaluated, so it is only computationally feasible to seed the low-\pt tracking with leftover space-points from the other two tracking algorithms.
