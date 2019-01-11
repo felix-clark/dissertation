@@ -225,6 +225,448 @@ where
 \end{equation}
 
 
-\section{Fragmentation background}
+\section{Hard-process contribution}
+\label{sec:jet_frag}
+
+The same-sign correlation functions contain enhancements that do not come from identical-particle interactions.
+It is of the utmost importance to understand these contributions since they arise in a similar region of phase space as the Bose-Einstein effects.
+This section will detail the procedure undertaken to describe the non-femtoscopic contribution.
+
+\subsection{Monte Carlo generators}
+\label{subsec:generators}
+
+A number of Monte Carlo generators were utilized during studies of the non-HBT part of the correlation function.
+Detector simulation is not run on these samples.
+In each of the following samples, 50 million (250 million for \PYEight) \minbias events are generated at a center of mass energy per nucleon of \pPbenergy.
+
+\begin{enumerate}
+\item \Hijing p+Pb \cite{Gyulassy:1994ew}\\
+The energy and boost settings are the same as in the nominal \pPb reconstructed simulation, except that the minimum hard-scattering transverse momentum is adjusted as described in \Sect{\ref{subsec:hard_process}}. This boost is applied only in the \pPb sample.
+Turning off the flow, which shifts the $\phi$ of particles in order to reproduce the flow harmonics $v_n$, was not found to have a significant effect on the momentum-space correlation functions.
+Tweaking the HIPR18 parameter is explored, as described in Figure \ref{fig:hard_process_min_pt}.
+
+\item \Hijing \pp\\
+The simulation is run at $\sqrt{s} = 5 \TeV$ with all of the same settings as the p+Pb sample, except that both incoming particles are protons.
+
+\item \Pythia 8.2 \pp \cite{Sjostrand:2007gs}\\
+The default ATLAS tune "UE AU2-CTEQ6L1" is used with \PYEight at $\sqrt{s} = 5.02 \TeV$.
+This utilizes the CTEQ 6L1 \ac{PDF} from LHAPDF6 \cite{Buckley:2014ana}.
+
+\item \Herwig++ 2.7 \pp \cite{Bahr:2008pv}\\
+A known bug in \Herwig++ 2.7.1 prevented the use of the CTEQ6 \ac{PDF}, so the default MRST \ac{PDF} was used instead.
+This should not be a significant issue for these purposes, because the jet fragmentation is not very dependent on the initial state.
+
+It should be noted that the correlation functions predicted by \Herwig are in such significant and obvious disagreement with those seen in the data that they cannot be used directly.
+The \Herwig sample is used to compare the variation of certain behavior of the correlation functions compared to \Pythia in order to establish an estimate for the systematic uncertainty arising from the details of the generator (as will be described in section \ref{subsec:herwig_vs_pythia}).
+\end{enumerate}
+
+\subsection{Description of the jet background}
+An additional contribution to the correlation function with a width in \qinv of order $0.5--1 \GeV$ arises from hard processes in the event.
+It is more prominent at high \kt, which suggests that the correlation comes from jet fragmentation.
+This origin of the effect was confirmed by running \Hijing with the minimum \pt for hard scattering turned up to $20 \GeV$ from the default of $2 \GeV$, which causes this feature to diminish (see Figure \ref{fig:hard_process_min_pt}).
+\Hijing has no Coulomb or Bose-Einstein effects, so any effects in Figure \ref{fig:hard_process_min_pt} are from charge/momentum conservation, resonance decays, and jet fragmentation.
+The effect is more pronounced at high \kt and low multiplicities, where particle pairs are more likely to have come from the same mini-jet.
+
+It should be noted that MC generators all tend to over-estimate the amplitude of the contribution from hard processes.
+In the past the double ratio has been studied (i.e. the ratio of the correlation function in data to MC), but this produces a suspicious depletion in the affected \qinv region.
+
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.4\linewidth]{Cqinv_Nch26to36_e0_kt1_pPbHijing.pdf}
+\includegraphics[width=.4\linewidth]{Cqinv_Nch26to36_e0_kt1_pPbHijing20.pdf}
+\includegraphics[width=.4\linewidth]{Cqinv_Nch26to36_e1_kt1_pPbHijing.pdf}
+\includegraphics[width=.4\linewidth]{Cqinv_Nch26to36_e1_kt1_pPbHijing20.pdf}
+\includegraphics[width=.4\linewidth]{Cqinv_Nch26to36_e0_kt6_pPbHijing.pdf}
+\includegraphics[width=.4\linewidth]{Cqinv_Nch26to36_e0_kt6_pPbHijing20.pdf}
+\includegraphics[width=.4\linewidth]{Cqinv_Nch26to36_e1_kt6_pPbHijing.pdf}
+\includegraphics[width=.4\linewidth]{Cqinv_Nch26to36_e1_kt6_pPbHijing20.pdf}
+\end{minipage}
+\caption{The hard-process background in \Hijing for either $+-$ or $++$ charged pairs in two \kt bins (with major resonances removed from $+-$), with the minimum hard-scattering \pt (parameter HIPR18) set to the default of $2 \GeV$ (left) and turned up to $20 \GeV$ (right). Removing the hard-scattering processes in this range diminishes or removes the non-femtoscopic signal. The Gaussian fits are shown only to roughly indicate the amplitude and width of the effects, and are not used in the analysis.}
+\label{fig:hard_process_min_pt}
+\end{figure}
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics{qinv_backLambda_vs_ang_backLambda.pdf}
+\end{minipage}
+\caption{A comparison of the amplitudes of gaussian fits of the $\qinv$ and angular ($\Delta \eta, \Delta \phi$) correlation functions from opposite-sign pairs in the data. The pairs are fully Coulomb-corrected (i.e. $\lambda = 1$) with an effective source size of $\Reff = 1 \textrm{ fm}$. The diffent colors are different centralities, each with a range of \kt.}
+\label{fig:background_amp_inv_vs_ang_data}
+\end{figure}
+
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{ang_lambda_opp_vs_same_MC.pdf}
+\includegraphics[width=.49\linewidth]{ang_lambda_kt_opp_vs_same_MC.pdf}
+\end{minipage}
+\caption{The amplitude of the jet contribution to $C(\Delta\eta, \Delta\phi)$ is largely correlated between like-sign and unlike-sign pairs. The plots are nearly identical, except that one is colored by centrality and the other by \kt. Some points have very large errors (sum of errors > 0.8) and are not shown.}
+\label{fig:background_ang_same_vs_opp_mc}
+\end{figure}
+
+\clearpage
+
+Rather than use a double-ratio, some analyses have described the background by allowing the amplitude to be a free fit parameter.
+We attempt instead a data-driven method to tune it by comparing to opposite-sign pairs (Coulomb-corrected and with the largest resonance contributions removed), which do not have a Bose-Einstein correlation.
+Figure \ref{fig:background_amp_inv_vs_ang_data}, of which it should be emphasized is taken from data, shows that the choice to tune from the amplitude of Gaussian fits to $\qinv$ or $\Delta\eta, \Delta\phi$ correlations does not significantly impact the result.
+This further supports the interpretation that the enhancement in $\qinv$ comes from hard processes, as the peak in angular coordinates is commonly associated with jets.
+Figure \ref{fig:background_ang_same_vs_opp_mc} shows the amplitudes of the jet contribution to $C(\Delta\eta, \Delta\phi)$ comparing both $++$ and $--$ to $+-$.
+The correlation between $\pm\pm$ and $+-$ demonstrates that, at least in principle, the $+-$ correlation functions can constrain the hard-process contribution in $\pm\pm$ correlation functions.
+
+Though some resonances are removed from the $+-$ correlation functions, the effect of jet fragmentation is not the same in same-sign as it is in opposite-sign.
+A mapping must be developed between $+-$ and $\pm\pm$, so the relationship between the two correlation functions is studied in Monte Carlo simulations.
+
+To isolate the effect of jet fragmentation, particles from weak decays ($\eta$, $\eta'$, and $\omega$) were excluded.
+Pairs of particles from two-body resonance decays were also neglected, in order to remove mass peaks in the correlation function.
+We also apply the same pair mass cut around the $\rho$ resonance that is used in the data, since the removal of the corresponding region of phase space has a significant effect on the shape of the correlation function.
+
+\subsection{Jet fragmentation in Lorentz invariant correlation function}
+\label{subsec:jet_frag_inv}
+
+In order to describe the background satisfactorily, it was found necessary to loosen the assumption of a Gaussian form in \qinv.
+The \qinv correlation functions in \Pythia 8 were fit to
+\begin{equation} C(q) = 1 + \lbkgd e^{-|\Rbkgd \qinv|^{\abkgd}} \end{equation}
+The results are shown in Figures \ref{fig:background_alpha_pythia8} and \ref{fig:background_qinv_same_vs_opp_pythia8}.
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics{qinv_backAlpha_vs_kt_pythia8.pdf}
+\end{minipage}
+\caption{The tail weight parameter \abkgd of fits to $C^{\pm\pm}(\qinv)$ as a function of \kt in \Pythia 8, in 4 multiplicity bins. \abkgd is limited by above at 2 (the Gaussian case), and for low \kt bins this is sufficient to describe the background shape. The parameter is fit to a function of the form $\abkgd = 2 - 0.0497 \log \left(1 + e^{50.9(\kt - 0.493)} \right)$, with \kt in GeV.
+}
+\label{fig:background_alpha_pythia8}
+\end{figure}
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{qinv_pythia8_backLambda_kt_opp_vs_same.pdf}
+\includegraphics[width=.49\linewidth]{qinv_pythia8_backR_kt_opp_vs_same.pdf}
+\end{minipage}
+\caption{A comparison of same-sign to opposite-sign charged pairs with the amplitude and width of $\alpha$-stable fits in \Pythia 8. Several multiplicities are shown in each colored \kt bin, with the multiplicity bins defined in Figure \ref{fig:background_alpha_pythia8}, and the $++$ and $--$ pairs are separated. The slopes and intercepts of the lines in the left plot are shown in Figure \ref{fig:background_qinv_same_vs_opp_pythia8_fits}. The widths $\Rbkgd$ are fit to a simple ratio $\rho$ (equation \ref{eqn:rho}). In the amplitude plot (left), the widths $\Rbkgd$ are fixed to the value extracted from the right plot.}
+\label{fig:background_qinv_same_vs_opp_pythia8}
+\end{figure}
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{can_kt_qinv_backLambda_slope_combined.pdf}
+\includegraphics[width=.49\linewidth]{can_kt_qinv_backLambda_intercept_combined.pdf}
+\end{minipage}
+\caption{The slopes (left) and intercepts (right) of the fits from Figure \ref{fig:background_qinv_same_vs_opp_pythia8} as defined in equation \ref{eqn:lambdaBackPar}. The parameters are each fitted to a function of the form $p_1 + \frac{p_2}{1 + e^{-p_3(k_T - p_4)}}$. The results of the fits are displayed in equations \ref{eqn:mu} - \ref{eqn:nu}. The procedure is perfomed in both forward (red) and central (blue) rapidity bins, and the results are used as a systematic variation.}
+\label{fig:background_qinv_same_vs_opp_pythia8_fits}
+\end{figure}
+
+In one attempt to constrain the background, correlation functions were generated in \Pythia 8 (which does not have Bose-Einstein or Coulomb effects) and the width and height of the correlation functions were compared from like-sign to unlike-sign.
+Figure \ref{fig:background_qinv_same_vs_opp_pythia8} shows the comparison for each \kt bin for a few choices of multiplicity ($26 \leq N_{ch}^{tr} \leq36$, $37 \leq N_{ch}^{tr} \leq48$, $49 \leq N_{ch}^{tr} \leq64$, $65 \leq N_{ch}^{tr}$).
+The amplitudes are compared on a log scale and straight lines are fit for each \kt bin.
+The widths $\Rbkgd^{\pm\pm}$ and $\Rbkgd^{+-}$ are taken to be proportional to each other by a constant factor.
+This assumption is clearly not perfect but becomes increasingly accurate at high \kt, where the background contribution is largest.
+
+This \kt dependence of fit parameters is used as a mapping from opposite-sign fits in the data to a fixed background gaussian.
+In summary we are requiring that
+
+\begin{align}
+\lbkgd^{\pm\pm} &= \mu(\kt) \left(\lbkgd^{+-}\right)^{\nu(\kt)} \label{eqn:lambdaBackPar}\\
+\Rbkgd^{\pm\pm} &= \rho \Rbkgd^{+-} \label{eqn:rBackPar}
+\end{align}
+
+and fixing $\mu(k_T)$, $\nu(k_T)$, and $\rho$ from the Monte Carlo (results shown in Figure \ref{fig:background_qinv_same_vs_opp_pythia8_fits})):
+
+\begin{align}
+\log \mu (\kt [\textrm{GeV}]) &= -2.26 + \frac{1.97}{1 + e^{-10.1 (\kt - 0.383)}} \label{eqn:mu}\\
+\nu(\kt [\textrm{GeV}]) &= 0.579 + \frac{4.38}{1 + e^{-14.4 (\kt - 0.425)}} \label{eqn:nu}\\
+\rho &= 1.33 \label{eqn:rho} %% this constant is independent over rapidity to within ~2%
+\end{align}
+The statistical errors on the above parameters are on the order of 10\%.
+
+
+\subsection{Jet fragmentation in three dimensions}
+\label{subsec:jet_frag_3d}
+
+In the longitudinally co-moving frame of a particle pair produced in a jet, on averate the axis of the jet will be aligned with the ``out'' direction and the plane transverse to the jet's momentum will be spanned by the ``side'' and ``long'' directions. In three dimensions the correlation from jet fragmentation is factorized into components which separately describe the ``out'' direction and both the ``side'' and ``long'' directions:
+
+\begin{align}
+C_{\mathrm{bkgd}}(\mathbf{q}) = 1 + \lbkgd^\mathrm{osl} \exp\left(-\left| R_\mathrm{bkgd}^\mathrm{out} \qout \right|^{\abkgd^\mathrm{out}} - \left| R_\mathrm{bkgd}^\mathrm{sl} \qsl \right|^{\abkgd^\mathrm{sl}}\right) \label{eqn:jet_frag_form_3d}
+\end{align}
+
+with $\qsl = \sqrt{\qside^2 + \qlong^2}$.
+The shape parameters $\abkgd^\mathrm{out}$ and $\abkgd^\mathrm{sl}$ are fixed to 1.5 and 1.7 respectively, as shown in Figure \ref{fig:pythia_bkgd_alpha}.
+These parameters are not statistically consistent with constants independent of \kt and multiplicity.
+However, at larger \kt, where the jet fragmentation is significant, the values do not vary enough to change the shape of the function drastically.
+What is lost in precision is gained in the utility of having good control over the remaining parameters.
+A systematic check is performed to investigate the effect of the shape on the results, and the results are seen to be insensitive at the 1\% level to variations of 0.1 in the \abkgd parameters.
+
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{canqosl_backAlphaOut_vs_kt.pdf}
+\includegraphics[width=.49\linewidth]{canqosl_backAlpha_vs_kt.pdf}\\
+\end{minipage}
+\caption{The fit results from \Pythia 8 of the shape parameters from Equation \ref{eqn:jet_frag_form_3d}. The dashed lines indicate the constant values used in the analysis. While the results are not well-described by a constant function, the difference in the shape of the function is not extreme over the discrepancies observed.}
+\label{fig:pythia_bkgd_alpha}
+\end{figure}
+
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics{can_kt_qosl_backLambda.pdf}\\
+\includegraphics[width=.49\linewidth]{can_kt_qosl_backLambda_slope_combined.pdf}
+\includegraphics[width=.49\linewidth]{can_kt_qosl_backLambda_intercept_combined.pdf}
+\end{minipage}
+\caption{
+Top: A comparison of same-sign to opposite-sign charged pairs with the amplitude and width of three-dimensional fits in \Pythia 8. Several multiplicities are shown in each colored \kt bin, with the multiplicity bins defined in Figure \ref{fig:background_alpha_pythia8}, and the $++$ and $--$ pairs are separated. The slopes and intercepts of the fit lines are shown in the bottom left and right subfigures, respectively. The procedure is repeated in both forward (red) and central (blue) rapidity bins, and the difference is used as a systematic variation.}
+\label{fig:background_qosl_lambda_same_vs_opp_pythia8}
+\end{figure}
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.55\linewidth]{can_kt_qosl_backRout.pdf}
+\includegraphics[width=.44\linewidth]{can_kt_qosl_backRout_intercept.pdf}
+\end{minipage}
+\caption{
+  Left: The comparison of jet fragmentation width along the out-axis between same- and opposite- sign charged pairs. The difference is modeled as a \kt-dependent constant additive factor. Right: the best-fit difference of the width between same- and opposite-sign pairs. The lowest \kt interval is not included in the fit because the jet contribution is not large there, and its behavior does not fit the trend.
+}
+\label{fig:background_qosl_Rout_same_vs_opp_pythia8}
+\end{figure}
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.55\linewidth]{can_kt_qosl_backR.pdf}
+\includegraphics[width=.44\linewidth]{can_kt_qosl_backR_intercept.pdf}
+\end{minipage}
+\caption{
+  Left: The comparison of jet fragmentation width in the side-long plane between same- and opposite- sign charged pairs. The difference is modeled as a \kt-dependent constant additive factor. Right: the best-fit difference of the width between same- and opposite-sign pairs. The lowest \kt interval is not included in the fit because the jet contribution is not large there, and its behavior does not fit the trend.
+}
+\label{fig:background_qosl_R_same_vs_opp_pythia8}
+\end{figure}
+
+
+
+Just as is done for the \qinv correlation functions, the amplitudes for three dimensional jet correlations are compared between opposite- and same-sign pairs (see Figure \ref{fig:background_qosl_lambda_same_vs_opp_pythia8}).
+
+\begin{align}
+\lbkgd^{\mathrm{osl},\pm\pm} &= \mu(\kt) \left(\lbkgd^{\mathrm{osl}+-}\right)^{\nu(\kt)} \label{eqn:lambdaBackParOSL}\\
+\Rbkgd^{\mathrm{sl},\pm\pm} &= \Rbkgd^{\mathrm{sl}+-} + \Delta\Rbkgd^{\mathrm{sl}}(\kt) \label{eqn:rBackParSL}\\
+\Rbkgd^{\mathrm{out},\pm\pm} &= \Rbkgd^{\mathrm{out}+-} + \Delta\Rbkgd^{\mathrm{out}}(\kt) \label{eqn:rBackParOut}
+\end{align}
+
+The numerical values used for the mapping the amplitude $\lbkgd^\mathrm{osl}$ (Figure \ref{fig:background_qosl_lambda_same_vs_opp_pythia8}), fragmentation width colinear with the jet axis $\Rbkgd^\mathrm{out}$ (Figure \ref{fig:background_qosl_Rout_same_vs_opp_pythia8}), and fragmentation width transverse to the jet axis $\Rbkgd^\mathrm{sl}$ (Figure \ref{fig:background_qosl_R_same_vs_opp_pythia8}) are as follows:
+
+\begin{align}
+\log \mu (\kt [\textrm{GeV}]) &= -3.9 + 9.5 \kt - 6.4 \kt^2 \label{eqn:mu_osl}\\
+\nu(\kt [\textrm{GeV}]) &= 0.03 + 2.6 \kt - 1.6 \kt^2 \label{eqn:nu_osl}\\
+\Delta \Rbkgd^\mathrm{out} (\kt [\textrm{GeV}]) &= 0.43 - 0.49 \kt \label{eqn_rbkgdout}\\
+\Delta \Rbkgd^\mathrm{sl} (\kt [\textrm{GeV}]) &= \frac{0.51}{1 + (1.30\kt)^2} \label{eqn_rbkgdsl}
+\end{align}
+
+\subsection{Difference between collision systems}
+
+The mapping from opposite- to same- sign correlation functions is derived from \Pythia 8, which simulates \pp~collisions but not nuclear collisions.
+Since the background structure is caused primarily by the fragmentation of mini-jets, a large difference is not expected between \pp~and \pPb~systems.
+Nevertheless, the distinction can and should be evaluated.
+
+Since \Hijing uses an old version of \Pythia 6 its description of the fragmentation function is not up-to-date, but \Pythia alone does not simulate the same soft particle production that \Hijing does.
+Thus, \Pythia 8 p+p is used to derive the mapping between $+-$ and $\pm\pm$, then corrected slightly for the difference between p+p and p+Pb observed in \Hijing.
+A comparison of \Hijing p-p and p-Pb correlation functions shows that the ratio of the background width is the same in each, at least a high \kt (about 1.08).
+This justifies using the width ratio from the updated \Pythia 8, since it suggests that changing from a proton-proton system to a proton-lead system does not drastically alter the ratio of widths.
+We also see that in \Hijing (with the width ratio is fixed to 1.08) $\log \lbkgd$ is decreased in p-Pb by $0.05$ (high \kt) to $0.2$ (low \kt) (See Figure \ref{fig:background_pp_ppb_comp}.) This difference is made more precise in Figure \ref{fig:mu_hijing_pp_pPb}, which quantifies the difference in the amplitudes of the ratios of correlation functions.
+The extracted scaling is applied to the background description in the data, and the spread in the attenuation is accounted for as a systematic variation.
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{backLambda_charge_comp_ppHijing.pdf}
+\includegraphics[width=.49\linewidth]{backLambda_charge_comp_pPbHijing.pdf}\\
+\includegraphics[width=.49\linewidth]{qinv_backAlpha_vs_kt_ppHijing.pdf}
+\includegraphics[width=.49\linewidth]{qinv_backAlpha_vs_kt_pPbHijing.pdf}\\
+
+\end{minipage}
+\caption{The background amplitude ratio (top) and the shape parameter (bottom) in \Hijing for both proton-proton (left) and proton-lead (right). The p-Pb has about a 5-20\% attenuation from p-p. For the amplitude comparison the width ratio from opposite to same sign is forced to be a constant 1.08, which the ratio tends to at high \kt in \Hijing for both systems. The shape, parameterized by $\abkgd$, is quite similar between the systems.}
+\label{fig:background_pp_ppb_comp}
+\end{figure}
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics{mu_hijing_pp_pPb.pdf}
+\end{minipage}
+\caption{A comparison of the attenuation between opposite- and same-sign correlation functions in \Hijing p+p and \Hijing p+Pb (all other settings identical). The multiplicity slices in each \kt bin are $26 \leq N_{ch}^{tr} \leq 36$, $37 \leq N_{ch}^{tr} \leq 48$, and $49 \leq N_{ch}^{tr} \leq 64$. The difference between the ratio is slightly more prominent in p+Pb, which is accounted for in the mapping and as a systematic error. The variable $\mu$ is used here because this correction and variation is applied directly into the $\mu$ of equations \Cref{eqn:lambdaBackPar,eqn:mu}.}
+\label{fig:mu_hijing_pp_pPb}
+\end{figure}
+
+\clearpage
+
+\subsection{Mapping results}
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.32\linewidth]{Cqinv_cent0_e0_kt0_ys1.pdf}
+\includegraphics[width=.32\linewidth]{Cqinv_cent4_e0_kt4_ys1.pdf}
+\includegraphics[width=.32\linewidth]{Cqinv_cent7_e0_kt6_ys1.pdf}
+\end{minipage}
+\caption{Examples of the background fit to opposite-sign correlation functions in the data. The shape parameter $\abkgd$ is fixed from \Pythia 8, and the amplitude $\lbkgd^{+-}$ and width $\Rbkgd^{+-}$ are left as free parameters. A selection of centrality and \kt bins are chosen to cover a large range of the magnitude of the effect. Note that some resonances are removed before filling the histograms, which accounts for the gaps and large error bars in some bins.}
+\label{fig:background_qinv_opp_example}
+\end{figure}
+
+Figure \ref{fig:background_qinv_opp_example} shows a few examples of the fit to opposite-sign correlation functions in order to determine the background.
+These fit parameters are then used with the mapping derived from the Monte Carlo to fix the background in same-sign fits.
+The parameters used to describe the background in \qinv are shown in Figure \ref{fig:background_data}.
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{canqinv_backLambda_vs_kt_opp.pdf}
+\includegraphics[width=.49\linewidth]{canqinv_backLambda_vs_kt_same.pdf}\\
+\includegraphics[width=.49\linewidth]{canqinv_backR_vs_kt_opp.pdf}
+\includegraphics[width=.49\linewidth]{canqinv_backR_vs_kt_same.pdf}\\
+\end{minipage}
+\caption{The background parameters that are free fit parameters in the opposite sign (left), and the like-sign parameters derived from the opposite-sign values using \Cref{eqn:lambdaBackPar,eqn:rBackPar,eqn:mu,eqn:nu} (right). The $\abkgd$ parameter is taken directly from \PYEight (\Cref{fig:background_alpha_pythia8}). Statistical error bars are too small to be visible. The non-monotonicity is not surprising, since the meaning of $\Rbkgd$ changes with $\abkgd$, which varies with \kt as shown in \Cref{fig:background_alpha_pythia8,fig:background_pp_ppb_comp}.}
+\label{fig:background_data}
+\end{figure}
+
+
+%---------------------------------------------
+\subsection{Fits to \Pythia}
+\label{subsec:pythia_fits}
+%---------------------------------------------
+
+This section will show examples of how well the stretched exponential form fits the correlation functions in \PYEight.
+The parameters extracted from these fits are used to form the mapping from opposite sign to same sign in the background description of the data.
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent3_e0_kt0.pdf}
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent3_e1_kt0.pdf}\\
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent3_e0_kt3.pdf}
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent3_e1_kt3.pdf}\\
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent3_e0_kt6.pdf}
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent3_e1_kt6.pdf}\\
+\end{minipage}
+\caption{Fits of the stretched exponential to correlation functions from \PYEight events.}
+\label{fig:pythia_bckg_fit_cent3}
+\end{figure}
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent7_e0_kt0.pdf}
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent7_e1_kt0.pdf}\\
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent7_e0_kt3.pdf}
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent7_e1_kt3.pdf}\\
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent7_e0_kt6.pdf}
+\includegraphics[width=.49\linewidth]{Cqinv_pythia_cent7_e1_kt6.pdf}\\
+\end{minipage}
+\caption{Fits of the stretched exponential to correlation functions from \PYEight events.}
+\label{fig:pythia_bckg_fit_cent7}
+\end{figure}
+
+
+%---------------------------------------------
+\subsection{Comparison of \Herwig and \PYEight}
+\label{subsec:herwig_vs_pythia}
+%---------------------------------------------
+
+Both \PYEight and \Herwig++ are studied in order to understand the uncertainties inherent in the background description.
+A direct comparison of the two is shown in Figures \ref{fig:comp_herwig_pythia_cent3} and \ref{fig:comp_herwig_pythia_cent7}.
+\Herwig tends to overestimate the mini-jet background more prominently than \PYEight does, especially at low \kt.
+Figures \ref{fig:herwig_pythia8_cent3_bkgd_charge_comp} and \ref{fig:herwig_pythia8_cent7_bkgd_charge_comp} compare the same and opposite sign correlation functions in the simulations considered.
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent3_e0_kt0.pdf}
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent3_e1_kt0.pdf}
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent3_e0_kt3.pdf}
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent3_e1_kt3.pdf}
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent3_e0_kt6.pdf}
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent3_e1_kt6.pdf}
+\end{minipage}
+\caption{An illustration of the differences between the jet fragmentation contribution to $C(\qinv)$ predicted in \Herwig and \PYEight, for relatively higher multiplicities $49 \leq N_\mathrm{ch}^\mathrm{tr} \leq 64$. The ratio of \Herwig to \PYEight is shown in the lower boxes of each plot. Opposite- (same-)charge correlation functions are shown on the left (right), and from top to bottom the figures have increasing \kt.}
+\label{fig:comp_herwig_pythia_cent3}
+\end{figure}
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent7_e0_kt0.pdf}
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent7_e1_kt0.pdf}
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent7_e0_kt3.pdf}
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent7_e1_kt3.pdf}
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent7_e0_kt6.pdf}
+\includegraphics[width=.49\linewidth]{herwigPythiaCompCent7_e1_kt6.pdf}
+\end{minipage}
+\caption{An illustration of the differences between the jet fragmentation contribution to $C(\qinv)$ predicted in \Herwig and \PYEight, for relatively lower multiplicities $26 \leq N_\mathrm{ch}^\mathrm{tr} \leq 36$. The ratio of \Herwig to \Pythia is shown in the lower boxes of each plot. Opposite- (same-)sign correlation functions are shown on the left (right), and from top to bottom the figures have increasing \kt.}
+\label{fig:comp_herwig_pythia_cent7}
+\end{figure}
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{herwig_bkgd_charge_comp_cent3_kt0.pdf}
+\includegraphics[width=.49\linewidth]{pythia8_bkgd_charge_comp_cent3_kt0.pdf}\\
+\includegraphics[width=.49\linewidth]{herwig_bkgd_charge_comp_cent3_kt2.pdf}
+\includegraphics[width=.49\linewidth]{pythia8_bkgd_charge_comp_cent3_kt2.pdf}\\
+\includegraphics[width=.49\linewidth]{herwig_bkgd_charge_comp_cent3_kt4.pdf}
+\includegraphics[width=.49\linewidth]{pythia8_bkgd_charge_comp_cent3_kt4.pdf}\\
+\includegraphics[width=.49\linewidth]{herwig_bkgd_charge_comp_cent3_kt6.pdf}
+\includegraphics[width=.49\linewidth]{pythia8_bkgd_charge_comp_cent3_kt6.pdf}\\
+\end{minipage}
+\caption{A comparison of like and unlike sign correlation functions in \Herwig++ and \PYEight.}
+\label{fig:herwig_pythia8_cent3_bkgd_charge_comp}
+\end{figure}
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{herwig_bkgd_charge_comp_cent7_kt0.pdf}
+\includegraphics[width=.49\linewidth]{pythia8_bkgd_charge_comp_cent7_kt0.pdf}\\
+\includegraphics[width=.49\linewidth]{herwig_bkgd_charge_comp_cent7_kt2.pdf}
+\includegraphics[width=.49\linewidth]{pythia8_bkgd_charge_comp_cent7_kt2.pdf}\\
+\includegraphics[width=.49\linewidth]{herwig_bkgd_charge_comp_cent7_kt4.pdf}
+\includegraphics[width=.49\linewidth]{pythia8_bkgd_charge_comp_cent7_kt4.pdf}\\
+\includegraphics[width=.49\linewidth]{herwig_bkgd_charge_comp_cent7_kt6.pdf}
+\includegraphics[width=.49\linewidth]{pythia8_bkgd_charge_comp_cent7_kt6.pdf}\\
+\end{minipage}
+\caption{A comparison of like and unlike sign correlation functions in \Pythia 8.}
+\label{fig:herwig_pythia8_cent7_bkgd_charge_comp}
+\end{figure}
+
+\begin{figure}[t]
+\begin{minipage}[t]{\textwidth}
+\centering
+\includegraphics{mu_pythia_herwig.pdf}
+\end{minipage}
+\caption{The left plot compares the difference in $+-$ and $\pm\pm$ correlation function ratios between two generators. The multiplicity bins used are $26 \leq N_{ch}^{tr} \leq 36$, $37 \leq N_{ch}^{tr} \leq 48$, and $49 \leq N_{ch}^{tr} \leq 64$. The lowest \kt bin is not used because of large statistical fluctuations in the fit parameters. While \Herwig predicts an amplitude for the ratio $C^{+-}/C^{\pm\pm}$ that is clearly too small by inspection (i.e. it blatantly fails to match the correlation functions in the data), the variation of the double ratio (\Herwig to \PYEight) can be used to showcase the uncertainty in a constant attenuation factor.}
+\label{fig:delta_mu_pythia_herwig}
+\end{figure}
+
+\subsection{Incorporating the hard-process description into fit}
+
+This section will briefly summarize the process by which the jet background is measured and applied in the data analysis.
+An example using Lorentz-invariant correlation functions will be shown.
+
+\begin{figure}[t]
+\centering
+\includegraphics{cqinv_charge_comp_cent6_kt4_kys1.pdf}
+\caption{Correlation functions in \pPb data for opposite-charge (teal circles) and same-charge (red squares) pairs. The opposite-charge correlation function, with the most prominent resonances removed, is fit to a function of the form in \Eqn{\ref{eq:bkgd_form}} (blue dashed line). The violet dotted line is the estimated jet contribution in the same-charge correlation function, also of the form of \Eqn{\ref{eq:bkgd_form}}, and the dark red line is the full fit of \Eqn{\ref{eq:correlation_function_full}} to the same-charge data.}
+\label{fig:hp_example}
+\end{figure}
+
+With $\abkgdinv(\kt)$, $\mu(\kt)$, $\nu(\kt)$, and $\rho$ determined from Monte Carlo generator samples, the mapping can be applied to the \pPb data.
+As illustrated in \Fig{\ref{fig:hp_example}}, the $+-$ correlation function is fit to \Eqn{\ref{eq:bkgd_form}} for $\qinv > 0.1~\GeV$, with \abkgd fixed from \PYEight and $\lbkgdinv{}^{+-}$ and $\Rbkgdinv{}^{+-}$ as free parameters.
+The $\mu$, $\nu$, and $\rho$ parameters are used to infer $\lbkgdinv{}^{\pm\pm}$ and $\Rbkgdinv{}^{\pm\pm}$, which are fixed before the femtoscopic part of the correlation function is fit to $\pm\pm$ data.
+
+
 \section{Fit procedure}
 \section{Systematic uncertainties}
