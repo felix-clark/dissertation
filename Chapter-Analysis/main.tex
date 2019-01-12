@@ -294,7 +294,7 @@ In each of the following samples, 50 million (250 million for \PYEight) \minbias
 \item \Hijing p+Pb \cite{Gyulassy:1994ew}\\
   The energy and boost settings are the same as in the nominal \pPb reconstructed simulation, except that the minimum hard-scattering transverse momentum is adjusted as described above.
   Turning off the flow, which shifts the $\phi$ of particles in order to reproduce the flow harmonics $v_n$, was not found to have a significant effect on the momentum-space correlation functions.
-  The minimum hard-scattering \pt parameter\footnote{HIPR18} is adjusted to show that the non-femtoscopic background originates from minijets, as described in Figure \ref{fig:hard_process_min_pt}.
+  The minimum hard-scattering \pt parameter\footnote{HIPR18} is adjusted to show that the non-femtoscopic background originates from minijets, as described in \Cref{fig:hard_process_min_pt}.
 
 \item \Hijing \pp\\
   The simulation is run at $\sqrt{s} = 5 \TeV$ with all of the same settings as the \pPb sample, except that both incoming particles are protons.
@@ -309,7 +309,7 @@ A known bug in \Herwig++ 2.7.1 prevented the use of the CTEQ6 \ac{PDF}, so the d
 This should not be a significant issue for these purposes, because the jet fragmentation is not very dependent on the initial state.
 
 It should be noted that the correlation functions predicted by \Herwig are in such significant and obvious disagreement with those seen in the data that they cannot be used directly.
-The \Herwig sample is used to compare the variation of certain behavior of the correlation functions compared to \Pythia in order to establish an estimate for the systematic uncertainty arising from the details of the generator (as will be described in section \ref{subsec:herwig_vs_pythia}).
+The \Herwig sample is used to compare the variation of certain behavior of the correlation functions compared to \Pythia in order to establish an estimate for the systematic uncertainty arising from the details of the generator (as will be described in \Cref{subsec:herwig_vs_pythia}).
 \end{enumerate}
 
 
@@ -565,7 +565,7 @@ The parameters extracted from these fits are used to form the mapping from oppos
 %---------------------------------------------
 
 Both \PYEight and \Herwig++ are studied in order to understand the uncertainties inherent in the background description.
-A direct comparison of the two is shown in \Cref{fig:comp_herwig_pythia_cent3} and \ref{fig:comp_herwig_pythia_cent7}.
+A direct comparison of the two is shown in \Cref{fig:comp_herwig_pythia_cent3,fig:comp_herwig_pythia_cent7}.
 \Herwig tends to overestimate the mini-jet background more prominently than \PYEight does, especially at low \kt.
 \Cref{fig:herwig_pythia8_cent3_bkgd_charge_comp,fig:herwig_pythia8_cent7_bkgd_charge_comp} compare the same and opposite sign correlation functions in the simulations considered.
 
@@ -657,4 +657,267 @@ The $\mu$, $\nu$, and $\rho$ parameters are used to infer $\lbkgdinv{}^{\pm\pm}$
 \FloatBarrier
 
 \section{Fit procedure}
-\section{Systematic uncertainties}
+
+%% -------------------------------------------
+%% Systematics
+%% -------------------------------------------
+\section{Systematic uncertainties and cross-checks}
+\label{sec:systematics}
+
+The average effect of each systematic on \Rinv is shown in \Cref{table:rinv_syst} for each \kt bin.
+The systematics in two centrality bins are shown in \Cref{table:rinv_syst_central,table:rinv_syst_peripheral}.
+Similar tables are shown for the 3D radii in \Cref{table:rout_syst,table:rside_syst,table:rlong_syst}.
+The systematics listed there are included in the final results.
+
+\subsection{Generator for hard-process description}
+The greatest difficulty by far in measuring HBT radii in small systems is in forming an accurate description of the background contribution from hard processes.
+For the uncertainty in the hard-process contribution two effects are considered.
+First, the variation in the translation from \pp to \pPb is taken as an uncertainty in the amplitude, as shown in \Cref{fig:mu_hijing_pp_pPb}.
+Secondly, as described in \Cref{subsec:herwig_vs_pythia}, the width of the variation in the difference of $\frac{C^{+-}}{C^{\pm\pm}}$ between \Pythia and \Herwig (\Cref{fig:delta_mu_pythia_herwig}) is used as an additional systematic variation in the background amplitude.
+This is to account for uncertainty arising from the specific choice of \Pythia as a generator.
+Both uncertainties are expressed as a scaling factor times $\lbkgd$, so they can be evaluated by scaling $\mu$ (\Cref{eqn:lambdaBackPar,eqn:mu}):
+
+\begin{equation}
+\sigma_{\log \mu} = \sigma^{p+p \rightarrow p+Pb}_{\log \mu} \oplus \sigma^{\Pythia-\Herwig}_{\log \mu} = 0.0413 \oplus 0.116 = 0.123
+\end{equation}
+
+The background amplitude \lbkgd is thus scaled up and down by 12.3\% to compute the systematic from the background.
+
+\subsection{Rapidity dependence of hard-process description}
+
+The background amplitude relations in \Cref{eqn:lambdaBackPar,eqn:rBackPar} are evaluated with \Pythia in both central ($|\kys| < 1$) and forward ($1 < |\kys| < 2$) rapidity intervals.
+The width relationship (\Cref{eqn:rBackPar}) does not change significantly, but the relationship between the amplitudes (\Cref{eqn:lambdaBackPar}) does.
+The parameterization is varied from the nominal (inclusive) expression to that for each of the different rapidity bins.
+In three dimensions a 2nd-order polynomial is used instead of a sigmoid.
+This variation is illustrated in \Cref{subsec:jet_frag_inv,subsec:jet_frag_3d}.
+
+\subsection{Choice of 3D jet background form}
+
+One alternative to \Cref{eqn:jet_frag_form_3d} is to describe the jet fragmentation in three dimensions as a simple function of \qinv only.
+The average \kt in each centrality/\kt/\kys interval can be used in \Cref{eqn:q3_to_qinv} to contract $\mathbf{q}$ into \qinv.
+The same parameters derived in the Lorentz invariant correlations could be used to describe the three-dimensional background as well.
+This turns out to be an over-simplification, as shown in \Cref{fig:pythia_qosl_alt_bkgd}.
+The form in \Cref{eqn:jet_frag_form_3d} is used as it clearly describes the jet fragmentation more accurately.
+
+\begin{figure}[t]
+\begin{minipage}[t]{\textwidth}
+\centering
+\includegraphics[width=\linewidth]{can_Cqosl_pythia_altbkgd_cent7_e3_kt6_ys1.pdf}
+\end{minipage}
+\caption{Two functional forms for describing three-dimensional jet fragmentation. The blue line (\Cref{eqn:jet_frag_form_3d}) is the one used in the results, and the purple line (which describes the correlation as a function of \qinv only) clearly does not enjoy the same level of agreement.}
+\label{fig:pythia_qosl_alt_bkgd}
+\end{figure}
+
+
+\subsection{Shape parameters of hard-process description}
+The background parameters $\abkgd^\mathrm{inv}$, $\abkgd^\mathrm{out}$, and $\abkgd^\mathrm{sl}$ were varied by 0.1\% from the nominal values.
+The typical effect on the HBT radii was seen to be on order 0.5\%, and this variation is not included in the reported systematic errors.
+
+\subsection{Pion identification}
+The \ac{PID} definition used for the nominal result is the "Middle" cut level defined in \Cref{sec:pid}.
+Systematic uncertainties from imperfections in the particle identification are evaluated by repeating the analysis with both the "Loose" and "Tight" cut levels.
+The effect on the radii is at the 1-2\% level for the lower \kt bins, but becomes more significant at higher momentum bins (presumably because they are relatively more populated with kaons and protons).
+
+\subsection{Charge asymmetry}
+The distinction between positive and negative pairs could come from the orientation of the overlap of the inner detector components.
+The nominal value is taken to be the fit results from histograms filled with all same-sign pairs, and a systematic variation is taken to positive and negative pairs.
+
+\subsection{Binning of $z$ position of Primary Vertex}
+A significant difference in the radii at high \kt was observed when it was required that events only be mixed from within the same 5 mm wide bin in $z_\textrm{vtx}$, the longitudinal position of the primary vertex.
+
+The variations in the radii between a bin size of 2 mm and 5 mm were found to be around $0.5 \%$, so a bin size of 5 mm is chosen and a systematic uncertainty is neglected.
+It is required that the event-mixing buffer in a given $z_\textrm{vtx}$ bin be full before histograms are filled, which ensures that the signal and mixed-event background have the same $z_\textrm{vtx}$ distribution.
+
+\subsection{Core fraction $x_c$}
+A correlation function of the form
+
+\begin{equation}
+C(q) = \left(1-x_c + x_c K(\qinv)\left( 1 + \lambda e^{-"Rq"} \right) \right) C_{\textrm{bkgd}}(q)
+\end{equation}
+
+was also considered.
+In this form $\lambda$ takes into account pion impurities, and $x_c$ indicates the fraction of pairs that come from a core (i.e. not from long-lived resonances or weak decays - see \Cref{fig:pythia_xc}).
+The region of the correlation function that drives the fit results is both at a larger $\qinv$ than where the Coulomb correction $K(\qinv) \neq 1$ and at smaller $\qinv$ than where $e^{-\Rinv\qinv}$ can be neglected.
+Here the correlation function looks like $C(q) \approx 1 + x_c \lambda e^{-"Rq"} C_{\textrm{bkgd}}(q)$, so the results are mostly dependent only on the product $x_c \lambda$.
+
+The measured radii turn out to be for the most part extremely insensitive to variations in the core fraction $x_c$.
+To emphasize this, $x_c$ is varied between 0.4 and 0.9.
+This is surely an overestimation of the possible range, but the difference in the radii is still less than one percent for nearly all bins.
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{pythia_xc.pdf}
+\end{minipage}
+\caption{The core fraction $x_c$ measured in \Pythia 8 by counting the pairs in which neither particle is a product of a weak decay or of a $\eta$, $\eta'$, $\omega$, or $K*$.}
+\label{fig:pythia_xc}
+\end{figure}
+
+Though a core fraction near 50\% is physically reasonable (as in \Cref{fig:pythia_xc}), it results in $\lambda$ parameters near 2.
+$\lambda$ should always be less than 1 in order to be interpreted as a coefficient of a Bose-Einstein enhancement.
+There is a redundancy in the description of the correlation function using both $x_c$ and $\lambda$.
+
+To avoid over-parameterizing the fit and to avoid questionable values of $\lambda$, the choice was made to effectively take $\lambda \rightarrow 1$ and rename $x_c \rightarrow \lambda$, to match the typical presentation of the "Bowler-Sinyukov" formula $C(q) = \left( 1-\lambda + \lambda K(\qinv)\left( 1 + e^{-Rq} \right)\right) C_{\textrm{bkgd}}(q)$.
+
+\subsection{Effective size for the Coulomb effect}
+The non-zero effective size of the Coulomb correction \Reff should only provide a bin-by-bin difference of a few percent, even up to several fm.
+However, since the parameter effectively changes the \qinv range over which the Coulomb correction is applied, varying this parameter can affect the HBT radii significantly.
+The parameter \Reff is taken to be proportional to the invariant HBT radius, such that $\Reff = \xi \Rinv$.
+
+The nominal value of $\xi$ is chosen to be equal to unity, and a variation down to $1/2$ and up to $2$ is taken to be the $1\sigma_{syst}$ level.
+
+\subsection{Projection of $\mathbf{q}$ onto $\qinv$}
+The value of \kt used to calculate \qinv from $\mathbf{q}$ in the 3D fits (see \Cref{eqn:q3_to_qinv}) is varied $\pm 1$ standard deviation of the \kt in each bin.
+In three dimensions, the value of \qinv is only used in the Coulomb correction.
+The effect on the radii is small, and the Coulomb correction is already varied through \Reff, so this variation is not included.
+%%It is still included as a systematic in the 3D results.
+
+%%is not expected to change \Rside or \Rlong appreciably since the part of the correlation function most relevant to those parameters is at $\qout = 0$, where $\qinv = |\mathbf{q}|$. It could possibly have a measureable effect on \Rout, however.
+
+\subsection{Alternative test statistic}
+The alternative test statistic mentioned in \Cref{sec:fit} is checked to to ensure that the fit results do not vary significantly as a result.
+Indeed, the typical variation is less than $0.1\%$.
+In the few exceptions, the difference is within range of the statistical error bar.
+This effect is therefore not included in a systematic variation.
+
+\subsection{Different functional forms}
+While the exponential seems to be a clear choice for fitting $C(\qinv)$, there are a number of possible options for the out-side-long fits.
+For instance, factorizing the longitudinal and transverse parts of the correlation function may provide a better quality of fit than assuming ellipsoidal symmetry.
+This consideration will be taken as a possibility for future analysis.
+
+\subsection{Two-particle track reconstruction effects}
+It is typically assumed that effects like tracking efficiency and acceptance factor out of the ratio $A(q) / B(q)$.
+However, one can reasonably question whether two-particle effects like ghosting can affect the correlation function.
+To explore this possibility, the ratio of reconstructed to truth correlation functions are shown in \Cref{fig:2pc_effects}.
+A significant effect above the few lowest \qinv bins is not observed.
+
+\begin{figure}[t]
+\begin{minipage}[t]{1.0\textwidth}
+\centering
+\includegraphics[width=.49\linewidth]{Cqinv_hijing_reco_vs_truth_cent3_e3_kt1.pdf}
+\includegraphics[width=.49\linewidth]{Cqinv_hijing_reco_vs_truth_cent3_e3_kt6.pdf}
+\end{minipage}
+\caption{A comparison of reconstructed to truth correlation functions using reconstructed \Hijing events.
+The bottom shows the ratio truth / reco.}
+\label{fig:2pc_effects}
+\end{figure}
+
+A minimum $q$ cutoff is applied in the fits to avoid being affected by detector effects like resolution and ghosting.
+The sensitivity of the results to this limit is checked by taking $\qinv^\textrm{min} = 30 \pm 10 \MeV$ in the 1d fits and symmetrizing the effect of the variation from $|\mathbf{q}|^\textrm{min} = 25 + 25 \MeV$ in the 3d fits.
+
+\subsection{Difference between two runs}
+
+A useful cross-check on the measurement is that the results should not differ significantly between period A (Pb going in $+z$ direction) and period B (proton going in $+z$ direction).
+\Cref{fig:fit_inv_R_split} illustrates the difference observed between the two runs, which is not significant.
+The differences are comparable to statistical uncertainties - typically less than $0.5\%$ at low \kt and around $2\%$ at the upper end of the \kt bins.
+
+\begin{figure}[t]
+\includegraphics[width=.49\linewidth]{qinv_R_vs_kt_periodA.pdf}
+\includegraphics[width=.49\linewidth]{qinv_R_vs_kt_periodB.pdf}
+\caption{Results for \Rinv split into both periods and both signs as a check.
+No systematic uncertainties are included - this is intended as a cross-check.}
+\label{fig:fit_inv_R_split}
+\end{figure}
+
+\subsection{Event plane resolution}
+Uncertainty in the 2nd-order event plane resolution is propagated through the event plane resolution correction to the azimuthally-dependent results. There are two contributions to the \psit resolution, both of which are evaluated by changes to the two alternate sub-detectors used in the three-sub-detector method of evaluating $\langle \cos(2\delta\psit) \rangle$. For one variation, tracks weighted by their \pt are used instead of calorimeter cells, and for the other the rapidity windows of the alternate subsdetectors are shifted away from the nominal sub-detector by $\Delta\eta = 0.5$.
+
+\subsection{Sampling uncertainty}
+The effect of the sampling procedure on the pair distribution is evaluated by taking the ratio of the distributions of sampled pairs to traditional event-mixed pairs, as discussed in \Cref{subsubsec:bkgd_sampling}.
+The uncertainty is determined by evaluating this ratio in the 8 intervals of $\kphi - \psit$ and 5 intervals of flow $|\qt|$, and using the endpoints of the middle 68.27\% interval (\Cref{fig:sample_to_mix_ratio}).
+%% The uncertainty is determined by evaluating this ratio in each event class and in several intervals of $\kphi - \psit$ and using the endpoints of the middle 68.27\% interval of this whole collection (\Cref{fig:sample_to_mix_ratio_kt2}).
+This procedure is measured separately for each \kt bin.
+
+The sampling procedure necessitates an effective integration over event plane angle \psit, or the computing demands of the analysis would be unmanageable. While there is no dependence of the physics on the event plane angle due to average rotational symmetry of the collisions, variations in the track reconstruction efficiency can affect the correlation between pairs of tracks. A pair distribution formed with event mixing is compared to a similar distribution in which one event is rotated azimuthally by a uniform random angle. The ratio of these distributions indicates the effect of the detector response on the pair correlation. The pair distribution is corrected by this ratio. The uncertainty in the ratio is evaluated by taking the endpoints of the middle 68.27\% of the variation in different runs and multiplicity bins (\Cref{fig:phi_corr_to_uncorr_ratio}). This accounts for variations in the pair response that may change between runs.
+
+\FloatBarrier
+\subsection{Summary tables and plots}
+
+\begin{center}
+\input{Chapter-Analysis/tables/rinv_syst}
+\input{Chapter-Analysis/tables/rout_syst}
+\input{Chapter-Analysis/tables/rside_syst}
+\input{Chapter-Analysis/tables/rlong_syst}
+\end{center}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.49\linewidth]{canqinv_R_vs_kt_systs.pdf}
+\includegraphics[width=0.49\linewidth]{canqinv_R_vs_npart_systs.pdf}\\
+\caption{The relative contributions of the various sources of systematic uncertainty to the invariant radius \Rinv. The typical trends with \kt are shown on the left and the trends with centrality (\Npart) are shown on the right.}
+\label{fig:syst_rinv}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.49\linewidth]{canqinv_x_vs_kt_systs.pdf}
+\includegraphics[width=0.49\linewidth]{canqinv_x_vs_npart_systs.pdf}\\
+\caption{The relative contributions of the various sources of systematic uncertainty to the invariant Bose-Einstein amplitude \linv. The typical trends with \kt are shown on the left and the trends with centrality (\Npart) are shown on the right.}
+\label{fig:syst_linv}
+\end{figure}
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.49\linewidth]{canqosl_Rout_vs_kt_systs.pdf}
+\includegraphics[width=0.49\linewidth]{canqosl_Rout_vs_npart_systs.pdf}\\
+\caption{The relative contributions of the various sources of systematic uncertainty to the three-dimensional radius \Rout. The typical trends with \kt are shown on the left and the trends with centrality (\Npart) are shown on the right.}
+\label{fig:syst_rout}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.49\linewidth]{canqosl_Rside_vs_kt_systs.pdf}
+\includegraphics[width=0.49\linewidth]{canqosl_Rside_vs_npart_systs.pdf}\\
+\caption{The relative contributions of the various sources of systematic uncertainty to the three-dimensional radius \Rside. The typical trends with \kt are shown on the left and the trends with centrality (\Npart) are shown on the right.}
+\label{fig:syst_rside}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.49\linewidth]{canqosl_Rlong_vs_kt_systs.pdf}
+\includegraphics[width=0.49\linewidth]{canqosl_Rlong_vs_npart_systs.pdf}\\
+\caption{The relative contributions of the various sources of systematic uncertainty to the three-dimensional radius \Rlong. The typical trends with \kt are shown on the left and the trends with centrality (\Npart) are shown on the right.}
+\label{fig:syst_rlong}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.49\linewidth]{canqosl_RoutOverRside_vs_kt_systs.pdf}
+\includegraphics[width=0.49\linewidth]{canqosl_RoutOverRside_vs_npart_systs.pdf}\\
+\caption{The relative contributions of the various sources of systematic uncertainty to the ratio $\Rout / \Rside$. The typical trends with \kt are shown on the left and the trends with centrality (\Npart) are shown on the right.}
+\label{fig:syst_rout_over_rside}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.49\linewidth]{canqosl_Rol_vs_kt_systs.pdf}
+\includegraphics[width=0.49\linewidth]{canqosl_Rol_vs_npart_systs.pdf}\\
+\caption{The relative contributions of the various sources of systematic uncertainty to the three-dimensional radius \Rol. The typical trends with \kt are shown on the left and the trends with centrality (\Npart) are shown on the right.}
+\label{fig:syst_rol}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.49\linewidth]{canqosl_x_vs_kt_systs.pdf}
+\includegraphics[width=0.49\linewidth]{canqosl_x_vs_npart_systs.pdf}\\
+\caption{The relative contributions of the various sources of systematic uncertainty to the three-dimensional Bose-Einstein amplitude \losl. The typical trends with \kt are shown on the left and the trends with centrality (\Npart) are shown on the right.}
+\label{fig:syst_losl}
+\end{figure}
+
+Examples of the systematic uncertainties in the invariant parameters \Rinv and \linv are shown as a function of \kt and centrality in \Cref{fig:syst_rinv,fig:syst_linv}.
+Typical systematic uncertainties are also shown for the 3D radii \Rout (\Cref{fig:syst_rout}), \Rside (\Cref{fig:syst_rside}), \Rlong (\Cref{fig:syst_rlong}), and \Rol (\Cref{fig:syst_rol}), as well as the ratio $\Rout / \Rside$ (\Cref{fig:syst_rout_over_rside}) and the amplitude (\Cref{fig:syst_losl}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=.49\linewidth]{can_syst_breakdown_gr_u_Rout_vs_q2_kt2.pdf}
+\includegraphics[width=.49\linewidth]{can_syst_breakdown_gr_u_Rside_vs_q2_kt2.pdf}\\
+\includegraphics[width=.49\linewidth]{can_syst_breakdown_gr_u_Rlong_vs_q2_kt2.pdf}
+\includegraphics[width=.49\linewidth]{can_syst_breakdown_gr_w_Ros_vs_q2_kt2.pdf}\\
+\caption{The symmetrized contribution of systematic uncertainties as a function of flow vector magnitude $|\qt|$ for the second-order cosine terms of \Rout (top left), \Rside (top right), and \Rlong (bottom left), as well as the second-order sine terms of \Ros (bottom right). The total systematic uncertainty is shown along with the three largest sources. The quadrature sum of the remaining systematic uncertainties is also shown.}
+\label{fig:azi_syst_breakdown}
+\end{figure}
+
+\Cref{fig:azi_syst_breakdown} shows the uncertainties contributing to the relative modulation of each of the main HBT radii. The dominant systematic effect is the \ac{PID}. This is partially due to the fact that the \ac{PID} systematic variation is performed by using looser and tighter \ac{PID} cuts, which gives the variation a statistical component as well. There is also a physical element, as different particle species are expected to freeze out at different times in an expanding source's evolution.
+
+The systematic uncertainties for the Fourier components are smoothed over different values of $|\qt|$. For each source of systematic variation, the uncertainty at each point is averaged with the uncertainty of its nearest neighbors, with double weighting given to its own value. This is done separately for the upwards and downwards variations of each source of systematic uncertainty, before all contributions are summed in quadrature. The use of this simple smoothing kernel reduces the effect of statistical fluctuations in the systematic uncertainties, without drastically changing the qualitative evolution of the size of the variations over $|\qt|$.
