@@ -250,7 +250,7 @@ In the past the double ratio has been studied (i.e. the ratio of the correlation
 \includegraphics[width=.4\linewidth]{Cqinv_Nch26to36_e1_kt6_pPbHijing.pdf}
 \includegraphics[width=.4\linewidth]{Cqinv_Nch26to36_e1_kt6_pPbHijing20.pdf}
 \end{minipage}
-\caption{The hard-process background in \Hijing for either $+-$ or $++$ charged pairs in two \kt bins (with major resonances removed from $+-$), with the minimum hard-scattering \pt (parameter HIPR18) set to the default of $2 \GeV$ (left) and turned up to $20 \GeV$ (right). Removing the hard-scattering processes in this range diminishes or removes the non-femtoscopic signal. The Gaussian fits are shown only to roughly indicate the amplitude and width of the effects, and are not used in the analysis.}
+\caption{The hard-process background in \Hijing for either $+-$ or $++$ charged pairs in two \kt bins (with major resonances removed from $+-$), with the minimum hard-scattering \pt set to the default of $2 \GeV$ (left) and turned up to $20 \GeV$ (right). Removing the hard-scattering processes in this range diminishes or removes the non-femtoscopic signal. The Gaussian fits are shown only to roughly indicate the amplitude and width of the effects, and are not used in the analysis.}
 \label{fig:hard_process_min_pt}
 \end{figure}
 
@@ -294,11 +294,11 @@ In each of the following samples, 50 million (250 million for \PYEight) \minbias
 \item \Hijing p+Pb \cite{Gyulassy:1994ew}\\
   The energy and boost settings are the same as in the nominal \pPb reconstructed simulation, except that the minimum hard-scattering transverse momentum is adjusted as described above.
   Turning off the flow, which shifts the $\phi$ of particles in order to reproduce the flow harmonics $v_n$, was not found to have a significant effect on the momentum-space correlation functions.
-  Tweaking the HIPR18 parameter is explored, as described in Figure \ref{fig:hard_process_min_pt}.
+  The minimum hard-scattering \pt parameter\footnote{HIPR18} is adjusted to show that the non-femtoscopic background originates from minijets, as described in Figure \ref{fig:hard_process_min_pt}.
 
 \item \Hijing \pp\\
   The simulation is run at $\sqrt{s} = 5 \TeV$ with all of the same settings as the \pPb sample, except that both incoming particles are protons.
-  The rapidity boost is not applied.
+  No rapidity boost is not applied, because the collision system is symmetric.
 
 \item \Pythia 8.2 \pp \cite{Sjostrand:2007gs}\\
 The default ATLAS tune "UE AU2-CTEQ6L1" is used with \PYEight at $\sqrt{s} = 5.02 \TeV$.
@@ -326,7 +326,7 @@ The results are shown in \Cref{fig:background_alpha_pythia8,fig:background_qinv_
 \centering
 \includegraphics{qinv_backAlpha_vs_kt_pythia8.pdf}
 \end{minipage}
-\caption{The tail weight parameter \abkgd of fits to $C^{\pm\pm}(\qinv)$ as a function of \kt in \Pythia 8, in 4 multiplicity bins. \abkgd is limited by above at 2 (the Gaussian case), and for low \kt bins this is sufficient to describe the background shape. The parameter is fit to a function of the form $\abkgd = 2 - 0.0497 \log \left(1 + e^{50.9(\kt - 0.493)} \right)$, with \kt in GeV.
+\caption{The tail weight parameter \abkgd of fits to $C^{\pm\pm}(\qinv)$ as a function of \kt in \Pythia 8, in four multiplicity bins. \abkgd is limited by above at 2 (the Gaussian case), and for low \kt bins this is sufficient to describe the background shape. The parameter is fit to a function of the form $\abkgd = 2 - 0.0497 \log \left(1 + e^{50.9(\kt - 0.493)} \right)$, with \kt in GeV.
 }
 \label{fig:background_alpha_pythia8}
 \end{figure}
@@ -438,7 +438,6 @@ Top: A comparison of same-sign to opposite-sign charged pairs with the amplitude
 }
 \label{fig:background_qosl_R_same_vs_opp_pythia8}
 \end{figure}
-
 
 
 Just as is done for the \qinv correlation functions, the amplitudes for three dimensional jet correlations are compared between opposite- and same-sign pairs (\Cref{fig:background_qosl_lambda_same_vs_opp_pythia8}).
