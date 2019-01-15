@@ -178,6 +178,9 @@ Also, the alternate subdetectors are calculated using the \qt from tracks, weigh
 \subsubsection{Pair sampling}
 \subsection{Event plane resolution correction}
 
+\subsection{Track pair cuts}
+\todo{fill section. it's about 1 paragraph}
+
 \subsection{Coulomb correction}
 The residual strong force between charged pions is subdominant to the Coulomb effect and can be neglected in final-state effects \cite{Lednicky:2005tb}.
 In heavy ion collisions the Bohr radius of a pair of pions ($a_{\pi} = 387.5 \textrm{ fm}$) is significantly larger than the source size, which is on the order of a few fermi.
@@ -469,9 +472,9 @@ Since the background structure is caused primarily by the fragmentation of mini-
 Nevertheless, the distinction can and should be evaluated.
 
 Since \Hijing uses an old version of \Pythia 6 its description of the fragmentation function is not up-to-date, but \Pythia alone does not simulate the same soft particle production that \Hijing does.
-Thus, \Pythia 8 p+p is used to derive the mapping between $+-$ and $\pm\pm$, then corrected slightly for the difference between p+p and p+Pb observed in \Hijing.
+Thus, \PYEight p+p is used to derive the mapping between $+-$ and $\pm\pm$, then corrected slightly for the difference between p+p and p+Pb observed in \Hijing.
 A comparison of \Hijing p-p and p-Pb correlation functions shows that the ratio of the background width is the same in each, at least a high \kt (about 1.08).
-This justifies using the width ratio from the updated \Pythia 8, since it suggests that changing from a proton-proton system to a proton-lead system does not drastically alter the ratio of widths.
+This justifies using the width ratio from the updated \PYEight, since it suggests that changing from a proton-proton system to a proton-lead system does not drastically alter the ratio of widths.
 We also see that in \Hijing (with the width ratio is fixed to 1.08) $\log \lbkgd$ is decreased in p-Pb by $0.05$ (high \kt) to $0.2$ (low \kt) (See \Cref{fig:background_pp_ppb_comp}). This difference is made more precise in \Cref{fig:mu_hijing_pp_pPb}, which quantifies the difference in the amplitudes of the ratios of correlation functions.
 The extracted scaling is applied to the background description in the data, and the spread in the attenuation is accounted for as a systematic variation.
 
@@ -661,7 +664,67 @@ The $\mu$, $\nu$, and $\rho$ parameters are used to infer $\lbkgdinv{}^{\pm\pm}$
 
 \FloatBarrier
 
-\section{Fit procedure}
+%% ------------------------------------------
+%% Fit procedure
+%% ------------------------------------------
+
+\section{Correlation function fitting}
+
+\subsection{Test statistic}
+For histograms representing the same-event distribution $A(q)$ and mixed-event distribution $B(q)$, the goal is to somehow pick the best choice for the parameters of $C(q)$ such that $A \sim B C$.
+When fitting to histograms that have bins with possibly small statistics, a simple $\chi^2$ minimization may not be sufficient and one must maximize a log likelihood ratio \cite{Baker1984437}, $\ln\mathcal{L}$.
+A likelihood for the correlation function can be derived by assuming a flat Bayesian prior in the means for Poisson distributed $A$ and $B$, $\mu$ and $\nu$ \cite{Soltz:1994PhDT}:
+
+\begin{align}
+L(C|A,B) &= \iint d\mu \, d\nu \, P(A|\mu) P(B|\nu) \delta\left(C - \frac{\mu}{\nu} \right)\\
+&= \iint d\mu \, d\nu \, \frac{\mu^{A} e^{-\mu} \nu^{B} e^{-\nu}}{A! B!} \delta\left(C - \frac{\mu}{\nu} \right)\\
+&= \frac{C^A}{A! B!} \int d\nu \, \nu^{A+B+1} e^{-\nu (1+C)}\\
+&= \frac{(A+B+1)! C^A}{A! B! (1+C)^{A+B+2}}
+\end{align}
+The choice of $C$ that maximizes this this likelihood is not simply the ratio $A/B$, but rather
+\begin{equation} C_{\textrm{max}} = \frac{A}{B+2} \; .\end{equation}
+
+The likelihood is normalized by the maximum possible likelihood so that the test statistic $-2\ln \mathcal{L}$ non-negative and zero for an exact match.
+The factor of $-2$ gives it the same characteristics as $\chi^2$ (so $-2\ln\mathcal{L}$ is minimized and has $1\sigma$ errors at $\Delta (-2\ln\mathcal{L}) = 1$), and the correspondence can be shown to be exact in the high statistics limit.
+The sum of the likelihood ratio over every bin $i$ is the global test statistic, which is minimized with the Minuit package \cite{James:1975dr}.
+\begin{align}
+-2\ln \mathcal{L} &= -2 \sum_i \ln \left[ \frac{L(C_i|A_i,B_i)}{L(C_{\textrm{max}}|A_i,B_i)} \right]\\
+&= -2 \ln \left[ \frac{C_i^{A_i} (1+C_{\textrm{max}})^{A_i+B_i+2}}{C_{\textrm{max}}^{A_i} (1+C_i)^{A_i+B_i+2}} \right]\\
+&= \sum_i \left\{ 2 A_i \ln \left[\frac{(1+C_i)A_i}{C_i (A_i+B_i+2)} \right] + 2(B_i+2) \ln \left[ \frac{(1+C_i)(B_i+2)}{A_i+B_i+2} \right] \right\}
+\end{align}
+In the above equations, $C_i$ is shorthand for $C(q_i)$, the parameterization of the correlation function at the center of the bin $i$, and $A_i$ and $B_i$ are the histogram contents at bin $i$.
+%% The results of this statistic for fits in a typical centrality, \kt, and \kys interval are shown in \ref{subsec:likelihood_maps}, with different pairs of parameters varied.
+
+In the above expression, the full form for $C$ is given by
+\begin{equation}
+C(q) = \mathcal{N} \left[ 1 - \lambda + \lambda K(\qinv) C_{\textrm{BE}}(q) \right] \left(1 + \lbkgd e^{-(\Rbkgd\qinv)^{\abkgd}} \right)
+\end{equation}
+where
+\begin{equation}
+C_{\textrm{BE}}(q) = 1 + e^{-\sqrt{q R^2 q}}
+\end{equation}
+for like-sign pairs, and $C_{\textrm{BE}} = 1$ for unlike-sign pairs.
+$C_{\textrm{BE}}$ can stand for either a function of $\qinv$ or of a function of vector $\mathbf{q}$, where $R^2$ would be a symmetric matrix (with a single independent off-diagonal element coupling the ``out'' and ``long'' directions).
+$\mathcal{N}$ is a free normalization parameter.
+$K$ is set to the average value of $K(\qinv)$ in a given bin from the mixed-event background, $<K(\qinv)> = B_K/B$, where $B_K \equiv \sum_i K(\qinv^i)$ is the counts in a bin weighted by $K$.
+
+As an alternative check to the previous method, a Poisson log-likelihood that accounts for uncertainty in both the signal and background can also be used.
+The mixed-event background can be corrected by the Coulomb factor as per the discussion in section \ref{subsec:coulomb} (to ignore the Coulomb correction, set $K=1$).
+
+\begin{equation} \tilde{B} \equiv (1-\lambda)B + \lambda B_{K} C_{\textrm{BE}} \end{equation}
+
+$B_{K}$ denotes the background formed by weighting each pair by the Coulomb correction $K(\qinv)$.
+The variance in a given bin is
+
+\begin{equation} \sigma_{\tilde{B}}^2 = (1-\lambda)^2 B + 2\lambda(1-\lambda)B_{K} C_{\textrm{BE}} + \lambda^2 B_{K^2} C_{\textrm{BE}}^2 \end{equation}
+
+where following the notation introduced above, $B_{K^2}$ is the mixed-event background in which each pair is weighted by the square of $K(\qinv)$.
+The negative log-likelihood ratio that is minimized is then \cite{Soltz:1994PhDT} % Zajc's method
+
+\begin{equation} - 2\ln \mathcal{L} = -2 \sum_{q_i} \left[ A - \tilde{B} + \left( A + \sigma_{\tilde{B}}^2 \right) \ln \left(1 - \frac{A - \tilde{B}}{A + \sigma_{\tilde{B}}^2} \right) \right]  \end{equation}
+
+This alternate systematic is used as a cross-check, as described in Section \ref{sec:systematics}.
+No significant difference is observed with this method, so it is not used in the results.
 
 %% -------------------------------------------
 %% Systematics
@@ -696,7 +759,7 @@ The parameterization is varied from the nominal (inclusive) expression to that f
 In three dimensions a 2nd-order polynomial is used instead of a sigmoid.
 This variation is illustrated in \Cref{subsec:jet_frag_inv,subsec:jet_frag_3d}.
 
-\subsection{Choice of 3D jet background form}
+\subsection{Jet fragmentation background in 3D}
 
 One alternative to \Cref{eqn:jet_frag_form_3d} is to describe the jet fragmentation in three dimensions as a simple function of \qinv only.
 The average \kt in each centrality/\kt/\kys interval can be used in \Cref{eqn:q3_to_qinv} to contract $\mathbf{q}$ into \qinv.
@@ -721,7 +784,7 @@ The typical effect on the HBT radii was seen to be on order 0.5\%, and this vari
 \subsection{Pion identification}
 The \ac{PID} definition used for the nominal result is the "Middle" cut level defined in \Cref{sec:pid}.
 Systematic uncertainties from imperfections in the particle identification are evaluated by repeating the analysis with both the "Loose" and "Tight" cut levels.
-The effect on the radii is at the 1-2\% level for the lower \kt bins, but becomes more significant at higher momentum bins (presumably because they are relatively more populated with kaons and protons).
+The effect on the radii is around 1--2\% for the lower \kt bins, but becomes more significant at higher momentum bins (presumably because they are relatively more populated with kaons and protons).
 
 \subsection{Charge asymmetry}
 The distinction between positive and negative pairs could come from the orientation of the overlap of the inner detector components.
@@ -754,7 +817,7 @@ This is surely an overestimation of the possible range, but the difference in th
 \centering
 \includegraphics[width=.49\linewidth]{pythia_xc.pdf}
 \end{minipage}
-\caption{The core fraction $x_c$ measured in \Pythia 8 by counting the pairs in which neither particle is a product of a weak decay or of a $\eta$, $\eta'$, $\omega$, or $K*$.}
+\caption{The core fraction $x_c$ measured in \PYEight by counting the pairs in which neither particle is a product of a weak decay or of a $\eta$, $\eta'$, $\omega$, or $K*$.}
 \label{fig:pythia_xc}
 \end{figure}
 
@@ -808,7 +871,7 @@ The bottom shows the ratio truth / reco.}
 \end{figure}
 
 A minimum $q$ cutoff is applied in the fits to avoid being affected by detector effects like resolution and ghosting.
-The sensitivity of the results to this limit is checked by taking $\qinv^\textrm{min} = 30 \pm 10 \MeV$ in the 1d fits and symmetrizing the effect of the variation from $|\mathbf{q}|^\textrm{min} = 25 + 25 \MeV$ in the 3d fits.
+The sensitivity of the results to this limit is checked by taking $\qinv^\textrm{min} = 30 \pm 10 \MeV$ in the 1D fits and symmetrizing the effect of the variation from $|\mathbf{q}|^\textrm{min} = 25 + 25 \MeV$ in the 3D fits.
 
 \subsection{Difference between two runs}
 
