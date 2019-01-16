@@ -181,6 +181,9 @@ Also, the alternate subdetectors are calculated using the \qt from tracks, weigh
 \subsection{Track pair cuts}
 \todo{fill section. it's about 1 paragraph}
 
+\subsection{Parameterization of the correlation function}
+\todo{describe invariant and 3D parameterizations}
+
 \subsection{Coulomb correction}
 The residual strong force between charged pions is subdominant to the Coulomb effect and can be neglected in final-state effects \cite{Lednicky:2005tb}.
 In heavy ion collisions the Bohr radius of a pair of pions ($a_{\pi} = 387.5 \textrm{ fm}$) is significantly larger than the source size, which is on the order of a few fermi.
@@ -231,6 +234,102 @@ where
 \begin{equation}
 \Gamma^2 = 2 m_{\pi}^2 + 2 |\mathbf{k}_\mathrm{T}|^2 + \frac{1}{2}|\mathbf{q}|^2 \; .
 \end{equation}
+
+
+%% ------------------------------------------
+%% Fit procedure
+%% ------------------------------------------
+
+\subsection{Fitting the correlation function}
+
+For histograms representing the same-event distribution $A(q)$ and mixed-event distribution $B(q)$, the goal is to somehow pick the best choice for the parameters of $C(q)$ such that $A \sim B C$.
+When fitting to histograms that have bins with possibly small statistics, a simple $\chi^2$ minimization may not be sufficient and one must maximize a log likelihood ratio \cite{Baker1984437}, $\ln\mathcal{L}$.
+A likelihood for the correlation function can be derived by assuming a flat Bayesian prior in the means for Poisson distributed $A$ and $B$, $\mu$ and $\nu$ \cite{Soltz:1994PhDT}:
+
+\begin{align}
+L(C|A,B) &= \iint d\mu \, d\nu \, P(A|\mu) P(B|\nu) \delta\left(C - \frac{\mu}{\nu} \right)\\
+&= \iint d\mu \, d\nu \, \frac{\mu^{A} e^{-\mu} \nu^{B} e^{-\nu}}{A! B!} \delta\left(C - \frac{\mu}{\nu} \right)\\
+&= \frac{C^A}{A! B!} \int d\nu \, \nu^{A+B+1} e^{-\nu (1+C)}\\
+&= \frac{(A+B+1)! C^A}{A! B! (1+C)^{A+B+2}}
+\end{align}
+The choice of $C$ that maximizes this this likelihood is not simply the ratio $A/B$, but rather
+\begin{equation} C_{\textrm{max}} = \frac{A}{B+2} \; .\end{equation}
+
+The likelihood is normalized by the maximum possible likelihood so that the test statistic $-2\ln \mathcal{L}$ non-negative and zero for an exact match.
+The factor of $-2$ gives it the same characteristics as $\chi^2$ (so $-2\ln\mathcal{L}$ is minimized and has $1\sigma$ errors at $\Delta (-2\ln\mathcal{L}) = 1$), and the correspondence can be shown to be exact in the high statistics limit.
+The sum of the likelihood ratio over every bin $i$ is the global test statistic, which is minimized with the Minuit package \cite{James:1975dr}.
+\begin{align}
+-2\ln \mathcal{L} &= -2 \sum_i \ln \left[ \frac{L(C_i|A_i,B_i)}{L(C_{\textrm{max}}|A_i,B_i)} \right]\\
+&= -2 \sum_i \ln \left[ \frac{C_i^{A_i} (1+C_{\textrm{max}})^{A_i+B_i+2}}{C_{\textrm{max}}^{A_i} (1+C_i)^{A_i+B_i+2}} \right]\\
+&= \sum_i \left\{ 2 A_i \ln \left[\frac{(1+C_i)A_i}{C_i (A_i+B_i+2)} \right] + 2(B_i+2) \ln \left[ \frac{(1+C_i)(B_i+2)}{A_i+B_i+2} \right] \right\}
+\end{align}
+In the above equations, $C_i$ is shorthand for $C(q_i)$, the parameterization of the correlation function at the center of the bin $i$, and $A_i$ and $B_i$ are the histogram contents at bin $i$.
+%% The results of this statistic for fits in a typical centrality, \kt, and \kys interval are shown in \ref{subsec:likelihood_maps}, with different pairs of parameters varied.
+
+An alternative test statistic is used for the azimuthal results, as there are multiplicative corrections to $B(q)$ that cause the bin contents to not be Poisson-distributed.
+A statistic can be derived by taking bins of $A$ and $B$ to be gamma-distributed rather than Poisson.
+Specifically, for bin weights $w_A$, we assume that bins of $A$ are distributed as
+\begin{equation}
+  p\left(A|\Sigma w_A, \Sigma w_A^2 \right) = \frac{\beta^\alpha A^{\alpha-1}}{\Gamma (\alpha)}e^{-\beta A}
+\end{equation}
+with
+\begin{align*}
+  \alpha &= \frac{(\Sigma w)^2}{\Sigma w^2} + 1\\
+  \beta &= \frac{\Sigma w}{\Sigma w^2} \; .\\
+\end{align*}
+This choice reverts to the Poisson log-likelihood in the case of all weights being equal.
+A likelihood is derived by taking
+\begin{equation}
+  \mathcal{L}\left( C | A,B \right) \propto \int dA' dB' p\left(A'|A\right) p\left(B'|B\right) \delta\left(C - \frac{A'}{B'}\right)
+\end{equation}
+which, after normalizing, gives a function to be minimized,
+\begin{equation}
+  -2\log\mathcal{L} = \sum_{q \textrm{bins}} \left\{-2(\alpha_A - 1) \log \left[ \frac{(\alpha_B +1)\beta_A}{(\alpha_A - 1)\beta_B} C \right] + 2(\alpha_A + \alpha_B) \log \left[ \frac{\left( 1 + \frac{\beta_A}{\beta_B} C\right)(\alpha_B + 1)}{\alpha_A + \alpha_B} \right] \right\} \; .
+\end{equation}
+
+When weighting events from several \Nch intervals so as to follow a minimum-bias distribution, the sample used in this analysis necessitates weights that can differ by several orders of magnitude.
+This means that the values in bins with low counts may be very poor representations of the actual distributions.
+To work around this issue, the histograms from each multiplicity range are tracked separately and the combined log-likelihood is a weighted sum of a log-likelihood calculated for each sample.
+\begin{equation}
+  -2\log\mathcal{L} = -2 \sum_{i=1}^{N_\textrm{samples}} \frac{W_i}{\overline{W}} \log\mathcal{L}_i
+\end{equation}
+where each sample corresponds to a multiplicity interval between the turn-on multiplicities of each \ac{HMT} (150, 180, 200, and 225 as visible in \Fig{\ref{fig:nch}}) and
+\[
+W_i \equiv \frac{N_{\textrm{evt},i}^\textrm{MinBias}}{N_{\textrm{evt},i}^\textrm{all}} \; .
+\]
+\[ \overline{W} \equiv \frac{1}{N_\textrm{samples}} \sum_i W_i \]
+Splitting the samples and combining them only at the minimization stage has the effect that the number of degrees of freedom in the fit is increased by a factor of $N_\textrm{samples} = 4$.
+\subsection{Extracting Fourier components of HBT radii}
+\label{subsec:azi_correlations}
+
+Because the event plane resolution correction (e.g. \Eqn{\ref{eq:a_corr}}) changes the Fourier components of $A$ and $N$, statistical correlations are induced between the contents in different azimuthal bins.
+As a result, correlations in the HBT radii are induced over different azimuthal bins.
+The propagation of the correlations from bins of $A$ and $B$ to the radii is quite complicated in general.
+We will motivate a reasonable parameterization of the covariance matrix of the HBT radii by using the form of the correlations between bins of the pair distribution $A$.
+The parameter values themselves will be adjusted corresponding to the results of a toy Monte Carlo (MC) study on the radii correlations.
+To the extent that enhancements to the azimuthal modulation of the HBT radii are, like $A(q)$, linear in $\xi$ (as defined in \Sect{\ref{subsubsec:epres}}), the azimuthal correlation is :
+\begin{equation} \label{eq:azi_corr}
+\textrm{cov}\left( R^\textrm{corr}_i, R^\textrm{corr}_j \right) = \delta_{ij} \sigma^2_{i} + \frac{2\xi}{N_\textrm{bins}} \cos\left[\tdpk_i - \tdpk_j \right] \left( \sigma^2_{i} + \sigma^2_{j} + \frac{\xi}{N_\textrm{bins}} \sum_{k=1}^{N_\textrm{bins}} \sigma^2_{k} \right)
+\end{equation}
+where $R_i$ is shorthand for $R\left(\tdpk_i\right)$ and $N_\textrm{bins}=8$ is the number of azimuthal bins, and in the above equation $\sigma^2_{k} \equiv \mathrm{var}(R_k)$ represents the statistical uncertainties in the uncorrected HBT radii. With the simplifying assumption that the statistical uncertainties in the radii are independent of the azimuthal bin, the correlation coefficient matrix for the corrected radii can be written as:
+\begin{equation} \label{eq:corr_coeff_matrix}
+  \rho_{ij} \equiv \frac{\mathrm{cov}\left( R^\textrm{corr}_i, R^\textrm{corr}_j \right)}{\sqrt{\mathrm{var}\left( R^\textrm{corr}_i \right) \mathrm{var}\left( R^\textrm{corr}_j \right)}}
+  = \frac{\delta_{ij} + \frac{2\xi(2+\xi)}{N_\textrm{bins}} \cos{\left[2(\phi_i-\phi_j)\right]}}{1 + \frac{2\xi(2+\xi)}{N_\textrm{bins}}}
+\end{equation}
+This matrix can be inverted analytically to:
+\begin{equation} \label{eq:corr_coeff_matrix_inv}
+(\rho^{-1})_{ij} = \left(1 + \frac{2\xi(2+\xi)}{N_\textrm{bins}}\right)\left\{\delta_{ij} - \frac{2\xi(2+\xi)}{N_\textrm{bins}(1+\xi)^2} \cos{\left[2(\phi_i-\phi_j)\right]}\right\} \;.
+\end{equation}
+For $N_\textrm{bins} > 2$, the determinant of this correlation matrix is $\det(\rho) = \left(1 + \xi\right)^{4}\left(1 + \frac{2\xi(2+\xi)}{N_\textrm{bins}} \right)^{-N_\textrm{bins}}$.\footnote{The determinant for $N_\textrm{bins} = 2$ is $\frac{1+4\xi+2\xi^2}{(1+\xi)^4}$, but this case is not relevant for this analysis.}
+
+A chi-square statistic can be minimized using these correlations, where $R_i$ and $\sigma_{i}$ are the fitted value and uncertainty for the $R$ HBT radius in each azimuthal bin and $R_{,n}$ is the $n$th Fourier coefficient as a parameter extracted from the data:
+\begin{equation} \label{eq:chi_sq_mod}
+\chi^2 = \sum_{i,j=1}^{N_\textrm{bins}} \left( f_i - R_i \right) \frac{(\rho^{-1})_{ij}}{\sigma_{R_i} \sigma_{R_j}} \left( f_j - R_j \right)
+\end{equation}
+where
+\[f_i \equiv R_{,0} + 2R_{,c2}\cos(2\phi_i) + 2R_{,s2}\sin(2\phi_i)\]
+and $2\phi_i$ is shorthand for $\tdpk_i$.
+
 
 \FloatBarrier
 \section{Hard-process contribution}
@@ -664,67 +763,6 @@ The $\mu$, $\nu$, and $\rho$ parameters are used to infer $\lbkgdinv{}^{\pm\pm}$
 
 \FloatBarrier
 
-%% ------------------------------------------
-%% Fit procedure
-%% ------------------------------------------
-
-\section{Correlation function fitting}
-
-\subsection{Test statistic}
-For histograms representing the same-event distribution $A(q)$ and mixed-event distribution $B(q)$, the goal is to somehow pick the best choice for the parameters of $C(q)$ such that $A \sim B C$.
-When fitting to histograms that have bins with possibly small statistics, a simple $\chi^2$ minimization may not be sufficient and one must maximize a log likelihood ratio \cite{Baker1984437}, $\ln\mathcal{L}$.
-A likelihood for the correlation function can be derived by assuming a flat Bayesian prior in the means for Poisson distributed $A$ and $B$, $\mu$ and $\nu$ \cite{Soltz:1994PhDT}:
-
-\begin{align}
-L(C|A,B) &= \iint d\mu \, d\nu \, P(A|\mu) P(B|\nu) \delta\left(C - \frac{\mu}{\nu} \right)\\
-&= \iint d\mu \, d\nu \, \frac{\mu^{A} e^{-\mu} \nu^{B} e^{-\nu}}{A! B!} \delta\left(C - \frac{\mu}{\nu} \right)\\
-&= \frac{C^A}{A! B!} \int d\nu \, \nu^{A+B+1} e^{-\nu (1+C)}\\
-&= \frac{(A+B+1)! C^A}{A! B! (1+C)^{A+B+2}}
-\end{align}
-The choice of $C$ that maximizes this this likelihood is not simply the ratio $A/B$, but rather
-\begin{equation} C_{\textrm{max}} = \frac{A}{B+2} \; .\end{equation}
-
-The likelihood is normalized by the maximum possible likelihood so that the test statistic $-2\ln \mathcal{L}$ non-negative and zero for an exact match.
-The factor of $-2$ gives it the same characteristics as $\chi^2$ (so $-2\ln\mathcal{L}$ is minimized and has $1\sigma$ errors at $\Delta (-2\ln\mathcal{L}) = 1$), and the correspondence can be shown to be exact in the high statistics limit.
-The sum of the likelihood ratio over every bin $i$ is the global test statistic, which is minimized with the Minuit package \cite{James:1975dr}.
-\begin{align}
--2\ln \mathcal{L} &= -2 \sum_i \ln \left[ \frac{L(C_i|A_i,B_i)}{L(C_{\textrm{max}}|A_i,B_i)} \right]\\
-&= -2 \ln \left[ \frac{C_i^{A_i} (1+C_{\textrm{max}})^{A_i+B_i+2}}{C_{\textrm{max}}^{A_i} (1+C_i)^{A_i+B_i+2}} \right]\\
-&= \sum_i \left\{ 2 A_i \ln \left[\frac{(1+C_i)A_i}{C_i (A_i+B_i+2)} \right] + 2(B_i+2) \ln \left[ \frac{(1+C_i)(B_i+2)}{A_i+B_i+2} \right] \right\}
-\end{align}
-In the above equations, $C_i$ is shorthand for $C(q_i)$, the parameterization of the correlation function at the center of the bin $i$, and $A_i$ and $B_i$ are the histogram contents at bin $i$.
-%% The results of this statistic for fits in a typical centrality, \kt, and \kys interval are shown in \ref{subsec:likelihood_maps}, with different pairs of parameters varied.
-
-In the above expression, the full form for $C$ is given by
-\begin{equation}
-C(q) = \mathcal{N} \left[ 1 - \lambda + \lambda K(\qinv) C_{\textrm{BE}}(q) \right] \left(1 + \lbkgd e^{-(\Rbkgd\qinv)^{\abkgd}} \right)
-\end{equation}
-where
-\begin{equation}
-C_{\textrm{BE}}(q) = 1 + e^{-\sqrt{q R^2 q}}
-\end{equation}
-for like-sign pairs, and $C_{\textrm{BE}} = 1$ for unlike-sign pairs.
-$C_{\textrm{BE}}$ can stand for either a function of $\qinv$ or of a function of vector $\mathbf{q}$, where $R^2$ would be a symmetric matrix (with a single independent off-diagonal element coupling the ``out'' and ``long'' directions).
-$\mathcal{N}$ is a free normalization parameter.
-$K$ is set to the average value of $K(\qinv)$ in a given bin from the mixed-event background, $<K(\qinv)> = B_K/B$, where $B_K \equiv \sum_i K(\qinv^i)$ is the counts in a bin weighted by $K$.
-
-As an alternative check to the previous method, a Poisson log-likelihood that accounts for uncertainty in both the signal and background can also be used.
-The mixed-event background can be corrected by the Coulomb factor as per the discussion in section \ref{subsec:coulomb} (to ignore the Coulomb correction, set $K=1$).
-
-\begin{equation} \tilde{B} \equiv (1-\lambda)B + \lambda B_{K} C_{\textrm{BE}} \end{equation}
-
-$B_{K}$ denotes the background formed by weighting each pair by the Coulomb correction $K(\qinv)$.
-The variance in a given bin is
-
-\begin{equation} \sigma_{\tilde{B}}^2 = (1-\lambda)^2 B + 2\lambda(1-\lambda)B_{K} C_{\textrm{BE}} + \lambda^2 B_{K^2} C_{\textrm{BE}}^2 \end{equation}
-
-where following the notation introduced above, $B_{K^2}$ is the mixed-event background in which each pair is weighted by the square of $K(\qinv)$.
-The negative log-likelihood ratio that is minimized is then \cite{Soltz:1994PhDT} % Zajc's method
-
-\begin{equation} - 2\ln \mathcal{L} = -2 \sum_{q_i} \left[ A - \tilde{B} + \left( A + \sigma_{\tilde{B}}^2 \right) \ln \left(1 - \frac{A - \tilde{B}}{A + \sigma_{\tilde{B}}^2} \right) \right]  \end{equation}
-
-This alternate systematic is used as a cross-check, as described in Section \ref{sec:systematics}.
-No significant difference is observed with this method, so it is not used in the results.
 
 %% -------------------------------------------
 %% Systematics
