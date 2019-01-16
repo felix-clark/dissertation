@@ -15,10 +15,6 @@ For results reported as a function of centrality, an additional \ac{HighET} trig
 The \ac{HighET} trigger sampled a total luminosity of $41.4~\mu\textrm{b}^{-1}$ after prescale and yielded 700 thousand events to the sample.
 Events from this trigger are only included in the 0--1\% centrality interval, where the \ac{HighET} trigger is fully efficient.
 
-The azimuthally-dependent results use central events with offline charged-particle multiplicity \Nch of at least 150, where only tracks with $\pt > 400~\MeV$ are counted in this number.
-Several \acp{HMT} are included to boost the sample, with offline \Nch cutoffs at 100, 130, 150, 180, 200, and 225 tracks.
-These \acp{HMT} provide a crucial 6.7 million events, as the \minbias triggers provide only 200 000 events at $\Nch > 150$.
-
 All events are required to pass a set of \minbias selection criteria.
 Events are required to be included in the latest Good Runs List from ATLAS, which rejects events recorded in conjunction with a technical difficulty in the detector.
 The \minbias trigger requires either one hit in both sides of the \ac{MBTS} or two hits in one side.
@@ -31,7 +27,7 @@ Diffractive events are identified for rejection by a gap of two units of pseudor
 Pileup events are also discarded using a run-dependent upper limit on the Pb-going \ac{ZDC}.
 In addition, events are discarded if an error flag is recorded in the \ac{LAr} or tile calorimeter systems, or if there is an indication that the event was not completely recorded.
 
-\section{Centrality determination}
+\subsection{Centrality determination}
 
 \begin{figure}[t]
 \includegraphics{fcal_et_total.pdf}
@@ -47,7 +43,7 @@ The events selected using the \ac{HighET} trigger are used only in the 0--1\% ce
 measurement.
 The discontinuity in the spectrum occurs at the low edge of the 0--1\% centrality interval, above which the \ac{HighET} events are included.
 
-For each centrality interval, the average multiplicity of charged particles with $\pt > 100~\MeV$ and $|\eta| < 1.5$, \avgdNdeta, and the corresponding average number of participating nucleons, \avgNpart, are obtained from a previous publication \cite{HION-2012-15}.
+For each centrality interval, the average multiplicity of charged particles with $\pt > 100~\MeV$ and $|\eta| < 1.5$, \avgdNdeta and the corresponding average number of participating nucleons, \avgNpart, are obtained from a previous publication \cite{HION-2012-15}.
 Since this analysis uses finer centrality intervals (no wider than 10\% of the total centrality range) than
 those used in \Ref{\cite{HION-2012-15}}, a linear interpolation over the Glauber \avgNpart is used to construct additional values for \avgdNdeta based on the published results.
 This interpolation is justified by the result in \Ref{\cite{HION-2012-15}} that charged-particle multiplicity is proportional to \avgNpart in the peripheral region.
@@ -55,6 +51,26 @@ The values and uncertainties from this procedure are listed in \Cref{table:npart
 
 \input{Chapter-Analysis/tables/npart} 
 
+\subsection{Multiplicity selection}
+
+\begin{figure}[t]
+\centering
+\includegraphics{can_nch.pdf}
+\caption{The charged-particle multiplicity \Nch of tracks with $\pt > 0.4$ GeV. Each of the 4 cutoffs corresponds to additional triggers used in the analysis. The distribution scaled down to match the scale of the events from the MinBias trigger is also shown by the dashed blue line.}
+\label{fig:nch}
+\end{figure}
+
+For the azimuthally-dependent results, events are selected by their reconstructed charged-particle multiplicity \Nch, with a minimum value of 150.
+Tracks are only counted towards \Nch if they have $\pt > 400 \MeV$, where the reconstruction efficiency is relatively constant.
+This choice permits the straightforward inclusion of several \acp{HMT} into the sample, which is particularly useful because only central events allow a sufficiently high event plane resolution.
+
+Several \acp{HMT} are included to boost the sample, with offline \Nch cutoffs at 100, 130, 150, 180, 200, and 225 tracks.
+These \acp{HMT} provide a crucial 6.7 million events, as the \minbias triggers provide only 200 000 events at $\Nch > 150$.
+The multiplicity distribution is shown in \Cref{fig:nch}, along with a scaled version to match the \minbias distribution.
+
+%% ---------------------------------
+%% event plane determination
+%% ---------------------------------
 \section{Flow vector determination}
 
 The 2nd-order azimuthal Fourier components $Q_2$ of the energy flow are defined by
