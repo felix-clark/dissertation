@@ -425,10 +425,10 @@ The \qgp is quite close to a perfect quantum fluid.
 Space-time correlations between the photons are used in astronomy to measure the size of stellar light sources.
 These Hanbury Brown and Twiss (HBT) correlations \cite{HanburyBrown:1954,HanburyBrown:1956} are a consequence of Bose-Einstein statistics and manifest as increased probability for two photons to arrive at two detectors at similar times.
 The width of the correlation in time difference is inversely proportional to the size of the distant star.
-This process is what called \emph{second-order interferometry}, as it requires a decoherent source in contrast to the type of interferometry exhibited in a classic double-slit experiment.
+This process is called \emph{second-order interferometry}, as it requires a decoherent source in contrast to the type of interferometry exhibited in a classic double-slit experiment.
 
 The procedure can be adapted to the tiny sources encountered in hadronic collisions using correlations in relative momentum space \cite{Goldhaber:1960sf}.
-Though Bose-Einstein interactions are the easiest to take advantage of, in principle any non-trivial interaction can be used to image the source density.
+Though Bose-Einstein interactions are the simplest to take advantage of, in principle any non-trivial interaction can be used to image the source density.
 The term \emph{femtoscopy} is used to refer to any measurement that provides spatio-temporal information of a hadronic source.
 
 The measured \emph{HBT radii} represent the dimensions of a nuclear source at freeze-out, after all interactions between a final-state particle and the bulk are finished.
@@ -437,23 +437,23 @@ The results of femtoscopic measurements in \pPb systems are of significant inter
 
 \subsection{Imaging the source density function}
 Momentum space correlation functions can be written out in terms of source density functions, as detailed in the review in \cite{Lisa:2005dd}.
-Particles are emitted on a freeze-out hypersurface denoted by $\Sigma$.
+Particles are emitted on a freeze-out hypersurface denoted by $\partial\Sigma$.
 The generation and interactions of $n$ particles before this hypersurface is described by a source density function $s_n(p_1, x_1;\ldots; p_n, x_n)$ of outgoing particle momenta $p_i$ and initial spacetime coordinates $x_i$.
-The hypersurface $\Sigma$ is not a region where each particle is created at, but rather the surface of final interaction of the emitted particles with the bulk.
-Though we only integrate $s_n$ over $\Sigma$, the interactions before freeze-out are swept into the definition of $s_n$.
-For two particles the following is worked out:
+The hypersurface $\partial\Sigma$ is not a region where each particle is created at, but rather the surface of final interaction of the emitted particles with the bulk.
+Though we only integrate $s_n$ over $\partial\Sigma$, the interactions before freeze-out are swept into the definition of $s_n$.
+For two particles the following is written out:
 \begin{align}
   C(p_a,p_b) &\equiv \frac{E_a E_b \frac{dN}{d^3 p_a \, d^3 p_b}}{E_a \frac{dN}{d^3 p_a} E_b \frac{dN}{d^3p_b}} 
-  \\&= \frac{\iint_{\Sigma} d^3 x_a \, d^3 x_b \, s_2 (p_a, x_a; p_b, x_b) \left| \braket{ p_a, p_b | x_a, x_b } \right|^2}{\int_{\Sigma} d^3 x_a \, s_1 (p_a, x_a) \, \int_{\Sigma} d^3 x_b \, s_1(p_b, x_b)}
+  \\&= \frac{\iint_{\partial\Sigma} d^3 x_a \, d^3 x_b \, s_2 (p_a, x_a; p_b, x_b) \left| \braket{ p_a, p_b | x_a, x_b } \right|^2}{\int_{\partial\Sigma} d^3 x_a \, s_1 (p_a, x_a) \, \int_{\partial\Sigma} d^3 x_b \, s_1(p_b, x_b)}
 \end{align}
  The "smoothness approximation" is typically invoked to approximate $\mathbf{p}_a \approx \frac{m_a}{m_a+m_b} \mathbf{k}$.
 It is then convenient to define a normalization of the two-particle source density.
 (We will skip a detailed discussion of the domain of integration of the variable $r = x_a - x_b$ and the equal-time approximation - for more see \cite{Lisa:2005dd}.) This re-normalization $S_2$ of $s_2$ is defined as follows:
-\begin{equation} S_{2, \mathbf{k}} (\mathbf{r}) \equiv \frac{\iint_{\Sigma} d^3 x_a \, d^3 x_b \, s_2 \left(\frac{m_a}{m_a+m_b}\mathbf{k}, x_a; \frac{m_b}{m_a+m_b}\mathbf{k}, x_b\right) \, \delta^3(\mathbf{r} - \mathbf{x}_a + \mathbf{x}_b)}{\int_{\Sigma} d^3 x_a \, s_1 \left(\frac{m_a}{m_a+m_b}\mathbf{k}, x_a\right) \, \int_{\Sigma} d^3 x_b \, s_1\left(\frac{m_b}{m_a+m_b}\mathbf{k}, x_b\right)}\end{equation}
+\begin{equation} S_{2, \mathbf{k}} (\mathbf{r}) \equiv \frac{\iint_{\partial\Sigma} d^3 x_a \, d^3 x_b \, s_2 \left(\frac{m_a}{m_a+m_b}\mathbf{k}, x_a; \frac{m_b}{m_a+m_b}\mathbf{k}, x_b\right) \, \delta^3(\mathbf{r} - \mathbf{x}_a + \mathbf{x}_b)}{\int_{\partial\Sigma} d^3 x_a \, s_1 \left(\frac{m_a}{m_a+m_b}\mathbf{k}, x_a\right) \, \int_{\partial\Sigma} d^3 x_b \, s_1\left(\frac{m_b}{m_a+m_b}\mathbf{k}, x_b\right)}\end{equation}
 If the resonances and other higher-order effects are ignored or removed, one can make the approximation that $s_2 (p_a, x_a; p_b, x_b) \approx s_1(p_a, x_a) s_1(p_b, x_b)$ which imposes the normalization constraint $\int d^3 r \, S_{2,\mathbf{k}}(\mathbf{r}) = 1$.
 
 The correlation function can now be written in a simple and suggestive form.
-Assuming that the center-of-mass motion is irrelevant after emission, the overall phase $e^{i\mathbf{k}\cdot(\mathbf{x}_a+\mathbf{x}_b)}$ can be innocuously factored out of the wavefunction (as in the example of \Cref{eqn:free_particle_wavefunction}), leaving us only to consider the relative part.
+Assuming that the center-of-mass motion is irrelevant after emission, the overall phase $e^{i\mathbf{k}\cdot(\mathbf{x}_a+\mathbf{x}_b)}$ can be factored out of the wavefunction (as in the example of \Cref{eqn:free_particle_wavefunction}), leaving only the relative part.
 \begin{equation} \label{eq:wavefunction_kernel}
 C_\mathbf{k}(\mathbf{q}) - 1 = \int d^3 r \, S_{2,\mathbf{k}}(\mathbf{r}) \left(\left|\braket{\mathbf{q}|\mathbf{r}}\right|^2 - 1 \right)
 \end{equation}
@@ -474,11 +474,10 @@ In principle, any two interacting particle species can be used to image the sour
 The stronger the interaction, the more powerful the kernel is at resolving the source.
 Bose-Einstein interactions are especially useful in nuclear collisions due to their increasing strength at small separations and the relative abundance of pions.
 
-The description of the correlation function's enhancement as the Fourier transform of the source density is useful for guiding intuition, but is not sufficient for a modern analysis.
-Bowler and Sinyukov pointed out \cite{Bowler:1991vx,Sinyukov:1998fc} that some fraction of pions come from decays or long-lived resonances and that the source function should be modified appropriately.
+Some fraction of pions come from decays, long-lived resonances, or coherent emission, and the source function must be correspondingly modified \cite{Bowler:1991vx,Sinyukov:1998fc}.
 Pairs in which one or both pions do not come from the core should be considered non-interacting since they are generated far apart, and the momentum scale of any Bose-Einstein effects are under the momentum resolution of the detector.
 If the fraction of pairs with pions that both originate from the core is parameterized by $\lambda$, the source function in \Cref{eq:wavefunction_kernel} should be expanded as
-\begin{equation} S_{2,\mathbf{k}}(r) = \lambda S_{c} (r) + (1-\lambda) S_{h} (r) \end{equation}
+\begin{equation} S_{2}(r;\mathbf{k}) \rightarrow \lambda S_{2,\textrm{core}} (r;\mathbf{k}) + (1-\lambda) S_{2,\textrm{halo}} (r;\mathbf{k}) \end{equation}
 where $S_c$ is the source function for pairs with both pions in the core and $S_h$ is the source for pairs involving the halo.
 Pairs from the halo have a trivial wavefunction, since they are non-interacting.
 Thus the $\left(\left|\braket{\mathbf{q}|\mathbf{r}}\right|^2 - 1\right)$ term multiplying $S_h$ vanishes, and the correlation function becomes (hereafter we suppress some labels and understand $S$ to be the two-particle source function of the core)
@@ -491,7 +490,7 @@ where we have written the wavefunction as $\braket{\mathbf{q}|\mathbf{r}} = \sqr
 For instance, $K = G(q)$ where $G(\qinv)$ is the Gamow factor accounts for Coulomb interactions between the final-state pions.
 It is convenient (and not totally misguided) to allow $K$ to be a function only of $q$, thus factoring it out of the integral.
 The exact choice for $K$ will be discussed further in \Cref{subsec:coulomb}.
-With this simplification the correlation function can be expressed in a fairly general form as a functor of the Fourier transform of the pair source density.
+With this simplification the correlation function can be expressed in a fairly general form as a function of the Fourier transform of the pair source density.
 \begin{equation} \label{eq:correlation_function}
 C_\mathbf{k}(\mathbf{q}) = (1-\lambda) + \lambda K(\mathbf{q})\left\{ 1 + s \mathcal{F} \left[ S_\mathbf{k} \right](\mathbf{q}) \right\}
 \end{equation}
@@ -499,16 +498,18 @@ C_\mathbf{k}(\mathbf{q}) = (1-\lambda) + \lambda K(\mathbf{q})\left\{ 1 + s \mat
 
 \subsection{Parameterization of the correlation function}
 
+\subsubsection{L\'evy parameter}
+
 A choice must be made to parameterize the description of $\mathcal{F}[S_\mathbf{k}]$.
 When a generalization of the central limit theorem is considered, for which the requirement for finite variance is relaxed, one can derive the L\'evy-stable distributions \cite{Csorgo:2003uv}.
 Their characteristic functions\footnote{i.e. Fourier transforms} are stretched exponentials, which are able to be expressed in terms of elementary functions and thus lend themselves readily to fitting.
-In the approximation of ellipsoidal symmetry of the source, the Bose-Einstein part of the identical-pion correlation function can then be expressed as the following:
-\begin{equation} C_{\textrm{BE}}(q) = 1 + \mathcal{F}[S_\mathbf{k}](\mathbf{q}) = 1 + e^{- \left|R \mathbf{q} \right|^{\alpha} } \end{equation}
-Here $R$ is a symmetric matrix whose components are the \emph{HBT radii}.
+In the approximation of ellipsoidal symmetry of the source, the Bose-Einstein part of the identical-pion correlation function can then be expressed as
+\begin{equation} C_{\textrm{BE}}(\mathbf{q}) = 1 + \mathcal{F}[S_\mathbf{k}](\mathbf{q}) = 1 + e^{- \left|R \mathbf{q} \right|^{\alpha} } \end{equation}
+where $R$ is a symmetric matrix whose components are the \emph{HBT radii}.
 The L\'evy parameter $\alpha$ determines the tail weight of the underlying source density - the lower it is, the heavier the tails are.
 Two particular cases are worth noting.
-If $\alpha = 2$, the correlation function is a Gaussian, and so is the source density.
-If $\alpha = 1$, the correlation function is a generalized exponential, and the source density is Cauchy.
+If $\alpha = 2$, the correlation function is a Gaussian and so is the source density, which is proportional to \( \exp\left(-\frac{1}{2} \mathbf{x} R^{-2} \mathbf{x}\right) \).
+If $\alpha = 1$, the correlation function is a generalized exponential, and the source density is Cauchy proportional to \( \left( 1 + \mathbf{x} R^{-2} \mathbf{x} \right)^{-1} \).
 It is common practice to fix $\alpha$ to one of these two values.
 
 The source densities corresponding to these stable functions have infinite variance if $\alpha < 2$, but the positive moments of the stable function itself are finite.
@@ -517,7 +518,26 @@ In $d$ dimensions, the normalized $n^\textrm{th}$ $|q|$-moment of the correlatio
 If it was assumed that the 1st moment was preserved under a fit (an assumption whose validity depends heavily on the shape of the measured correlation function), the fit parameters measured at one choice of $\alpha$ could be related to those at another choice of $\alpha$, for instance $\Rinv^{\textrm{exp}} \sim \sqrt{\pi} \Rinv^{\textrm{gauss}}$.
 This relation is sometimes used in the literature, but it lacks rigorous motivation or support.
 
-\todo{discuss coordinate system, out-side-long, R matrix}
+\subsubsection{Coordinate system}
+\label{subsubsec:coordinate}
+In three dimensions, a \ac{LCMF} is used, which is boosted to the longitudinal rest-frame of each pair of particles.
+The coordinate axes are the Bertsch-Pratt coordinate system \cite{Pratt:1986cc,Bertsch:1989vn,Csorgo:1989kq}, which uses the ``out-side-long'' axes to separate the transverse part into components parallel (``out'') and perpendicular (``side'') to the pair's transverse momentum $\mathbf{k}_\mathrm{T}$.
+\begin{align}
+\qout &\equiv& \frac{\mathbf{k}_{\mathrm{T}} \cdot \mathbf{q}}{\left| \mathbf{k}_{\mathrm{T}} \right|}
+&=& \frac{|\mathbf{p}^a_{\mathrm{T}}|^2 - |\mathbf{p}^b_{\mathrm{T}}|^2}{2 \kt}\\
+\qside &\equiv& \frac{(\hat{\mathbf{z}} \times \mathbf{k}_{\mathrm{T}}) \cdot \mathbf{q}}{\left| \mathbf{k}_{\mathrm{T}} \right|} &=& - \frac{\hat{\mathbf{z}} \cdot \left(\mathbf{p}^a_{\mathrm{T}} \times \mathbf{p}^b_{\mathrm{T}}\right)}{\kt}\\
+\qlong &\equiv& \hat{\mathbf{z}} \cdot \mathbf{q} &=& \frac{p^a_{z}E^{b} - p^b_{z}E^{a}}{\sqrt{k_{0}^2 - k_{z}^2}}
+\end{align}
+In a longitudinally-expanding hydrodynamic system, this coordinate system is the local rest frame of the fluid elements.
+
+\todo{full expression for $R$ matrix}
+
+Since for identical particles the correlation function is symmetric under exchange, $C(-\mathbf{q}) = C(\mathbf{q})$, A single component of $\mathbf{q}$ can always be chosen as positive.
+In this work we will pick the order of a particle pair such that $\qout > 0$.
+Aside from the azimuthally-dependent results, the \emph{average} azimuthal symmetry of the \pPb system is invoked so that $C(-\qside) = C(\qside)$, it will be sufficient to consider only the absolute value $|\qside|$ and $\Ros = 0$.
+In the azimuthally-dependent results, the \Rol term is sub-dominant compared to the other components\footnote{as shown in the results}.
+For those results, only the absolute value of \qlong is considered and \Rol is fixed to zero.
+In both cases $\Rls = 0$.
 
 %% \subsection{Final-state interactions} %% this is in analysis section now
 %% justify ignoring strong force; describe Coulomb correction (save jet fragmentation details for later)
