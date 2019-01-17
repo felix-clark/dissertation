@@ -195,7 +195,25 @@ Also, the alternate subdetectors are calculated using the \qt from tracks, weigh
 \subsection{Event plane resolution correction}
 
 \subsection{Track pair cuts}
-\todo{fill section. it's about 1 paragraph}
+All particle pairs are required to have $\left| \Delta \phi \right| < \pi/2$.
+Without this cut, an enhancement is observed at large relative momentum from di-jets.
+While the physics of interest happens at low relative momentum, an enhancement at large relative momentum can affect the asymptotic normalization of the fit functions, which can in turn impact the quality of the fit.
+
+Opposite-sign pairs are rejected if their $\sqrt{s}$ is near one of a few known resonances.
+In calculating the invariant mass of each pair, the track masses are assumed to be one of the sets of possible daughter particles (in this case $\pi^{\pm}$ or $K^{\pm}$).
+The pair is rejected if their invariant mass is within $20~\MeV$ of the mass of the possible parent particle, except in the case of the $\rho^{0}$, where pairs are rejected if they are within 2 half-widths of $m_{\rho^{0}}$, at $626.2 \MeV < \sqrt{s} < 924.4 \MeV$.
+The decays rejected are the following:
+\begin{itemize}
+\item
+  $\rho^{0} \rightarrow \pi^{+} \pi^{-}$
+\item
+  $K^{0}_{S} \rightarrow \pi^{+} \pi^{-}$
+%% \item
+%%   $\Lambda^{0} \rightarrow \pi^{\pm} p^{\mp}$
+\item
+  $\phi(1020) \rightarrow K^{+} K^{-}$
+\end{itemize}
+
 
 \subsection{Parameterization of the correlation function}
 \todo{describe invariant and 3D parameterizations}
