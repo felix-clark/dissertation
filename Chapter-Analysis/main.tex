@@ -959,6 +959,8 @@ No systematic uncertainties are included - this is intended as a cross-check.}
 \label{fig:fit_inv_R_split}
 \end{figure}
 
+\FloatBarrier %% split azimuthal plots
+
 \subsection{Event plane resolution}
 Uncertainty in the 2nd-order event plane resolution is propagated through the event plane resolution correction to the azimuthally-dependent results. There are two contributions to the \psit resolution, both of which are evaluated by changes to the two alternate sub-detectors used in the three-sub-detector method of evaluating $\langle \cos(2\delta\psit) \rangle$. For one variation, tracks weighted by their \pt are used instead of calorimeter cells, and for the other the rapidity windows of the alternate subsdetectors are shifted away from the nominal sub-detector by $\Delta\eta = 0.5$.
 
@@ -973,6 +975,8 @@ The sampling procedure necessitates an effective integration over event plane an
 
 \FloatBarrier
 \subsection{Summary tables and plots}
+Examples of the systematic uncertainties in the invariant parameters \Rinv and \linv are shown as a function of \kt and centrality in \Cref{fig:syst_rinv,fig:syst_linv}.
+Typical systematic uncertainties are also shown for the 3D radii \Rout (\Cref{fig:syst_rout}), \Rside (\Cref{fig:syst_rside}), \Rlong (\Cref{fig:syst_rlong}), and \Rol (\Cref{fig:syst_rol}), as well as the ratio $\Rout / \Rside$ (\Cref{fig:syst_rout_over_rside}) and the amplitude (\Cref{fig:syst_losl}).
 
 \begin{center}
 \input{Chapter-Analysis/tables/rinv_syst}
@@ -1045,8 +1049,8 @@ The sampling procedure necessitates an effective integration over event plane an
 \label{fig:syst_losl}
 \end{figure}
 
-Examples of the systematic uncertainties in the invariant parameters \Rinv and \linv are shown as a function of \kt and centrality in \Cref{fig:syst_rinv,fig:syst_linv}.
-Typical systematic uncertainties are also shown for the 3D radii \Rout (\Cref{fig:syst_rout}), \Rside (\Cref{fig:syst_rside}), \Rlong (\Cref{fig:syst_rlong}), and \Rol (\Cref{fig:syst_rol}), as well as the ratio $\Rout / \Rside$ (\Cref{fig:syst_rout_over_rside}) and the amplitude (\Cref{fig:syst_losl}).
+\FloatBarrier
+\Cref{fig:azi_syst_breakdown} shows the uncertainties contributing to the relative modulation of each of the main HBT radii. The dominant systematic effect is the \ac{PID}. This is partially due to the fact that the \ac{PID} systematic variation is performed by using looser and tighter \ac{PID} cuts, which gives the variation a statistical component as well. There is also a physical element, as different particle species are expected to freeze out at different times in an expanding source's evolution.
 
 \begin{figure}[t]
 \centering
@@ -1057,7 +1061,5 @@ Typical systematic uncertainties are also shown for the 3D radii \Rout (\Cref{fi
 \caption{The symmetrized contribution of systematic uncertainties as a function of flow vector magnitude $|\qt|$ for the second-order cosine terms of \Rout (top left), \Rside (top right), and \Rlong (bottom left), as well as the second-order sine terms of \Ros (bottom right). The total systematic uncertainty is shown along with the three largest sources. The quadrature sum of the remaining systematic uncertainties is also shown.}
 \label{fig:azi_syst_breakdown}
 \end{figure}
-
-\Cref{fig:azi_syst_breakdown} shows the uncertainties contributing to the relative modulation of each of the main HBT radii. The dominant systematic effect is the \ac{PID}. This is partially due to the fact that the \ac{PID} systematic variation is performed by using looser and tighter \ac{PID} cuts, which gives the variation a statistical component as well. There is also a physical element, as different particle species are expected to freeze out at different times in an expanding source's evolution.
 
 The systematic uncertainties for the Fourier components are smoothed over different values of $|\qt|$. For each source of systematic variation, the uncertainty at each point is averaged with the uncertainty of its nearest neighbors, with double weighting given to its own value. This is done separately for the upwards and downwards variations of each source of systematic uncertainty, before all contributions are summed in quadrature. The use of this simple smoothing kernel reduces the effect of statistical fluctuations in the systematic uncertainties, without drastically changing the qualitative evolution of the size of the variations over $|\qt|$.

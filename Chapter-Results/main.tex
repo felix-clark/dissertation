@@ -2,8 +2,68 @@
 \label{ch:results}
 \graphicspath{{Chapter-Results/figures/}}
 
+This chapter shows examples of one- and three-dimensional fits to correlation functions, then presents results for extracted invariant and 3D source radii.
+The results are shown as a function of \kt, which can illustrate the time-dependence of the source size.
+They are also shown as a function of \kys, showing any variations in source size along the collision axis, and against several quantities related to multiplicity and centrality.
+These results show the freeze-out density and the evolution of the source with the size of the initial geometry.
+Comparisons to hydrodynamic models are made for central events, showing good agreement with theory.
+Finally, HBT radii are shown as a function of azimuthal angle with respect to the second-order event plane.
+The second-order Fourier components are extracted and shown as a function of $|\qt|$ and \kt.
+
 \section{Same- and mixed-event distributions}
+\todo{possibly add some raw distributions of $A(q)$ and $B(q)$ here}
+
 \section{Correlation function fits}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{Cqinv_kt_cent0_e3_kys1.pdf}
+\caption{Results of the fit to the one-dimensional correlation function in very central (0--1\%) events in three \kt intervals.
+The dashed blue line indicates the description of the contribution from jet fragmentation and the red line shows the full correlation function fit.
+The dotted red line indicates the extrapolation of the fit function beyond the interval over which the fit is performed.
+}
+\label{fig:cqinv_cent0}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{Cqinv_kt_cent4_e3_kys1.pdf}
+\caption{Results of the fit to the one-dimensional correlation function in semi-central (20--30\%) events in three \kt intervals.
+The dashed blue line indicates the description of the contribution from jet fragmentation and the red line shows the full correlation function fit.
+The dotted red line indicates the extrapolation of the fit function beyond the interval over which the fit is performed.
+}
+\label{fig:cqinv_cent4}
+\end{figure}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{Cqinv_kt_cent8_e3_kys1.pdf}
+\caption{Results of the fit to the one-dimensional correlation function in relatively peripheral (60--70\%) events in three \kt intervals.
+The dashed blue line indicates the description of the contribution from jet fragmentation and the red line shows the full correlation function fit.
+The dotted red line indicates the extrapolation of the fit function beyond the interval over which the fit is performed.
+}
+\label{fig:cqinv_cent8}
+\end{figure}
+
+An example of a one-dimensional fit to $C(\qinv)$ using the functional form of \Cref{eq:correlation_function_full} is included in \Cref{fig:hp_example}.
+Additional examples of one-dimensional fits for different \kt intervals are shown in \Cref{fig:cqinv_cent0,fig:cqinv_cent4,fig:cqinv_cent8} for very central (0--1\%), semi-central (20--30\%), and peripheral (60--70\%) centrality intervals, respectively.
+The fits to the same-charge correlation functions generally describe the data well, with only small departures from an exponential description.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.97\linewidth]{Cqosl_slices_cent3_e3_kt3_ys1.pdf}
+\caption{Results of the 3D fit to the correlation function in the $0.4 < \kt < 0.5$~\GeV, $-1 < \kys < 0$ kinematic intervals and for the 10--20\% centrality interval.
+The left, middle, and right panels show the distributions versus \qout, \qside, and \qlong, respectively, with limits on the other two components of $\mathbf{q}$ such that $|q_i| < 40~\MeV$.
+The dashed blue line indicates the description of the contribution from hard processes and the red line shows the full correlation function fit.
+The dotted red line indicates the extrapolation of the fit function beyond the interval over which the fit is performed.
+}
+\label{fig:cqosl_slices}
+\end{figure}
+
+
+Slices of a three-dimensional fit of $C(\mathbf{q})$ to the three-dimensional variant of \Cref{eq:correlation_function_full} are shown in \Cref{fig:cqosl_slices}.
+The apparently imperfect fit along the \qout axis is characteristic of $\qside \approx \qlong \approx 0$, and away from this slice the  fit agrees better with the data (the test statistic per degree of freedom is 1.03 for the fit shown). 
+
+
 
 \FloatBarrier
 \section{HBT radii}
