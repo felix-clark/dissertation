@@ -275,15 +275,19 @@ This is interpreted as clear evidence for a phase transition.
 \todo{event plane angle, flow quantities, to discuss before section 5 ``determination of flow vector'' etc. }
 \todo{HIGH PRIORITY}
 
-general big picture, possible hydro from finger physics: \cite{Busza:2018rrf}
+general big picture, possible hydro from finger physics: \cite{Busza:2018rrf} %% also nice summary at end
 
 \todo{discuss how experimental results show strongly-coupled hydro in HI, at finger-physics level}
-%% strongly-coupled: small eta/s ; weakly coupled gas: large eta?
-%% eta \propto \varepsilon*\mfp from relativistic kinetic theory: \rho -> \varepsilon and <v> -> c
-%% \mfp = 1/(n*\sigma) %% or up to constant
+%% strongly-coupled: small eta/s ; weakly coupled gas: large eta
+%% eta \propto \varepsilon*\mfp from relativistic kinetic theory:
+%%%    \eta \propto \rho\mfp<v> with \rho -> \varepsilon and <v> -> c
+%% \mfp \propto 1/(n*\sigma) \propto 1/(s*\sigma)
+%% also can have \mfp \propto eta/p with kinetic argument
 %% \eta/s \propto T*\mfp
-\todo{e.g. wavelength / \mfp < L}
+%% smaller \mfp means fluid element cannot traverse perpendicular to transfer momentum
+\todo{e.g. wavelength or \mfp < L}
 \todo{e.g. conceptual summary of hydro, what it means}
+test hydro by prediction of spatial anisotropies being converted to momentum anisotropies
 
 \subsubsection{Nuclear modification factor}
 \subsubsection{Jet quenching}
@@ -529,13 +533,14 @@ The L\'evy parameter $\alpha$ determines the tail weight of the underlying sourc
 Two particular cases are worth noting.
 If $\alpha = 2$, the correlation function is a Gaussian and so is the source density, which is proportional to \( \exp\left(-\frac{1}{2} \mathbf{x} R^{-2} \mathbf{x}\right) \).
 If $\alpha = 1$, the correlation function is a generalized exponential, and the source density is Cauchy proportional to \( \left( 1 + \mathbf{x} R^{-2} \mathbf{x} \right)^{-1} \).
-It is common practice to fix $\alpha$ to one of these two values.
-
-The source densities corresponding to these stable functions have infinite variance if $\alpha < 2$, but the positive moments of the stable function itself are finite.
-In $d$ dimensions, the normalized $n^\textrm{th}$ $|q|$-moment of the correlation function's enhancement is given by
-\begin{equation}\left< q^n \right>_{\alpha} = \frac{\Gamma\left(\frac{n+d}{\alpha}\right)}{R^n \Gamma\left(\frac{d}{\alpha}\right)} \end{equation}
-If it was assumed that the 1st moment was preserved under a fit (an assumption whose validity depends heavily on the shape of the measured correlation function), the fit parameters measured at one choice of $\alpha$ could be related to those at another choice of $\alpha$, for instance $\Rinv^{\textrm{exp}} \sim \sqrt{\pi} \Rinv^{\textrm{gauss}}$.
-This relation is sometimes used in the literature, but it lacks rigorous motivation or support.
+It is common practice to fix $\alpha$ to one of these two values\footnote{The source densities corresponding to these stable functions have infinite variance if $\alpha < 2$, but the positive moments of the stable function itself are finite.
+In $d$ spatial dimensions, the normalized $n^\textrm{th}$ $|q|$-moment of the correlation function's enhancement is given by
+\begin{equation}
+\left< q^n \right>_{\alpha} = \frac{\Gamma\left(\frac{n+d}{\alpha}\right)}{R^n \Gamma\left(\frac{d}{\alpha}\right)}
+\end{equation}
+If it was assumed that the 1st moment was preserved under a fit (an assumption with validity depending heavily on the shape of the measured correlation function), the fit parameters measured at one choice of $\alpha$ could be related to those at another choice of $\alpha$, for instance $\Rinv^{\textrm{exp}} \sim \sqrt{\pi} \Rinv^{\textrm{gauss}}$.
+This relation is sometimes used in the literature, but it lacks rigorous motivation or support.}.
+For the ATLAS \pPb results, $\alpha$ is fixed to 1, as this choice has good agreement with data.
 
 \subsubsection{Coordinate system}
 \label{subsubsec:coordinate}
