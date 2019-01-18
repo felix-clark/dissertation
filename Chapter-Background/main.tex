@@ -2,6 +2,8 @@
 \label{ch:background}
 \graphicspath{{Chapter-Background/figures/}}
 
+\todo{section on commonly-used quantities, rapidity, \pt, etc. possibly at end of intro chapter. dimensionless units, $c = hbar = k_B = 1$ although sometimes left in}
+
 \section{Quantum chromodynamics}
 \subsection{History and experimental motivation}
 
@@ -18,6 +20,8 @@ It was noticed that hadrons can be organized by their quantum numbers in a manne
 This suggests that hadrons are composed of constituent particles called \emph{quarks}; however, the quark model was not immediately accepted because free quarks were not (and still have not been) observed.
 Because electrons are point-like particles to the limits of current experiments, a scattering process $e^- A \rightarrow e^- X$ is dependent only on the internal structure of the target $A$.
 The electron scatters through a virtual photon that interacts directly with the hadron in a process called \ac{DIS}\footnote{``deep'' because it probes the constituent structure of the target, ``inelastic'' because kinetic energy and matter are exchanged in the creation of the product particles}.
+
+\todo{re-think transition between flavor/quantum number discussion and DIS processes}
 
 \begin{figure}[t]
   \includegraphics{dis_electron_proton.png}
@@ -265,12 +269,27 @@ This is interpreted as clear evidence for a phase transition.
 \todo{\ac{CNM}, no jet quenching, hydro results}
 
 \subsection{Experimental evidence for the existence of the QGP}
+%% and that it act like a strongly-coupled hydrodynamic system
 \todo{HI summary plots: (v2, RAA, etc).
   \url{https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CombinedSummaryPlots/HION/}}
+\todo{event plane angle, flow quantities, to discuss before section 5 ``determination of flow vector'' etc. }
+\todo{HIGH PRIORITY}
+
+general big picture, possible hydro from finger physics: \cite{Busza:2018rrf}
+
+\todo{discuss how experimental results show strongly-coupled hydro in HI, at finger-physics level}
+%% strongly-coupled: small eta/s ; weakly coupled gas: large eta?
+%% eta \propto \varepsilon*\mfp from relativistic kinetic theory: \rho -> \varepsilon and <v> -> c
+%% \mfp = 1/(n*\sigma) %% or up to constant
+%% \eta/s \propto T*\mfp
+\todo{e.g. wavelength / \mfp < L}
+\todo{e.g. conceptual summary of hydro, what it means}
+
 \subsubsection{Nuclear modification factor}
 \subsubsection{Jet quenching}
-\subsubsection{Flow harmonics}
+\subsubsection{Collective expansion and flow harmonics}
 %% it's a little awkward having this before the following section on hydro
+
 
 \section{Hydrodynamic description of heavy ion collisions}
 
@@ -530,17 +549,22 @@ The coordinate axes are the Bertsch-Pratt coordinate system \cite{Pratt:1986cc,B
 \end{align}
 In a longitudinally-expanding hydrodynamic system, this coordinate system is the local rest frame of the fluid elements.
 
+\begin{figure}[t]
+  \includegraphics{hbt_radii_outsidelong.png}
+  \caption{The HBT radii in the Bertsch-Pratt coordinate system. The longitudinal radius \Rlong is evaluated in the frame boosted to the pair's longitudinal momentum. The outwards transverse radius \Rout is along the pair's transverse momentum, and \Rside is the other transverse component. Figure from \Ref{\cite{Lisa:2005dd}}.}
+  \label{fig:hbt_outsidelong}
+\end{figure}
+
+
 \todo{full expression for $R$ matrix}
 
-Since for identical particles the correlation function is symmetric under exchange, $C(-\mathbf{q}) = C(\mathbf{q})$, A single component of $\mathbf{q}$ can always be chosen as positive.
-In this work we will pick the order of a particle pair such that $\qout > 0$.
-Aside from the azimuthally-dependent results, the \emph{average} azimuthal symmetry of the \pPb system is invoked so that $C(-\qside) = C(\qside)$, it will be sufficient to consider only the absolute value $|\qside|$ and $\Ros = 0$.
-In the azimuthally-dependent results, the \Rol term is sub-dominant compared to the other components\footnote{as shown in the results}.
-For those results, only the absolute value of \qlong is considered and \Rol is fixed to zero.
+For identical particles the correlation function is symmetric under exchange of the pair, \(C(-\mathbf{q}) = C(\mathbf{q})\), so a single component of $\mathbf{q}$ can always be chosen as positive.
+The order of a particle pair is picked such that $\qout > 0$.
+Aside from the azimuthally-dependent results, the \emph{average} azimuthal symmetry of the \pPb system is invoked so that $C(-\qside) = C(\qside)$, and it will be sufficient to consider only the absolute value $|\qside|$ and $\Ros = 0$.
+In the azimuthally-dependent results, the \Rol term is sub-dominant compared to the other components\footnote{as shown in the results} and is fixed to zero, and only the absolute value of \qlong is considered.
 In both cases $\Rls = 0$.
 
 %% \subsection{Final-state interactions} %% this is in analysis section now
 %% justify ignoring strong force; describe Coulomb correction (save jet fragmentation details for later)
 \subsection{Motivation for femtoscopy in proton-lead}
-\subsubsection{Collective expansion}
 
