@@ -34,7 +34,7 @@ The baseline track finding algorithm uses inside-out reconstruction.
 Space-points are collected by hits in the silicon detectors by the 3D location of pixel hits and by the crossing point of back-to-back \sct strip pairs with simultaneous hits.
 Pairs of space-points from the pixel detector are used to construct short track seeds, which are used to find the longitudinal position of vertices.
 A histogram is filled with the $z$-coordinate of straight-line extensions of these track seeds to the beam line and peaks in this distribution are identified with the $z$ position of the vertices.
-These $z$-vertices constrain the extension of seeds from two space-points to three (\Cref{fig:trk_seeds}).
+These $z$-vertices constrain the extension of seeds from two space-points to three (\cref{fig:trk_seeds}).
 The seed search can also be done without the $z$ vertex constraint, inducing a significant increase in computational demands but allows for a greater efficiency to reconstruct decays from certain events.
 The seeds with three space-points are fed to the track extension and fitting algorithm.
 
@@ -63,7 +63,7 @@ The efficiency below $\pt = 400 \MeV$ begins do fall rapidly with decreasing \pt
 %% Kalman filter -- dedicated subsection?
 A helical track path is defined by the 5-tuple
 \( \left( d_0, z_0, \theta, \phi, q/p \right) \)
-where $d_0$ and $z_0$ are the transverse and longitudinal distance from the beamspot at the point of closest approach, $\theta$ and $\phi$ are the polar and azimuthal angles of the track at this point, and $q/p$ is the inverse magnitude of the track's total momentum signed by the charge of the particle\footnote{This ratio is related to the transverse radius of curvature $R$ and the axial magnetic field $B$ by $q/p = \sin \theta / B R$.} (\Cref{fig:trk_params}).
+where $d_0$ and $z_0$ are the transverse and longitudinal distance from the beamspot at the point of closest approach, $\theta$ and $\phi$ are the polar and azimuthal angles of the track at this point, and $q/p$ is the inverse magnitude of the track's total momentum signed by the charge of the particle\footnote{This ratio is related to the transverse radius of curvature $R$ and the axial magnetic field $B$ by $q/p = \sin \theta / B R$.} (\cref{fig:trk_params}).
 However, every interaction with a detector element modifies a charged particle's trajectory through ionization energy loss and multiple scattering.
 Since there are tens of hits in most tracks, a typical track has $\mathcal{O}(100)$ parameters in its description, and the parameters before and after a hit are not independent.
 It is computationally infeasible to process a single global fit for each track candidate with this many correlated parameters.
@@ -115,8 +115,8 @@ The offline track selection is that used in the \pPb multiplicity analysis \cite
 
 High-energy \pp and heavy ion collisions are generated with \mc simulations to study the performance of the track reconstruction algorithm.
 Proton-lead collision events are generated with \Hijing \cite{Gyulassy:1994ew} and the detector material is simulated with \GEANTFour \cite{Agostinelli:2002hh}.
-These simulations are able to provide a very precise description of many track properties, such as the silicon hits per track shown in \Cref{fig:trk_si_hits}.
-The track reconstruction efficiency is studied in these \mc samples, with results shown in \Cref{fig:trk_eff}.
+These simulations are able to provide a very precise description of many track properties, such as the silicon hits per track shown in \cref{fig:trk_si_hits}.
+The track reconstruction efficiency is studied in these \mc samples, with results shown in \cref{fig:trk_eff}.
 The probability to reconstruct a track at $\pt > 500 \MeV$ is roughly constant in the range of 75--80\%.
 Below that the efficiency drops rapidly with \pt, down to the minimum of 100 \MeV.
 The efficiency is slightly higher around 80\% in the barrel region $|\eta| < 1$, dropping to 70--75\% throughout most of the end-cap.
@@ -200,7 +200,7 @@ Data is taken from reconstructed \Hijing p-Pb data, and the truth matching is do
 \label{fig:prob_pi}
 \end{figure}
 
-\Cref{fig:prob_pi} shows the distribution of $P(\pi)$ as a function of charge times momentum.
+\cref{fig:prob_pi} shows the distribution of $P(\pi)$ as a function of charge times momentum.
 Since this quantity is associated with pions, it is required to be above a certain cutoff.
 Lines are drawn to indicate the selection for each cut level, which include the $\left|\mathbf{p}\right|$ cuts for each selection.
 
@@ -215,7 +215,7 @@ Lines are drawn to indicate the selection for each cut level, which include the 
 \label{fig:prob_k}
 \end{figure}
 
-In \Cref{fig:prob_k} $P(K)$ is plotted the same manner.
+In \cref{fig:prob_k} $P(K)$ is plotted the same manner.
 The cut on this variable is used to reject some low-momentum kaons but is not intended to dominate the selection.
 
 \begin{figure}[t]
@@ -225,11 +225,11 @@ The cut on this variable is used to reject some low-momentum kaons but is not in
 \includegraphics[width=.32\linewidth]{P_kaon_p.png}
 \includegraphics[width=.32\linewidth]{P_proton_p.png}
 %% \end{minipage}
-\caption{The normalized proton likelihood $P(p)$ for tracks truth-matched to pions, kaons, and protons, respectively. The Loose and Middle cut levels both reject tracks above the parabola, but the Loose level only applies the cut for $P(p) > 0.5$. As in \Cref{fig:prob_k}, here the Tight cut level does not select directly on this variable, but the limit that is implied from the cut on $P(\pi)$ is included in red.}
+\caption{The normalized proton likelihood $P(p)$ for tracks truth-matched to pions, kaons, and protons, respectively. The Loose and Middle cut levels both reject tracks above the parabola, but the Loose level only applies the cut for $P(p) > 0.5$. As in \cref{fig:prob_k}, here the Tight cut level does not select directly on this variable, but the limit that is implied from the cut on $P(\pi)$ is included in red.}
 \label{fig:prob_p}
 \end{figure}
 
-\Cref{fig:prob_p} shows the normalized proton probability for each particle species.
+\cref{fig:prob_p} shows the normalized proton probability for each particle species.
 The momentum-dependent cut is intended to cut out a large number of protons along the edge of the upper band without rejecting too many pions.
 
 \begin{figure}[t]
@@ -240,7 +240,7 @@ The momentum-dependent cut is intended to cut out a large number of protons alon
 \label{fig:dedx}
 \end{figure}
 
-The Loose and Middle cut level definitions include an additional cut on \dEdx, as illustrated in \Cref{fig:dedx}.
+The Loose and Middle cut level definitions include an additional cut on \dEdx, as illustrated in \cref{fig:dedx}.
 The cut is applied in the Loose level to reject the high-momentum tracks that are far from the pion band but not rejected from the other cuts.
 In the Middle cut level it is taken further, and an additional slice is removed.
 The Tight level requires no such additional cut on \dEdx, as the requirement that $P(\pi) > 0.6$ is stringent enough.
@@ -269,10 +269,10 @@ The Tight level requires no such additional cut on \dEdx, as the requirement tha
 \end{figure}
 
 The efficiency and purity of each cut level is studied in reconstructed p+Pb \Hijing simulation.
-The fraction of pions that pass each of these cut levels are shown in \Cref{fig:pid_eff}.
+The fraction of pions that pass each of these cut levels are shown in \cref{fig:pid_eff}.
 The Loose definition is shown to allow most (approximately $90\%$) pions to remain in the sample.
 In contrast, the Middle and Tight selections have a pion efficiency that drops off as a function of \pt and $|\eta|$.
-The purity of pions in the sample is plotted in \Cref{fig:pid_purity}.
+The purity of pions in the sample is plotted in \cref{fig:pid_purity}.
 While the Loose cut only improves the purity slightly and mostly at low \pt and $|\eta|$, the Tight cut level provides a purity at the level up to $99\%$.
 In interpreting these purities, it is important to keep in mind that the majority of tracks that pass the single-particle and pair cuts have $p_T < 1 \GeV$ and all of them are $\lesssim 1.5 \GeV$, due to the upper \kt bin ending at $0.8 \GeV$.
 
@@ -313,6 +313,6 @@ In interpreting these purities, it is important to keep in mind that the majorit
 \label{fig:pid_purity_kt_eta}
 \end{figure}
 
-The efficiency of each PID selection level for pions and other particles are shown in \Cref{fig:pid_eff_2d}, and the purity in \Cref{fig:pid_purity_2d}.
-The purity of pairs (i.e. fraction of pairs in which both particles are pions) is shown in \Cref{fig:pid_purity_kt_eta}.
+The efficiency of each PID selection level for pions and other particles are shown in \cref{fig:pid_eff_2d}, and the purity in \cref{fig:pid_purity_2d}.
+The purity of pairs (i.e. fraction of pairs in which both particles are pions) is shown in \cref{fig:pid_purity_kt_eta}.
 

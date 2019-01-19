@@ -1,11 +1,12 @@
 \chapter{Experimental design and apparatus}
+\label{ch:experiment}
 \graphicspath{{Chapter-Experiment/figures/}}
 
 \section{Scattering experiments}
 
 \subsection{History and motivation}
 The first modern scattering experiment could be said to be the Geiger-Marsden experiments in the early 1910s, in which the Rutherford scattering of alpha ($\alpha$) particles by gold foil was observed \cite{Rutherford:1911zz}.
-While most $\alpha$ particles pass through the foil with little deflection, a small fraction of them are deflected to extreme angles (\Cref{fig:rutherford}).
+While most $\alpha$ particles pass through the foil with little deflection, a small fraction of them are deflected to extreme angles (\cref{fig:rutherford}).
 This result provided evidence that electric charge within the foil was not distributed uniformly, but localized in very small clusters -- the nuclei of the gold atoms.
 \begin{figure}[t]
   %% https://www.chegg.com/homework-help/questions-and-answers/rutherford-s-experiment-studied-deflection-scattering-ofalpha-particles-known-helium-nucle-q458296
@@ -65,7 +66,7 @@ Modern high-energy experiments therefore accelerate two particle beams and gener
 The most straightforward method to accelerate charged particles to high energies is to allow them to pass through a large voltage differential.
 A large voltage can be produced, for instance, with a Van de Graaff generator \cite{PhysRev.43.149}.
 The voltage differential is limited by the insulation breakdown, which in practice caps the energy of accelerated particles with charge $Ze$ to a few $Z \cdot\MeV$.
-A modern \linac circumvents this issue by passing ions through a series of drift tubes with alternating positive and negative potentials (\Cref{fig:linac}).
+A modern \linac circumvents this issue by passing ions through a series of drift tubes with alternating positive and negative potentials (\cref{fig:linac}).
 The drift tubes are constructed with conducting material, so they shield the ions traveling through them from external electric acceleration.
 Between the drift tubes, however, strong electric fields are induced by the alternating potentials.
 This voltage difference is oscillated with \rf and the apparatus is constructed such that ions injected at a given velocity can pass through each gap with acceleration in the forward direction.
@@ -80,7 +81,7 @@ While this is several orders of magnitude higher than the energies accessible wi
   \label{fig:cyclotron}
 \end{figure}
 The cyclotron is the next fundamental progression in accelerator technology.
-Ions in a cyclotron are passed between two semi-cylindrical electrodes (``dees'') that are driven with an alternating voltage (\Cref{fig:cyclotron}).
+Ions in a cyclotron are passed between two semi-cylindrical electrodes (``dees'') that are driven with an alternating voltage (\cref{fig:cyclotron}).
 A large electromagnet keeps the particles traveling in a circular path contained within the dees.
 At non-relativistic energies, the velocity of the ions is proportional to the radius of their path, so the time taken for one revolution is independent of the velocity.
 If the voltage between the electrodes is oscillated with a frequency equal to the cyclotron resonance frequency $f_\textrm{cyclo} = q B / 2\pi m$, then ions are accelerated to higher energies with each pass between the dees.
@@ -142,7 +143,7 @@ Then the luminosity can be expressed as a function of the emittance and $\beta^*
 \Lumi = f_\mathrm{coll} \frac{n_1 n_2}{4 \sqrt{\epsilon_x \epsilon_y \beta_x^* \beta_y^*}}
 \end{equation}
 If the crossing angle is non-zero, $\beta$ is not minimized at the \ac{IP}, or other effects deviate from the ideal case, then the real luminosity will be smaller than this optimal value.
-\Cref{eq:lumi} shows that the keys to increasing the efficiency of data-taking are to make highly-populated bunches cross at high frequency, with low-emittance beams and optics that minimize the amplitude functions at the \ac{IP}.
+\cref{eq:lumi} shows that the keys to increasing the efficiency of data-taking are to make highly-populated bunches cross at high frequency, with low-emittance beams and optics that minimize the amplitude functions at the \ac{IP}.
 
 \section{The Large Hadron Collider}
 
@@ -162,7 +163,7 @@ The results of this thesis will use data collected from the 2013 \pPb collisions
 
 Before being injected into the \lhc, ion beams pass through a series of increasingly large accelerators, incrementally raising their energy \cite{Benedikt:2004wm}.
 These lower-energy accelerators predate the \lhc and have each been used for many collision experiments throughout the history of CERN.
-The CERN accelerator complex is sketched in \Cref{fig:injection_chain}.
+The CERN accelerator complex is sketched in \cref{fig:injection_chain}.
 
 Protons are first collected by ionizing hydrogen gas, then accelerated to a kinetic energy of 50 \MeV by the Linac 2 linear accelerator.
 The \ac{PSB} increases their energy to the relativistic level of 1.4 \GeV.
@@ -186,7 +187,7 @@ Finally, the beam is injected into the \lhc, where it is accelerated to a few \T
 \label{fig:lhc_schematic}
 \end{figure}
 
-The \lhc ring does not trace a perfect circle, but is actually composed of eight alternating straight and curved arc sections (\Cref{fig:lhc_schematic}) \cite{Bruning:2004ej}.
+The \lhc ring does not trace a perfect circle, but is actually composed of eight alternating straight and curved arc sections (\cref{fig:lhc_schematic}) \cite{Bruning:2004ej}.
 Two parallel beam pipes 
 The straight sections are each 528 m in length and carry the \rf cavities for acceleration, \acp{IP} for detector experiments, and other features like injection spots and beam dumps.
 The arc portions have a radius of curvature of $R = 2.8$ km, using a total of 1232 superconducting dipole magnets to turn the beams along the path.
@@ -203,7 +204,7 @@ As of 2018, the smallest bunch spacing used for lead ions is 75 ns.
 \label{fig:dipole_cross_section}
 \end{figure}
 
-The dipole magnets (\Cref{fig:dipole_cross_section}) have a maximum design strength of 10 T, though the active field strength must remain proportional to the current energy of the beam fill.
+The dipole magnets (\cref{fig:dipole_cross_section}) have a maximum design strength of 10 T, though the active field strength must remain proportional to the current energy of the beam fill.
 For the \pPbenergy \pPb run they operated at 6.0 T with fully energetic beams.
 \todo{beams @ fixed rigidity, explain different energies in beams, different Z/A. possibly move some details from 3.2.4 up here}
 To keep the beams focused, 392 quadrupole magnets are arranged in an alternating-polarity orientation.
@@ -220,7 +221,7 @@ This is particularly disastrous if the helium is heated to its gaseous phase, ca
 The two largest \lhc experiments, ATLAS\footnote{an ``acronym'' for \textbf{A} \textbf{T}oroidal \textbf{L}HC \textbf{A}pparatu\textbf{S}} \cite{Aad:2008zzm} and CMS\footnote{\textbf{C}ompact \textbf{M}uon \textbf{S}olenoid} \cite{Chatrchyan:2008aa}, are general-purpose detectors that fulfilled one of their primary objectives with the joint discovery of the Higgs boson in 2012 \cite{HIGG-2012-27,Chatrchyan:2012xdj}.
 They continue to be used in the search for physics beyond the Standard Model such as supersymmetry and large extra dimensions.
 The large rapidity coverage of their calorimeter and tracking systems also make them highly capable of measuring both low- and high-energy probes of heavy ion collisions.
-The ATLAS detector, which provided the data used in this thesis, is discussed in more detail in \Cref{sec:atlas}.
+The ATLAS detector, which provided the data used in this thesis, is discussed in more detail in \cref{sec:atlas}.
 
 ALICE\footnote{\textbf{A} \textbf{L}arge \textbf{I}on \textbf{C}ollider \textbf{E}xperiment} \cite{Aamodt:2008zz} is a dedicated heavy-ion detector that is particularly adept at the identification of particle species.
 
@@ -246,7 +247,7 @@ The results in this thesis use the 2013 \lhc \pPb dataset at a center-of-mass en
 The proton beam had an energy of 4 \TeV and the Pb ions had an energy per nucleon of $Z/A \cdot 4 \TeV = 1.57 \TeV$, so the center-of-mass of a proton and any one Pb nucleon has a longitudinal rapidity boost of $\ycm = 0.465$.
 The \pPb run was divided into two periods between which the directions of the proton and lead beams were reversed.
 The maximum luminosity was $\Lumi_\textrm{peak} = 110 \times 10^{27} \, \textrm{cm}^{-2} \, \textrm{s}^{-1}$ over the 32 stable beam runs (16 in each period), though depending on the run $\Lumi_\textrm{peak}$ was as low as $22 \times 10^{27} \, \textrm{cm}^{-2} \, \textrm{s}^{-1}$.
-The integrated luminosity of the data taking period from January 21 to February 10 is $\Lint = 28.1~\inb$ (\Cref{fig:int_lumi}).
+The integrated luminosity of the data taking period from January 21 to February 10 is $\Lint = 28.1~\inb$ (\cref{fig:int_lumi}).
 The bunch spacing of the beams was 200 ns, so the maximum bunch crossing rate was 5 MHz.
 
 \section{The ATLAS detector}
@@ -259,7 +260,7 @@ The bunch spacing of the beams was 200 ns, so the maximum bunch crossing rate wa
 \end{figure}
 
 The ATLAS experiment is a general purpose particle detector \cite{Aad:2008zzm} located at Point 1 on the \lhc ring, across the street from the main entrance to the CERN site at Meyrin, Switzerland.
-Currently the largest volume accelerator detector in operation, it encompasses 44 m along the beam axis and has a diameter of 25 m, weighing about 7 kilotonnes (\Cref{fig:atlas_layout}).
+Currently the largest volume accelerator detector in operation, it encompasses 44 m along the beam axis and has a diameter of 25 m, weighing about 7 kilotonnes (\cref{fig:atlas_layout}).
 Broadly speaking, the major subsystems of the ATLAS detector are (from inner- to outer-most): the \id, the magnet system, the calorimeters, and the muon spectrometer.
 The muon spectrometer is essential for reconstructing a number of massive and exotic particles \cite{ATLAS:1997ad}; however, it will not be discussed in detail here as it is not used in the analyses presented in this thesis.
 The extensive trigger and data acquisition system is also crucial for successful operation.
@@ -278,7 +279,7 @@ They are used to distinguish pileup events by detecting spectator nucleons that 
 \label{fig:atlas_magnets}
 \end{figure}
 
-Two superconducting magnet systems are used to generate a large magnetic field with field lines parallel to the beam axis (\Cref{fig:atlas_magnets}) \cite{ATLAS:1997ae}. %% tech design report
+Two superconducting magnet systems are used to generate a large magnetic field with field lines parallel to the beam axis (\cref{fig:atlas_magnets}) \cite{ATLAS:1997ae}. %% tech design report
 This magnetic field causes charged particles to follow a curved path through the detector, allowing their charge and transverse momentum to be measured according to \(  \pt = q B_z R\) where $R$ is the radius of curvature in the transverse plane.
 A large solenoid 5.3 m in length and 2.3 m in diameter surrounds the ID and produces a 2 T magnetic field.
 It is designed to produce as uniform of a magnetic field as is possible to allow precise measurements of the momentum of charged particles in the ID.
@@ -305,7 +306,7 @@ From innermost to outermost, these are the silicon pixel detector, the \sct, and
 \subsubsection{Pixel detector}
 
 The silicon pixel detector surrounds the beam pipe, covering radial distances from 50 mm to 150 mm, and is composed of 1744 silicon pixel modules \cite{Aad:2008zz}.
-These are distributed over three concentric barrel layers and three disk layers on each endcap (\Cref{fig:atlas_pixel}), so that the trajectory of a typical charged particle passes through three points in the pixel detector.
+These are distributed over three concentric barrel layers and three disk layers on each endcap (\cref{fig:atlas_pixel}), so that the trajectory of a typical charged particle passes through three points in the pixel detector.
 Each module is 16.4 mm by 60.8 mm and has 47 232 pixels of size 50 $\mu$m by 400 $\mu$m.
 A total of 80.4 million readout channels are supported by 16 radiation-hardened front-end chips bump-bonded to each sensor.
 A hit is recorded in each pixel when the signal exceeds a tunable threshold, and the time over threshold can be used to provide a measurement of ionization energy loss \dEdx used for particle identification.
@@ -345,7 +346,7 @@ The \trt hits are generally useful to refine the transverse momentum measurement
 \label{fig:atlas_calorimeter}
 \end{figure}
 
-The ATLAS calorimetry system (\Cref{fig:atlas_calorimeter}) covers nearly ten units of pseudorapidity at $|\eta| < 4.9$.
+The ATLAS calorimetry system (\cref{fig:atlas_calorimeter}) covers nearly ten units of pseudorapidity at $|\eta| < 4.9$.
 It provides measurements of high-energy particles by sampling the energy deposited in the calorimeters' dense active material \cite{Airapetian:1996iv}. %% performance tech design report
 An absorbing material, placed in alternating layers with the active material, collects this energy from the showers.
 ATLAS has two main categories of calorimeter, \emph{electromagnetic} and \emph{hadronic}, the former designed to induce \ac{EM} showers from electrons and photons, and the latter designed to stop hadrons like protons and neutrons with both strong and \ac{EM} interactions.
@@ -359,7 +360,7 @@ Photons are stopped by the \ac{EM} calorimeter via pair production of electron-p
 A single electron or photon passing through the \ac{EM} calorimeter causes an electromagnetic cascade as these processes are repeated by product particles with progressively smaller energies.
 As the energy is dispersed through the increasing number of shower particles, they are eventually slowed to a critical energy below which they interact through ionization and excitation, depositing their energy in the material.
 The energy as a function of path length $\Delta l$ can be described by exponential decay \(E = E_0 e^{-\Delta l / X_0} \).
-A typical photon or electron has a trajectory that, if extended beyond absorption, would cross a minimum of about 25 radiation lengths $X_0$ (\Cref{fig:atlas_em_rad_length}).
+A typical photon or electron has a trajectory that, if extended beyond absorption, would cross a minimum of about 25 radiation lengths $X_0$ (\cref{fig:atlas_em_rad_length}).
 
 \begin{figure}[t]
 \includegraphics[width=0.49\linewidth]{x0_layers_barrel.pdf}
@@ -376,7 +377,7 @@ The hadronic calorimeter lies outside the \ac{EM} calorimeter and is designed to
 The barrel region, along with the extended barrel region which encompasses the end-cap, cover $|\eta| < 1.7$ and comprise the tile system \cite{ATLAS:1996aa}.
 The tile system does not use a \ac{LAr} active material, but rather is made of alternating steel plates and polystyrene scintillating tiles.
 The \ac{HEC} detector covers $1.5 < |\eta| < 3.2$ and uses a \ac{LAr} active material with copper absorbers.
-Most hadrons take a path that, if extended beyond the cascade, would cross at least 10 nuclear interaction lengths (\Cref{fig:atlas_calo_nuclear_int_length}).
+Most hadrons take a path that, if extended beyond the cascade, would cross at least 10 nuclear interaction lengths (\cref{fig:atlas_calo_nuclear_int_length}).
 
 \begin{figure}[t]
 \includegraphics{calo_nuclear_int_length.pdf}
