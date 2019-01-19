@@ -95,17 +95,20 @@
 \g@addto@macro\@floatboxreset\centering
 \makeatother
 
-\usepackage{cleveref}
-\Crefname{equation}{Eq.}{Eqs.}
-\Crefname{align}   {Eq.}{Eqs.}
-\Crefname{figure}{Fig.}{Figs.}
-\Crefname{tabular}      {Table}{Tables}
-\Crefname{sidewaystable}{Table}{Tables}
-\Crefname{table}        {Table}{Tables}
-\Crefname{section}{Sec.}{Secs.}
-\Crefname{chapter}{Ch.}{Ch.}
-\Crefname{appendix}{App.}{App.}
-\Crefname{subsection}{Sec.}{Secs.}
+%% capitalize option to always capitalize ``Figure'', ``Equation'', etc.
+\usepackage[capitalize]{cleveref}
+%% use defaults? will automatically spell out
+%% \Crefname{equation}{Eq.}{Eqs.}
+%% \Crefname{align}   {Eq.}{Eqs.}
+%% \Crefname{figure}{Fig.}{Figs.}
+%% \Crefname{tabular}      {Table}{Tables}
+%% \Crefname{sidewaystable}{Table}{Tables}
+%% \Crefname{table}        {Table}{Tables}
+%% \Crefname{section}{Sec.}{Secs.}
+\crefname{chapter}{Ch.}{Ch.}
+\Crefname{chapter}{Chapter}{Chapters}
+%% \Crefname{appendix}{App.}{App.}
+%% \Crefname{subsection}{Sec.}{Secs.}
 
 %% we want to number down to sub-sections, however this doesn't add numbers on its own
 \setsecnumdepth{subsection} %% \setcounter{secnumdepth} doesn't work for some reason
