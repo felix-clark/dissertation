@@ -154,10 +154,10 @@
 \expandafter\def\expandafter\quote\expandafter{\quote\SingleSpace} %Keep all block quotes single-spaced regardless of body text spacing.
 \pagestyle{plain} %Put page numbers at the bottom-center for the whole dissertation. Columbia's dissertation office requires that the numbers appear at this location on the page throughout the document.
 
-\newcommand{\thesisTitle}{Femtoscopic signatures of small QGP droplets in proton-lead collisions at the Large Hadron Collider with the ATLAS detector} %%  at $\sqrt{s_\mathrm{NN}} = 5.02~\TeV$ %% energy necessary?
+\newcommand{\thesisTitle}{Femtoscopic signatures of small QGP droplets in proton-lead collisions at the Large Hadron Collider}
 \newcommand{\myName}{Michael (Felix) Clark}
 \newcommand{\abstractText}{
-abstract text here
+  \input{abstract}
 }
 \newcommand{\yearText}{2019}
 %The section that follows renders the "Cover pages and Abstract" part of your dissertation.
@@ -166,17 +166,21 @@ abstract text here
 %Be sure you replace the title and author with the title of your dissertation and your name!
 \newcommand*{\TitleColumbia}{\begingroup
 \begin{center}
-\thesisTitle{} \\
-\myName{} \par
-\vspace*{5 in} %This is a sloppy way to get the "Submitted in partial fulfillment" part to move to the bottom of the page
+  {\LARGE \textbf{\thesisTitle{}}} \\
+  \bigskip
+  {\large \myName{} \par}
+  %% \normalsize
+  %% \vspace*{5 in} %This is a sloppy way to get the "Submitted in partial fulfillment" part to move to the bottom of the page
+  \vfill %% non-sloppy way to fill with variable space
 %\begin{SingleSpace} can be used here if you want the "Submitted" text to be single-spaced.
 Submitted in partial fulfillment of the\\
 requirements for the degree of\\
 Doctor of Philosophy\\
 in the Graduate School of Arts and Sciences\par
 %\end{SingleSpace} here if you decide to use single-spacing on the "Submitted" text.
-\vfill
-COLUMBIA UNIVERSITY\\
+%% \vfill
+\vspace{3cm}
+\textbf{COLUMBIA UNIVERSITY}\\
 \yearText
 \end{center}
 \endgroup}
@@ -207,9 +211,13 @@ All rights reserved
 \clearpage
 \thispagestyle{empty}
 \begin{center}
-ABSTRACT\\ %You need to keep this text here in all capitals. Don't change it.
-\thesisTitle \\ %Do of course change this to the title of your dissertation.
-\myName \\ %Your name here
+  \large
+  \textbf{ABSTRACT}\\ %You need to keep this text here in all capitals. Don't change it.
+  \bigskip
+  \textbf{\thesisTitle} \\ %Do of course change this to the title of your dissertation.
+  \bigskip
+  \myName \\ %Your name here
+  \bigskip
 \end{center}
 \abstractText{}
 
