@@ -482,7 +482,7 @@ It is then convenient to define a normalization of the two-particle source densi
 If the resonances and other higher-order effects are ignored or removed, one can make the approximation that $s_2 (p_a, x_a; p_b, x_b) \approx s_1(p_a, x_a) s_1(p_b, x_b)$ which imposes the normalization constraint $\int d^3 r \, S_{2,\mathbf{k}}(\mathbf{r}) = 1$.
 
 The correlation function can now be written in a simple and suggestive form.
-Assuming that the center-of-mass motion is irrelevant after emission, the overall phase $e^{i\mathbf{k}\cdot(\mathbf{x}_a+\mathbf{x}_b)}$ can be factored out of the wavefunction (as in the example of \cref{eqn:free_particle_wavefunction}), leaving only the relative part.
+Assuming that the center-of-mass motion is irrelevant after emission, the overall phase $e^{i\mathbf{k}\cdot(\mathbf{x}_a+\mathbf{x}_b)}$ can be factored out of the wavefunction (as in the example of \cref{eq:free_particle_wavefunction}), leaving only the relative part.
 \begin{equation} \label{eq:wavefunction_kernel}
 C_\mathbf{k}(\mathbf{q}) - 1 = \int d^3 r \, S_{2,\mathbf{k}}(\mathbf{r}) \left(\left|\braket{\mathbf{q}|\mathbf{r}}\right|^2 - 1 \right)
 \end{equation}
@@ -491,7 +491,7 @@ For identical bosons, the resolving power is particularly strong, due to wavefun
 In the approximation that all particles of a given charge are pions, that they are created in a fully chaotic source, and that they have no final-state interactions, the wavefunctions are simple plane waves and the resulting enhancement is the Fourier transform of the source density (the kernel is only non-zero for interacting particles):
 \begin{align}
 \braket{\mathbf{k}|\mathbf{q}}{\mathbf{x}_a, \mathbf{x}_b} &= \frac{1}{\sqrt{2}}\left(e^{i\mathbf{p}_a \cdot \mathbf{x}_a + i\mathbf{p}_b \cdot \mathbf{x}_b} + e^{i\mathbf{p}_b \cdot \mathbf{x}_a + i\mathbf{p}_a \cdot \mathbf{x}_b}\right)\\
-&= \frac{1}{\sqrt{2}}e^{i\mathbf{k} \cdot (\mathbf{x}_a+ \mathbf{x}_b)}\left(e^{i\mathbf{q} \cdot (\mathbf{x}_a - \mathbf{x}_b)/2} + e^{- i\mathbf{q} \cdot (\mathbf{x}_a - \mathbf{x}_b)/2}\right) \label{eqn:free_particle_wavefunction}
+&= \frac{1}{\sqrt{2}}e^{i\mathbf{k} \cdot (\mathbf{x}_a+ \mathbf{x}_b)}\left(e^{i\mathbf{q} \cdot (\mathbf{x}_a - \mathbf{x}_b)/2} + e^{- i\mathbf{q} \cdot (\mathbf{x}_a - \mathbf{x}_b)/2}\right) \label{eq:free_particle_wavefunction}
 \end{align}
 Plugging this back into the expression for the correlation function yields:
 \begin{align}

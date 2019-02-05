@@ -382,12 +382,12 @@ The decays rejected are the following:
 \subsection{Parameterization of the correlation function}
 
 The Bose-Einstein enhancement in the invariant correlation functions is fit to an exponential form:
-\begin{equation} C_{\textrm{BE}}(\qinv) = 1 + \mathrm{e}^{- \Rinv \qinv } \,, \label{eqn:cbe_qinv}\end{equation}
+\begin{equation} C_{\textrm{BE}}(\qinv) = 1 + \mathrm{e}^{- \Rinv \qinv } \,, \label{eq:cbe_qinv}\end{equation}
 where \Rinv is the Lorentz-invariant HBT radius. This function corresponds to an underlying Breit-Wigner source density.
 
 The Bose-Einstein component of the three-dimensional correlation functions is fit to a function of the form
 \begin{equation}
-C_{\textrm{BE}}(\mathbf{q}) = 1 + \mathrm{e}^{- \left\| R \mathbf{q} \right\|} \;, \label{eqn:cbe_qosl}
+C_{\textrm{BE}}(\mathbf{q}) = 1 + \mathrm{e}^{- \left\| R \mathbf{q} \right\|} \;, \label{eq:cbe_qosl}
 \end{equation}
 where $R$ is the symmetric matrix in \cref{eq:r_matrix_full}.
 
@@ -395,7 +395,7 @@ The full form of the invariant-correlation-function fit to like-charge track pai
 \begin{equation}
 C(q) = \mathcal{N} \left[1-\lambda + \lambda K(\qinv)C_{\textrm{BE}}(q)\right] \Omega(q) \,,\label{eq:correlation_function_full}
 \end{equation}
-where $\mathcal{N}$ is a normalization factor, $C_\mathrm{BE}(q)$ is given by \cref{eqn:cbe_qinv} or \cref{eqn:cbe_qosl}, $K(\qinv)$ is discussed in \cref{subsec:coulomb}, and $\Omega(q)$ is discussed in \cref{sec:jet_frag}.
+where $\mathcal{N}$ is a normalization factor, $C_\mathrm{BE}(q)$ is given by \cref{eq:cbe_qinv} or \cref{eq:cbe_qosl}, the Coulomb correction $K(\qinv)$ is discussed in \cref{subsec:coulomb}, and the hard process background $\Omega(q)$ is discussed in detail in \cref{sec:jet_frag}.
 When opposite-charge pairs are fit to constrain the jet fragmentation background, the same expression is used but the sign of the Bohr radius in $K(\qinv)$ is flipped and the Bose-Einstein correlation vanishes such that $C_\mathrm{BE}(q) = 1$.
 
 %% As discussed in \Sect{\ref{subsec:hard_process}}, the opposite-charge correlation functions are fit in the regions where \qinv (or $|\mathbf{q}|$ in 3D) is greater than 100~\MeV. The opposite-charge parameters are highly insensitive to the choice of cutoff, as the $q$ distributions contribute more statistical weight at larger $q$. The same-charge correlation functions are fit in the regions $\qinv > 30~\MeV$ for the invariant fits and $|\mathbf{q}| > 25~\MeV$ in three dimensions.
@@ -445,7 +445,7 @@ Corresponding expressions for the confluent hypergeometric function appearing in
 To apply the Coulomb correction in 3D out-side-long coordinates, the average \kt in each bin is used to contract compute \qinv from $\mathbf{q}$.
 The following expression takes advantage of working in the \ac{LCMF} so that $k_L = 0$.
 \begin{equation}
-\qinv^2 = |\mathbf{q}|^2 - \Gamma^2 + \sqrt{\Gamma^4 - 4 |\mathbf{k}_\mathrm{T}|^2 \qout^2} \label{eqn:q3_to_qinv}
+\qinv^2 = |\mathbf{q}|^2 - \Gamma^2 + \sqrt{\Gamma^4 - 4 |\mathbf{k}_\mathrm{T}|^2 \qout^2} \label{eq:q3_to_qinv}
 \end{equation}
 where
 \begin{equation}
@@ -661,7 +661,7 @@ The results are shown in \cref{fig:background_alpha_pythia8,fig:background_qinv_
 \includegraphics[width=.49\linewidth]{qinv_pythia8_backLambda_kt_opp_vs_same.pdf}
 \includegraphics[width=.49\linewidth]{qinv_pythia8_backR_kt_opp_vs_same.pdf}
 \end{minipage}
-\caption{A comparison of same-sign to opposite-sign charged pairs with the amplitude and width of $\alpha$-stable fits in \Pythia 8. Several multiplicities are shown in each colored \kt bin, with the multiplicity bins defined in \cref{fig:background_alpha_pythia8}, and the $++$ and $--$ pairs are separated. The slopes and intercepts of the lines in the left plot are shown in \cref{fig:background_qinv_same_vs_opp_pythia8_fits}. The widths $\Rbkgd$ are fit to a simple ratio $\rho$ (\cref{eqn:rho}). In the amplitude plot (left), the widths $\Rbkgd$ are fixed to the value extracted from the right plot.}
+\caption{A comparison of same-sign to opposite-sign charged pairs with the amplitude and width of $\alpha$-stable fits in \Pythia 8. Several multiplicities are shown in each colored \kt bin, with the multiplicity bins defined in \cref{fig:background_alpha_pythia8}, and the $++$ and $--$ pairs are separated. The slopes and intercepts of the lines in the left plot are shown in \cref{fig:background_qinv_same_vs_opp_pythia8_fits}. The widths $\Rbkgd$ are fit to a simple ratio $\rho$ (\cref{eq:rho}). In the amplitude plot (left), the widths $\Rbkgd$ are fixed to the value extracted from the right plot.}
 \label{fig:background_qinv_same_vs_opp_pythia8}
 \end{figure}
 
@@ -671,7 +671,7 @@ The results are shown in \cref{fig:background_alpha_pythia8,fig:background_qinv_
 \includegraphics[width=.49\linewidth]{can_kt_qinv_backLambda_slope_combined.pdf}
 \includegraphics[width=.49\linewidth]{can_kt_qinv_backLambda_intercept_combined.pdf}
 \end{minipage}
-\caption{The slopes (left) and intercepts (right) of the fits from \cref{fig:background_qinv_same_vs_opp_pythia8} as defined in \cref{eqn:lambdaBackPar}. The parameters are each fitted to a function of the form $p_1 + \frac{p_2}{1 + e^{-p_3(k_T - p_4)}}$. The results of the fits are displayed in \cref{eqn:mu,eqn:nu}. The procedure is perfomed in both forward (red) and central (blue) rapidity bins, and the results are used as a systematic variation.}
+\caption{The slopes (left) and intercepts (right) of the fits from \cref{fig:background_qinv_same_vs_opp_pythia8} as defined in \cref{eq:lambdaBackPar}. The parameters are each fitted to a function of the form $p_1 + \frac{p_2}{1 + e^{-p_3(k_T - p_4)}}$. The results of the fits are displayed in \cref{eq:mu,eqn:nu}. The procedure is perfomed in both forward (red) and central (blue) rapidity bins, and the results are used as a systematic variation.}
 \label{fig:background_qinv_same_vs_opp_pythia8_fits}
 \end{figure}
 
@@ -685,16 +685,16 @@ This \kt dependence of fit parameters is used as a mapping from opposite-sign fi
 In summary we are requiring that
 
 \begin{align}
-\lbkgd^{\pm\pm} &= \mu(\kt) \left(\lbkgd^{+-}\right)^{\nu(\kt)} \label{eqn:lambdaBackPar}\\
-\Rbkgd^{\pm\pm} &= \rho \Rbkgd^{+-} \label{eqn:rBackPar}
+\lbkgd^{\pm\pm} &= \mu(\kt) \left(\lbkgd^{+-}\right)^{\nu(\kt)} \label{eq:lambdaBackPar}\\
+\Rbkgd^{\pm\pm} &= \rho \Rbkgd^{+-} \label{eq:rBackPar}
 \end{align}
 
 and fixing $\mu(k_T)$, $\nu(k_T)$, and $\rho$ from the Monte Carlo (results shown in \cref{fig:background_qinv_same_vs_opp_pythia8_fits})):
 
 \begin{align}
-\log \mu (\kt [\textrm{GeV}]) &= -2.26 + \frac{1.97}{1 + e^{-10.1 (\kt - 0.383)}} \label{eqn:mu}\\
-\nu(\kt [\textrm{GeV}]) &= 0.579 + \frac{4.38}{1 + e^{-14.4 (\kt - 0.425)}} \label{eqn:nu}\\
-\rho &= 1.33 \label{eqn:rho} %% this constant is independent over rapidity to within ~2%
+\log \mu (\kt [\textrm{GeV}]) &= -2.26 + \frac{1.97}{1 + e^{-10.1 (\kt - 0.383)}} \label{eq:mu}\\
+\nu(\kt [\textrm{GeV}]) &= 0.579 + \frac{4.38}{1 + e^{-14.4 (\kt - 0.425)}} \label{eq:nu}\\
+\rho &= 1.33 \label{eq:rho} %% this constant is independent over rapidity to within ~2%
 \end{align}
 The statistical errors on the above parameters are on the order of 10\%.
 
@@ -705,7 +705,7 @@ The statistical errors on the above parameters are on the order of 10\%.
 In the longitudinally co-moving frame of a particle pair produced in a jet, on averate the axis of the jet will be aligned with the ``out'' direction and the plane transverse to the jet's momentum will be spanned by the ``side'' and ``long'' directions. In three dimensions the correlation from jet fragmentation is factorized into components which separately describe the ``out'' direction and both the ``side'' and ``long'' directions:
 
 \begin{align}
-C_{\mathrm{bkgd}}(\mathbf{q}) = 1 + \lbkgd^\mathrm{osl} \exp\left(-\left| R_\mathrm{bkgd}^\mathrm{out} \qout \right|^{\abkgd^\mathrm{out}} - \left| R_\mathrm{bkgd}^\mathrm{sl} \qsl \right|^{\abkgd^\mathrm{sl}}\right) \label{eqn:jet_frag_form_3d}
+C_{\mathrm{bkgd}}(\mathbf{q}) = 1 + \lbkgd^\mathrm{osl} \exp\left(-\left| R_\mathrm{bkgd}^\mathrm{out} \qout \right|^{\abkgd^\mathrm{out}} - \left| R_\mathrm{bkgd}^\mathrm{sl} \qsl \right|^{\abkgd^\mathrm{sl}}\right) \label{eq:jet_frag_form_3d}
 \end{align}
 
 with $\qsl = \sqrt{\qside^2 + \qlong^2}$.
@@ -722,7 +722,7 @@ A systematic check is performed to investigate the effect of the shape on the re
 \includegraphics[width=.49\linewidth]{canqosl_backAlphaOut_vs_kt.pdf}
 \includegraphics[width=.49\linewidth]{canqosl_backAlpha_vs_kt.pdf}\\
 \end{minipage}
-\caption{The fit results from \Pythia 8 of the shape parameters from \cref{eqn:jet_frag_form_3d}. The dashed lines indicate the constant values used in the analysis. While the results are not well-described by a constant function, the difference in the shape of the function is not extreme over the discrepancies observed.}
+\caption{The fit results from \Pythia 8 of the shape parameters from \cref{eq:jet_frag_form_3d}. The dashed lines indicate the constant values used in the analysis. While the results are not well-described by a constant function, the difference in the shape of the function is not extreme over the discrepancies observed.}
 \label{fig:pythia_bkgd_alpha}
 \end{figure}
 
@@ -767,16 +767,16 @@ Top: A comparison of same-sign to opposite-sign charged pairs with the amplitude
 Just as is done for the \qinv correlation functions, the amplitudes for three dimensional jet correlations are compared between opposite- and same-sign pairs (\cref{fig:background_qosl_lambda_same_vs_opp_pythia8}).
 
 \begin{align}
-\lbkgd^{\mathrm{osl},\pm\pm} &= \mu(\kt) \left(\lbkgd^{\mathrm{osl}+-}\right)^{\nu(\kt)} \label{eqn:lambdaBackParOSL}\\
-\Rbkgd^{\mathrm{sl},\pm\pm} &= \Rbkgd^{\mathrm{sl}+-} + \Delta\Rbkgd^{\mathrm{sl}}(\kt) \label{eqn:rBackParSL}\\
-\Rbkgd^{\mathrm{out},\pm\pm} &= \Rbkgd^{\mathrm{out}+-} + \Delta\Rbkgd^{\mathrm{out}}(\kt) \label{eqn:rBackParOut}
+\lbkgd^{\mathrm{osl},\pm\pm} &= \mu(\kt) \left(\lbkgd^{\mathrm{osl}+-}\right)^{\nu(\kt)} \label{eq:lambdaBackParOSL}\\
+\Rbkgd^{\mathrm{sl},\pm\pm} &= \Rbkgd^{\mathrm{sl}+-} + \Delta\Rbkgd^{\mathrm{sl}}(\kt) \label{eq:rBackParSL}\\
+\Rbkgd^{\mathrm{out},\pm\pm} &= \Rbkgd^{\mathrm{out}+-} + \Delta\Rbkgd^{\mathrm{out}}(\kt) \label{eq:rBackParOut}
 \end{align}
 
 The numerical values used for the mapping the amplitude $\lbkgd^\mathrm{osl}$ (\cref{fig:background_qosl_lambda_same_vs_opp_pythia8}), fragmentation width colinear with the jet axis $\Rbkgd^\mathrm{out}$ (\cref{fig:background_qosl_Rout_same_vs_opp_pythia8}), and fragmentation width transverse to the jet axis $\Rbkgd^\mathrm{sl}$ (\cref{fig:background_qosl_R_same_vs_opp_pythia8}) are as follows:
 
 \begin{align}
-\log \mu (\kt [\textrm{GeV}]) &= -3.9 + 9.5 \kt - 6.4 \kt^2 \label{eqn:mu_osl}\\
-\nu(\kt [\textrm{GeV}]) &= 0.03 + 2.6 \kt - 1.6 \kt^2 \label{eqn:nu_osl}\\
+\log \mu (\kt [\textrm{GeV}]) &= -3.9 + 9.5 \kt - 6.4 \kt^2 \label{eq:mu_osl}\\
+\nu(\kt [\textrm{GeV}]) &= 0.03 + 2.6 \kt - 1.6 \kt^2 \label{eq:nu_osl}\\
 \Delta \Rbkgd^\mathrm{out} (\kt [\textrm{GeV}]) &= 0.43 - 0.49 \kt \label{eqn_rbkgdout}\\
 \Delta \Rbkgd^\mathrm{sl} (\kt [\textrm{GeV}]) &= \frac{0.51}{1 + (1.30\kt)^2} \label{eqn_rbkgdsl}
 \end{align}
@@ -812,7 +812,7 @@ The extracted scaling is applied to the background description in the data, and 
 \centering
 \includegraphics{mu_hijing_pp_pPb.pdf}
 \end{minipage}
-\caption{A comparison of the attenuation between opposite- and same-sign correlation functions in \Hijing proton-proton and \Hijing proton-lead (all other settings identical). The multiplicity slices in each \kt bin are $26 \leq N_{ch}^{tr} \leq 36$, $37 \leq N_{ch}^{tr} \leq 48$, and $49 \leq N_{ch}^{tr} \leq 64$. The difference between the ratio is slightly more prominent in p+Pb, which is accounted for in the mapping and as a systematic error. The variable $\mu$ is used here because this correction and variation is applied directly into the $\mu$ of equations \cref{eqn:lambdaBackPar,eqn:mu}.}
+\caption{A comparison of the attenuation between opposite- and same-sign correlation functions in \Hijing proton-proton and \Hijing proton-lead (all other settings identical). The multiplicity slices in each \kt bin are $26 \leq N_{ch}^{tr} \leq 36$, $37 \leq N_{ch}^{tr} \leq 48$, and $49 \leq N_{ch}^{tr} \leq 64$. The difference between the ratio is slightly more prominent in p+Pb, which is accounted for in the mapping and as a systematic error. The variable $\mu$ is used here because this correction and variation is applied directly into the $\mu$ of equations \cref{eq:lambdaBackPar,eqn:mu}.}
 \label{fig:mu_hijing_pp_pPb}
 \end{figure}
 
@@ -841,7 +841,7 @@ The parameters used to describe the background in \qinv are shown in \cref{fig:b
 \includegraphics[width=.49\linewidth]{canqinv_backR_vs_kt_opp.pdf}
 \includegraphics[width=.49\linewidth]{canqinv_backR_vs_kt_same.pdf}\\
 \end{minipage}
-\caption{The background parameters that are free fit parameters in the opposite sign (left), and the like-sign parameters derived from the opposite-sign values using \cref{eqn:lambdaBackPar,eqn:rBackPar,eqn:mu,eqn:nu} (right). The $\abkgd$ parameter is taken directly from \PYEight (\cref{fig:background_alpha_pythia8}). Statistical error bars are too small to be visible. The non-monotonicity is not surprising, since the meaning of $\Rbkgd$ changes with $\abkgd$, which varies with \kt as shown in \cref{fig:background_alpha_pythia8,fig:background_pp_ppb_comp}.}
+\caption{The background parameters that are free fit parameters in the opposite sign (left), and the like-sign parameters derived from the opposite-sign values using \cref{eq:lambdaBackPar,eqn:rBackPar,eqn:mu,eqn:nu} (right). The $\abkgd$ parameter is taken directly from \PYEight (\cref{fig:background_alpha_pythia8}). Statistical error bars are too small to be visible. The non-monotonicity is not surprising, since the meaning of $\Rbkgd$ changes with $\abkgd$, which varies with \kt as shown in \cref{fig:background_alpha_pythia8,fig:background_pp_ppb_comp}.}
 \label{fig:background_data}
 \end{figure}
 
@@ -998,7 +998,7 @@ For the uncertainty in the hard-process contribution two effects are considered.
 First, the variation in the translation from \pp to \pPb is taken as an uncertainty in the amplitude, as shown in \cref{fig:mu_hijing_pp_pPb}.
 Secondly, as described in \cref{subsec:herwig_vs_pythia}, the width of the variation in the difference of $\frac{C^{+-}}{C^{\pm\pm}}$ between \Pythia and \Herwig (\cref{fig:delta_mu_pythia_herwig}) is used as an additional systematic variation in the background amplitude.
 This is to account for uncertainty arising from the specific choice of \Pythia as a generator.
-Both uncertainties are expressed as a scaling factor times $\lbkgd$, so they can be evaluated by scaling $\mu$ (\cref{eqn:lambdaBackPar,eqn:mu}):
+Both uncertainties are expressed as a scaling factor times $\lbkgd$, so they can be evaluated by scaling $\mu$ (\cref{eq:lambdaBackPar,eqn:mu}):
 
 \begin{equation}
 \sigma_{\log \mu} = \sigma^{p+p \rightarrow p+Pb}_{\log \mu} \oplus \sigma^{\Pythia-\Herwig}_{\log \mu} = 0.0413 \oplus 0.116 = 0.123
@@ -1008,26 +1008,26 @@ The background amplitude \lbkgd is thus scaled up and down by 12.3\% to compute 
 
 \subsection{Rapidity dependence of hard-process description}
 
-The background amplitude relations in \cref{eqn:lambdaBackPar,eqn:rBackPar} are evaluated with \Pythia in both central ($|\kys| < 1$) and forward ($1 < |\kys| < 2$) rapidity intervals.
-The width relationship (\cref{eqn:rBackPar}) does not change significantly, but the relationship between the amplitudes (\cref{eqn:lambdaBackPar}) does.
+The background amplitude relations in \cref{eq:lambdaBackPar,eqn:rBackPar} are evaluated with \Pythia in both central ($|\kys| < 1$) and forward ($1 < |\kys| < 2$) rapidity intervals.
+The width relationship (\cref{eq:rBackPar}) does not change significantly, but the relationship between the amplitudes (\cref{eq:lambdaBackPar}) does.
 The parameterization is varied from the nominal (inclusive) expression to that for each of the different rapidity bins.
 In three dimensions a 2nd-order polynomial is used instead of a sigmoid.
 This variation is illustrated in \cref{subsec:jet_frag_inv,subsec:jet_frag_3d}.
 
 \subsection{Jet fragmentation background in 3D}
 
-One alternative to \cref{eqn:jet_frag_form_3d} is to describe the jet fragmentation in three dimensions as a simple function of \qinv only.
-The average \kt in each centrality/\kt/\kys interval can be used in \cref{eqn:q3_to_qinv} to contract $\mathbf{q}$ into \qinv.
+One alternative to \cref{eq:jet_frag_form_3d} is to describe the jet fragmentation in three dimensions as a simple function of \qinv only.
+The average \kt in each centrality/\kt/\kys interval can be used in \cref{eq:q3_to_qinv} to contract $\mathbf{q}$ into \qinv.
 The same parameters derived in the Lorentz invariant correlations could be used to describe the three-dimensional background as well.
 This turns out to be an over-simplification, as shown in \cref{fig:pythia_qosl_alt_bkgd}.
-The form in \cref{eqn:jet_frag_form_3d} is used as it clearly describes the jet fragmentation more accurately.
+The form in \cref{eq:jet_frag_form_3d} is used as it clearly describes the jet fragmentation more accurately.
 
 \begin{figure}[t]
 \begin{minipage}[t]{\textwidth}
 \centering
 \includegraphics[width=\linewidth]{can_Cqosl_pythia_altbkgd_cent7_e3_kt6_ys1.pdf}
 \end{minipage}
-\caption{Two functional forms for describing three-dimensional jet fragmentation. The blue line (\cref{eqn:jet_frag_form_3d}) is the one used in the results, and the purple line (which describes the correlation as a function of \qinv only) clearly does not enjoy the same level of agreement.}
+\caption{Two functional forms for describing three-dimensional jet fragmentation. The blue line (\cref{eq:jet_frag_form_3d}) is the one used in the results, and the purple line (which describes the correlation as a function of \qinv only) clearly does not enjoy the same level of agreement.}
 \label{fig:pythia_qosl_alt_bkgd}
 \end{figure}
 
@@ -1090,7 +1090,7 @@ The parameter \Reff is taken to be proportional to the invariant HBT radius, suc
 The nominal value of $\xi$ is chosen to be equal to unity, and a variation down to $1/2$ and up to $2$ is taken to be the $1\sigma_{syst}$ level.
 
 \subsection{Projection of $\mathbf{q}$ onto $\qinv$}
-The value of \kt used to calculate \qinv from $\mathbf{q}$ in the 3D fits (see \cref{eqn:q3_to_qinv}) is varied $\pm 1$ standard deviation of the \kt in each bin.
+The value of \kt used to calculate \qinv from $\mathbf{q}$ in the 3D fits (see \cref{eq:q3_to_qinv}) is varied $\pm 1$ standard deviation of the \kt in each bin.
 In three dimensions, the value of \qinv is only used in the Coulomb correction.
 The effect on the radii is small, and the Coulomb correction is already varied through \Reff, so this variation is not included.
 %%It is still included as a systematic in the 3D results.
