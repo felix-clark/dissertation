@@ -10,8 +10,9 @@ Comparisons to hydrodynamic models are made for central events, showing good agr
 Finally, HBT radii are shown as a function of azimuthal angle with respect to the second-order event plane.
 The second-order Fourier components are extracted and shown as a function of $|\qt|$ and \kt.
 
-\section{Same- and mixed-event distributions}
-\todo{possibly add some raw distributions of $A(q)$ and $B(q)$ here}
+%% \section{Same- and mixed-event distributions}
+%% \todo{possibly add some raw distributions of $A(q)$ and $B(q)$ here} ??
+%% maybe leave this out unless requested specifically
 
 \section{Correlation function fits}
 \begin{figure}[t]
@@ -64,11 +65,9 @@ Slices of a three-dimensional fit of $C(\mathbf{q})$ to the three-dimensional va
 The apparently imperfect fit along the \qout axis is characteristic of $\qside \approx \qlong \approx 0$, and away from this slice the  fit agrees better with the data (the test statistic per degree of freedom is 1.03 for the fit shown). 
 
 
-
 \FloatBarrier
-\section{HBT radii}
-\subsection{Lorentz invariant results}
-\label{subsec:invariant_results}
+\section{Lorentz invariant HBT radii}
+\label{sec:invariant_results}
 
 \begin{figure}[t]
 \centering
@@ -116,8 +115,8 @@ In contrast, at larger \kt the amplitudes are indistinguishable between differen
 The amplitude exhibits no significant variation over rapidity.
 
 \FloatBarrier
-\subsection{Three-dimensional radii}
-\label{subsec:3d_results}
+\section{Three-dimensional HBT radii}
+\label{sec:3d_results}
 
 \begin{figure}[ht]
 \centering
@@ -280,7 +279,8 @@ At larger \kt the systematic effect from \ac{PID} looks larger, but the variatio
 %% \subsection{Transverse momentum dependence}
 %% \subsection{Centrality dependence}
 %% \subsection{Pseudorapidity dependence}
-\subsection{Comparison with hydrodynamic model}
+\FloatBarrier
+\section{Comparison with hydrodynamic model}
 
 Interferometry radii have been calculated in recent hydrodynamic simulations of central \pPb collisions \cite{Bozek:2017bwp}.
 In general the agreement is quite good with the experimental HBT radii from central collisions with ATLAS.
@@ -303,7 +303,69 @@ These calculations show that hydrodynamics provides an accurate description of u
 \label{fig:results_theory_kys}
 \end{figure}
 
+\FloatBarrier
+\section{Azimuthal dependence and Fourier components of HBT radii}
 
-\subsection{Azimuthal dependence}
+The source radii are shown as a function of \tdpk in \Fig{\ref{fig:Rosl_vs_phi}} for the HBT matrix elements \Rout, \Rside, \Rlong, and \Ros in the intermediate \kt interval from 0.3 to 0.4\ \GeV.
+The transverse components \Rout, \Rside, and \Ros are normalized by the zeroth-order Fourier component of \Rside in each \kt and $|\qt|$ interval, and \Rlong is normalized by the zeroth-order Fourier component of \Rlong.
+Each quantity is shown in each of the five $|\qt|$ intervals used in the analysis with increasing offsets in steps of $0.1$.
+The result of sinusoidal fits to the data, as described in \Sect{\ref{subsec:azi_correlations}}, are shown in solid lines.
+The transverse radii, \Rout and \Rside, show significant modulation in the orientation compatible with the initial elliptic orientation predicted by hydrodynamics.
 
-\todo{fill in azimuthal results and discussion, ideally after an iteration on paper draft}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.49\linewidth]{can_Rout_vs_phi_kt2.pdf}
+\includegraphics[width=.49\linewidth]{can_Rside_vs_phi_kt2.pdf}\\
+\includegraphics[width=.49\linewidth]{can_Rlong_vs_phi_kt2.pdf}
+\includegraphics[width=.49\linewidth]{can_Ros_vs_phi_kt2.pdf}\\
+\caption{The three-dimensional HBT radii as a function of \kphi in the transverse momentum interval of $0.3 < \kt < 0.4$ GeV. Results are shown for each of five intervals of flow vector magnitude $|\qt|$ with vertical offsets increasing in steps of $0.1$. Statistical uncertainties are indicated by the vertical bars at each point and systematic uncertainties are denoted by the boxes.}
+\label{fig:Rosl_vs_phi}
+\end{figure}
+
+The normalized second-order Fourier components of the radii are shown in \Fig{\ref{fig:Rosl_vs_q2}} for five intervals of \kt.
+Each \kt interval has a small horizontal offset for visibility.
+The statistical uncertainties are shown with vertical bars and the systematic uncertainties with shaded bands.
+
+The modulation of the outwards radius \Rout is stronger than that of the other two radii.
+The sideways radius \Rside gives the cleanest picture of the geometrical modulation. Since \Rside indicates a length perpendicular to the pair's transverse momentum, the fact that it is larger in-plane than out-of-plane indicates that the source is spatially extended out-of-plane at freeze-out. As the modulation of \Rout is in the other direction, this is consistent with an elliptical transverse density with its minor axis aligned with the EP, as predicted by hydrodynamics.
+The longitudinal radius \Rlong displays comparable modulation in sign and magnitude to \Rside. This could suggest that the source experiences greater longitudinal expansion in-plane than out-of-plane.
+The cross term coupling the \Rout and \Rside terms, \Ros has no zeroth Fourier component so it is normalized by $\Rside{}_{,0}$. The sign of the modulation is also consistent with that observed in A-A collisions \cite{Adams:2003ra,Adare:2014vax,Adamczyk:2014mxp,Adamova:2017opl}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.49\linewidth]{can_u_Rout_vs_q2.pdf}
+\includegraphics[width=.49\linewidth]{can_u_Rside_vs_q2.pdf}\\
+\includegraphics[width=.49\linewidth]{can_u_Rlong_vs_q2.pdf}
+\includegraphics[width=.49\linewidth]{can_w_Ros_vs_q2.pdf}\\
+\caption{The Fourier terms of the HBT radii as a function of flow vector magnitude $|\qt|$. The cosine terms are shown for the diagonal radii and the sine terms are shown for the cross-term \Ros. Five intervals of transverse momentum \kt are shown with small horizontal offsets for visual clarity. Statistical uncertainties are shown with vertical bars and systematic uncertainties are indicated by the shaded bands.}
+\label{fig:Rosl_vs_q2}
+\end{figure}
+
+In each of the results shown in this section, the modulation at low $|\qt|$ cannot be distinguished from zero within uncertainties.
+Hydrodynamics does not predict elliptical spatial anisotropies in events with low flow, and the vanishing event plane resolution makes the measurement difficult in that limit, which is reflected in the large statistical and systematic uncertainties in the second-order components of the radii.
+%% The conclusions from these results should be drawn primarily from the trend of the relative modulation in events characterised by higher values of $|\qt|$, where the low EP resolution does not deteriorate the measurement.
+
+%% new subsection?
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.49\linewidth]{can_u_Rosl_vs_kt.pdf}
+\includegraphics[width=.49\linewidth]{can_w_Rosl_vs_kt.pdf}\\
+\caption{The Fourier terms of the HBT matrix as a function of \kt. Each point is averaged over all flow vector magnitudes $|\qt|$. The cosine terms are shown on the left and the sine terms on the right. Vertical lines at each point indicate statistical uncertainties and shaded bands indicate systematic uncertainties.}
+\label{fig:uw_vs_kt}
+\end{figure}
+
+\Fig{\ref{fig:uw_vs_kt}} shows the normalized second-order Fourier terms of each component of the three-dimensional HBT matrix.
+The second-order terms are normalized by the zeroth-order terms of their respective quantities.
+The statistical uncertainties are shown with vertical bars while the systematic uncertainties are indicated by the shaded bands.
+Each point is a weighted statistical average of the values over all $|\qt|$ flow values.
+The cosine terms of the diagonal radii approach zero at low \kt.
+At larger \kt, the cosine term of \Rside is positive while that of \Rout is negative.
+This orientation of the elliptic modulation is consistent with that predicted in hydrodynamics, and with the \kt dependence observed in \PbPb collisions \cite{Adamova:2017opl}.
+Because higher momentum particles are emitted earlier from a collectively expanding source, the fact that \Rside has a larger Fourier component at higher \kt suggests that the source evolves over time from more elliptic to less elliptic.
+By contrast, the second-order Fourier component of \Rout does not become increasingly negative at higher \kt, but \Rout does not have as purely a geometric interpretation as \Rside because in hydrodynamic models it also depends on the source lifetime.
+The cosine component of \Rlong is qualitatively similar to \Rside (positive and increasing with rising \kt) but with a systematically smaller magnitude.
+The cosine term of \Ros is consistent with zero, as expected by symmetry.
+However, its sine term is positive and rises with increasing \kt.
+This is consistent with the rotation of an elliptic source that is initially compressed along the event plane axis.
+The sine terms of the three diagonal components are consistent with zero, as expected by symmetry.
