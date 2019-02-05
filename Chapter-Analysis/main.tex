@@ -189,14 +189,14 @@ Also, the alternate subdetectors are calculated using the \qt from tracks, weigh
 
 \section{Correlation function}
 The two-particle correlation function is defined as the ratio of two-particle to single-particle momentum spectra:
-\[ C\left(p^a, p^b\right) \equiv \dfrac{\left(\dfrac{dN^{ab}}{d^3p^a d^3p^b}\right)}{\left(\dfrac{dN^{a}}{d^3p^a}\right)\left(\dfrac{dN^{b}}{d^3p^b}\right)} \,,\]
+\begin{equation}
+  C\left(p^a, p^b\right) \equiv \dfrac{\left(\dfrac{dN^{ab}}{d^3p^a d^3p^b}\right)}{\left(\dfrac{dN^{a}}{d^3p^a}\right)\left(\dfrac{dN^{b}}{d^3p^b}\right)} \,,
+\end{equation}
 for pairs of particles with four-momenta $p^a$ and $p^b$.
 This definition has the useful feature that most single-particle efficiency, acceptance, and resolution effects cancel in the ratio.
 The correlation function is expressed as a function of the relative momentum\footnote{While $q$ here refers to the relative four-momentum, it is also used generically to refer to either the Lorentz-invariant \qinv or three-vector $\mathbf{q}$.
 The correlation function is studied in terms of both these variables but the description of the analysis is nearly identical for both cases.} $q \equiv p^a - p^b$ in intervals of average momentum $k \equiv \left(p^a + p^b\right)/2$.
 
-
-\subsection{Experimental construction}
 The relative momentum distribution $A(q) \equiv \left. dN/dq \right|_{\textrm{same}}$ is formed by selecting like-charge (or unlike-charge) pairs of particles from each event in an event class, which is defined by the collision centrality and $z$ position of the primary vertex ($z_\textrm{PV}$).
 The combinatorial background $B(q) \equiv \left. dN/dq \right|_{\textrm{diff}}$ is constructed either by event mixing or, for the azimuthal analysis, by the pair sampling procedure.
 Each of these approaches will be described below.
@@ -205,7 +205,8 @@ The ratio of the distributions defines the correlation function:
 C_{\mathbf{k}}(q) \equiv \frac{A_{\mathbf{k}}(q)}{B_{\mathbf{k}}(q)} \label{eq:same_over_mixed} \,.
 \end{equation}
 
-\subsubsection{Event mixing}
+\subsection{Event mixing}
+\label{subsec:evt_mixing}
 The event-mixed background $B(q) \equiv \left. dN/dq \right|_{\textrm{mix}}$ is constructed by selecting one particle from each of two events in the same event class as $A(q)$.
 Each particle in the background fulfills the same selection requirements as those used in the same-event distribution.
 Event classes are categorized by centrality so that events are only compared to others with similar multiplicities and momentum distributions.
@@ -213,22 +214,23 @@ Events are sorted by $z_\textrm{PV}$ so that the background distribution is cons
 The $A(q)$ and $B(q)$ distributions are combined over $z_\textrm{PV}$ intervals in such a way that each of them samples the same $z_\textrm{PV}$ distribution.
 
 
-\subsubsection{Pair sampling}
+\subsection{Pair sampling}
+\label{subsec:bkgd_sampling}
 The single-particle distribution can be corrected for the event plane resolution, following the procedure for the pair distribution. It is not possible to correct the mixed-event pair distributions properly, at least not without extending the analysis in an additional dimension (\psit) which would require an infeasible amount of memory and CPU resources. Pairs can be sampled from the single-particle distribution after it is corrected. Building a background with sampling is usually not as precise as mixed-event distributions, but in an azimuthal analysis the event plane resolution correction is a dominant effect, so it is necessary to structure the measurement around it.
 
 The sampling method does not account exactly for variations of the detector acceptance and efficiency over \pt, $\eta$, and \kphi, because each track contributes a count to a bin which represents a small range of possible values of \pt, $\eta$, and \tdpk.
-The sampled background pair distribution $B(q)$ is multiplied by the ratio of an event-mixed distribution to a sampled pair distribution (\Cref{fig:sample_to_mix_ratio}) in order to compensate for the effect of the sampling procedure.
+The sampled background pair distribution $B(q)$ is multiplied by the ratio of an event-mixed distribution to a sampled pair distribution (\cref{fig:sample_to_mix_ratio}) in order to compensate for the effect of the sampling procedure.
 Both distributions in this ratio are not corrected for event plane resolution, since such a correction cannot be applied to the mixed-event pair distribution.
 At small relative momentum, where the HBT signal is relevant, there is no significant effect from the sampling.
 This multiplicative correction is applied as a function of \kt.
 
-It is prohibitive statistically and/or computationally to bin the analysis in \psit as well as \tdpk, which would require increasing the size of the analysis by about a factor of 64. As a result, the sampled momentum $\mathbf{p}$ distribution does not fully account for azimuthal anisotropies in the pair response of the detector. This effect is described by the ratio of a distribution of mixed events to a similar distribution in which one of the events is smeared by a random angle (\Cref{fig:phi_corr_to_uncorr_ratio}). The background is multiplied by this ratio, which is evaluated as a function of \kt.
+It is prohibitive statistically and/or computationally to bin the analysis in \psit as well as \tdpk, which would require increasing the size of the analysis by about a factor of 64. As a result, the sampled momentum $\mathbf{p}$ distribution does not fully account for azimuthal anisotropies in the pair response of the detector. This effect is described by the ratio of a distribution of mixed events to a similar distribution in which one of the events is smeared by a random angle (\cref{fig:phi_corr_to_uncorr_ratio}). The background is multiplied by this ratio, which is evaluated as a function of \kt.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=.49\linewidth]{sample_to_mix_ratio_kt0.pdf}
 \includegraphics[width=.49\linewidth]{sample_to_mix_ratio_kt3.pdf}\\
-\caption{The ratio of a sampled distribution to an event-mixed distribution, both of which are not corrected for event plane resolution. This shows the effect of sampling from a finite number of bins. The central points are shown as circles with statistical uncertainties and the bands indicate the systematic uncertainty, which is discussed in \Cref{sec:systematics}.}
+\caption{The ratio of a sampled distribution to an event-mixed distribution, both of which are not corrected for event plane resolution. This shows the effect of sampling from a finite number of bins. The central points are shown as circles with statistical uncertainties and the bands indicate the systematic uncertainty, which is discussed in \cref{sec:systematics}.}
 \label{fig:sample_to_mix_ratio}
 \end{figure}
 
@@ -236,11 +238,11 @@ It is prohibitive statistically and/or computationally to bin the analysis in \p
 \centering
 \includegraphics[width=.49\linewidth]{phi_corr_to_uncorr_ratio_kt0.pdf}
 \includegraphics[width=.49\linewidth]{phi_corr_to_uncorr_ratio_kt3.pdf}\\
-\caption{The ratio of an event-mixed distribution to an event-mixed distribution with randomized azimuthal angle between the events. This demonstrates the effect of not binning events in \psit. The central points are shown as circles with statistical uncertainties and the bands indicate the systematic uncertainty, which is discussed in \Cref{sec:systematics}.}
+\caption{The ratio of an event-mixed distribution to an event-mixed distribution with randomized azimuthal angle between the events. This demonstrates the effect of not binning events in \psit. The central points are shown as circles with statistical uncertainties and the bands indicate the systematic uncertainty, which is discussed in \cref{sec:systematics}.}
 \label{fig:phi_corr_to_uncorr_ratio}
 \end{figure}
 
-The single-particle experimental distribution $N^\mathrm{exp}(\pt, \eta, \tdpp)$ is corrected similarly to the pair distribution $A(q)$ (\Cref{eq:a_corr}), however it is also explicitly symmetrized in $\phi$ so there is no sine term added.
+The single-particle experimental distribution $N^\mathrm{exp}(\pt, \eta, \tdpp)$ is corrected similarly to the pair distribution $A(q)$ (\cref{eq:a_corr}), however it is also explicitly symmetrized in $\phi$ so there is no sine term added.
 \begin{equation}
   \label{eq:n_corr}
   N^\textrm{corr}[\pt, \eta, \tdpp] = N^\textrm{exp}_\textrm{symm}\left[\pt, \eta, \tdpp\right] + 2\xi N_\textrm{,c2}(\pt, \eta) \cos\left[\tdpp\right]
@@ -255,7 +257,7 @@ Events are grouped by run period, $z_\textrm{vtx}$, charged-particle multiplicit
 The events are combined within each run period, so that the 15 runs from period A and the 16 runs from period B are combined.
 This is necessary to sufficiently populate the single-particle distributions to minimize auto-correlations.
 Because the 3D momentum histograms need to be densely populated, a large number of events are needed even when each event has a large multiplicity.
-The number of events in each of these event classes is shown in \Cref{fig:evt_class}.
+The number of events in each of these event classes is shown in \cref{fig:evt_class}.
 Each event class has a minimum of 100 events, but most have greater than 1000.
 
 \begin{figure}[t]
@@ -290,7 +292,7 @@ Without this correction for sampling-without-replacement, there is a small but s
 \FloatBarrier
 
 The physical \pt distribution has a steep slope in many places, and the detector response is relatively smooth as a function of \pt.
-By contrast, the sampled distribution from the histogram of the single-particle distribution will have sharp jumps at bin edges, so where the slope is large the value of the sampling distribution can be far from that of a smooth one near a bin edge (see \Cref{fig:sample_slope_corr}, right).
+By contrast, the sampled distribution from the histogram of the single-particle distribution will have sharp jumps at bin edges, so where the slope is large the value of the sampling distribution can be far from that of a smooth one near a bin edge (see \cref{fig:sample_slope_corr}, right).
 A correction procedure is applied to remove these sharp edges in the \pt profile of the sampled distribution. In each event class, the \pt distribution is fit to a 4-parameter gamma distribution in four intervals (with boundaries corresponding to changes in the \sct hit requirements).
 A first-order correction is performed to transform the a random \pt value to another one in the same bin, to account for the slope of the probability distribution in that bin.
 The slope used for this procedure is that computed from the fit function in the \pt interval.
@@ -299,7 +301,7 @@ The adjusted \pt is given by
   \pt \rightarrow \pt + \frac{f'}{2} (b-a) (\pt-a) (b-\pt)
 \end{equation}
 where the bin edges of the \pt bin are $a$ and $b$ and the approximate numeric derivative of the probability distribution is $f'$.
-The result of this process is illustrated in \Cref{fig:sample_slope_corr} on a toy distribution.
+The result of this process is illustrated in \cref{fig:sample_slope_corr} on a toy distribution.
 Samples are drawn from a course-binned distribution, and the distribution of the modified random variable accounts for the underlying slope.
 
 \begin{figure}[htb]
@@ -314,7 +316,7 @@ The corrected correlation function $C(q)$ is then formed by taking the ratio of 
 \begin{equation}
   C(q) = \frac{A^\textrm{corr}(q)}{B^\textrm{corr}(q)}
 \end{equation}
-where $B^\textrm{corr}(q)$ is sampled from pairs drawn from $N^\textrm{corr}$ as described in \Cref{subsec:epres_corr}.
+where $B^\textrm{corr}(q)$ is sampled from pairs drawn from $N^\textrm{corr}$ as described in \cref{subsec:epres_corr}.
 
 
 \subsection{Event plane resolution correction}
@@ -347,12 +349,14 @@ With an azimuthally-differential analysis, the event plane resolution correction
 Previous azimuthal femtoscopic measurements have corrected the mixed-event distribution $B$ in the same way that the same-event distribution $A$ is corrected, as suggested in \Ref{\cite{Heinz:2002au}}.
 However, this neglects to account for the fact that the independent smearing of the two event planes changes the shape of the pair distribution, and when projected into $q$-space it cannot be simply corrected bin-by-bin.
 
-On the other hand it is possible to correct the single-particle momentum distribution in the same way as \Eqn{\ref{eq:a_corr}}.
+On the other hand it is possible to correct the single-particle momentum distribution in the same way as \cref{eq:a_corr}.
 The dependent variables are \pt and $\eta$ instead of $\mathbf{q}$, and there are many more azimuthal bins (in \Eqn{\ref{eq:xi_def}} the $N_\textrm{bins} = 64$ of $2(\phi - \psit)$ as opposed to 8 bins of $2(\kphi - \psit)$), but the procedure is otherwise identical.
-Pairs of momentum can then be sampled from this corrected distribution, as discussed in detail in \Sect{\ref{subsubsec:bkgd_sampling}}.
+Pairs of momentum can then be sampled from this corrected distribution, as discussed in detail in \cref{subsec:bkgd_sampling}.
 
 The correlation function $C(q)$ is then formed by taking the ratio of the corrected same- and mixed-event relative momentum distributions
-\[C(q) = \frac{A^\textrm{corr}(q)}{B^\textrm{corr}(q)} \]
+\begin{equation}
+  C(q) = \frac{A^\textrm{corr}(q)}{B^\textrm{corr}(q)}
+\end{equation}
 where $B^\textrm{corr}$ is generated by sampling pairs from $N^\textrm{corr}$, as described in the following sections.
 
 
@@ -385,13 +389,13 @@ The Bose-Einstein component of the three-dimensional correlation functions is fi
 \begin{equation}
 C_{\textrm{BE}}(\mathbf{q}) = 1 + \mathrm{e}^{- \left\| R \mathbf{q} \right\|} \;, \label{eqn:cbe_qosl}
 \end{equation}
-where $R$ is the symmetric matrix in \Cref{eq:r_matrix_full}.
+where $R$ is the symmetric matrix in \cref{eq:r_matrix_full}.
 
 The full form of the invariant-correlation-function fit to like-charge track pair data including the hard-process background description is
 \begin{equation}
 C(q) = \mathcal{N} \left[1-\lambda + \lambda K(\qinv)C_{\textrm{BE}}(q)\right] \Omega(q) \,,\label{eq:correlation_function_full}
 \end{equation}
-where $\mathcal{N}$ is a normalization factor, $C_\mathrm{BE}(q)$ is given by \Cref{eqn:cbe_qinv} or \Cref{eqn:cbe_qosl}, $K(\qinv)$ is discussed in \Cref{subsec:coulomb}, and $\Omega(q)$ is discussed in \Cref{sec:jet_frag}. %%given by \Cref{eq:bkgd_form} or \Cref{eqn:jet_frag_form_3d}.
+where $\mathcal{N}$ is a normalization factor, $C_\mathrm{BE}(q)$ is given by \cref{eqn:cbe_qinv} or \cref{eqn:cbe_qosl}, $K(\qinv)$ is discussed in \cref{subsec:coulomb}, and $\Omega(q)$ is discussed in \cref{sec:jet_frag}.
 When opposite-charge pairs are fit to constrain the jet fragmentation background, the same expression is used but the sign of the Bohr radius in $K(\qinv)$ is flipped and the Bose-Einstein correlation vanishes such that $C_\mathrm{BE}(q) = 1$.
 
 %% As discussed in \Sect{\ref{subsec:hard_process}}, the opposite-charge correlation functions are fit in the regions where \qinv (or $|\mathbf{q}|$ in 3D) is greater than 100~\MeV. The opposite-charge parameters are highly insensitive to the choice of cutoff, as the $q$ distributions contribute more statistical weight at larger $q$. The same-charge correlation functions are fit in the regions $\qinv > 30~\MeV$ for the invariant fits and $|\mathbf{q}| > 25~\MeV$ in three dimensions.
@@ -520,7 +524,7 @@ As a result, correlations in the HBT radii are induced over different azimuthal 
 The propagation of the correlations from bins of $A$ and $B$ to the radii is quite complicated in general.
 We will motivate a reasonable parameterization of the covariance matrix of the HBT radii by using the form of the correlations between bins of the pair distribution $A$.
 The parameter values themselves will be adjusted corresponding to the results of a toy Monte Carlo (MC) study on the radii correlations.
-To the extent that enhancements to the azimuthal modulation of the HBT radii are, like $A(q)$, linear in $\xi$ (as defined in \Cref{subsec:epres}), the azimuthal correlation is :
+To the extent that enhancements to the azimuthal modulation of the HBT radii are, like $A(q)$, linear in $\xi$ (as defined in \cref{subsec:epres}), the azimuthal correlation is :
 \begin{equation} \label{eq:azi_corr}
 \textrm{cov}\left( R^\textrm{corr}_i, R^\textrm{corr}_j \right) = \delta_{ij} \sigma^2_{i} + \frac{2\xi}{N_\textrm{bins}} \cos\left[\tdpk_i - \tdpk_j \right] \left( \sigma^2_{i} + \sigma^2_{j} + \frac{\xi}{N_\textrm{bins}} \sum_{k=1}^{N_\textrm{bins}} \sigma^2_{k} \right)
 \end{equation}
@@ -1144,7 +1148,7 @@ No systematic uncertainties are included - this is intended as a cross-check.}
 Uncertainty in the 2nd-order event plane resolution is propagated through the event plane resolution correction to the azimuthally-dependent results. There are two contributions to the \psit resolution, both of which are evaluated by changes to the two alternate sub-detectors used in the three-sub-detector method of evaluating $\langle \cos(2\delta\psit) \rangle$. For one variation, tracks weighted by their \pt are used instead of calorimeter cells, and for the other the rapidity windows of the alternate subsdetectors are shifted away from the nominal sub-detector by $\Delta\eta = 0.5$.
 
 \subsection{Sampling uncertainty}
-The effect of the sampling procedure on the pair distribution is evaluated by taking the ratio of the distributions of sampled pairs to traditional event-mixed pairs, as discussed in \cref{subsubsec:bkgd_sampling}.
+The effect of the sampling procedure on the pair distribution is evaluated by taking the ratio of the distributions of sampled pairs to traditional event-mixed pairs, as discussed in \cref{subsec:bkgd_sampling}.
 The uncertainty is determined by evaluating this ratio in the 8 intervals of $\kphi - \psit$ and 5 intervals of flow $|\qt|$, and using the endpoints of the middle 68.27\% interval (\cref{fig:sample_to_mix_ratio}).
 %% The uncertainty is determined by evaluating this ratio in each event class and in several intervals of $\kphi - \psit$ and using the endpoints of the middle 68.27\% interval of this whole collection (\cref{fig:sample_to_mix_ratio_kt2}).
 This procedure is measured separately for each \kt bin.
