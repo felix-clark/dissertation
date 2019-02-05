@@ -40,7 +40,11 @@ Resolving individual atoms requires collisions with energy of order \keV, resolv
 
 \subsection{Accelerator physics}
 
-%% \todo{define mandelstam variable $s$, motivate w/ Lorentz invariance. not necessarily here but somewhere} %% s is now defined in intro, but could be moved here
+The energy of a beam collision is described by the Lorentz-invariant quantity $\sqrt{s}$ where $s = (p_a + p_b)^2$ with $p_a$ and $p_b$ being the four-momenta of the beam particles.
+In the center-of-momentum frame, $\sqrt{s}$ is the total energy of the collision.
+The beam energy in heavy ion and proton-ion collisions is normalized by the mass of the nucleus.
+In symmetric ion collisions with mass number $A$ this energy per nucleon is $\sqrt{s_\mathrm{NN}} = A^{-1} \sqrt{s}$.
+
 In a fixed-target experiment using target particles of mass $m_t$ and a projectile beam with particles of rest mass $m_p$ and energy $E$, the center-of-momentum energy $\sqrt{s}$ is given by
 \begin{equation}
 \sqrt{s} = \sqrt{(m_t+m_p)^2 + 2 m_t (E - m_p)} \; ,
@@ -205,7 +209,8 @@ As of 2018, the smallest bunch spacing used for lead ions is 75 ns.
 
 The dipole magnets (\cref{fig:dipole_cross_section}) have a maximum design strength of 10 T, although the active field strength must remain proportional to the current energy of the beam fill.
 For the \pPbenergy \pPb run they operated at 6.0 T with fully energetic beams.
-\todo{beams @ fixed rigidity, explain different energies in beams, different Z/A. possibly move some details from 3.2.4 up here}
+In an asymmetric \pA beam configuration the beams must have different energies in order to trace out paths with the same magnetic field and radius of curvature.
+They operate at fixed beam rigidity $|\mathbf{p}|/Ze \propto AEv/Z$ so that the per-nucleon energy for beams near the speed of light is proportional to $Z/A$.
 To keep the beams focused, 392 quadrupole magnets are arranged in an alternating-polarity orientation.
 This scheme alternately squeezes the beams horizontally and vertically, with a net effect of keeping the beam radius small.
 Over 6000 additional multipole magnets are used for fine-tuning the magnetic fields.
@@ -240,6 +245,7 @@ It is a mostly passive detector located next to LHCb, with the goal of direct de
 \end{figure}
 
 The results in this thesis use the 2013 \lhc \pPb dataset at a center-of-mass energy per nucleon of \pPbenergy.
+%% In an asymmetric \pA beam configuration, 
 The proton beam had an energy of 4 \TeV and the Pb ions had an energy per nucleon of $Z/A \cdot 4 \TeV = 1.57 \TeV$, so the center-of-mass of a proton and any one Pb nucleon had a longitudinal rapidity boost of $\ycm = 0.465$.
 The \pPb run was divided into two periods between which the directions of the proton and lead beams were reversed to allow for better control over various systematic effects.
 The maximum luminosity was $\Lumi_\textrm{peak} = 110 \times 10^{27} \, \textrm{cm}^{-2} \, \textrm{s}^{-1}$ over the 32 stable beam runs (16 in each period), though depending on the run $\Lumi_\textrm{peak}$ was as low as $22 \times 10^{27} \, \textrm{cm}^{-2} \, \textrm{s}^{-1}$.
