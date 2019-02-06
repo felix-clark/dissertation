@@ -25,8 +25,7 @@ The kinematics of the electron in type of experiment constrain the structure of 
 
 \begin{figure}[t]
   \includegraphics{dis_electron_proton.png}
-  \caption{Deep inelastic scattering of a lepton on a hadron. Figure from \Ref{\cite{dis_fig_proceedings}}.
-}
+  \caption{Deep inelastic scattering of a lepton on a hadron \cite{dis_fig_proceedings}.}
   \label{fig:dis}
 \end{figure}
 
@@ -51,7 +50,7 @@ Logarithmic corrections are understood theoretically and arise as gluon radiatio
   %% page 326 of particle review
   \includegraphics[width=0.45\linewidth]{proton_f2.png}
   \includegraphics[width=0.54\linewidth]{proton_f2_vs_x.png}
-  \caption{The structure function $F_2\left(x, Q^2\right)$ of the proton as a function of $Q^2$ (left) and of $x$ (right). Figure from \Ref{\cite{Tanabashi:2018oca}}.}
+  \caption{The structure function $F_2\left(x, Q^2\right)$ of the proton as a function of $Q^2$ (left) and of $x$ (right) \cite{Tanabashi:2018oca}.}
   \label{fig:proton_f2}
 \end{figure}
 
@@ -92,7 +91,7 @@ This procedure induces in the \qcd vacuum a breaking of the chiral symmetry $SU(
 
 \begin{figure}[t]
   \includegraphics{qcd_feynman.png}
-  \caption{The propagators and vertices in QCD along with the corresponding Feynman rules for the amplitude factors. The strong coupling charge is written here as $e_s = \sqrt{4\pi\alpha_s}$, and the gauge parameter is denoted by $\lambda$. Figure from \Ref{\cite{Altarelli:2013tya}}.}
+  \caption{The propagators and vertices in QCD along with the corresponding Feynman rules for the amplitude factors \cite{Altarelli:2013tya}. The strong coupling charge is written here as $e_s = \sqrt{4\pi\alpha_s}$, and the gauge parameter is denoted by $\lambda$.}
   \label{fig:qcd_feynman}
 \end{figure}
 
@@ -158,7 +157,7 @@ The running of the coupling is demonstrated by the summary of experimental measu
 \begin{figure}[t]
   %% page 155 of particle review
   \includegraphics{running_as.png}
-  \caption{Measurements of the strong coupling constant $\alpha_s$ as a function of the energy scale $Q$. Figure from \Ref{\cite{Tanabashi:2018oca}}.}
+  \caption{Measurements of the strong coupling constant $\alpha_s$ as a function of the energy scale $Q$ \cite{Tanabashi:2018oca}.}
   \label{fig:running_coupling}
 \end{figure}
 
@@ -189,7 +188,7 @@ An extrapolation of vanish grid spacing $a \rightarrow 0$ is performed in order 
 
 \begin{figure}[t]
   \includegraphics{ccbar_potential.png}
-  \caption{Charmonium ($c\bar{c}$) potential from a combination of perturbative QCD (small $r$) and lattice QCD (large $r$). Figure from \Ref{\cite{Laschka:2011zr}}.}
+  \caption{Charmonium ($c\bar{c}$) potential from a combination of perturbative QCD (small $r$) and lattice QCD (large $r$) \cite{Laschka:2011zr}.}
   \label{fig:charmonium_potential}
 \end{figure}
 
@@ -252,7 +251,7 @@ Above the critical temperature, clear deviations are shown from the predictions 
 
 \begin{figure}[t]
   \includegraphics[width=\linewidth]{lattice_eos.png}
-  \caption{The trace anomaly for several values of lattice spacing $N_\tau = 1/aT$ and the continuum extrapolation (left), and thermodynamic quantities in the continuum limit (right), both shown as a function of temperature. The solid lines show the predictions from the HRG model, and the Stefan-Boltzmann limit at $95\pi^2/60$ is shown by the straight dashed line. Figure from \Ref{\cite{Bazavov:2014pvz}}.}
+  \caption{The trace anomaly for several values of lattice spacing $N_\tau = 1/aT$ and the continuum extrapolation (left), and thermodynamic quantities in the continuum limit (right), both shown as a function of temperature \cite{Bazavov:2014pvz}. The solid lines show the predictions from the HRG model, and the Stefan-Boltzmann limit at $95\pi^2/60$ is shown by the straight dashed line.}
   \label{fig:lattice_eos}
 \end{figure}
 
@@ -261,23 +260,67 @@ The large step in the ratios $\varepsilon/T^4$ and $s/T^3$ around the critical t
 This is interpreted as clear evidence for a phase transition.
 
 \subsection{Heavy ion collisions}
-Heavy ions like gold-197 and lead-208 have around hundreds of nucleons packed into a spherical volume of radius $\sqrt[3]{A} \approx 6$ times that of a proton.
+
+Heavy ions like gold-197 and lead-208 have hundreds of nucleons packed into a spherical volume of radius $\sqrt[3]{A} \approx 6$ times that of a proton.
 This also corresponds to an average transverse areal density of the same factor of 6 times larger than that of a proton.
 In a head-on \AuAu or \PbPb collision, roughly 200 times the energy interacts in a transverse area about 35 times larger than a \pp collisions of the same $\sqrt{s_\mathrm{NN}}$.
-The high-density matter that extends several interaction lengths provides the conditions necessary for a high-temperature in nuclear matter.
-%% \todo{describe why heavy ion collisions are used to study potential QGP}
+Hydrodynamic modeling suggests a formation time on the order of 1 fm/c, so naively the ultra-relativistic initial products of nuclear collisions have the potential to reach thermalization in \AA collisions.
 
-\subsubsection{Glauber model}
-\cite{Miller:2007ri} %% glauber model reference
-\subsubsection{proton-ion collisions}
+%% \subsubsection{Glauber model} %% don't really need an extra subsection label?
+\begin{figure}[t]
+  \includegraphics{hi_collision_geo.png}
+  \caption{Diagram of the Glauber model nucleus-nucleus geometry with transverse (a) and longitudinal (b) perspectives \cite{Miller:2007ri}.}
+  \label{fig:hi_collision_geo}
+\end{figure}
+
+The size and shape of the energy density deposited in a heavy ion collision varies greatly depending on the impact parameter $b$, as illustrated in \cref{fig:hi_collision_geo}.
+In experiments, impact parameter cannot be measured directly so another proxy is used, typically the charged-particle multiplicity or the total energy deposited in the forward regions.
+The Glauber model is used to describe the average energy density in nuclear collisions as a function of impact parameter \cite{Miller:2007ri}.
+It parameterizes the nuclear density $\rho$ by the Woods-Saxon distribution
+\begin{equation}
+\rho(r) = \frac{\rho_0}{1 + \exp\left( \frac{r-a}{R} \right)} \, ,
+\end{equation}
+where $R$ and $a$ are the radius and skin depth of the nucleus, respectively.
+The normalization constant $\rho_0$ is set to fix the integral to the total number of nucleons.
+The radial density distribution for lead-208 is shown in \cref{fig:woods_saxon}, with $R = 6.62 \pm 0.06 \fm$ and $a = 0.55 \pm 0.01 \fm$.
+
+\begin{figure}[t]
+  \includegraphics{woods_saxon_pb208.png}
+  \caption{The density as a function of radius following the Woods-Saxon distribution for ${}^{208}\mathrm{Pb}$.}
+  \label{fig:woods_saxon}
+\end{figure}
+
+
+
+\subsection{Proton-nucleus collisions}
+The initial motivation for studying proton-nucleus collisions is to understand \ac{CNM} effects.
+Measurements from \AA collisions are often normalized by the same quantities in \pp collisions up to factors of \Npart.
+Heavy ion collisions are not completely equivalent to a sum of several \pp collisions, due in part to the presence of additional spectator nucleons.
+Proton-nucleus collisions can be used to control for these effects.
+The physics of \pA collisions also turned out to be surprisingly interesting in its own right.
+
+
+\todo{geometry \ac{GGCF}}
+
+\begin{figure}[t]
+  \includegraphics[width=0.49\linewidth]{ggcf_prob_dist.pdf}
+  \includegraphics[width=0.49\linewidth]{npart_ggcf.pdf}
+  \caption{The \Npart distribution for proton-lead collisions using the Glauber model and the generalized color fluctuation model (left), along with the \avgNpart for the corresponding centrality intervals with each model (right) \cite{HION-2012-15}.}
+  \label{fig:ggcf_npart}
+\end{figure}
+
 \todo{\ac{CNM}, no jet quenching, hydro results}
 
 \subsection{Experimental evidence for strongly-coupled QGP}
+\todo{split this section into \AA and \pA ?}
+
 %% and that it act like a strongly-coupled hydrodynamic system
 \todo{HI summary plots: (v2, RAA, etc).
   \url{https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CombinedSummaryPlots/HION/}}
 \todo{event plane angle, flow quantities, to discuss before section 5 ``determination of flow vector'' etc. }
 \todo{HIGH PRIORITY}
+
+In \pp or \pA systems where the projectile has a radius comparable to or smaller than the formation time, hydrodynamics is not expected naively.
 
 general big picture, possible hydro from finger physics: \cite{Busza:2018rrf} %% also nice summary at end
 
@@ -300,6 +343,10 @@ test hydro by prediction of spatial anisotropies being converted to momentum ani
 \subsubsection{Collective expansion and flow harmonics}
 %% it's a little awkward having this before the following section on hydro
 
+
+%% --------------------------------
+%% Hydrodynamics
+%% --------------------------------
 
 \section{Hydrodynamic description of heavy ion collisions}
 
@@ -566,7 +613,7 @@ In a longitudinally-expanding hydrodynamic system, this coordinate system is the
 
 \begin{figure}[t]
   \includegraphics{hbt_radii_outsidelong.png}
-  \caption{The HBT radii in the Bertsch-Pratt coordinate system. The longitudinal radius \Rlong is evaluated in the frame boosted to the pair's longitudinal momentum. The outwards transverse radius \Rout is along the pair's transverse momentum, and \Rside is the other transverse component. Figure from \Ref{\cite{Lisa:2005dd}}.}
+  \caption{The HBT radii in the Bertsch-Pratt coordinate system \cite{Lisa:2005dd}. The longitudinal radius \Rlong is evaluated in the frame boosted to the pair's longitudinal momentum. The outwards transverse radius \Rout is along the pair's transverse momentum, and \Rside is the other transverse component.}
   \label{fig:hbt_outsidelong}
 \end{figure}
 
@@ -623,7 +670,7 @@ with $\Rsl = 0$.
 \subsubsection{HBT radii under collective flow}
 \begin{figure}[t]
   \includegraphics{hbt_radii_flow.png}
-  \caption{Figure from \Ref{\cite{Lisa:2005dd}}.}
+  \caption{\cite{Lisa:2005dd}.}
   \label{fig:hbt_flow}
 \end{figure}
 \todo{fill out or merge section, possibly w/ next subsection on motivation}
