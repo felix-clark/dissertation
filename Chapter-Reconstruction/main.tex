@@ -3,7 +3,8 @@
 \graphicspath{{Chapter-Reconstruction/figures/}}
 
 Charged particles produced in collisions at the ATLAS \ac{IP} travel helical paths through the \id due to the solenoid magnetic field.
-The three subdetectors register hits at various space-point locations as each of these particles passes through them, often 11 silicon and 15--30 \trt hits for a typical particle of sufficiently high \pt.
+The three subdetectors register hits at various space-point locations as these particles pass through them.
+There are often 11 silicon and 15--30 \trt hits for a typical particle of sufficiently high \pt.
 The trajectories of these particles must be reconstructed from the collection of all the space-point hits in order to infer the initial momentum of all of the collision products.
 This procedure is non-trivial and computationally intensive, particularly because the trajectories of charged particles are altered when they pass through detector elements, via ionization energy loss and multiple scattering.
 
@@ -20,7 +21,7 @@ This procedure is non-trivial and computationally intensive, particularly becaus
 
 While the classification is not absolute, the ATLAS track reconstruction procedure can be divided roughly into two parts: first track seeds are identified, then tracks are extended and evaluated with a global fit \cite{Cornelissen:2007vba}. %% ATLAS new tracking (NEWT)
 Each of these procedures will be described separately in the following sections.
-Overall, the reconstruction of collision vertices and the charged-particle products has very good performance, even in the high-luminosity environment of the \lhc with tens of simultaneous collisions along the beamline \cite{ATLAS:2012jma}. %% performance of tracking and vertexing (2012), w/ description of reconstruction
+Overall, the reconstruction of collision vertices and the charged-particle products has very good performance, even in the high-luminosity environment of the \lhc with tens of simultaneous collisions \cite{ATLAS:2012jma}. %% performance of tracking and vertexing (2012), w/ description of reconstruction
 
 \subsection{Seeding track candidates}
 
@@ -31,17 +32,18 @@ Overall, the reconstruction of collision vertices and the charged-particle produ
 \end{figure}
 
 The baseline track finding algorithm uses inside-out reconstruction.
-Space-points are collected by hits in the silicon detectors by the 3D location of pixel hits and by the crossing point of back-to-back \sct strip pairs with simultaneous hits.
+Space-points are collected by hits in the silicon detectors.
+In the pixel detector the 3D locations of the hits are used, and in the \sct the crossing points of back-to-back strip pairs with simultaneous hits are used.
 Pairs of space-points from the pixel detector are used to construct short track seeds, which are used to find the longitudinal position of vertices.
 A histogram is filled with the $z$-coordinate of straight-line extensions of these track seeds to the beam line and peaks in this distribution are identified with the $z$ position of the vertices.
 These $z$-vertices constrain the extension of seeds from two space-points to three (\cref{fig:trk_seeds}).
-The seed search can also be done without the $z$ vertex constraint, inducing a significant increase in computational demands but allows for a greater efficiency to reconstruct decays from certain events.
+The seed search can also be done without the $z$ vertex constraint, inducing a significant increase in computational demands but allowing for a greater efficiency to reconstruct decays from certain events.
 The seeds with three space-points are fed to the track extension and fitting algorithm.
 
 After the inside-out track reconstruction is completed, an additional round of seeding is performed using an outside-in algorithm called back-tracking.
-This process is designed to reconstruct secondary particles, which are generated in the decays of primary particles and so do not necessarily originate from near the beam line.
-The \trt drift tube hits do not provide fine-scale information along the straw direction, so seeds are built in the $r - \phi$ plane in the \trt barrel and the $r - z$ plane in the \trt end-cap.
-Back-tracking is not well-suited for low-\pt particles, which spiral out of the \id without making it to the \trt, so the targeted particles have reasonably straight-line trajectories.
+This process is designed to reconstruct secondary particles, which are generated in the decays of primary particles and thus do not necessarily originate from near the beam line.
+The \trt drift tube hits do not provide fine-scale information along the straw direction so seeds are built in the $r - \phi$ plane in the \trt barrel and the $r - z$ plane in the \trt end-cap.
+Back-tracking is not well-suited for low-\pt particles, which spiral out of the \id without making it to the \trt, so particles targeted by the back-tracking algorithm have reasonably straight-line trajectories.
 The Hough transform \cite{Duda:1972:UHT:361237.361242} is used to detect straight-line sets of three \trt hits which are used as track candidate seeds.
 The extension of these \trt segments into the silicon detectors are evaluated in multiple $\eta$ slices to accommodate the fact that the seed-finding is done in the transverse plane.
 
@@ -49,8 +51,8 @@ The extension of these \trt segments into the silicon detectors are evaluated in
 Finally, the remaining silicon hits that have not been used in the inside-out or back-tracking algorithms are used to seed an additional low-\pt track reconstruction.
 Charged particles with $\pt < 400 \MeV$ do not necessarily pass through every layer of the \sct.
 These tracks can have a transverse momentum as low as 100 \MeV~ so their transverse radius of curvature is small.
-Without a trajectory that is close to a straight line in the transverse plane, a larger set of possible track seeds must be evaluated, so it is only computationally feasible to seed the low-\pt tracking with leftover space-points from the other two tracking algorithms.
-The efficiency below $\pt = 400 \MeV$ begins do fall rapidly with decreasing \pt, but a significant fraction of particles in this kinematic region are reconstructed.
+Without a trajectory that is close to a straight line in the transverse plane a larger set of possible track seeds must be evaluated, so it is only computationally feasible to seed the low-\pt tracking with leftover space-points from the other two tracking algorithms.
+The efficiency below $\pt = 400 \MeV$ begins to fall rapidly with decreasing \pt, but a significant fraction of particles in this kinematic region are reconstructed.
 
 \subsection{Track extension and fitting}
 
@@ -66,20 +68,20 @@ A helical track path is defined by the 5-tuple
 where $d_0$ and $z_0$ are the transverse and longitudinal distance from the beamspot at the point of closest approach, $\theta$ and $\phi$ are the polar and azimuthal angles of the track at this point, and $q/p$ is the inverse magnitude of the track's total momentum signed by the charge of the particle\footnote{This ratio is related to the transverse radius of curvature $R$ and the axial magnetic field $B$ by $q/p = \sin \theta / B R$.} (\cref{fig:trk_params}).
 However, every interaction with a detector element modifies a charged particle's trajectory through ionization energy loss and multiple scattering.
 Since there are tens of hits in most tracks, a typical track has $\mathcal{O}(100)$ parameters in its description, and the parameters before and after a hit are not independent.
-It is computationally infeasible to process a single global fit for each track candidate with this many correlated parameters.
+It is computationally infeasible to process a single global fit for each track candidate with so many correlated parameters.
 A Kalman filter approach is taken instead, which processes a track from one end to the other, updating the parameters and covariance matrix along the way.
 
 The three space-points in a track seed are sufficient to constrain a helical path.
 This naive trajectory is used to build a road along which additional silicon hits are checked for.
 The Kalman smoother-fitter follows the trajectory and incorporates successive hits into the fit \cite{Cornelissen:2008zza}. %% global chi^2 track fitter
 It predicts where hits for a track candidate would be expected in other layers, and a track candidate is penalized if there are no hits near the expected trajectory. \todo{Consider adding more detail on Kalman filter}
-Under typical LHC circumstances, about 10\% of seeds result in a successful track candidate.
+Under typical LHC circumstances about 10\% of seeds result in a successful track candidate.
 
 \subsection{Ambiguity solving} %% does this deserve a separate section?
 
 Many of the track candidates at this point have holes, shared hits, or represent fake tracks.
 The $\chi^2$ output of the Kalman filter is not a good quantity for determining whether a track is a fake or not\footnote{The $\chi^2$ should follow a corresponding $\chi^2$ distribution, which has a tail that extends to positive infinity. Selecting tracks based on their $\chi^2$ would lead to a biased sample.}.
-A track scoring strategy is used that penalizes track candidates for holes using different weights depending on the location of the hole in the detector \cite{Wicke:1998efw}.
+Instead, a track scoring strategy is used that penalizes track candidates for holes using different weights depending on the location of the hole in the detector \cite{Wicke:1998efw}.
 In general, measurements from more precise detector systems are given larger weights.
 Shared hits from two or more tracks are assigned to the track with the largest score, and the remainder of the tracks with the shared hit are refit neglecting this hit, and their score is re-calculated.
 Track candidates with a score that falls below a certain quality threshold are removed, and this process is performed iteratively until the set of tracks remains unchanged.
@@ -95,7 +97,8 @@ Otherwise the original silicon track is kept and the \trt hits are kept as outli
 
 The tracks used for the results in this thesis are inside-out and low-\pt tracks.
 Tracks from back-tracking are not used because they are typically secondary particles.
-The offline track selection is that used in the \pPb multiplicity analysis \cite{HION-2012-15}, which is based on the \pp \minbias spectra analysis \cite{STDM-2010-06} with some additional cuts on impact parameter ($d_0$ and $z_0$) significance.
+The offline track selection is the same as that used in the \pPb multiplicity analysis \cite{HION-2012-15}, which is based on the \pp \minbias spectra analysis \cite{STDM-2010-06} with some additional cuts on impact parameter ($d_0$ and $z_0$) significance.
+These selection criteria are the following:
 \begin{itemize}
 \item
   The track must have $\pt \geq 0.1 \GeV$ and $|\eta| < 2.5$.
@@ -107,23 +110,23 @@ The offline track selection is that used in the \pPb multiplicity analysis \cite
 \item
   The transverse and longitudinal impact parameters with respect to the \ac{PV} must satisfy $|d_0^\textrm{PV}| < 1.5 \textrm{ mm}$ and $|z_0^\textrm{PV} \sin\theta| < 1.5 \textrm{ mm}$.
 \item
-  A significance cut is also placed on the impact parameters such that $|d_0^\textrm{PV}| < 3\sigma_{d_0^\textrm{PV}}$ and $|z_0^\textrm{PV} \sin\theta| < 3\sigma_{z_0^\textrm{PV} \sin\theta}$.
+  A significance cut is also placed on the impact parameters such that $|d_0^\textrm{PV}| < 3\sigma_{d_0^\textrm{PV}}$ and $|z_0^\textrm{PV} \sin\theta| < 3\sigma_{(z_0^\textrm{PV} \sin\theta)}$.
 \end{itemize}
 
 
 \section{Track reconstruction performance}
 
 High-energy \pp and heavy ion collisions are generated with \mc simulations to study the performance of the track reconstruction algorithm.
-Proton-lead collision events are generated with \Hijing \cite{Gyulassy:1994ew} and the detector material is simulated with \GEANTFour \cite{Agostinelli:2002hh}.
+Proton-lead collision events are produces with the \Hijing Monte Carlo event generator \cite{Gyulassy:1994ew} and the detector material is simulated with \GEANTFour \cite{Agostinelli:2002hh}.
 These simulations are able to provide a very precise description of many track properties, such as the silicon hits per track shown in \cref{fig:trk_si_hits}.
 The track reconstruction efficiency is studied in these \mc samples, with results shown in \cref{fig:trk_eff}.
-The probability to reconstruct a track at $\pt > 500 \MeV$ is roughly constant in the range of 75--80\%.
-Below that the efficiency drops rapidly with \pt, down to the minimum of 100 \MeV.
-The efficiency is slightly higher around 80\% in the barrel region $|\eta| < 1$, dropping to 70--75\% throughout most of the end-cap.
+The probability to reconstruct a track with $\pt > 500 \MeV$ is roughly constant in the range of 75--80\%.
+Below that the efficiency drops rapidly with \pt, down to the minimum \pt of 100 \MeV.
+The efficiency is slightly higher, around 80\%, in the barrel region $|\eta| < 1$, and drops to 70--75\% throughout most of the end-cap.
 
 \begin{figure}[t]
   \includegraphics[width=\linewidth]{ATL-COM-PHYS-2013-1017_sihits.png}
-  \caption{The mean number of silicon hits on track in Run-1 proton-lead collisions as a function of pseudorapidity (top) and azimuthal angle (bottom).}
+  \caption{The mean number of silicon hits per track in Run-1 proton-lead collisions as a function of pseudorapidity (top) and azimuthal angle (bottom).}
   \label{fig:trk_si_hits}
 \end{figure}
 
@@ -136,10 +139,10 @@ The efficiency is slightly higher around 80\% in the barrel region $|\eta| < 1$,
 \section{Pion identification}
 \label{sec:pid}
 
-Charged particles are identified using a measurement of the ionization energy loss (\dEdx) from the time-over-threshold of charge deposited in the pixel hits of a track.
+Charged particles are identified using a measurement of the ionization energy loss (\dEdx) from the time-over-threshold of charge deposited in the hit pixels of a track.
 Three working \pid cut levels are defined based on \dEdx approximations from hits in the pixel detector.
-A nominal selection is chosen, and a looser selection (with high efficiency) a tight selection (with high purity) are used as systematic variations.
-The variables used for \pid defined in \Ref{\cite{ATLAS-CONF-2011-016}}: $L(X)$ is the likelihood of the particle being species $X$ where $X$ is $\pi$, $K$, or $p$, and we define $P(X) \equiv \frac{L(X)}{L(\pi^{\pm}) + L(K^{\pm}) +L(p^{\pm})}$.
+A nominal selection is chosen, and a looser selection (with high efficiency) and a tight selection (with high purity) are used as systematic variations.
+The variables used for \pid are defined in \Ref{\cite{ATLAS-CONF-2011-016}}: $L(X)$ is the likelihood of the particle being species $X$ where $X$ is $\pi$, $K$, or $p$, and we define $P(X) \equiv \frac{L(X)}{L(\pi^{\pm}) + L(K^{\pm}) +L(p^{\pm})}$.
 Note that $P(X)$ are not probabilities per se, but are effective quantities to use in the selections.
 
 For all cut levels it is required that the likelihood be positive for each particle species, as a negative value indicates an error in the attempt to assign a likelihood to that track.
@@ -187,7 +190,7 @@ The ``Tight'' selection is defined by:
 The Tight definition prioritizes getting a sample with a high concentration of pions.
 
 The $P(X)$ variables described above are shown in this section as a function of momentum, along with lines defining the above cuts.
-Data is taken from reconstructed \Hijing p-Pb data, and the truth matching is done requiring a truth matching probability greater than $0.5$.
+Data is taken from reconstructed \Hijing \pPb data and the truth matching is done by requiring a truth matching probability greater than $0.5$.
 
 \begin{figure}[t]
 \begin{minipage}[t]{1.0\textwidth}
@@ -225,7 +228,7 @@ The cut on this variable is used to reject some low-momentum kaons but is not in
 \includegraphics[width=.32\linewidth]{P_kaon_p.png}
 \includegraphics[width=.32\linewidth]{P_proton_p.png}
 %% \end{minipage}
-\caption{The normalized proton likelihood $P(p)$ for tracks truth-matched to pions, kaons, and protons, respectively. The Loose and Middle cut levels both reject tracks above the parabola, but the Loose level only applies the cut for $P(p) > 0.5$. As in \cref{fig:prob_k}, here the Tight cut level does not select directly on this variable, but the limit that is implied from the cut on $P(\pi)$ is included in red.}
+\caption{The normalized proton likelihood $P(p)$ for tracks truth-matched to pions, kaons, and protons, respectively. The Loose and Middle cut levels both reject tracks above the parabola, but the Loose level only applies the cut for $P(p) > 0.5$. As in \cref{fig:prob_k}, the Tight cut level does not select directly on this variable, but the limit that is implied from the cut on $P(\pi)$ is included in red.}
 \label{fig:prob_p}
 \end{figure}
 
@@ -236,12 +239,12 @@ The momentum-dependent cut is intended to cut out a large number of protons alon
 \includegraphics[width=.32\linewidth]{dedx_loose.png}
 \includegraphics[width=.32\linewidth]{dedx_mid.png}
 \includegraphics[width=.32\linewidth]{dedx_tight.png}
-\caption{Ionization energy loss \dEdx as a function of $qp$ for the Loose (left) and Middle (center) cut levels without their explicit cuts on \dEdx, which are shown in red. The \dEdx after Tight selection is shown in the right panel.}
+\caption{Ionization energy loss \dEdx as a function of $qp$ for the Loose (left) and Middle (center) cut levels without their explicit cuts on \dEdx, which are shown in red. The \dEdx after the Tight selection is shown in the right panel.}
 \label{fig:dedx}
 \end{figure}
 
 The Loose and Middle cut level definitions include an additional cut on \dEdx, as illustrated in \cref{fig:dedx}.
-The cut is applied in the Loose level to reject the high-momentum tracks that are far from the pion band but not rejected from the other cuts.
+The cut is applied in the Loose level to reject the high-momentum tracks that are far from the pion band but not rejected by the other cuts.
 In the Middle cut level it is taken further, and an additional slice is removed.
 The Tight level requires no such additional cut on \dEdx, as the requirement that $P(\pi) > 0.6$ is stringent enough.
 
@@ -273,8 +276,8 @@ The fraction of pions that pass each of these cut levels are shown in \cref{fig:
 The Loose definition is shown to allow most (approximately $90\%$) pions to remain in the sample.
 In contrast, the Middle and Tight selections have a pion efficiency that drops off as a function of \pt and $|\eta|$.
 The purity of pions in the sample is plotted in \cref{fig:pid_purity}.
-While the Loose cut only improves the purity slightly and mostly at low \pt and $|\eta|$, the Tight cut level provides a purity at the level up to $99\%$.
-In interpreting these purities, it is important to keep in mind that the majority of tracks that pass the single-particle and pair cuts have $p_T < 1 \GeV$ and all of them are $\lesssim 1.5 \GeV$, due to the upper \kt bin ending at $0.8 \GeV$.
+While the Loose cut only improves the purity slightly and mostly at low \pt and $|\eta|$, the Tight cut level provides a purity at the level of up to $99\%$.
+In interpreting these purities, it is important to keep in mind that the majority of tracks that pass the single-particle and pair cuts have $\pt < 1 \GeV$ and all of them are $\lesssim 1.5 \GeV$, due to the upper \kt bin ending at $0.8 \GeV$.
 
 \begin{figure}[t]
 \begin{minipage}[t]{1.0\textwidth}
