@@ -74,7 +74,7 @@ A Kalman filter approach is taken instead, which processes a track from one end 
 The three space-points in a track seed are sufficient to constrain a helical path.
 This naive trajectory is used to build a road along which additional silicon hits are checked for.
 The Kalman smoother-fitter follows the trajectory and incorporates successive hits into the fit \cite{Cornelissen:2008zza}. %% global chi^2 track fitter
-It predicts where hits for a track candidate would be expected in other layers, and a track candidate is penalized if there are no hits near the expected trajectory. \todo{Consider adding more detail on Kalman filter}
+It predicts where hits for a track candidate would be expected in other layers, and a track candidate is penalized if there are no hits near the expected trajectory. %% \todo{Consider adding more detail on Kalman filter}
 Under typical LHC circumstances about 10\% of seeds result in a successful track candidate.
 
 \subsection{Ambiguity solving} %% does this deserve a separate section?
