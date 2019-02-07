@@ -112,7 +112,7 @@ As is the case in all quantum field theories, the naive calculation of higher-or
 In many theories, including \qcd \cite{Gross:1973ju}, these infinities can be dealt with with a process called \emph{renormalization}.
 One description of renormalization is the introduction of an energy/momentum cutoff scale.
 Physical calculations cannot depend on any such scales, so amplitude calculations must be organized such that any dependence on the renormalization scale cancels in a physical result, which can be done order-by-order in perturbation theory.
-This process induces a scale-dependence of the coupling constant $\alpha_s$ on the arbitrary renormalization scale $\mu$.
+This process induces a scale dependence of the coupling constant $\alpha_s$ on the arbitrary renormalization scale $\mu$.
 If the value of $\alpha_s$ is known at a particular $\mu = \mu_0$, its dependence on the scale can be determined by calculating the beta function
 \begin{equation}
   \beta(\alpha_s) \equiv  \frac{\partial \alpha_s}{\partial \ln \mu^2}
@@ -248,7 +248,7 @@ Above some critical baryon density the transition is hypothesized to be first-or
 Thermodynamic quantities can be computed in lattice \qcd at small chemical potential \cite{Borsanyi:2013bia,Bazavov:2014pvz}.
 The results are clearly distinct from the \ac{HRG} model \cite{Huovinen:2009yb}, indicating that deconfinement is a fundamental property of the transition.
 The trace anomaly $T_\mu^\mu = \varepsilon - 3 p$, where $\varepsilon$ is the energy density and $p$ is the pressure, is computed in lattice calculations as a function of temperature.
-It vanishes in a conformal theory, so the appearance of a significant trace anomaly with a peak around $200 \MeV$ suggests the emergence of a scale-dependence.
+It vanishes in a conformal theory, so the appearance of a significant trace anomaly with a peak around $200 \MeV$ suggests the emergence of a scale dependence.
 The pressure is related to the derivative of the trace anomaly up to factors of the temperature.
 From there, the remaining combinations of thermodynamic quantities such as $\varepsilon(T)$ and the entropy density $s = \frac{\varepsilon + p}{T}$ are determined  (\cref{fig:lattice_eos}).
 These determine the \ac{EoS}.
@@ -318,9 +318,9 @@ The optical approximation taken here is not able to account for fluctuations in 
 To remedy this, a \mc approach can be taken which randomizes the impact parameter according to $P(b) \propto 2\pi b$ and the positions of the nucleons within each nucleus according to the Woods-Saxon distribution.
 One method is to tag a nucleon as wounded if its distance in the transverse plane is within $\sqrt{\sigma^{NN}_\mathrm{inel}/\pi}$ of any nucleon in the other nucleus.
 The expectation values of \Ncoll and \Npart can be calculated as a function of $b$ by repeated simulations. 
-The Glauber \mc model gives some shadowing of the total nucleus-nucleus cross section relative to the optical approach, but differences in the expected \Ncoll and \Npart are negligible \cite{Miller:2007ri}. %% todo: show figure 5 from this reference here?
+The Glauber \mc model predicts some shadowing of the total nucleus-nucleus cross section relative to the optical approach, but differences in the expected \Ncoll and \Npart are negligible \cite{Miller:2007ri}. %% todo: show figure 5 from this reference here? probably not
 
-In experiments, impact parameter cannot be measured directly so a proxy must be used.
+In experiments the impact parameter cannot be measured directly so a proxy must be used.
 This is typically the charged-particle multiplicity or the total energy deposited at large $|\eta|$.
 Because there is a probabilistic component to the particle production at a given $b$, results are often reported in intervals of event activity, either in percentile or the corresponding expected \Npart.
 
@@ -354,15 +354,40 @@ Fluctuations in $\sigma^{NN}_\mathrm{inel}$ put higher weight into the high-\Npa
 
 Measurements of charged particle multiplicity and $Z$ boson production suggest that the geometry is best described by $\omega_\sigma > 0$ \cite{HION-2012-15,HION-2013-09}.
 The precise value is not well-constrained but a value of $\omega_\sigma = 0.11$ is slightly preferred over the higher value of $0.2$.
-Results presented in this thesis will provide additional support for $\omega_\sigma > 0$.
+Results presented in this thesis will provide additional support for the \ac{GGCF} model with $\omega_\sigma > 0$.
 
 
 \subsection{Experimental evidence for strongly-coupled QGP}
-\todo{split this section into \AA and \pA ?}
 
-%% and that it act like a strongly-coupled hydrodynamic system
-\todo{HI summary plots: (v2, RAA, etc).
-  \url{https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CombinedSummaryPlots/HION/}}
+
+\begin{figure}[t]
+  \includegraphics{dijet_asym.pdf}
+  \caption{The distribution of the sub-leading jet suppression $x_\textrm{J}$ as a function of centrality in lead-lead collisions \cite{HION-2012-11}. The observable $x_\textrm{J}$ is defined as the ratio of sub-leading to leading jet \pt and is reduced relative to proton-proton collisions. The distributions are unfolded to correct for detector resolution effects.}
+  \label{fig:dijet_asym}
+\end{figure}
+
+The observation of jet quenching in \PbPb collisions, shown in \cref{fig:dijet_asym}, is a signature of the formation of an opaque medium \cite{HION-2012-11}.
+The reduction of the ratio of sub-leading jet \pt to leading jet \pt is drastic in central collisions but not significant in peripheral collisions.
+This matter is likely composed of relatively soft particles since if the suppression was a result of hard scattering alone dijets would be deflected at large angles.
+Jet quenching has not been observed in \pA collisions, but this does not necessarily rule out the formation of a medium because it could have a formation time comparable to the transverse size of the system.
+
+Jet and particle production in heavy ion collisions is often reported in terms of the nuclear modification factor \RAA.
+\begin{equation}
+  \RAA = \frac{\frac{d\sigma^{AA}}{d^3 p}}{\langle T_{AA} \rangle \frac{d\sigma^{pp}}{d^3 p}}
+\end{equation}
+An $\RAA < 1$ is called \emph{suppression}, and is often interpreted as absorption or slowing of the channel in question.
+As shown in \cref{fig:pbpb_raa}, high-\pt hadrons and jets are suppressed in \PbPb collisions which suggests that they interact with a medium.
+The \RAA for $Z$ bosons is shown as a control result because electoweak bosons do not interact via the color force and thus are expected to pass through any \qgp.
+
+\begin{figure}[t]
+  \includegraphics{ATLAS_HION_Summary_Raa_02.pdf}
+  \caption{Summary of the nuclear modification factor \RAA for a few relevant production channels in lead-lead collisions. No suppression is observed for the colorless $Z$ bosons, but high-\pt jets and hadrons are suppressed with an increased effect in central collisions.}
+  \label{fig:pbpb_raa}
+\end{figure}
+
+
+%% \todo{split this section into \AA and \pA ?} %% maybe split by observable instead
+
 \todo{event plane angle, flow quantities, to discuss before section 5 ``determination of flow vector'' etc. }
 \todo{HIGH PRIORITY}
 
@@ -384,18 +409,27 @@ general big picture, possible hydro from finger physics: \cite{Busza:2018rrf} %%
 \todo{e.g. wavelength or \mfp < L}
 \todo{e.g. conceptual summary of hydro, what it means}
 test hydro by prediction of spatial anisotropies being converted to momentum anisotropies
+, is discussed in greater detail in \cref{sec:hydro}.
 
-\subsubsection{Nuclear modification factor}
-\subsubsection{Jet quenching}
-\subsubsection{Collective expansion and flow harmonics}
+%% \subsubsection{Nuclear modification factor} %% probably won't divide into these subsections
+%% \subsubsection{Jet quenching}
+%% \subsubsection{Collective expansion and flow harmonics}
+\begin{figure}[t]
+  \includegraphics[width=0.49\linewidth]{vn_vs_cent.png}
+  \includegraphics[width=0.49\linewidth]{vn_vs_pt.png}
+  \caption{Event-by-event viscous hydrodynamic simulations of lead-lead collisions from \Ref{\cite{Gale:2012rq}} showing excellent agreement with experimental results as a function of centrality (left) \cite{ALICE:2011ab} and \pt (right) \cite{HION-2011-01}.}
+  \label{fig:pbpb_vn}
+\end{figure}
+
 %% it's a little awkward having this before the following section on hydro
 
-
+\FloatBarrier
 %% --------------------------------
 %% Hydrodynamics
 %% --------------------------------
 
 \section{Hydrodynamic description of heavy ion collisions}
+\label{sec:hydro}
 
 \subsection{Relativistic fluid dynamics}
 
@@ -417,7 +451,7 @@ Projecting this equation into time and space components yields the relativistic 
   \left(\varepsilon + p\right)Du^\mu + c_s^2 \nabla_\perp^\mu \varepsilon &= 0 
 \end{align}
 where \(D \equiv u^\mu \nabla_\mu\) is the co-moving time-like derivative, \( \nabla_\perp^\mu \equiv \Delta^{\mu\nu} \nabla_\nu \) is the co-moving space-like derivative, and \(c_s(\varepsilon) \equiv \sqrt{\frac{\partial p}{\partial \varepsilon}} \) can be identified with the speed of sound.
-With a toy \ac{EoS} $p = c_s^2 \varepsilon$ the Euler equation is written %% conformal if c_s^2 = 1/3
+With a toy \ac{EoS} $p = c_s^2 \varepsilon$ the Euler equation is written %% conformal/ultrarelativistic if c_s^2 = 1/3, e.g. photon gas
 \begin{equation}
 \dot{u}^\mu = \frac{c_s^2}{1+c_s^2} \frac{\nabla^\mu p}{p}
 \end{equation}
@@ -450,7 +484,7 @@ but these equations violate causality by instantaneously propagating gradients t
 This causes instabilities in the solutions to these equations.
 Causality can be recovered by expanding to second-order in the gradients \cite{Israel:1976tn} at the cost of introducing 15 second-order transport coefficients, four of which vanish in flat spacetime.
 State-of-the-art simulations of the \qgp rely on second-order relativistic hydrodynamics \cite{Israel:1979wp}, though in practical applications many second-order coefficients are still fixed to zero.
-In the conformal limit, for instance, $\zeta \rightarrow 0$ and there are five nonzero second-order transport coefficients \cite{Baier:2007ix}.
+In the conformal limit, for instance, $\zeta \rightarrow 0$ and there are five nonzero second-order transport coefficients \cite{Baier:2007ix,Marrochio:2013wla}.
 
 \subsection{Applicability of hydrodynamics}
 %% low viscosity: large cross-section, low mfp
@@ -496,7 +530,7 @@ Perturbative calculations of the bulk viscosity at high temperature show that \c
 \end{equation}
 to \ac{LO}.
 The bulk viscosity is suppressed by four powers of $\alpha_s$ relative to the shear viscosity, and is expected to vanish for conformal theories and in both in the low and high temperature limits.
-It is therefore often neglected in discussions of the \qgp viscosity, though it can be relevant near the transition temperature.
+It is therefore often neglected in discussions of the \qgp viscosity, though it can be relevant near the transition temperature and can enhance the Fourier harmonics of the particle production \cite{Noronha-Hostler:2013gga}.
 
 The entropy density $s = (\varepsilon + p)/T$ also scales with the cube of temperature, so the shear viscosity is often normalized by the entropy density to from the specific viscosity $\eta/s$.
 In \ac{pQCD} the value of the specific viscosity is close to unity near the critical point.
@@ -559,7 +593,7 @@ They are therefore sensitive to predictions regarding hydrodynamic expansion of 
 The results of femtoscopic measurements in \pPb systems are of significant interest because they can shed light on the extent to which hydrodynamics applies in such small systems.
 
 \subsection{Imaging the source density function}
-Momentum space correlation functions can be written out in terms of source density functions, as detailed in the review in \cite{Lisa:2005dd}.
+Momentum space correlation functions can be written out in terms of source density functions, as detailed in the review in \Ref{\cite{Lisa:2005dd}}.
 Particles are emitted on a freeze-out hypersurface denoted by $\partial\Sigma$.
 The generation and interactions of $n$ particles before this hypersurface is described by a source density function $s_n(p_1, x_1;\ldots; p_n, x_n)$ of outgoing particle momenta $p_i$ and initial spacetime coordinates $x_i$.
 The hypersurface $\partial\Sigma$ is not a region where each particle is created at, but rather the surface of final interaction of the emitted particles with the bulk.
