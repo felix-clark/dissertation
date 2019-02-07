@@ -238,6 +238,12 @@ Above some critical baryon density the transition is hypothesized to be first-or
 \subsection{Equation of state from lattice calculations}
 \label{subsec:lattice}
 
+\begin{figure}[t]
+  \includegraphics[width=\linewidth]{lattice_eos.png}
+  \caption{The trace anomaly for several values of lattice spacing $N_\tau = 1/aT$ and the continuum extrapolation (left), and thermodynamic quantities in the continuum limit (right), both shown as a function of temperature \cite{Bazavov:2014pvz}. The solid lines show the predictions from the HRG model, and the Stefan-Boltzmann limit at $95\pi^2/60$ is shown by the straight dashed line.}
+  \label{fig:lattice_eos}
+\end{figure}
+
 %% the latter HotQCD ref is slightly more recent and has many good plots including static potential (no 1/m corrections?)
 Thermodynamic quantities can be computed in lattice \qcd at small chemical potential \cite{Borsanyi:2013bia,Bazavov:2014pvz}.
 The results are clearly distinct from the \ac{HRG} model \cite{Huovinen:2009yb}, indicating that deconfinement is a fundamental property of the transition.
@@ -248,12 +254,6 @@ From there, the remaining combinations of thermodynamic quantities such as $\var
 These determine the \ac{EoS}.
 A smooth crossover is observed, with a critical temperature of \( T_c = 170 \pm 4 \MeV \) \cite{Aoki:2009sc}, which is indeed close to \lqcd as predicted by dimensional analysis.
 Above the critical temperature, clear deviations are shown from the predictions of the \ac{HRG} model.
-
-\begin{figure}[t]
-  \includegraphics[width=\linewidth]{lattice_eos.png}
-  \caption{The trace anomaly for several values of lattice spacing $N_\tau = 1/aT$ and the continuum extrapolation (left), and thermodynamic quantities in the continuum limit (right), both shown as a function of temperature \cite{Bazavov:2014pvz}. The solid lines show the predictions from the HRG model, and the Stefan-Boltzmann limit at $95\pi^2/60$ is shown by the straight dashed line.}
-  \label{fig:lattice_eos}
-\end{figure}
 
 %% The Stefan-Boltzmann limit of \(\varepsilon = \frac{g \pi^2 T^4}{30}\) where g is a degeneracy factor is not reached in lattice calculations.
 The large step in the ratios $\varepsilon/T^4$ and $s/T^3$ around the critical temperature is an indication of an increase in the effective number of degrees of freedom in \qcd matter.
@@ -274,33 +274,76 @@ Hydrodynamic modeling suggests a formation time on the order of 1 fm/c, so naive
 \end{figure}
 
 The size and shape of the energy density deposited in a heavy ion collision varies greatly depending on the impact parameter $b$, as illustrated in \cref{fig:hi_collision_geo}.
-In experiments, impact parameter cannot be measured directly so another proxy is used, typically the charged-particle multiplicity or the total energy deposited in the forward regions.
 The Glauber model is used to describe the average energy density in nuclear collisions as a function of impact parameter \cite{Miller:2007ri}.
-It parameterizes the nuclear density $\rho$ by the Woods-Saxon distribution
+In the optical limit of smooth density, the nuclear density $\rho$ is parameterized by the Woods-Saxon distribution
 \begin{equation}
-\rho(r) = \frac{\rho_0}{1 + \exp\left( \frac{r-a}{R} \right)} \, ,
+\rho(r) = \frac{\rho_0}{1 + \exp\left( \frac{r-R}{a} \right)} \, ,
 \end{equation}
 where $R$ and $a$ are the radius and skin depth of the nucleus, respectively.
-The normalization constant $\rho_0$ is set to fix the integral to the total number of nucleons.
-The radial density distribution for lead-208 is shown in \cref{fig:woods_saxon}, with $R = 6.62 \pm 0.06 \fm$ and $a = 0.55 \pm 0.01 \fm$.
+The normalization constant \[\rho_0 = \frac{3A}{4 \pi R^3} \left[1 + \frac{\pi^2 a^2}{R^2}  + \bigo{e^{-R/a}}\right]^{-1}\] is set to fix the integral to the total number of nucleons\footnote{The exact expression in terms of the trilogarithm function is \( \rho_0 = \frac{A}{-8\pi a^3 \mathrm{Li}_3\left( -e^{R/a} \right)} \).}.
+The radial density distribution for lead-208 is shown in \cref{fig:woods_saxon}, with $R = 6.62 \pm 0.06~\fm$ and $a = 0.55 \pm 0.01~\fm$.
 
 \begin{figure}[t]
   \includegraphics{woods_saxon_pb208.png}
-  \caption{The density as a function of radius following the Woods-Saxon distribution for ${}^{208}\mathrm{Pb}$.}
+  \caption{The density as a function of radius following the Woods-Saxon distribution for the ${}^{208}\mathrm{Pb}$ nucleus.}
   \label{fig:woods_saxon}
 \end{figure}
 
+The transverse density of a nucleus with mass number $A$ at a transverse position $\mathbf{s}$ relative to its center is given by the projection of the spherical density along a longitudinal axis.
+\begin{equation}
+T_A(\mathbf{s}) = \int dz \, \rho_A\left( \sqrt{s^2 + z^2} \right)
+\end{equation}
+For two nuclei with mass numbers $A$ and $B$ colliding with impact parameter $\mathbf{b}$, the thickness function is
+\begin{equation}
+T_{AB}(\mathbf{b}) = \int d^2 b \, T_A(\mathbf{s}) T_B(\mathbf{s} - \mathbf{b}) \;,
+\end{equation}
+which has units of inverse area.
+The expected number of nucleon-nucleon collisions \Ncoll is obtained by multiplying the thickness function by the inelastic nucleon-nucleon cross section\footnote{More rigorously, the probability distribution of \Ncoll for a given impact parameter $b$ is the binomial distribution with $n = AB$ and $p = \frac{T_{AB}(b) \sigma^{NN}_\mathrm{inel}}{AB}$. }
+\begin{equation}
+  \langle\Ncoll(b)\rangle = T_{AB}(b) \sigma^{NN}_\mathrm{inel} \;.
+\end{equation}
+%% The inelastic nucleus-nucleus cross section is
+%% \begin{equation}
+%% \frac{d^2 \sigma^{AB}_\mathrm{inel}}{db^2} = 1 - \left[ 1 - \frac{T_{AB}(b) \sigma^{NN}_\mathrm{inel}}{AB} \right]^{AB} \;.
+%% \end{equation}
+The number of nucleons in both target and projectile that interact is called the number of participating nucleons, \Npart, or the number of wounded nucleons.
+\begin{equation}
+  \begin{split}
+  \langle \Npart(b) \rangle = &\int d^2 s \, T_A(\mathbf{s})\left\{ 1 - \left[ 1 - \frac{T_B (\mathbf{s} - \mathbf{b}) \sigma^{NN}_\mathrm{inel}}{B} \right]^B \right\} + \\
+  &\int d^2 s \, T_B(\mathbf{s}-\mathbf{b})\left\{ 1 - \left[ 1 - \frac{T_A (\mathbf{s}) \sigma^{NN}_\mathrm{inel}}{A} \right]^A \right\}
+  \end{split}
+\end{equation}
 
+The optical approximation taken here is not able to account for fluctuations in nucleon positions within the nuclei.
+To remedy this, a \mc approach can be taken which randomizes the impact parameter according to $P(b) \propto 2\pi b$ and the positions of the nucleons within each nucleus according to the Woods-Saxon distribution.
+One method is to tag a nucleon as wounded if its distance in the transverse plane is within $\sqrt{\sigma^{NN}_\mathrm{inel}/\pi}$ of any nucleon in the other nucleus.
+The expectation values of \Ncoll and \Npart can be calculated as a function of $b$ by repeated simulations. 
+The Glauber \mc model gives some shadowing of the total nucleus-nucleus cross section relative to the optical approach, but differences in the expected \Ncoll and \Npart are negligible \cite{Miller:2007ri}. %% todo: show figure 5 from this reference here?
+
+In experiments, impact parameter cannot be measured directly so a proxy must be used.
+This is typically the charged-particle multiplicity or the total energy deposited at large $|\eta|$.
+Because there is a probabilistic component to the particle production at a given $b$, results are often reported in intervals of event activity, either in percentile or the corresponding expected \Npart.
 
 \subsection{Proton-nucleus collisions}
 The initial motivation for studying proton-nucleus collisions is to understand \ac{CNM} effects.
 Measurements from \AA collisions are often normalized by the same quantities in \pp collisions up to factors of \Npart.
 Heavy ion collisions are not completely equivalent to a sum of several \pp collisions, due in part to the presence of additional spectator nucleons.
 Proton-nucleus collisions can be used to control for these effects.
-The physics of \pA collisions also turned out to be surprisingly interesting in its own right.
+The physics of \pA collisions has also turned out to be surprisingly interesting in its own right.
 
-
-\todo{geometry \ac{GGCF}}
+In \pA collisions the expected number of collisions is given in terms of the single-nucleon thickness function
+\begin{equation}
+  \langle \Ncoll(b) \rangle = T_A(b) \sigma^{NN}_\mathrm{inel}
+\end{equation}
+and the number of nucleon participants is simply
+\begin{equation}
+  \Npart = \Ncoll + 1 \;.
+\end{equation}
+Because the projectile consists of a single proton, event-by-event fluctuations in its size can impact the \Npart significantly.
+In \AA collisions the effect of such fluctuations is washed out because the relative fluctuations in the projectile cross section are suppressed by a factor of $A^{-1/2}$.
+The \ac{GGCF} model provides the framework to describe this effect by parameterizing fluctuations in $\sigma^{NN}_\mathrm{inel}$ with the dimensionless parameter $\omega_\sigma$.
+The \Npart distribution is shown in \cref{fig:ggcf_npart} for the Glauber model and two values of the \ac{GGCF} extension.
+Fluctuations in $\sigma^{NN}_\mathrm{inel}$ put higher weight into the high-\Npart tail of the distribution.
 
 \begin{figure}[t]
   \includegraphics[width=0.49\linewidth]{ggcf_prob_dist.pdf}
@@ -309,7 +352,10 @@ The physics of \pA collisions also turned out to be surprisingly interesting in 
   \label{fig:ggcf_npart}
 \end{figure}
 
-\todo{\ac{CNM}, no jet quenching, hydro results}
+Measurements of charged particle multiplicity and $Z$ boson production suggest that the geometry is best described by $\omega_\sigma > 0$ \cite{HION-2012-15,HION-2013-09}.
+The precise value is not well-constrained but a value of $\omega_\sigma = 0.11$ is slightly preferred over the higher value of $0.2$.
+Results presented in this thesis will provide additional support for $\omega_\sigma > 0$.
+
 
 \subsection{Experimental evidence for strongly-coupled QGP}
 \todo{split this section into \AA and \pA ?}
@@ -320,6 +366,7 @@ The physics of \pA collisions also turned out to be surprisingly interesting in 
 \todo{event plane angle, flow quantities, to discuss before section 5 ``determination of flow vector'' etc. }
 \todo{HIGH PRIORITY}
 
+\todo{in \pPb: no jet quenching, hydro results}
 In \pp or \pA systems where the projectile has a radius comparable to or smaller than the formation time, hydrodynamics is not expected naively.
 
 general big picture, possible hydro from finger physics: \cite{Busza:2018rrf} %% also nice summary at end
@@ -593,9 +640,9 @@ In $d$ spatial dimensions, the normalized $n^\textrm{th}$ $|q|$-moment of the co
 \left< q^n \right>_{\alpha} = \frac{\Gamma\left(\frac{n+d}{\alpha}\right)}{R^n \Gamma\left(\frac{d}{\alpha}\right)}
 \end{equation}
 If it was assumed that the 1st moment was preserved under a fit (an assumption with validity depending heavily on the shape of the measured correlation function), the fit parameters measured at one choice of $\alpha$ could be related to those at another choice of $\alpha$, for instance $\Rinv^{\textrm{exp}} \sim \sqrt{\pi} \Rinv^{\textrm{gauss}}$.
-This relation is sometimes used in the literature, but it lacks rigorous motivation or support.}.
-For the ATLAS \pPb results, $\alpha$ is fixed to 1, as this choice has good agreement with data.
-In many other results $alpha = 2$ is used, as this choice tends to work particularly well in \AA collisions.
+This relation is sometimes used in the literature but it lacks rigorous motivation or support.}.
+For the ATLAS \pPb results, $\alpha$ is fixed to 1 because this choice has good agreement with data.
+In many other results $\alpha = 2$ is used as this choice tends to work particularly well in \AA collisions.
 
 \todo{is experimental definition of $C(q) = A(q;k)/B(q;k)$ established anywhere?}
 
