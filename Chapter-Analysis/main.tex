@@ -509,7 +509,7 @@ A likelihood is derived by taking
 \end{equation}
 which, after normalizing, gives a function to be minimized,
 \begin{equation}
-  -2\log\mathcal{L} = \sum_{q \textrm{bins}} \left\{-2(\alpha_A - 1) \log \left[ \frac{(\alpha_B +1)\beta_A}{(\alpha_A - 1)\beta_B} C \right] + 2(\alpha_A + \alpha_B) \log \left[ \frac{\left( 1 + \frac{\beta_A}{\beta_B} C\right)(\alpha_B + 1)}{\alpha_A + \alpha_B} \right] \right\} \; .
+    -2\log\mathcal{L} = \sum_{q \textrm{bins}} \left\{\begin{split} -2(\alpha_A &- 1) \log \left[ \frac{(\alpha_B +1)\beta_A}{(\alpha_A - 1)\beta_B} C \right] \\ &+ 2(\alpha_A + \alpha_B) \log \left[ \frac{\left( 1 + \frac{\beta_A}{\beta_B} C\right)(\alpha_B + 1)}{\alpha_A + \alpha_B} \right] \end{split} \right\} \; .
 \end{equation}
 
 When weighting events from several \Nch intervals so as to follow a minimum-bias distribution, the sample used in this analysis necessitates weights that can differ by several orders of magnitude.
