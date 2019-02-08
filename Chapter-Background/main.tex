@@ -357,8 +357,9 @@ The precise value is not well-constrained but a value of $\omega_\sigma = 0.11$ 
 Results presented in this thesis will provide additional support for the \ac{GGCF} model with $\omega_\sigma > 0$.
 
 
-\subsection{Experimental evidence for strongly-coupled QGP}
+\subsection{Experimental status of the strongly-coupled QGP}
 
+\subsubsection{Hard sector}
 
 \begin{figure}[t]
   \includegraphics{dijet_asym.pdf}
@@ -369,15 +370,7 @@ Results presented in this thesis will provide additional support for the \ac{GGC
 The observation of jet quenching in \PbPb collisions, shown in \cref{fig:dijet_asym}, is a signature of the formation of an opaque medium \cite{HION-2012-11}.
 The reduction of the ratio of sub-leading jet \pt to leading jet \pt is drastic in central collisions but not significant in peripheral collisions.
 This matter is likely composed of relatively soft particles since if the suppression was a result of hard scattering alone dijets would be deflected at large angles.
-Jet quenching has not been observed in \pA collisions, but this does not necessarily rule out the formation of a medium because it could have a formation time comparable to the transverse size of the system.
-
-Jet and particle production in heavy ion collisions is often reported in terms of the nuclear modification factor \RAA.
-\begin{equation}
-  \RAA = \frac{\frac{d\sigma^{AA}}{d^3 p}}{\langle T_{AA} \rangle \frac{d\sigma^{pp}}{d^3 p}}
-\end{equation}
-An $\RAA < 1$ is called \emph{suppression}, and is often interpreted as absorption or slowing of the channel in question.
-As shown in \cref{fig:pbpb_raa}, high-\pt hadrons and jets are suppressed in \PbPb collisions which suggests that they interact with a medium.
-The \RAA for $Z$ bosons is shown as a control result because electoweak bosons do not interact via the color force and thus are expected to pass through any \qgp.
+Dijet asymmetry has not been observed in \pA collisions, but this does not necessarily rule out the formation of a medium because it could have a formation time comparable to the transverse size of the system.
 
 \begin{figure}[t]
   \includegraphics{ATLAS_HION_Summary_Raa_02.pdf}
@@ -385,14 +378,79 @@ The \RAA for $Z$ bosons is shown as a control result because electoweak bosons d
   \label{fig:pbpb_raa}
 \end{figure}
 
+Jet and particle production in heavy ion collisions is often reported in terms of the nuclear modification factor \RAA of channel $X$.
+\begin{equation}
+  \RAA = \frac{\frac{1}{\Nevt}\frac{d N^{AA}_{X}}{d^3 p}}{\langle T_{AA} \rangle \frac{d\sigma^{pp}}{d^3 p}}
+\end{equation}
+An $\RAA < 1$ is called \emph{suppression}, and is often interpreted as absorption or slowing of the channel in question.
+As shown in \cref{fig:pbpb_raa}, high-\pt hadrons and jets are suppressed in \PbPb collisions which suggests that they interact with a medium.
+This suppression is stronger in central collisions where a greater mass and volume of medium is produced \cite{HION-2013-06}.
+The \RAA for $Z$ bosons is shown as a control measurement because electoweak bosons do not interact via the color force and thus are expected to pass through any \qgp.
 
-%% \todo{split this section into \AA and \pA ?} %% maybe split by observable instead
+\begin{figure}[t]
+  \includegraphics{rppb_cp.pdf}
+  \caption{\RpPb for charged particles as a function of \pt for different collision geometries in the Glauber-Gribov color fluctuation model \cite{HION-2012-14}.}
+  \label{fig:rppb_cp}
+\end{figure}
 
-\todo{event plane angle, flow quantities, to discuss before section 5 ``determination of flow vector'' etc. }
-\todo{HIGH PRIORITY}
+A similar ratio is defined for \pA collisions.
+\begin{equation}
+  \RpA = \frac{\frac{1}{\Nevt}\frac{d N^{pA}_{X}}{d^3 p}}{\langle T_{pA} \rangle \frac{d\sigma^{pp}}{d^3 p}}
+\end{equation}
+For charged particles an apparent enhancement at high \pt can be explained by the \ac{GGCF} model \cite{HION-2012-14}, as shown in \cref{fig:rppb_cp}.
+There is a sign of rapidity-dependent jet suppression in central \pPb collisions \cite{HION-2013-08}, although this is not a smoking gun for any medium formation because \RpPb is sensitive to other production effects like differences in the nuclear \ac{PDF}.
 
-\todo{in \pPb: no jet quenching, hydro results}
+
+\FloatBarrier
+\subsubsection{Soft sector}
+
+Particle production in high energy collisions is often decomposed into azimuthal Fourier components \cite{Voloshin:1994mz,Poskanzer:1998yz}. %% Heinz:2013th more recent summary
+\begin{equation}
+  \label{eq:flow_coefficients}
+  E \frac{d^3 N}{d^3 p} = \frac{1}{2\pi \pt} \frac{d^2 N}{d\pt \, dy}\left[ 1 + \sum_{n=1}^{\infty} 2v_n \cos\left[n(\phi - \Psi_n) \right] \right]
+\end{equation}
+The $v_n$ are called the $n$th-order flow coefficients and the $\Psi_n$ are the $n$th-order event plane.
+Experimentally they are defined by the relation (without corrections)
+\begin{equation}
+v_n e^{in\Psi_n} = \sum_k w_k e^{in\phi_k}
+\end{equation}
+where $w_k$ weights the $k$th particle or calorimeter element and is typically the \pt or $E_\mathrm{T}$ of the component.
+This provides a framework for testing the predictions of dynamical models that describe the evolution of the initial energy deposited in the collision to the final-state bulk of particles.
+For instance, a non-interacting gas model predicts $\langle v_n \rangle = 0$ for $n \geq 2$, with nonzero flow coefficients only from fluctuations, and is ruled out for \AA, \pA, and \pp collisions.
+
+Hydrodynamics is a simple model that only assumes the system can be described by a fluid field with four-velocity $u^\mu(x^\nu)$ and imposes conservation of the stress-energy tensor $T^{\mu\nu}$ such that $\nabla_\mu T^{\mu\nu} = 0$.
+The inputs into hydrodynamics are the description of $T^{\mu\nu}$ itself, which typically includes an \ac{EoS} and multiple free parameters.
+\Cref{sec:hydro} discusses relativistic hydrodynamic theory in detail.
+The signature feature of fluid dynamics is the fact that accelerations are driven by pressure gradients.
+For instance, in an ideal conformal fluid in $d$ spacetime dimensions
+\begin{equation}
+\dot{\mathbf{u}} = - \frac{1}{d} \boldsymbol{\nabla} \ln p
+\end{equation}
+where $\mathbf{u}$ is the vector part of $u^\mu$ and $p$ is the pressure.
+Thus the shape of the initial energy density has a significant effect on the final particle distribution in \cref{eq:flow_coefficients}, as fluid is pushed from regions of large density to small.
+
+For the fluid description to be valid, matter must be able to readily interact with nearby fluid.
+If disturbances in the velocity and energy fields are not propagated to nearby locations then the smooth description of the fields breaks down.
+This requires the mean free path \mfp to be small compared to the length scale that the system evolves over, or equivalently, that the viscosity is small.
+The applicability of hydrodynamics is discussed in further detail in \cref{subsec:hydro_applicability}.
+
+To a reasonable approximation, the 2nd- and 3rd-order flow coefficients are proportional to the corresponding eccentricities of the transverse source density \cite{Qiu:2011iv}, although $v_n$ for $n \geq 4$ include higher-order products.
+The centrality of a \AA collision provides a control on the initial ellipticity, which is small for head-on central collisions with a circular transverse profile and larger for mid-central collisions with an almond-shaped overlap profile.
+The $v_2$ as a function of centrality behaves according to this hydrodynamic prediction in \PbPb collisions.
+Higher-order flow coefficients do not exhibit a strong centrality dependence because the higher-order eccentricities are not greatly dependent on the centrality.
+The detailed simulations shown in \cref{fig:pbpb_vn} exhibit this behavior with excellent agreement with data as a function both of centrality and \pt.
+
+\begin{figure}[t]
+  \includegraphics[width=0.49\linewidth]{vn_vs_cent.png}
+  \includegraphics[width=0.49\linewidth]{vn_vs_pt.png}
+  \caption{Event-by-event viscous hydrodynamic simulations of lead-lead collisions from \Ref{\cite{Gale:2012rq}} showing excellent agreement with experimental results as a function of centrality (left) \cite{ALICE:2011ab} and \pt (right) \cite{HION-2011-01}.}
+  \label{fig:pbpb_vn}
+\end{figure}
+
+
+\todo{in \pPb: hydro results}
 In \pp or \pA systems where the projectile has a radius comparable to or smaller than the formation time, hydrodynamics is not expected naively.
+
 
 general big picture, possible hydro from finger physics: \cite{Busza:2018rrf} %% also nice summary at end
 
@@ -407,19 +465,18 @@ general big picture, possible hydro from finger physics: \cite{Busza:2018rrf} %%
 %% \eta/s \propto T*\mfp
 %% smaller \mfp means fluid element cannot traverse perpendicular to transfer momentum
 \todo{e.g. wavelength or \mfp < L}
-\todo{e.g. conceptual summary of hydro, what it means}
-test hydro by prediction of spatial anisotropies being converted to momentum anisotropies
-, is discussed in greater detail in \cref{sec:hydro}.
 
-%% \subsubsection{Nuclear modification factor} %% probably won't divide into these subsections
-%% \subsubsection{Jet quenching}
-%% \subsubsection{Collective expansion and flow harmonics}
+%% \subsection{Flow in small systems} %% no separate section for experimental results, possibly in theory?
+ review of small-systems hydro: \cite{Nagle:2018nvi}
+\todo{discuss results for \pp and \pPb flow}
+
 \begin{figure}[t]
-  \includegraphics[width=0.49\linewidth]{vn_vs_cent.png}
-  \includegraphics[width=0.49\linewidth]{vn_vs_pt.png}
-  \caption{Event-by-event viscous hydrodynamic simulations of lead-lead collisions from \Ref{\cite{Gale:2012rq}} showing excellent agreement with experimental results as a function of centrality (left) \cite{ALICE:2011ab} and \pt (right) \cite{HION-2011-01}.}
-  \label{fig:pbpb_vn}
+  \includegraphics[width=\linewidth]{vn_all.png}
+  \caption{Elliptic, triangular, and quadrupolar flow coefficients from superSONIC simulations (bands) compared to experimental data for proton-proton (left), proton-lead (center), and lead-lead (right) collisions \cite{Weller:2017tsr}. The specific viscosity parameters used in the simulations are $\eta/s = 0.08$ and $\zeta/s = 0.01$.}
+  \label{fig:vn_all}
 \end{figure}
+
+\cite{Weller:2017tsr} %% simultaneous pp, pPb, PbPb
 
 %% it's a little awkward having this before the following section on hydro
 
@@ -487,6 +544,7 @@ State-of-the-art simulations of the \qgp rely on second-order relativistic hydro
 In the conformal limit, for instance, $\zeta \rightarrow 0$ and there are five nonzero second-order transport coefficients \cite{Baier:2007ix,Marrochio:2013wla}.
 
 \subsection{Applicability of hydrodynamics}
+\label{subsec:hydro_applicability}
 %% low viscosity: large cross-section, low mfp
 
 In order for hydrodynamics to be capable of a valid description, additional terms in the expansion of $T^{\mu\nu}$ must be small compared to existing terms.
@@ -556,23 +614,15 @@ The calculation of the shear viscosity in the strongly-coupled conformal limit g
 \end{equation}
 which is remarkably close to the bound from the uncertainty principle in \cref{eq:eta_over_s_uncertainty}.
 This bound is not expected to be exact in \qcd, because it does not have all the symmetries of the corresponding supersymmetric \ac{CFT}.
+Similarly the bulk viscosity has a temperature-dependent limit \cite{Buchel:2007mf}
+\begin{equation}
+  \frac{\zeta}{\eta} \geq 2\left(\frac{1}{3} - c_s^2 \right)
+\end{equation}
+which is positive in a non-conformal theory and larger than the perturbative calculation suggests. %% $\zeta/\eta \approx 15(1/3 - c_s^2)^2 \sim \alpha_s^4$.
 
 Experimental measurements of collective flow anisotropies have been used to extract an experimental value of $\eta/s \approx 0.2 \approx 2.5\frac{1}{4\pi}$ \cite{Heinz:2013th}.
 Recent simulations using the Kubo relations on the lattice for pure glue also report $\eta/s \approx 0.2$ near the critical point \cite{Astrakhantsev:2017nrs}, with hints that it rises slowly with the temperature.
 The \qgp is quite close to a perfect quantum fluid.
-
-%% \subsection{Fourier decomposition of particle production}
-\subsection{Success of hydrodynamics}
-
-\subsection{Flow in small systems}
- review of small-systems hydro: \cite{Nagle:2018nvi}
-
-%% \section{Jet production and fragmentation} %% not the higher priority for us
-%% Though the focus of this thesis is not on the physics of jet fragmentation, control of hard processes is essential to correctly extract observable quantities of interest.
-%% This section would describe the physics behind jets.
-%% \subsection{Parton model}
-%% lorentz contraction in infinite momentum frame, transverse freeze-out, factorization
-%% \subsection{Fragmentation function}
 
 
 \section{Femtoscopy in heavy ion collisions}
@@ -678,7 +728,7 @@ This relation is sometimes used in the literature but it lacks rigorous motivati
 For the ATLAS \pPb results, $\alpha$ is fixed to 1 because this choice has good agreement with data.
 In many other results $\alpha = 2$ is used as this choice tends to work particularly well in \AA collisions.
 
-\todo{is experimental definition of $C(q) = A(q;k)/B(q;k)$ established anywhere?}
+%% experimental definition of correlation function in \cref{\label{sec:corr_func}}
 
 \subsubsection{Coordinate system}
 \label{subsubsec:coordinate}
