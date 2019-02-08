@@ -108,7 +108,7 @@ The highly-nontrivial gluon self-interaction is a crucial ingredient in the rich
 
 %% https://arxiv.org/pdf/1604.08082.pdf
 
-As is the case in all quantum field theories, the naive calculation of higher-order (in $\alpha_s$) loop diagram integrals contain divergences in the amplitudes.
+As is the case in all quantum field theories, the na\"ive calculation of higher-order (in $\alpha_s$) loop diagram integrals contain divergences in the amplitudes.
 In many theories, including \qcd \cite{Gross:1973ju}, these infinities can be dealt with with a process called \emph{renormalization}.
 One description of renormalization is the introduction of an energy/momentum cutoff scale.
 Physical calculations cannot depend on any such scales, so amplitude calculations must be organized such that any dependence on the renormalization scale cancels in a physical result, which can be done order-by-order in perturbation theory.
@@ -264,7 +264,7 @@ This is interpreted as clear evidence for a phase transition.
 Heavy ions like gold-197 and lead-208 have hundreds of nucleons packed into a spherical volume of radius $\sqrt[3]{A} \approx 6$ times that of a proton.
 This also corresponds to an average transverse areal density of the same factor of 6 times larger than that of a proton.
 In a head-on \AuAu or \PbPb collision, roughly 200 times the energy interacts in a transverse area about 35 times larger than a \pp collisions of the same $\sqrt{s_\mathrm{NN}}$.
-Hydrodynamic modeling suggests a formation time on the order of 1 fm/c, so naively the ultra-relativistic initial products of nuclear collisions have the potential to reach thermalization in \AA collisions.
+Hydrodynamic modeling suggests a formation time on the order of 1 fm/c, so na\"ively the ultra-relativistic initial products of nuclear collisions have the potential to reach thermalization in \AA collisions.
 
 %% \subsubsection{Glauber model} %% don't really need an extra subsection label?
 \begin{figure}[t]
@@ -398,7 +398,7 @@ A similar ratio is defined for \pA collisions.
   \RpA = \frac{\frac{1}{\Nevt}\frac{d N^{pA}_{X}}{d^3 p}}{\langle T_{pA} \rangle \frac{d\sigma^{pp}}{d^3 p}}
 \end{equation}
 For charged particles an apparent enhancement at high \pt can be explained by the \ac{GGCF} model \cite{HION-2012-14}, as shown in \cref{fig:rppb_cp}.
-There is a sign of rapidity-dependent jet suppression in central \pPb collisions \cite{HION-2013-08}, although this is not a smoking gun for any medium formation because \RpPb is sensitive to other production effects like differences in the nuclear \ac{PDF}.
+There is a sign of rapidity-dependent jet suppression in central \pPb collisions \cite{HION-2013-08}, although this is not a smoking gun for any medium formation because \RpPb is sensitive to other production effects like modifications to the nuclear \ac{PDF}.
 
 
 \FloatBarrier
@@ -407,7 +407,7 @@ There is a sign of rapidity-dependent jet suppression in central \pPb collisions
 Particle production in high energy collisions is often decomposed into azimuthal Fourier components \cite{Voloshin:1994mz,Poskanzer:1998yz}. %% Heinz:2013th more recent summary
 \begin{equation}
   \label{eq:flow_coefficients}
-  E \frac{d^3 N}{d^3 p} = \frac{1}{2\pi \pt} \frac{d^2 N}{d\pt \, dy}\left[ 1 + \sum_{n=1}^{\infty} 2v_n \cos\left[n(\phi - \Psi_n) \right] \right]
+  E \frac{d^3 N}{d^3 p} = \frac{1}{2\pi \pt} \frac{d^2 N}{d\pt \, dy}\left\{ 1 + \sum_{n=1}^{\infty} 2v_n \cos\left[n(\phi - \Psi_n) \right] \right\}
 \end{equation}
 The $v_n$ are called the $n$th-order flow coefficients and the $\Psi_n$ are the $n$th-order event plane.
 Experimentally they are defined by the relation (without corrections)
@@ -418,7 +418,7 @@ where $w_k$ weights the $k$th particle or calorimeter element and is typically t
 This provides a framework for testing the predictions of dynamical models that describe the evolution of the initial energy deposited in the collision to the final-state bulk of particles.
 For instance, a non-interacting gas model predicts $\langle v_n \rangle = 0$ for $n \geq 2$, with nonzero flow coefficients only from fluctuations, and is ruled out for \AA, \pA, and \pp collisions.
 
-Hydrodynamics is a simple model that only assumes the system can be described by a fluid field with four-velocity $u^\mu(x^\nu)$ and imposes conservation of the stress-energy tensor $T^{\mu\nu}$ such that $\nabla_\mu T^{\mu\nu} = 0$.
+Hydrodynamics is a simple model that only assumes the system can be described by a fluid field with four-velocity $u^\mu(x^\nu)$ and imposes conservation of the stress-energy tensor $T^{\mu\nu}$ and possibly other conserved charges. %%, such that $\nabla_\mu T^{\mu\nu} = 0$.
 The inputs into hydrodynamics are the description of $T^{\mu\nu}$ itself, which typically includes an \ac{EoS} and multiple free parameters.
 \Cref{sec:hydro} discusses relativistic hydrodynamic theory in detail.
 The signature feature of fluid dynamics is the fact that accelerations are driven by pressure gradients.
@@ -440,6 +440,10 @@ The $v_2$ as a function of centrality behaves according to this hydrodynamic pre
 Higher-order flow coefficients do not exhibit a strong centrality dependence because the higher-order eccentricities are not greatly dependent on the centrality.
 The detailed simulations shown in \cref{fig:pbpb_vn} exhibit this behavior with excellent agreement with data as a function both of centrality and \pt.
 
+Another key observation in \AuAu collisions is the scaling of the hadron flow coefficient with the hadron's number of constituent quarks $n_q$ \cite{Adare:2006ti}.
+The hadron elliptic flow is found to scale with the kinetic energy such that $v_2^\textrm{hadron} = n_q v_2^\textrm{parton} \left(KT_\mathrm{T} / n_q\right)$.
+This shows that the quarks themselves are indeed deconfined in the flow of the system, which amounts to strong evidence for the existence of the \qgp.
+
 \begin{figure}[t]
   \includegraphics[width=0.49\linewidth]{vn_vs_cent.png}
   \includegraphics[width=0.49\linewidth]{vn_vs_pt.png}
@@ -447,28 +451,10 @@ The detailed simulations shown in \cref{fig:pbpb_vn} exhibit this behavior with 
   \label{fig:pbpb_vn}
 \end{figure}
 
-
-\todo{in \pPb: hydro results}
-In \pp or \pA systems where the projectile has a radius comparable to or smaller than the formation time, hydrodynamics is not expected naively.
-
-
-general big picture, possible hydro from finger physics: \cite{Busza:2018rrf} %% also nice summary at end
-
-%% dN/d\eta / \Npart \propto s^0.15 in AA and s^0.11 in pp (\sqrt{s}^0.3; \sqrt{s}^0.22) \cite{Aamodt:2010pb}
-
-\todo{discuss how experimental results show strongly-coupled hydro in HI, at finger-physics level}
-%% strongly-coupled: small eta/s ; weakly coupled gas: large eta
-%% eta \propto \varepsilon*\mfp from relativistic kinetic theory:
-%%%    \eta \propto \rho\mfp<v> with \rho -> \varepsilon and <v> -> c
-%% \mfp \propto 1/(n*\sigma) \propto 1/(s*\sigma)
-%% also can have \mfp \propto eta/p with kinetic argument
-%% \eta/s \propto T*\mfp
-%% smaller \mfp means fluid element cannot traverse perpendicular to transfer momentum
-\todo{e.g. wavelength or \mfp < L}
-
-%% \subsection{Flow in small systems} %% no separate section for experimental results, possibly in theory?
- review of small-systems hydro: \cite{Nagle:2018nvi}
-\todo{discuss results for \pp and \pPb flow}
+In \pp or \pA systems where the projectile has a radius that may be comparable to or smaller than the formation time, hydrodynamics is not na\"ively expected.
+However, observations of a near-side azimuthal correlations in \pPb \cite{Abelev:2012ola,CMS-HIN-12-005,HION-2013-04} and \pp \cite{CMS-QCD-10-002,HION-2015-09} collisions show that these also exhibit collectivity, which is defined as pair correlations that arise not from direct interaction but from the global bulk evolution.
+This ``ridge'' allows for the possibility of hydrodynamics in these smaller collisions, but hydrodynamics is not a necessary condition for collective behavior.
+For instance, a \cgc model that invokes saturation of nuclear \acp{PDF} can predict a ridge in small systems with some success \cite{Dusling:2012cg,Dusling:2012wy,Dusling:2013qoz,McLerran:2013una,Kovchegov:2014yza}.
 
 \begin{figure}[t]
   \includegraphics[width=\linewidth]{vn_all.png}
@@ -476,9 +462,10 @@ general big picture, possible hydro from finger physics: \cite{Busza:2018rrf} %%
   \label{fig:vn_all}
 \end{figure}
 
-\cite{Weller:2017tsr} %% simultaneous pp, pPb, PbPb
+Nevertheless, state-of-the-art viscous hydrodynamic simulations are capable of describing the flow coefficients in \pp, \pA, and \AA collisions simultaneously, as shown in \cref{fig:vn_all} \cite{Weller:2017tsr}.
+Even in \pp collisions the $v_2$ seems to persist down to $\Nch \sim 20$ \cite{HION-2016-01}, however there is not yet complete agreement in the field over the experimental procedures used to extract the flow coefficients at very low \Nch.
+For a review of hydrodynamics in small systems consult \Ref{\cite{Nagle:2018nvi}}.
 
-%% it's a little awkward having this before the following section on hydro
 
 \FloatBarrier
 %% --------------------------------
@@ -545,6 +532,18 @@ In the conformal limit, for instance, $\zeta \rightarrow 0$ and there are five n
 
 \subsection{Applicability of hydrodynamics}
 \label{subsec:hydro_applicability}
+
+%% possibly flesh this section out more?
+%% dN/d\eta / \Npart \propto s^0.15 in AA and s^0.11 in pp (\sqrt{s}^0.3; \sqrt{s}^0.22) \cite{Aamodt:2010pb}
+%% strongly-coupled: small eta/s ; weakly coupled gas: large eta
+%% \todo{e.g. wavelength or \mfp < L}
+%% eta \propto \varepsilon*\mfp from relativistic kinetic theory:
+%%%    \eta \propto \rho\mfp<v> with \rho -> \varepsilon and <v> -> c
+%% \mfp \propto 1/(n*\sigma) \propto 1/(s*\sigma)
+%% also can have \mfp \propto eta/p with kinetic argument
+%% \eta/s \propto T*\mfp
+%% smaller \mfp means fluid element cannot traverse perpendicular to transfer momentum
+
 %% low viscosity: large cross-section, low mfp
 
 In order for hydrodynamics to be capable of a valid description, additional terms in the expansion of $T^{\mu\nu}$ must be small compared to existing terms.
@@ -798,16 +797,21 @@ Fortunately a comparison is simple when the cross-terms are relatively small, as
 \end{equation}
 with $\Rsl = 0$.
 
-\subsubsection{HBT radii under collective flow}
+\subsection{HBT radii under collective flow}
 \begin{figure}[t]
   \includegraphics{hbt_radii_flow.png}
   \caption{\cite{Lisa:2005dd}.}
   \label{fig:hbt_flow}
 \end{figure}
 \todo{fill out or merge section, possibly w/ next subsection on motivation}
-\cite{Kolb:2003dz} %% decrease w/ kT is collective expansion
 
-%% \subsection{Final-state interactions} %% this is in analysis section now
-%% justify ignoring strong force; describe Coulomb correction (save jet fragmentation details for later)
+\cite{Kolb:2003dz} %% claim that decrease w/ kT is collective expansion
+
+
 \subsection{Motivation for femtoscopy in proton-lead}
 
+%% \subsection{Existing experimental results for HBT radii} %% maybe not?
+\todo{show plots of azimuthal HBT radii in \AA}
+Elliptic modulation of the freeze-out shape has been observed in \AuAu \cite{Adams:2003ra,Adare:2014vax,Adamczyk:2014mxp} and \PbPb \cite{Adamova:2017opl} collisions, which show that the transverse radii are reduced along the event plane axis compared to out-of-plane.
+
+\todo{describe specific motivation for these measurements}
