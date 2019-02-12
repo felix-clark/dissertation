@@ -210,7 +210,7 @@ This property is responsible for the phenomenon of \emph{confinement}, which is 
   \label{fig:qqbar_flux}
 \end{figure}
 
-%% \todo{possible sections to add: high-temp thermal field theory, detail on lattice gauge theory}
+%% \todo{possibly add detail on lattice gauge theory}
 
 \section{QCD at high temperatures}
 
@@ -235,11 +235,11 @@ T_c \sim \lqcd \sim 10^{12}~\mathrm{K}\; .
 The transition between hadronic matter and the QGP is a smooth crossover at low baryon density \cite{Aoki:2006we}.
 Above some critical baryon density the transition is hypothesized to be first-order based on a number of model approaches, but this has not been established.
 
-\subsection{Thermodynamics review}
+\subsection{Thermodynamics of relativistic systems}
 For massless particles the probability of having energy $E$ is calculated by integrating over the constrained phase volume \( \frac{d^3 x \, d^3 p}{(2\pi)^3} \delta\left( E - |\mathbf{p}|\right)\) times the density of states.
-With $s = \pm1$ for bosons/fermions this gives a probability per unit volume of
+With the statistical factor $\eta=\pm1$ for bosons/fermions and $\eta=0$ for non-identical particles, this gives a probability per unit volume of
 \begin{equation}
-\frac{g E^2}{2\pi^2} \frac{1}{e^{E/T} - s}
+\frac{g E^2}{2\pi^2} \frac{1}{e^{E/T} - \eta}
 \end{equation}
 where $g$ is a degeneracy factor e.g. for multiple spin values.
 For non-identical particles this yields expressions for the energy and number density
@@ -268,17 +268,55 @@ where the $g$ terms are the total degeneracy factors for relevant particle speci
 For instance, at low temperatures where a system is hadron gas the degrees of freedom are the pions with 3 isospin possibilities, so $g_\textrm{BE} = 3$ and $g_\textrm{FD} = 0$.
 In \qcd the energy density becomes\footnote{Gluons have $3^2 - 1 = 8$ possible colors and 2 possible spins, while each flavor of quark has 3 possible colors and 4 spinor components.}
 \begin{equation}
+  \label{eq:qcd_energy}
 \varepsilon = \left( 32 + 21 N_f \right) \frac{\pi^2 T^4}{60}
 \end{equation}
 for $N_f$ active quark flavors at the temperature scale.
 At a phase transition where the active thermodynamic degrees of freedom become quarks and gluons from pions the ratio $\varepsilon/T^4$ would be expected to increase by an order of magnitude.
+
+\subsection{Thermal quantum field theory}
+The probability of a thermal system to be in state $\psi$ is proportional to $e^{-\beta \hat{H}(\psi)}$ where $\beta = 1/T$ is the coldness and $H$ is the Hamiltonian of the configuration.
+This is generally expressed in terms of the partition function
+\begin{equation}
+  \label{eq:z_classical}
+Z(\beta) = \mathrm{tr} \left( e^{-\beta H} \right)
+\end{equation}
+so that the thermodynamic expectation value of an operator $\mathcal{O}$ is given by
+\begin{equation}
+\langle \mathcal{O} \rangle = \frac{1}{Z} \mathrm{tr} \left( \mathcal{O} e^{-\beta H} \right) \;.
+\end{equation}
+In \ac{QFT} the partition function is represented by the path integral
+\begin{equation}
+  \label{eq:z_qft}
+  Z = \int \mathcal{D}[\psi] \, e^{i\int d^4 x \, \Lagr(\psi)}
+\end{equation}
+from which amplitudes can be calculated through functional derivatives of source terms $J \cdot \psi$ in the Lagrangian density.
+At the same time, by analogy with \cref{eq:z_classical} the thermal partition function must look something like
+\begin{equation}
+  \label{eq:z_analogy}
+Z \sim \int \mathcal{D}[\psi] \, e^{-\beta \int d^3 \mathbf{x} \, \mathcal{H}(\psi)}
+\end{equation}
+in terms of the Hamiltonian density $\mathcal{H}$.
+The Lagrangian can be related to the Hamiltonian by a Wick rotation $t \rightarrow -i\tau$ which transforms $\mathcal{L} \rightarrow - \mathcal{H}$.
+With the transformation of the temporal integral in the exponent $i \int dt$ into a periodic domain $\int_0^\beta d\tau$ this analogy can be made precise.
+The fields are periodic such that \(\psi(\beta,\mathbf{x}) = \pm \psi(\beta,\mathbf{x})\) where the sign is determined by whether the field is a boson or fermion.
+This periodicity leads to discretization of the allowed energies where $E_n = 2n\pi T$ for bosons and $E_n = (2n+1)\pi T$ for fermions.
+
+With this formalism the full power of perturbation theory can be applied to calculate a number of observables \cite{Gross:1980br}.
+The real-time tree-level propagators pick up absorptive terms proportional to \(2\pi \delta(p^2 - m^2) \frac{1}{e^{\beta |p^0|} \mp 1} \) for bosons/fermions.
+For instance, computation of the free energy $ -T \log Z$ leads to a corresponding \ac{LO} correction to \cref{eq:qcd_energy}.
+\begin{equation}
+  \label{eq:qcd_energy_lo}
+\frac{\varepsilon}{T^4} = \left( \frac{4\pi}{15} - \alpha_s \right)2\pi + \left(\frac{7\pi}{10} - \frac{5}{3}\alpha_s \right)\frac{\pi N_f}{2}
+\end{equation}
+
 
 \subsection{Equation of state from lattice calculations}
 \label{subsec:lattice}
 
 \begin{figure}[t]
   \includegraphics[width=\linewidth]{lattice_eos.png}
-  \caption{The trace anomaly for several values of lattice spacing $N_\tau = 1/aT$ and the continuum extrapolation (left), and thermodynamic quantities in the continuum limit (right), both shown as a function of temperature \cite{Bazavov:2014pvz}. The solid lines show the predictions from the HRG model, and the Stefan-Boltzmann limit for 3 quark flavors at $95\pi^2/60$ is shown by the straight dashed line.}
+  \caption{The trace anomaly for several values of lattice spacing $N_\tau = 1/aT$ and the continuum extrapolation (left), and thermodynamic quantities in the continuum limit (right), both shown as a function of temperature \cite{Bazavov:2014pvz}. The solid lines show the predictions from the HRG model, and the Stefan-Boltzmann limit for 3 quark flavors at $19\pi^2/12$ is shown by the straight dashed line.}
   \label{fig:lattice_eos}
 \end{figure}
 
@@ -288,14 +326,15 @@ The results are clearly distinct from the \ac{HRG} model \cite{Huovinen:2009yb},
 The trace anomaly $T_\mu^\mu = \varepsilon - 3 p$, where $\varepsilon$ is the energy density and $p$ is the pressure, is computed in lattice calculations as a function of temperature.
 It vanishes in a conformal theory, so the appearance of a significant trace anomaly with a peak around $200 \MeV$ suggests the emergence of a scale dependence.
 The pressure is related to the derivative of the trace anomaly up to factors of the temperature.
-From there, the remaining combinations of thermodynamic quantities such as $\varepsilon(T)$ and the entropy density $s = \frac{\varepsilon + p}{T}$ are determined  (\cref{fig:lattice_eos}).
-These determine the \ac{EoS}.
-A smooth crossover is observed, with a critical temperature of \( T_c = 170 \pm 4 \MeV \) \cite{Aoki:2009sc}, which is indeed close to \lqcd as predicted by dimensional analysis.
-Above the critical temperature, clear deviations are shown from the predictions of the \ac{HRG} model.
+From there, the remaining combinations of thermodynamic quantities such as $\varepsilon(T)$ and the entropy density $s = \frac{\varepsilon + p}{T}$ are computed, determining the \ac{EoS}.
 
-%% The Stefan-Boltzmann limit of \(\varepsilon = \frac{g \pi^2 T^4}{30}\) where g is a degeneracy factor is not reached in lattice calculations.
-The large step in the ratios $\varepsilon/T^4$ and $s/T^3$ around the critical temperature is an indication of an increase in the effective number of degrees of freedom in \qcd matter.
-This is interpreted as clear evidence for a phase transition.
+Recent lattice \qcd results are shown in \cref{fig:lattice_eos}.
+The large step in the ratios $\varepsilon/T^4$ and $s/T^3$ around the critical temperature is an indication of a phase transition indicated by the increase in the effective number of degrees of freedom in \qcd matter.
+A smooth crossover is observed with a critical temperature of \( T_c = 170 \pm 4 \MeV \) \cite{Aoki:2009sc}, which is indeed close to \lqcd as predicted by dimensional analysis.
+Above the critical temperature, clear deviations are shown from the predictions of the \ac{HRG} model.
+The Stefan-Boltzmann limit does not appear to be reached.
+This appears to be consistent with \cref{eq:qcd_energy_lo} which says that perturbative corrections to the energy are negative.
+
 
 \subsection{Heavy ion collisions}
 
@@ -472,6 +511,13 @@ If disturbances in the velocity and energy fields are not propagated to nearby l
 This requires the mean free path \mfp to be small compared to the length scale that the system evolves over, or equivalently, that the viscosity is small.
 The applicability of hydrodynamics is discussed in further detail in \cref{subsec:hydro_applicability}.
 
+\begin{figure}[t]
+  \includegraphics[width=0.49\linewidth]{vn_vs_cent.png}
+  \includegraphics[width=0.49\linewidth]{vn_vs_pt.png}
+  \caption{Event-by-event viscous hydrodynamic simulations of lead-lead collisions from \Ref{\cite{Gale:2012rq}} showing excellent agreement with experimental results as a function of centrality (left) \cite{ALICE:2011ab} and \pt (right) \cite{HION-2011-01}.}
+  \label{fig:pbpb_vn}
+\end{figure}
+
 To a reasonable approximation, the 2nd- and 3rd-order flow coefficients are proportional to the corresponding eccentricities of the transverse source density \cite{Qiu:2011iv}, although $v_n$ for $n \geq 4$ include higher-order products.
 The centrality of a \AA collision provides a control on the initial ellipticity, which is small for head-on central collisions with a circular transverse profile and larger for mid-central collisions with an almond-shaped overlap profile.
 The $v_2$ as a function of centrality behaves according to this hydrodynamic prediction in \PbPb collisions.
@@ -481,13 +527,6 @@ The detailed simulations shown in \cref{fig:pbpb_vn} exhibit this behavior with 
 Another key observation in \AuAu collisions is the scaling of the hadron flow coefficient with the hadron's number of constituent quarks $n_q$ \cite{Adare:2006ti}.
 The hadron elliptic flow is found to scale with the kinetic energy such that $v_2^\textrm{hadron} = n_q v_2^\textrm{parton} \left(KT_\mathrm{T} / n_q\right)$.
 This shows that the quarks themselves are indeed deconfined in the flow of the system, which amounts to strong evidence for the existence of the \qgp.
-
-\begin{figure}[t]
-  \includegraphics[width=0.49\linewidth]{vn_vs_cent.png}
-  \includegraphics[width=0.49\linewidth]{vn_vs_pt.png}
-  \caption{Event-by-event viscous hydrodynamic simulations of lead-lead collisions from \Ref{\cite{Gale:2012rq}} showing excellent agreement with experimental results as a function of centrality (left) \cite{ALICE:2011ab} and \pt (right) \cite{HION-2011-01}.}
-  \label{fig:pbpb_vn}
-\end{figure}
 
 In \pp or \pA systems where the projectile has a radius that may be comparable to or smaller than the formation time, hydrodynamics is not na\"ively expected.
 However, observations of a near-side azimuthal correlations in \pPb \cite{Abelev:2012ola,CMS-HIN-12-005,HION-2013-04} and \pp \cite{CMS-QCD-10-002,HION-2015-09} collisions show that these also exhibit collectivity, which is defined as pair correlations that arise not from direct interaction but from the global bulk evolution.
