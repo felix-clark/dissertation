@@ -4,7 +4,7 @@
 
 \section{Data set}
 
-The analyses presented in this thesis use the data from the \ac{LHC} 2013 \pPb at a center-of-mass energy of \pPbenergy with an integrated luminosity of \pPblumi.
+The analyses presented in this thesis use the data from the 2013 \pPb run at the \ac{LHC} with a center-of-mass energy of \pPbenergy for a total integrated luminosity of \pPblumi.
 The Pb ions had an energy per nucleon of $1.57 \TeV$ and collided with the $4 \TeV$ proton beam resulting in a net longitudinal boost of the center-of-mass system of $\ycm = 0.465$ in the proton direction relative to the ATLAS laboratory frame.
 The \pPb\ run was divided into two periods between which the directions of the proton and lead beams were
 reversed. 
@@ -14,6 +14,9 @@ When the data from these two periods are combined, the \minbias triggers sampled
 For results reported as a function of centrality, an additional \ac{HighET} trigger selection is included in the most central bin that requires the total transverse energy in both sides of the \ac{FCal} to be at least 65 \GeV.
 The \ac{HighET} trigger sampled a total luminosity of $41.4~\mu\textrm{b}^{-1}$ after prescale and yielded 700 thousand events to the sample.
 Events from this trigger are only included in the 0--1\% centrality interval, where the \ac{HighET} trigger is fully efficient.
+
+Several \acp{HMT} are included to boost the sample used in the azimuthal analysis, with offline \Nch cutoffs at 100, 130, 150, 180, 200, and 225 tracks.
+These \acp{HMT} provide a crucial 6.7 million events, as the \minbias triggers provide only 200 000 events at $\Nch > 150$.
 
 All events are required to pass a set of \minbias selection criteria.
 Events are required to be included in the latest Good Runs List from ATLAS, which rejects events recorded in conjunction with a technical difficulty in the detector.
@@ -63,10 +66,7 @@ The values and uncertainties from this procedure are listed in \cref{table:npart
 For the azimuthally-dependent results, events are selected by their reconstructed charged-particle multiplicity \Nch, with a minimum value of 150.
 Tracks are only counted towards \Nch if they have $\pt > 400 \MeV$, where the reconstruction efficiency is relatively constant.
 This choice permits the straightforward inclusion of several \acp{HMT} into the sample, which is particularly useful because only central events allow a sufficiently high event plane resolution.
-
-Several \acp{HMT} are included to boost the sample, with offline \Nch cutoffs at 100, 130, 150, 180, 200, and 225 tracks.
-These \acp{HMT} provide a crucial 6.7 million events, as the \minbias triggers provide only 200 000 events at $\Nch > 150$.
-The multiplicity distribution is shown in \cref{fig:nch}, along with a scaled version to match the \minbias distribution.
+The multiplicity distribution is shown in \cref{fig:nch} along with a scaled version to match the \minbias distribution.
 
 %% ---------------------------------
 %% event plane determination
@@ -82,18 +82,19 @@ The two-component elliptic flow vector \qt is defined in terms of $Q_2$, normali
 \begin{equation}
   \qt = \frac{Q_2}{\sum_i \et{}_i } \; .\\
 \end{equation}
-
-The elliptic flow used in this analysis is taken from calorimeter cells on the Pb-going side of the detector with $\eta < -2.5$ for period B or $\eta > 2.5$ for period A, which has the beam orientation reversed. This forward cut is made so as to not overlap with the inner detector.
+The elliptic flow used in this analysis is taken from calorimeter cells on the Pb-going side of the detector with $\eta < -2.5$ for period B or $\eta > 2.5$ for period A, which has the beam orientation reversed.
+This forward cut is made so as to not overlap with the inner detector.
 
 The second-order event plane angle \psit is defined as
 \begin{equation}
 2\psit = \mathrm{atan2}(\qt{}_{,y},\qt{}_{,x})
 \end{equation}
-and the magnitude of the flow vector is $|\qt| = \sqrt{\qtx^2 + \qty^2}$.
+and is degenerate under $\psit \rightarrow \psit + \pi$.
+The magnitude of the flow vector is $|\qt| = \sqrt{\qtx^2 + \qty^2}$; this is essentially a proxy for the total event flow $v_2$ but computed only in the forward region to remove auto-correlations with the inner detector.
 An equivalent expression of these equations is
-\[
+\begin{equation}
 \qt = |\qt| e^{i2\psit} = \frac{\sum_i \et{}_i e^{i2\phi_i}}{\sum_i \et{}_i} \; .
-\]
+\end{equation}
 A sketch of the relationship of event plane angle to transverse momentum is shown in \cref{fig:ep_cartoon}.
 
 \begin{figure}[t]
@@ -104,7 +105,8 @@ A sketch of the relationship of event plane angle to transverse momentum is show
 \end{figure}
 
 \subsection{First-order correction}
-Due to non-uniformities in the calorimeter response in azimuth, the measurement of the \qt vector may be biased. This leads to a non-uniform distribution of event plane angle \psit with an additive term proportional to $\cos (2(\psit - \phi_0))$ which is obviously not physical.
+Due to non-uniformities in the calorimeter response the measurement of the \qt vector can be biased.
+This leads to a non-uniform distribution of event plane angle \psit with an additive term proportional to $\cos [2(\psit - \phi_0)]$ which is obviously not physical.
 This bias is corrected by subtracting off the mean \qt on a run-by-run basis.
 The mean components of the \qt vector are shown in \cref{fig:mean_q2}.
 The correction factors are statistically consistent in different multiplicity intervals, so all multiplicities are combined to increase their statistical significance.
@@ -129,7 +131,9 @@ In order to correct for these and make $\langle \qt{}_i \qt{}_j \rangle$ proport
   -\langle\qtx\qty\rangle & \langle \qtx^2 \rangle + D
   \end{array} \right) \; ,
 \end{equation}
-where $D = \sqrt{\langle \qtx^2 \rangle \langle \qty^2 \rangle - \langle \qtx \qty \rangle ^2}$ and $N = D\left(\langle \qtx^2 \rangle + \langle\qty^2\rangle + 2D\right)$. The components of the covariance matrix are shown in \cref{fig:mean_q2_cov}. This multiplication causes the corrected \qt vector to have no skew and have the same width in the \qtx and \qty axes.
+where $D = \sqrt{\langle \qtx^2 \rangle \langle \qty^2 \rangle - \langle \qtx \qty \rangle ^2}$ and $N = D\left(\langle \qtx^2 \rangle + \langle\qty^2\rangle + 2D\right)$.
+The components of the covariance matrix are shown in \cref{fig:mean_q2_cov}.
+This multiplication removes the skew from the \qt distribution and causes it to have the same width in the \qtx and \qty axes.
 
 \begin{figure}[t]
 \centering
@@ -191,7 +195,7 @@ Also, the alternate subdetectors are calculated using the \qt from tracks, weigh
 \label{sec:corr_func}
 The two-particle correlation function is defined as the ratio of two-particle to single-particle momentum spectra:
 \begin{equation} \label{eq:corr_deff}
-  C\left(\mathbf{p}^a, \mathbf{p}^b; \kt, \kphi\right) \equiv \dfrac{\left(\dfrac{dN^{ab}}{d^3\mathbf{p}^a d^3\mathbf{p}^b}\right)}{\left(\dfrac{dN^{a}}{d^3\mathbf{p}^a}\right)\left(\dfrac{dN^{b}}{d^3\mathbf{p}^b}\right)} \,,
+  C\left(\mathbf{p}^a, \mathbf{p}^b; \kt, \kys, \kphi\right) \equiv \dfrac{\left(\dfrac{dN^{ab}}{d^3\mathbf{p}^a d^3\mathbf{p}^b}\right)}{\left(\dfrac{dN^{a}}{d^3\mathbf{p}^a}\right)\left(\dfrac{dN^{b}}{d^3\mathbf{p}^b}\right)} \,,
 \end{equation}
 for pairs of particles with four-momenta $p^a$ and $p^b$.
 This definition has the useful feature that most single-particle efficiency, acceptance, and resolution effects cancel in the ratio.
