@@ -560,7 +560,8 @@ Under the constraints of Lorentz symmetry and neglecting fluctuations, the stres
 %% T^{\mu\nu} = \left( \varepsilon + p \right) u^\mu u^\nu - p g^{\mu\nu} %% metric term has opposite sign for time-positive metric
 T^{\mu\nu}_{(0)} = \varepsilon u^\mu u^\nu - p \Delta^{\mu\nu}
 \end{equation}
-where $\varepsilon$ and $p(\varepsilon)$ are respectively the energy density and pressure in the local rest frame and \( \Delta^{\mu\nu} \equiv g^{\mu\nu} - u^\mu u^\nu \) is the space-like projection operator\footnote{The four-velocity $u^\mu$ is itself the time-like projection operator.}.
+where $\varepsilon$ and $p(\varepsilon)$ are respectively the energy density and pressure in the local rest frame.
+The co-moving time-like and space-like projection operators are $u^\mu u^\nu$ and \( \Delta^{\mu\nu} \equiv g^{\mu\nu} - u^\mu u^\nu \) respectively.
 In the absence of sources there are four conserved quantities corresponding to energy and three components of momentum.
 \begin{equation}
   \label{eq:em_cons}
@@ -610,7 +611,7 @@ In the conformal limit, for instance, $\zeta \rightarrow 0$ and there are five n
 \subsection{Applicability of hydrodynamics}
 \label{subsec:hydro_applicability}
 
-%% possibly flesh this section out more?
+%% todo: possibly flesh this section out more?
 %% dN/d\eta / \Npart \propto s^0.15 in AA and s^0.11 in pp (\sqrt{s}^0.3; \sqrt{s}^0.22) \cite{Aamodt:2010pb}
 %% strongly-coupled: small eta/s ; weakly coupled gas: large eta
 %% \todo{e.g. wavelength or \mfp < L}
@@ -625,7 +626,7 @@ In the conformal limit, for instance, $\zeta \rightarrow 0$ and there are five n
 
 In order for hydrodynamics to be capable of a valid description, additional terms in the expansion of $T^{\mu\nu}$ must be small compared to existing terms.
 The magnitude of the $\sigma^{\mu\nu}$ gradients in \cref{eq:sigma_tensor} can be estimated by the inverse system size $L^{-1}$.
-The 1st-order term must be small compared to the 0th-order term, so a condition for the validity of hydrodynamics is %% eta/(ep+p) from arxiv:1712.05815 \cite{Romatschke:2017ejr} pg. 28
+The 1st-order term must be small compared to the 0th-order term, so a condition for the validity of hydrodynamics is \cite{Romatschke:2017ejr} %% eta/(ep+p) from arxiv:1712.05815 pg. 28
 \begin{equation}
   \frac{\eta}{(\varepsilon + p)L} \ll 1 \;.
 \end{equation}
@@ -634,13 +635,13 @@ With the approximation that the mean free path is \(\mfp = \frac{\eta}{\varepsil
   \mathrm{Kn} \equiv \frac{\mfp}{L} \ll 1 \;.
 \end{equation}
 
-The series produced in the hydrodynamic gradient expansion is not convergent \cite{Denicol:2016bjh}.
+The series produced in the hydrodynamic gradient expansion is not strictly convergent \cite{Denicol:2016bjh}.
 This is because the number of terms grows like the factorial of the order of the expansion, and there is no lucky magic that exponentially suppresses the magnitude of the transport coefficients.
 The Knudsen number in heavy ion simulations is not typically orders of magnitudes below unity \cite{Niemi:2014wta}; however, low-order viscous hydrodynamics has had ``unreasonable success'' at describing many global properties of heavy ion collisions.
 
 Recent work has shown that the hydrodynamic expansion can be Borel-resummed \cite{Romatschke:2016hle,Romatschke:2017vte}, a method that produces an analytic continuation of the series.
 The stress-energy tensor is split into a hydrodynamic attractor and a non-hydrodynamic component, with the cost that the transport coefficients become explicit functions of $\varepsilon$ and the gradients of $\varepsilon$ and $u^\mu$.
-The condition for the applicability of hydrodynamics is weakened to the statement that the non-hydro modes are negligible.
+The condition for the applicability of hydrodynamics is weakened from thermal equilibrium to the statement that these non-hydro modes are negligible.
 It appears in many examples that the non-hydro modes decrease exponentially quickly, which potentially explains the ``unreasonable success'' of viscous hydrodynamics.
 This also helps to explain the observations of some hydro-like phenomena in \pPb and even \pp collisions, where the small system size results in Knudsen numbers that are often greater than unity.
 
@@ -689,12 +690,12 @@ The calculation of the shear viscosity in the strongly-coupled conformal limit g
   \frac{\eta}{s} \geq \frac{1}{4\pi} \approx 0.08
 \end{equation}
 which is remarkably close to the bound from the uncertainty principle in \cref{eq:eta_over_s_uncertainty}.
-This bound is not expected to be exact in \qcd, because it does not have all the symmetries of the corresponding supersymmetric \ac{CFT}.
 Similarly the bulk viscosity has a temperature-dependent limit \cite{Buchel:2007mf}
 \begin{equation}
   \frac{\zeta}{\eta} \geq 2\left(\frac{1}{3} - c_s^2 \right)
 \end{equation}
 which is positive in a non-conformal theory and larger than the perturbative calculation suggests. %% $\zeta/\eta \approx 15(1/3 - c_s^2)^2 \sim \alpha_s^4$.
+These bounds are not expected to be exact in \qcd because it does not have all the symmetries of the corresponding supersymmetric \ac{CFT}.
 
 Experimental measurements of collective flow anisotropies have been used to extract an experimental value of $\eta/s \approx 0.2 \approx 2.5\frac{1}{4\pi}$ \cite{Heinz:2013th}.
 Recent simulations using the Kubo relations on the lattice for pure glue also report $\eta/s \approx 0.2$ near the critical point \cite{Astrakhantsev:2017nrs}, with hints that it rises slowly with the temperature.
@@ -797,18 +798,18 @@ If $\alpha = 1$, the correlation function is a generalized exponential, and the 
 It is common practice to fix $\alpha$ to one of these two values\footnote{The source densities corresponding to these stable functions have infinite variance if $\alpha < 2$, but the positive moments of the stable function itself are finite.
 In $d$ spatial dimensions, the normalized $n^\textrm{th}$ $|q|$-moment of the correlation function's enhancement is given by
 \begin{equation}
-\left< q^n \right>_{\alpha} = \frac{\Gamma\left(\frac{n+d}{\alpha}\right)}{R^n \Gamma\left(\frac{d}{\alpha}\right)}
+\left< q^n \right>_{\alpha} = \frac{\Gamma\left(\frac{n+d}{\alpha}\right)}{R^n \Gamma\left(\frac{d}{\alpha}\right)} \; .
 \end{equation}
-If it was assumed that the 1st moment was preserved under a fit (an assumption with validity depending heavily on the shape of the measured correlation function), the fit parameters measured at one choice of $\alpha$ could be related to those at another choice of $\alpha$, for instance $\Rinv^{\textrm{exp}} \sim \sqrt{\pi} \Rinv^{\textrm{gauss}}$.
+If it is assumed that the 1st moment was preserved under a fit (an assumption with validity depending heavily on the shape of the measured correlation function), the fit parameters measured at one choice of $\alpha$ could be related to those at another choice of $\alpha$, for instance $\Rinv^{\textrm{exp}} \sim \sqrt{\pi} \Rinv^{\textrm{gauss}}$.
 This relation is sometimes used in the literature but it lacks rigorous motivation or support.}.
-For the ATLAS \pPb results, $\alpha$ is fixed to 1 because this choice has good agreement with data.
+For the ATLAS \pPb results $\alpha$ is fixed to 1 because this choice has good agreement with data.
 In many other results $\alpha = 2$ is used as this choice tends to work particularly well in \AA collisions.
 
 %% experimental definition of correlation function in \cref{\label{sec:corr_func}}
 
 \subsubsection{Coordinate system}
 \label{subsubsec:coordinate}
-In three dimensions, a \ac{LCMF} is used, which is boosted to the longitudinal rest-frame of each pair of particles.
+In three dimensions a \ac{LCMF} is used, which is boosted to the longitudinal rest-frame of each pair of particles.
 The coordinate axes are the Bertsch-Pratt coordinate system \cite{Pratt:1986cc,Bertsch:1989vn,Csorgo:1989kq}, which uses the ``out-side-long'' axes to separate the transverse part into components parallel (``out'') and perpendicular (``side'') to the pair's transverse momentum \kt.
 \begin{align}
 \qout &\equiv& \frac{\mathbf{k}_{\mathrm{T}} \cdot \mathbf{q}}{\left| \mathbf{k}_{\mathrm{T}} \right|}
@@ -816,7 +817,7 @@ The coordinate axes are the Bertsch-Pratt coordinate system \cite{Pratt:1986cc,B
 \qside &\equiv& \frac{(\hat{\mathbf{z}} \times \mathbf{k}_{\mathrm{T}}) \cdot \mathbf{q}}{\left| \mathbf{k}_{\mathrm{T}} \right|} &=& - \frac{\hat{\mathbf{z}} \cdot \left(\mathbf{p}^a_{\mathrm{T}} \times \mathbf{p}^b_{\mathrm{T}}\right)}{\kt}\\
 \qlong &\equiv& \hat{\mathbf{z}} \cdot \mathbf{q} &=& \frac{p^a_{z}E^{b} - p^b_{z}E^{a}}{\sqrt{k_{0}^2 - k_{z}^2}}
 \end{align}
-In a longitudinally-expanding hydrodynamic system, this coordinate system is the local rest frame of the fluid elements.
+In a longitudinally-expanding hydrodynamic system this coordinate system is the local rest frame of the fluid elements.
 
 \begin{figure}[t]
   \includegraphics{hbt_radii_outsidelong.png}
