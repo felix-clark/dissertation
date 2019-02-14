@@ -197,8 +197,7 @@ The two-particle correlation function is defined as the ratio of two-particle to
 \begin{equation} \label{eq:corr_deff}
   C\left(\mathbf{p}^a, \mathbf{p}^b; \kt, \kys, \kphi\right) \equiv \dfrac{\left(\dfrac{dN^{ab}}{d^3\mathbf{p}^a d^3\mathbf{p}^b}\right)}{\left(\dfrac{dN^{a}}{d^3\mathbf{p}^a}\right)\left(\dfrac{dN^{b}}{d^3\mathbf{p}^b}\right)} \,,
 \end{equation}
-for pairs of particles with four-momenta $p^a$ and $p^b$.
-This definition has the useful feature that most single-particle efficiency, acceptance, and resolution effects cancel in the ratio.
+for pairs of particles with momenta $\mathbf{p}^a$ and $\mathbf{p}^b$.
 The correlation function is expressed as a function of the relative momentum $\mathbf{q} \equiv \mathbf{p}^a - \mathbf{p}^b$ in intervals of the transverse component \kt of the average momentum $\mathbf{k} \equiv \left(\mathbf{p}^a + \mathbf{p}^b\right)/2$.
 The correlation function is measured in intervals of transverse pair momentum \kt and either the rapidity \kys or the azimuthal angle of the pair with respect to the second-order event plane, $\kphi-\psit$.
 Because the second-order event plane angle is two-fold degenerate, the observables are invariant under an azimuthal rotation $\kphi \rightarrow \kphi + \pi$, and can be expressed without loss of generality as functions of $\tdpk$. %% \equiv 2(\kphi-\psit)$. %% come up with other notation?
@@ -212,7 +211,6 @@ The kinematic variables for the azimuthal analysis are shown in a transverse pro
 \end{figure}
 
 The numerator and denominator of \Eqn{\ref{eq:corr_deff}} are expressed in terms of the variables of interest with the following notation:
-
 \begin{align}
   A\left[\mathbf{q};\kt, \kys, \tdpk\right] &\equiv \left. dN_\textrm{pair}/d^3 \mathbf{q} \right|_{\textrm{same}} \\
   B\left[\mathbf{q};\kt, \kys, \tdpk\right] &\equiv \left. dN_\textrm{pair}/d^3 \mathbf{q} \right|_{\textrm{diff}}
@@ -247,6 +245,8 @@ The decays rejected are the following:
 \subsection{Event mixing}
 \label{subsec:evt_mixing}
 The event-mixed background $B(q) \equiv \left. dN/dq \right|_{\textrm{mix}}$ is constructed by selecting one particle from each of two events in the same event class as $A(q)$.
+This approach has the useful property that most single-particle efficiency, acceptance, and resolution effects cancel in the ratio.
+This event mixing approach is therefore used except in the azimuthally-dependent analysis where is precluded by the event plane resolution correction.
 Each particle in the background fulfills the same selection requirements as those used in the same-event distribution.
 Event classes are categorized by centrality so that events are only compared to others with similar multiplicities and momentum distributions.
 Events are sorted by $z_\textrm{PV}$ so that the background distribution is constructed with pairs of tracks originating from nearby space points, which is necessary for $B(q)$ to accurately represent the as-installed detector.
