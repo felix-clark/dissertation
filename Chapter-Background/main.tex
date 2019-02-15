@@ -13,15 +13,15 @@ Since the strong interaction only acts over a length scale of about 2 fm, the me
 The charged pion was indeed discovered experimentally in 1947 \cite{Lattes:1947mw}.
 Pions can be interpreted as the Nambu-Goldstone bosons corresponding to the spontaneously broken chiral symmetry, which explains their relatively small masses.
 
-The expanding body of observed hadrons --- particles bound by the strong nuclear interaction --- and the allowed decays thereof suggested additional conserved quantum numbers suggested that they could be composed of constituent particles.
+The expanding body of observed hadrons --- particles bound by the strong nuclear interaction --- and the allowed decays thereof suggested additional conserved quantum numbers and that they could be composed of constituent particles.
 It was noticed that hadrons can be organized by their quantum numbers in a manner described by an $SU(3)$ \emph{flavor} symmetry \cite{GellMann:1962xb}.
 This suggests that hadrons are composed of constituent particles called \emph{quarks}, each with a quantum number called flavor that can takes a value of ``up'' ($u$), ``down'' ($d$), or ``strange'' ($s$)\footnote{Three heavy flavors have since been discovered, ``charm'' ($c$), ``bottom'' ($b$), and ``top'' ($t$), but heavy quarks and the hadrons composed of them decay very rapidly due to their larger mass.}.
 The quark model was not immediately accepted because free quarks were not (and still have not been) observed.
 Scattering experiments were needed to probe the internal structure of hadrons.
 
 Because electrons are point-like particles to the limits of current experiments, a scattering process $e^- A \rightarrow e^- X$ is dependent only on the internal structure of the target $A$.
-The electron scatters through a virtual photon that interacts directly with the hadron in a process called \ac{DIS}\footnote{``deep'' because it probes the constituent structure of the target, ``inelastic'' because kinetic energy and matter are exchanged in the creation of the product particles}.
-The kinematics of the electron in type of experiment constrain the structure of the target hadrons.
+The electron scatters through a virtual photon that interacts directly with the hadron in a process called \ac{DIS}\footnote{``deep'' in that it probes the constituent structure of the target and ``inelastic'' because kinetic energy and matter are exchanged in the creation of the product particles}.
+The kinematics of the electron in this type of experiment constrain the structure of the target hadrons.
 
 \begin{figure}[t]
   \includegraphics{dis_electron_proton.png}
@@ -34,17 +34,18 @@ Under the constraints of Lorentz and gauge invariance, the cross-section of an u
   \frac{d^2 \sigma}{dx \, dQ^2} = \frac{4\pi\alpha^2_\textrm{EM}}{2xQ^4}\left[ \left(1+(1-y)^2\right) F_2\left(x, Q^2\right) - y^2 F_L \left(x, Q^2\right) \right]
   \label{eq:dis}
 \end{equation}
-where $Q^2 = -q^2$ is the absolute magnitude squared of the photon's virtuality, $x = \frac{Q^2}{2q \cdot P}$, and $y = \frac{q \cdot P}{k \cdot P}$ is the fraction of the lepton's energy lost in the nucleon's rest frame.
+where $Q^2 = -q^2$ is the absolute magnitude squared of the photon's virtuality, $y = \frac{q \cdot P}{k \cdot P}$ is the fraction of the lepton's energy lost in the nucleon's rest frame, and $x = \frac{Q^2}{2q \cdot P}$.
 In the parton model, which describes the proton as approximately-free point-like quarks in the infinite longitudinal momentum frame, $x$ is interpreted as the fraction of the target proton's momentum carried by a struck parton.
 The structure functions $F_i(x, Q^2)$ describe the inherent internal structure of the proton.
-The longitudinal structure function $F_L = F_2 - 2xF_1$ is zero by the Callan-Gross relation \cite{Callan:1969uq}, and experimentally the ratio $2xF_1 / F_2$ is consistent with 1 independent of $x$.
-In the parton model, where the proton is described in terms of free point-like quarks constituents, the structure function $F_2$ is decomposed into \acp{PDF}
+The longitudinal structure function $F_L = F_2 - 2xF_1$ is zero by the Callan-Gross relation \cite{Callan:1969uq}.
+In experiment the ratio $2xF_1 / F_2$ is consistent with unity independent of $x$.
+In the parton model, where the proton is described in terms of free point-like quark constituents, the structure function $F_2$ is decomposed into \acp{PDF}
 \begin{equation}
 F_2 \left(x, Q^2\right) = x \sum_q e_q^2 f_{q/p}(x)
 \end{equation}
 to lowest order in the strong coupling constant $\alpha_s$.
 The independence of $Q^2$ of the \acp{PDF} is a manifestation of their point-like description in the parton model and is known as \emph{Bjorken scaling}.
-Logarithmic corrections are understood theoretically and arise as gluon radiation from the quarks becomes relevant, particularly at small $x$ (\cref{fig:proton_f2}).
+Logarithmic corrections are understood theoretically and arise as gluon radiation from the quarks becomes relevant at small $x$ (\cref{fig:proton_f2}).
 
 \begin{figure}[t]
   %% page 326 of particle review
@@ -57,7 +58,7 @@ Logarithmic corrections are understood theoretically and arise as gluon radiatio
 An experimental and phenomenological description of the nucleon structure functions does not provide a complete description of the interactions among nucleon constituents.
 The success of gauge theories in describing \ac{QED} ($U(1)$) and electroweak theory ($U(2) = SU(2) \otimes U(1)$) suggests that some other gauge theory may be able to describe the nuclear interaction.
 A quantum field theory with an $SU(N_c)$ ``color'' symmetry with $N_c$ colors, called \qcd, is one such candidate.
-For it to be a believable description of the strong interaction, it must not only be consistent with experimental observations, but it must also explain why free quarks have never been observed.
+For it to be a believable description of the strong interaction it must not only be consistent with experimental observations but also explain why free quarks have never been observed.
 The rate of hadronic production in electron-positron collisions is proportional to $N_c$, so experimental measurements of the ratio\footnote{at energies above the $b\bar{b}$ threshold and below the mass of the $Z$ boson}
 \begin{equation}
 R \equiv \frac{\sigma\left(e^+ e^- \rightarrow \textrm{hadrons}\right)}{\sigma\left(e^+ e^- \rightarrow \mu^+ \mu^- \right)} \approx N_c \sum_{q \in \{u,d,s,c,b\}} e_q^2 = \frac{11}{9} N_c
@@ -72,17 +73,19 @@ The gauge-invariant lagrangian density of \qcd \cite{Wilczek:2000ih} is that of 
 \end{equation}
 Here repeated indices are summed, where $\mu$ and $\nu$ indicate spacetime indices, $a$, $b$, and $c$ indicate color indices in the fundamental ($N=3$) representation, and $A$, $B$, and $C$ indicated color indices in the adjoint ($N=8$) representation.
 The slash notation refers to contraction with the gamma matrices $\{\gamma^\mu, \gamma^\nu\} = 2\eta^{\mu\nu}$\footnote{with Minkowski signature $(+---)$}.
-The covariant derivative
-\[ D_\mu \equiv \partial_\mu - i g A^C_\mu t^C\]
+The covariant derivative is given by
+\begin{equation}
+  D_\mu \equiv \partial_\mu - i g A^C_\mu t^C
+\end{equation}
 where $A^C_\mu$ is the gluon field, $t^C$ are the generators of the $SU(3)$ gauge group, and $g$ is the strong charge constant.
 The constant $g$ in the lagrangian is always squared when computing rates from quantum amplitudes, so physical results are typically expressed in terms of
 \begin{equation}
   \alpha_s \equiv \frac{g^2}{4\pi} \; ,
 \end{equation}
-typically called the strong coupling constant.
+which is typically called the strong coupling constant.
 The gluon field strength tensor is
 \[ G^A_{\mu\nu} \equiv \partial_\mu A^A_\nu - \partial_\nu A^A_\mu + g f^{ABC} A^B_\mu A^C_\nu \]
-with the $SU(3)$ structure constants defined such that
+where the $SU(3)$ structure constants $t^A$ are defined such that
 \[ [t^A,t^B] = if^{ABC}t^C \; \footnote{In the $SU(2)$ gauge group the adjoint representation is three-dimensional and the structure constants are given by the anti-symmetric Levi-Civita symbol $\epsilon^{ABC}$}.\]
 The quark fields are defined such that the mass matrix $m$ is diagonal:
 \[ \bar{\psi}m\psi = \sum_{q = u,d,s,\ldots} m_{q}\bar{q}q \]
@@ -96,10 +99,10 @@ This procedure induces in the \qcd vacuum a breaking of the chiral symmetry $SU(
 \end{figure}
 
 %% The QCD Lagrangian has a symmetry under the gauge transformation defined as... %% we don't really need to get explicit about gauge transformations
-The physical interaction vertices of \qcd are a 3-point quark-gluon vertex analogous to he \ac{QED} vertex, a 3-gluon vertex and a 4-gluon vertex (\cref{fig:qcd_feynman}).
+The physical interaction vertices of \qcd are a 3-point quark-gluon vertex analogous to the \ac{QED} vertex, a 3-gluon vertex and a 4-gluon vertex (\cref{fig:qcd_feynman}).
 A scalar ghost field\footnote{which has a spin of 0 yet anti-commutes like a fermion} also couples to the gluon as is generally necessary in non-abelian gauge theories to prevent over-counting gauge-equivalent states \cite{Faddeev:1967fc}.
 The non-abelian nature of \qcd manifests in Feynman diagrams as the gluon self-interaction vertices.
-The gluon-gluon interactions make \qcd difficult to calculate with.
+The gluon-gluon interactions make \qcd difficult to apply in theoretical calculations.
 In a classical theory, they prevent the principle of superposition from being applied in chromodynamics.
 The highly-nontrivial gluon self-interaction is a crucial ingredient in the richness of nuclear physics.
 
@@ -242,23 +245,21 @@ With the statistical factor $\eta=\pm1$ for bosons/fermions and $\eta=0$ for non
 \frac{g E^2}{2\pi^2} \frac{1}{e^{E/T} - \eta}
 \end{equation}
 where $g$ is a degeneracy factor e.g. for multiple spin values.
-For non-identical particles this yields expressions for the energy and number density
-\begin{align}
-  \varepsilon_\textrm{NI} =& g\frac{3T^4}{\pi^2} \\
-  n_\textrm{NI} =& g\frac{T^3}{\pi^2}
-\end{align}
-with
+%% \begin{align}
+%%   \varepsilon_\textrm{NI} =& g\frac{3T^4}{\pi^2} \\
+%%   n_\textrm{NI} =& g\frac{T^3}{\pi^2}
+%% \end{align}
+For bosons this yields expressions for the energy and number density
 \begin{align}
   \varepsilon_\textrm{BE} =& g\frac{\pi^2 T^4}{30} \\
   n_\textrm{BE} =& g\frac{\zeta(3) T^3}{\pi^2}
 \end{align}
-for bosons and
+and for fermions
 \begin{align}
   \varepsilon_\textrm{FD} =& g\frac{7 \pi^2 T^4}{240} = \frac{7}{8} \varepsilon_\textrm{BE} \\
-  n_\textrm{FD} =& g\frac{3 \zeta(3) T^3}{4 \pi^2} = \frac{3}{4} n_\textrm{BE}
+  n_\textrm{FD} =& g\frac{3 \zeta(3) T^3}{4 \pi^2} = \frac{3}{4} n_\textrm{BE} \; .
 \end{align}
-for fermions.
-Quantum statistical effects increase the energy and number density for bosons and decrease them for fermions so $\varepsilon_\textrm{FD} < \varepsilon_\textrm{NI} < \varepsilon_\textrm{BE}$.
+Relative to the energy and number density for non-identical particles, quantum statistical effects increase the density for bosons and decrease it for fermions.
 
 For a non-interacting mixture the total energy density is
 \begin{equation}
@@ -275,7 +276,7 @@ for $N_f$ active quark flavors at the temperature scale.
 At a phase transition where the active thermodynamic degrees of freedom become quarks and gluons from pions the ratio $\varepsilon/T^4$ would be expected to increase by an order of magnitude.
 
 \subsection{Thermal quantum field theory}
-The probability of a thermal system to be in state $\psi$ is proportional to $e^{-\beta \hat{H}(\psi)}$ where $\beta = 1/T$ is the coldness and $H$ is the Hamiltonian of the configuration.
+The probability of a thermal system to be in state $\psi$ is proportional to $e^{-\beta H(\psi)}$ where $\beta = 1/T$ is the coldness and $H$ is the Hamiltonian of the configuration.
 This is generally expressed in terms of the partition function
 \begin{equation}
   \label{eq:z_classical}
@@ -653,8 +654,8 @@ Assumptions or results from microscopic theory are required to say anything abou
 The \qcd \ac{EoS} is under control from lattice calculations, as discussed in \cref{subsec:lattice}. %% need to number subsections to have proper section number reference.
 
 %% kinetic theory: $\eta/s = \tau_R T / 5$ where \tau_R is the relaxation time
-At high temperatures, the typical momentum is large, so the coupling is weak, and perturbative calculations might be expected to apply.
-To \ac{LO}, the \ac{pQCD} shear viscosity is \cite{Arnold:2000dr}
+At high temperatures the typical momentum is large, so the coupling is weak and perturbative calculations might be expected to apply.
+To \ac{LO} the \ac{pQCD} shear viscosity is \cite{Arnold:2000dr}
 \begin{equation}
 \eta \propto \frac{T^3}{\alpha_s^2 \ln \left( 1/\alpha_s\right) }
 \end{equation}
@@ -667,9 +668,9 @@ to \ac{LO}.
 The bulk viscosity is suppressed by four powers of $\alpha_s$ relative to the shear viscosity, and is expected to vanish for conformal theories and in both in the low and high temperature limits.
 It is therefore often neglected in discussions of the \qgp viscosity, though it can be relevant near the transition temperature and can enhance the Fourier harmonics of the particle production \cite{Noronha-Hostler:2013gga}.
 
-The entropy density $s = (\varepsilon + p)/T$ also scales with the cube of temperature, so the shear viscosity is often normalized by the entropy density to from the specific viscosity $\eta/s$.
+The entropy density $s = (\varepsilon + p)/T$ also scales with the cube of temperature, so the shear viscosity is often normalized by the entropy density to form the specific viscosity $\eta/s$.
 In \ac{pQCD} the value of the specific viscosity is close to unity near the critical point.
-As an aside, note that the condition for the validity of hydrodynamics from the previous discussion can be expressed as
+The condition for the validity of hydrodynamics from the previous discussion can be expressed as
 \begin{equation}
   \frac{\eta}{s} \ll LT \;,
 \end{equation}
@@ -726,13 +727,15 @@ The generation and interactions of $n$ particles before this hypersurface is des
 The hypersurface $\partial\Sigma$ is not a region where each particle is created at, but rather the surface of final interaction of the emitted particles with the bulk.
 Though we only integrate $s_n$ over $\partial\Sigma$, the interactions before freeze-out are swept into the definition of $s_n$.
 For two particles the following is written out:
-\begin{align}
+\begin{equation}
+  \begin{split}
   C(p_a,p_b) &\equiv \frac{E_a E_b \frac{dN}{d^3 p_a \, d^3 p_b}}{E_a \frac{dN}{d^3 p_a} E_b \frac{dN}{d^3p_b}} 
   \\&= \frac{\iint_{\partial\Sigma} d^3 x_a \, d^3 x_b \, s_2 (p_a, x_a; p_b, x_b) \left| \braket{ p_a, p_b | x_a, x_b } \right|^2}{\int_{\partial\Sigma} d^3 x_a \, s_1 (p_a, x_a) \, \int_{\partial\Sigma} d^3 x_b \, s_1(p_b, x_b)}
-\end{align}
+  \end{split}
+\end{equation}
  The "smoothness approximation" is typically invoked to approximate $\mathbf{p}_a \approx \frac{m_a}{m_a+m_b} \mathbf{k}$.
 It is then convenient to define a normalization of the two-particle source density.
-(We will skip a detailed discussion of the domain of integration of the variable $r = x_a - x_b$ and the equal-time approximation - for more see \cite{Lisa:2005dd}.) This re-normalization $S_2$ of $s_2$ is defined as follows:
+(We will skip a detailed discussion of the domain of integration of the variable $r = x_a - x_b$ and the equal-time approximation - for more see \cite{Lisa:2005dd}.) This normalization $S_2$ of $s_2$ is defined as follows:
 \begin{equation} S_{2, \mathbf{k}} (\mathbf{r}) \equiv \frac{\iint_{\partial\Sigma} d^3 x_a \, d^3 x_b \, s_2 \left(\frac{m_a}{m_a+m_b}\mathbf{k}, x_a; \frac{m_b}{m_a+m_b}\mathbf{k}, x_b\right) \, \delta^3(\mathbf{r} - \mathbf{x}_a + \mathbf{x}_b)}{\int_{\partial\Sigma} d^3 x_a \, s_1 \left(\frac{m_a}{m_a+m_b}\mathbf{k}, x_a\right) \, \int_{\partial\Sigma} d^3 x_b \, s_1\left(\frac{m_b}{m_a+m_b}\mathbf{k}, x_b\right)}\end{equation}
 If the resonances and other higher-order effects are ignored or removed, one can make the approximation that $s_2 (p_a, x_a; p_b, x_b) \approx s_1(p_a, x_a) s_1(p_b, x_b)$ which imposes the normalization constraint $\int d^3 r \, S_{2,\mathbf{k}}(\mathbf{r}) = 1$.
 
@@ -763,13 +766,15 @@ Pairs in which one or both pions do not come from the core should be considered 
 If the fraction of pairs with pions that both originate from the core is parameterized by $\lambda$, the source function in \cref{eq:wavefunction_kernel} should be expanded as
 \begin{equation} S_{2}(r;\mathbf{k}) \rightarrow \lambda S_{2,\textrm{core}} (r;\mathbf{k}) + (1-\lambda) S_{2,\textrm{halo}} (r;\mathbf{k}) \end{equation}
 where $S_c$ is the source function for pairs with both pions in the core and $S_h$ is the source for pairs involving the halo.
-Pairs from the halo have a trivial wavefunction, since they are non-interacting.
-Thus the $\left(\left|\braket{\mathbf{q}|\mathbf{r}}\right|^2 - 1\right)$ term multiplying $S_h$ vanishes, and the correlation function becomes (hereafter we suppress some labels and understand $S$ to be the two-particle source function of the core)
-\begin{align}
-C_\mathbf{k}(\mathbf{q}) &= 1 + \lambda \int d^3 r \, S_{\mathbf{k}}(\mathbf{r}) \left(\left|\braket{\mathbf{q}|\mathbf{r}}\right|^2 - 1 \right)\\
-&= (1-\lambda) + \lambda \int d^3 r \, S_{\mathbf{k}}(\mathbf{r}) \left|\braket{\mathbf{q}|\mathbf{r}}\right|^2\\
-&= (1-\lambda) + \lambda \int d^3 r \, S_{\mathbf{k}}(\mathbf{r}) K(\mathbf{q},\mathbf{r}) \left(1 + s \cos\left(\mathbf{q}\cdot\mathbf{r}\right)\right)
-\end{align}
+Pairs from the halo have a trivial wavefunction since they are effectively non-interacting.
+For these the $\left(\left|\braket{\mathbf{q}|\mathbf{r}}\right|^2 - 1\right)$ term multiplying $S_h$ vanishes, and the correlation function becomes (hereafter we suppress some labels and understand $S$ to be the two-particle source function of the core)
+\begin{equation}
+  \begin{split}
+    C_\mathbf{k}(\mathbf{q}) &= 1 + \lambda \int d^3 r \, S_{\mathbf{k}}(\mathbf{r}) \left(\left|\braket{\mathbf{q}|\mathbf{r}}\right|^2 - 1 \right)\\
+    &= (1-\lambda) + \lambda \int d^3 r \, S_{\mathbf{k}}(\mathbf{r}) \left|\braket{\mathbf{q}|\mathbf{r}}\right|^2\\
+    &= (1-\lambda) + \lambda \int d^3 r \, S_{\mathbf{k}}(\mathbf{r}) K(\mathbf{q},\mathbf{r}) \left(1 + s \cos\left(\mathbf{q}\cdot\mathbf{r}\right)\right)
+  \end{split}
+\end{equation}
 where we have written the wavefunction as $\braket{\mathbf{q}|\mathbf{r}} = \sqrt{K(\mathbf{q},\mathbf{r})} \braket{\mathbf{q}|\mathbf{r}}_{\textrm{free}}$, with $K$ representing corrections to the free-particle wavefunction, and where $s$ is a spin factor such that $s = \pm 1$ for bosons/fermions and $0$ for distinct particles.
 For instance, $K = G(q)$ where $G(\qinv)$ is the Gamow factor accounts for Coulomb interactions between the final-state pions.
 It is convenient to allow $K$ to be a function only of $q$, thus factoring it out of the integral.
