@@ -167,6 +167,12 @@ Once these two corrections are applied run-by-run, the \psit distribution is fla
 
 \subsection{Event plane angular resolution}
 \label{subsec:epres}
+\begin{figure}[t]
+\centering
+\includegraphics{epRes.pdf}\\
+\caption{The event plane resolution as a function of the magnitude of the flow vector $|\qt|$ calculated using calorimeter cells with $\eta < -2.5$. Four different intervals of reconstructed track multiplicity \Nch used in the analysis are shown. The systematic uncertainties are shown in the bands, and statistical uncertainties are too small to be visible.}
+\label{fig:ep_res}
+\end{figure}
 
 The event plane angular resolution, defined as $\langle \cos(2 \delta \psit) \rangle$ where $\delta \psit$ is the difference between true and measured \psit, is shown in \cref{fig:ep_res} measured with the calorimeters in the lead-going direction at $\eta < -2.5$.
 The resolution is shown separately for periods A and B, but since they are comparable only the combined resolution is used.
@@ -183,19 +189,14 @@ The alternate subdetectors are shifted by $\Delta\eta = +0.5$ and the difference
 Also, the alternate subdetectors are calculated using the \qt from tracks weighted by their \pt.
 This difference is also symmetrized, and these two contributions are added in quadrature.
 
-\begin{figure}[t]
-\centering
-\includegraphics{epRes.pdf}\\
-\caption{The event plane resolution as a function of the magnitude of the flow vector $|\qt|$ calculated using calorimeter cells with $\eta < -2.5$. Four different intervals of reconstructed track multiplicity \Nch used in the analysis are shown. The systematic uncertainties are shown in the bands, and statistical uncertainties are too small to be visible.}
-\label{fig:ep_res}
-\end{figure}
 
-
+\FloatBarrier
 \section{Correlation function}
 \label{sec:corr_func}
 The two-particle correlation function is defined as the ratio of two-particle to single-particle momentum spectra:
 \begin{equation} \label{eq:corr_deff}
-  C\left(\mathbf{p}^a, \mathbf{p}^b; \kt, \kys, \kphi\right) \equiv \dfrac{\left(\dfrac{dN^{ab}}{d^3\mathbf{p}^a d^3\mathbf{p}^b}\right)}{\left(\dfrac{dN^{a}}{d^3\mathbf{p}^a}\right)\left(\dfrac{dN^{b}}{d^3\mathbf{p}^b}\right)} \,,
+  %% ; \kt, \kys, \kphi
+  C\left(\mathbf{p}^a, \mathbf{p}^b\right) \equiv \dfrac{\left(\dfrac{dN^{ab}}{d^3\mathbf{p}^a d^3\mathbf{p}^b}\right)}{\left(\dfrac{dN^{a}}{d^3\mathbf{p}^a}\right)\left(\dfrac{dN^{b}}{d^3\mathbf{p}^b}\right)} \,,
 \end{equation}
 for pairs of particles with momenta $\mathbf{p}^a$ and $\mathbf{p}^b$.
 The correlation function is expressed as a function of the relative momentum $\mathbf{q} \equiv \mathbf{p}^a - \mathbf{p}^b$ in intervals of the transverse component \kt of the average momentum $\mathbf{k} \equiv \left(\mathbf{p}^a + \mathbf{p}^b\right)/2$.
@@ -221,8 +222,9 @@ Each of these approaches will be described below.
 The ratio of the distributions defines the correlation function:
 \begin{equation}
   \label{eq:same_over_mixed}
-  C_{\mathbf{k}}(q) \equiv \frac{A_{\mathbf{k}}(q)}{B_{\mathbf{k}}(q)} \,.
+  C\left[q;\kt, \kys, \tdpk\right] \equiv \frac{A_{\mathbf{k}}(q)}{B_{\mathbf{k}}(q)}
 \end{equation}
+which in practice is a function either of \kys or \tdpk, not both.
 
 \subsection{Track pair cuts}
 All particle pairs are required to have $\left| \Delta \phi \right| < \pi/2$.
