@@ -166,7 +166,7 @@ Once these two corrections are applied run-by-run, the \psit distribution is fla
 
 
 \subsection{Event plane angular resolution}
-\label{subsubsec:epres}
+\label{subsec:epres}
 
 The event plane angular resolution, defined as $\langle \cos(2 \delta \psit) \rangle$ where $\delta \psit$ is the difference between true and measured \psit, is shown in \cref{fig:ep_res} measured with the calorimeters in the lead-going direction at $\eta < -2.5$.
 The resolution is shown separately for periods A and B, but since they are comparable only the combined resolution is used.
@@ -721,7 +721,7 @@ The results are shown in \cref{fig:background_alpha_pythia8,fig:background_qinv_
 \includegraphics[width=.49\linewidth]{can_kt_qinv_backLambda_slope_combined.pdf}
 \includegraphics[width=.49\linewidth]{can_kt_qinv_backLambda_intercept_combined.pdf}
 \end{minipage}
-\caption{The slopes (left) and intercepts (right) of the fits from \cref{fig:background_qinv_same_vs_opp_pythia8} as defined in \cref{eq:lambdaBackPar}. The parameters are each fitted to a function of the form $p_1 + \frac{p_2}{1 + e^{-p_3(k_T - p_4)}}$. The results of the fits are displayed in \cref{eq:mu,eqn:nu}. The procedure is perfomed in both forward (red) and central (blue) rapidity bins, and the results are used as a systematic variation.}
+\caption{The slopes (left) and intercepts (right) of the fits from \cref{fig:background_qinv_same_vs_opp_pythia8} as defined in \cref{eq:lambdaBackPar}. The parameters are each fitted to a function of the form $p_1 + \frac{p_2}{1 + e^{-p_3(k_T - p_4)}}$. The results of the fits are displayed in \cref{eq:mu,eq:nu}. The procedure is perfomed in both forward (red) and central (blue) rapidity bins, and the results are used as a systematic variation.}
 \label{fig:background_qinv_same_vs_opp_pythia8_fits}
 \end{figure}
 
@@ -862,7 +862,7 @@ The extracted scaling is applied to the background description in the data, and 
 \centering
 \includegraphics{mu_hijing_pp_pPb.pdf}
 \end{minipage}
-\caption{A comparison of the attenuation between opposite- and same-sign correlation functions in \Hijing proton-proton and \Hijing proton-lead (all other settings identical). The multiplicity slices in each \kt bin are $26 \leq N_{ch}^{tr} \leq 36$, $37 \leq N_{ch}^{tr} \leq 48$, and $49 \leq N_{ch}^{tr} \leq 64$. The difference between the ratio is slightly more prominent in p+Pb, which is accounted for in the mapping and as a systematic error. The variable $\mu$ is used here because this correction and variation is applied directly into the $\mu$ of equations \cref{eq:lambdaBackPar,eqn:mu}.}
+\caption{A comparison of the attenuation between opposite- and same-sign correlation functions in \Hijing proton-proton and \Hijing proton-lead (all other settings identical). The multiplicity slices in each \kt bin are $26 \leq N_{ch}^{tr} \leq 36$, $37 \leq N_{ch}^{tr} \leq 48$, and $49 \leq N_{ch}^{tr} \leq 64$. The difference between the ratio is slightly more prominent in p+Pb, which is accounted for in the mapping and as a systematic error. The variable $\mu$ is used here because this correction and variation is applied directly into the $\mu$ of equations \cref{eq:lambdaBackPar,eq:mu}.}
 \label{fig:mu_hijing_pp_pPb}
 \end{figure}
 
@@ -891,7 +891,7 @@ The parameters used to describe the background in \qinv are shown in \cref{fig:b
 \includegraphics[width=.49\linewidth]{canqinv_backR_vs_kt_opp.pdf}
 \includegraphics[width=.49\linewidth]{canqinv_backR_vs_kt_same.pdf}\\
 \end{minipage}
-\caption{The background parameters that are free fit parameters in the opposite sign (left), and the like-sign parameters derived from the opposite-sign values using \cref{eq:lambdaBackPar,eqn:rBackPar,eqn:mu,eqn:nu} (right). The $\abkgd$ parameter is taken directly from \PYEight (\cref{fig:background_alpha_pythia8}). Statistical error bars are too small to be visible. The non-monotonicity is not surprising, since the meaning of $\Rbkgd$ changes with $\abkgd$, which varies with \kt as shown in \cref{fig:background_alpha_pythia8,fig:background_pp_ppb_comp}.}
+\caption{The background parameters that are free fit parameters in the opposite sign (left), and the like-sign parameters derived from the opposite-sign values using \cref{eq:lambdaBackPar,eq:rBackPar,eq:mu,eq:nu} (right). The $\abkgd$ parameter is taken directly from \PYEight (\cref{fig:background_alpha_pythia8}). Statistical error bars are too small to be visible. The non-monotonicity is not surprising, since the meaning of $\Rbkgd$ changes with $\abkgd$, which varies with \kt as shown in \cref{fig:background_alpha_pythia8,fig:background_pp_ppb_comp}.}
 \label{fig:background_data}
 \end{figure}
 
@@ -1048,7 +1048,7 @@ For the uncertainty in the hard-process contribution two effects are considered.
 First, the variation in the translation from \pp to \pPb is taken as an uncertainty in the amplitude, as shown in \cref{fig:mu_hijing_pp_pPb}.
 Secondly, as described in \cref{subsec:herwig_vs_pythia}, the width of the variation in the difference of $\frac{C^{+-}}{C^{\pm\pm}}$ between \Pythia and \Herwig (\cref{fig:delta_mu_pythia_herwig}) is used as an additional systematic variation in the background amplitude.
 This is to account for uncertainty arising from the specific choice of \Pythia as a generator.
-Both uncertainties are expressed as a scaling factor times $\lbkgd$, so they can be evaluated by scaling $\mu$ (\cref{eq:lambdaBackPar,eqn:mu}):
+Both uncertainties are expressed as a scaling factor times $\lbkgd$, so they can be evaluated by scaling $\mu$ (\cref{eq:lambdaBackPar,eq:mu}):
 
 \begin{equation}
 \sigma_{\log \mu} = \sigma^{p+p \rightarrow p+Pb}_{\log \mu} \oplus \sigma^{\Pythia-\Herwig}_{\log \mu} = 0.0413 \oplus 0.116 = 0.123
@@ -1058,7 +1058,7 @@ The background amplitude \lbkgd is thus scaled up and down by 12.3\% to compute 
 
 \subsection{Rapidity dependence of hard-process description}
 
-The background amplitude relations in \cref{eq:lambdaBackPar,eqn:rBackPar} are evaluated with \Pythia in both central ($|\kys| < 1$) and forward ($1 < |\kys| < 2$) rapidity intervals.
+The background amplitude relations in \cref{eq:lambdaBackPar,eq:rBackPar} are evaluated with \Pythia in both central ($|\kys| < 1$) and forward ($1 < |\kys| < 2$) rapidity intervals.
 The width relationship (\cref{eq:rBackPar}) does not change significantly, but the relationship between the amplitudes (\cref{eq:lambdaBackPar}) does.
 The parameterization is varied from the nominal (inclusive) expression to that for each of the different rapidity bins.
 In three dimensions a 2nd-order polynomial is used instead of a sigmoid.
@@ -1148,15 +1148,24 @@ The effect on the radii is small, and the Coulomb correction is already varied t
 %%is not expected to change \Rside or \Rlong appreciably since the part of the correlation function most relevant to those parameters is at $\qout = 0$, where $\qinv = |\mathbf{q}|$. It could possibly have a measureable effect on \Rout, however.
 
 \subsection{Alternative test statistic}
-The alternative test statistic mentioned in \cref{sec:fit} is checked to to ensure that the fit results do not vary significantly as a result.
-Indeed, the typical variation is less than $0.1\%$.
-In the few exceptions, the difference is within range of the statistical error bar.
-This effect is therefore not included in a systematic variation.
 
-\subsection{Different functional forms}
-While the exponential seems to be a clear choice for fitting $C(\qinv)$, there are a number of possible options for the out-side-long fits.
-For instance, factorizing the longitudinal and transverse parts of the correlation function may provide a better quality of fit than assuming ellipsoidal symmetry.
-This consideration will be taken as a possibility for future analysis.
+As an alternative check to the previous method, a Poisson log-likelihood that accounts for uncertainty in both the signal and background can also be used.
+The mixed-event background is weighted by the Coulomb factor $K(\qinv)$ from the discussion in \cref{subsec:coulomb}.
+\begin{equation}
+  \tilde{B} \equiv (1-\lambda)B + \lambda B_{K} C_{\textrm{BE}}
+\end{equation}
+$B_{K}$ denotes the background formed by weighting each pair by the Coulomb correction $K(\qinv)$.
+The variance in a given bin is
+\begin{equation}
+  \sigma_{\tilde{B}}^2 = (1-\lambda)^2 B + 2\lambda(1-\lambda)B_{K} C_{\textrm{BE}} + \lambda^2 B_{K^2} C_{\textrm{BE}}^2
+\end{equation}
+where following the notation introduced above, $B_{K^2}$ is the mixed-event background in which each pair is weighted by the square of $K(\qinv)$.
+The negative log-likelihood ratio that is minimized is then \cite{Soltz:1994PhDT} % Zajc's method
+\begin{equation}
+  - 2\ln \mathcal{L} = -2 \sum_{q_i} \left[ A - \tilde{B} + \left( A + \sigma_{\tilde{B}}^2 \right) \ln \left(1 - \frac{A - \tilde{B}}{A + \sigma_{\tilde{B}}^2} \right) \right]
+\end{equation}
+The alternative test statistic mentioned is checked to to ensure that the fit results do not vary significantly as a result and the typical variation is less than $0.1\%$, well within the statistical uncertainties.
+
 
 \subsection{Two-particle track reconstruction effects}
 It is typically assumed that effects like tracking efficiency and acceptance factor out of the ratio $A(q) / B(q)$.
