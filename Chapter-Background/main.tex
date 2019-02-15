@@ -733,9 +733,10 @@ For two particles the following is written out:
   \\&= \frac{\iint_{\partial\Sigma} d^3 x_a \, d^3 x_b \, s_2 (p_a, x_a; p_b, x_b) \left| \braket{ p_a, p_b | x_a, x_b } \right|^2}{\int_{\partial\Sigma} d^3 x_a \, s_1 (p_a, x_a) \, \int_{\partial\Sigma} d^3 x_b \, s_1(p_b, x_b)}
   \end{split}
 \end{equation}
- The "smoothness approximation" is typically invoked to approximate $\mathbf{p}_a \approx \frac{m_a}{m_a+m_b} \mathbf{k}$.
+The "smoothness approximation" is typically invoked to approximate $\mathbf{p}_a \approx \frac{m_a}{m_a+m_b} \mathbf{k}$.
 It is then convenient to define a normalization of the two-particle source density.
-(We will skip a detailed discussion of the domain of integration of the variable $r = x_a - x_b$ and the equal-time approximation - for more see \cite{Lisa:2005dd}.) This normalization $S_2$ of $s_2$ is defined as follows:
+%% (We will skip a detailed discussion of the domain of integration of the variable $r = x_a - x_b$ and the equal-time approximation - for more see \cite{Lisa:2005dd}.) %% todo: maybe actually explain this
+This normalization $S_2$ of $s_2$ is defined as follows:
 \begin{equation} S_{2, \mathbf{k}} (\mathbf{r}) \equiv \frac{\iint_{\partial\Sigma} d^3 x_a \, d^3 x_b \, s_2 \left(\frac{m_a}{m_a+m_b}\mathbf{k}, x_a; \frac{m_b}{m_a+m_b}\mathbf{k}, x_b\right) \, \delta^3(\mathbf{r} - \mathbf{x}_a + \mathbf{x}_b)}{\int_{\partial\Sigma} d^3 x_a \, s_1 \left(\frac{m_a}{m_a+m_b}\mathbf{k}, x_a\right) \, \int_{\partial\Sigma} d^3 x_b \, s_1\left(\frac{m_b}{m_a+m_b}\mathbf{k}, x_b\right)}\end{equation}
 If the resonances and other higher-order effects are ignored or removed, one can make the approximation that $s_2 (p_a, x_a; p_b, x_b) \approx s_1(p_a, x_a) s_1(p_b, x_b)$ which imposes the normalization constraint $\int d^3 r \, S_{2,\mathbf{k}}(\mathbf{r}) = 1$.
 
