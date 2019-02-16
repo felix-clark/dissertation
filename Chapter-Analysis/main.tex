@@ -552,11 +552,11 @@ Splitting the samples and combining them only at the minimization stage has the 
 \subsection{Extracting Fourier components of HBT radii}
 \label{subsec:azi_correlations}
 
-Because the event plane resolution correction (e.g. \Eqn{\ref{eq:a_corr}}) changes the Fourier components of $A$ and $N$, statistical correlations are induced between the contents in different azimuthal bins.
+Because the event plane resolution correction (e.g. \cref{eq:a_corr}) changes the Fourier components of $A$ and $N$, statistical correlations are induced between the contents in different azimuthal bins.
 As a result the fitted HBT radii in different azimuthal bins are correlated.
 The propagation of the correlations from bins of $A$ and $B$ to the radii is quite complicated in general.
 We will motivate a reasonable parameterization of the covariance matrix of the HBT radii by using the form of the correlations between bins of the pair distribution $A$.
-The parameter values themselves will be adjusted corresponding to the results of a toy Monte Carlo (MC) study on the radii correlations.
+The parameter values themselves will be adjusted corresponding to the results of a toy \ac{MC} study on the radii correlations.
 To the extent that enhancements to the azimuthal modulation of the HBT radii are, like $A(q)$, linear in $\xi$ (as defined in \cref{subsec:epres}), the azimuthal correlation is :
 \begin{equation} \label{eq:azi_corr}
 \textrm{cov}\left( R^\textrm{corr}_i, R^\textrm{corr}_j \right) = \delta_{ij} \sigma^2_{i} + \frac{2\xi}{\Nbins} \cos\left[2(\phi_i - \phi_j) \right] \left( \sigma^2_{i} + \sigma^2_{j} + \frac{\xi}{\Nbins} \sum_{k=1}^{\Nbins} \sigma^2_{k} \right)
@@ -597,7 +597,7 @@ Each of the independent \Ntoy samples is corrected for the event plane resolutio
 The azimuthal correlations between each radii observable are then computed directly.
 The correlation is fit to a function of the form of \cref{eq:corr_coeff_matrix}, deriving an actual $\xi_\textrm{toy}$ from the naive value $\xi_\textrm{naive}$.
 The correlation matrix is shown for the three main radii in \cref{fig:rho_dphi}, along with the monomorphism for the $\xi$ parameter.
-Conveniently, the correlations between all independent observables (i.e. 1D and 3D, both amplitude and radii) can be described by the same function $\xi_\textrm{toy}\left(\xi_\textrm{naive}\right)$.
+Conveniently the correlations between all independent observables (i.e. 1D and 3D, both amplitude and radii) can be described by the same function $\xi_\textrm{toy}\left(\xi_\textrm{naive}\right)$.
 The parameterization that is chosen for this data is $ \xi_\textrm{toy} = 0.3310 (\xi_\textrm{naive})^{1.246} $.
 Uncertainties in the $\xi$ parameter are not rigorously evaluated because the value of this parameterization only effects the statistical uncertainties in the radii, not the central points.
 
@@ -616,7 +616,7 @@ These correlations have a large impact on the uncertainties of these components 
 
 
 \FloatBarrier
-\section{Hard-process contribution}
+\section{Hard-process correlations}
 \label{sec:jet_frag}
 
 An additional contribution to the correlation function with a width in \qinv of order 0.5--1 \GeV\ arises from hard processes in the event.
@@ -625,8 +625,8 @@ This origin of the effect was confirmed by running \Hijing with the minimum \pt 
 \Hijing has no Coulomb or Bose-Einstein effects, so any effects in \cref{fig:hard_process_min_pt} are from charge/momentum conservation, resonance decays, and jet fragmentation.
 The effect is more pronounced at high \kt and low multiplicities, where particle pairs are more likely to have come from the same mini-jet.
 
-It should be noted that MC generators all tend to over-estimate the amplitude of the contribution from hard processes.
-In the past the double ratio has been studied (i.e. the ratio of the correlation function in data to MC), but this produces a suspicious depletion in the affected \qinv region.
+It should be noted that \ac{MC} generators all tend to over-estimate the amplitude of the contribution from hard processes.
+In the past a double ratio, i.e. the ratio of the correlation function in data to \ac{MC}, has been used but this produces a suspicious depletion in the affected \qinv region.
 
 
 \begin{figure}[t]
@@ -660,19 +660,19 @@ In the past the double ratio has been studied (i.e. the ratio of the correlation
 \label{fig:background_ang_same_vs_opp_mc}
 \end{figure}
 
-Rather than use a double-ratio, some femtoscopic analyses have described the background by allowing the amplitude to be a free fit parameter.
-This analysis uses a data-driven method to tune it by comparing to opposite-sign pairs (Coulomb-corrected and with the largest resonance contributions removed), which do not have a Bose-Einstein correlation.
-\cref{fig:background_amp_inv_vs_ang_data}, of which it should be emphasized is taken from data, shows that the choice to tune from the amplitude of Gaussian fits to $\qinv$ or $\Delta\eta, \Delta\phi$ correlations does not significantly impact the result.
+Rather than use a double-ratio, some femtoscopic analyses have described the background with one or more be a free fit parameter.
+The results in this thesis use a data-driven method to tune it by comparing to opposite-sign pairs, Coulomb-corrected and with the largest resonance contributions removed, which do not have a Bose-Einstein correlation.
+\Cref{fig:background_amp_inv_vs_ang_data}, which is taken from data, shows that the choice to tune from the amplitude of Gaussian fits to $\qinv$ or $\Delta\eta, \Delta\phi$ correlations does not significantly impact the result.
 This further supports the interpretation that the enhancement in $\qinv$ comes from hard processes, as the peak in angular coordinates is commonly associated with jets.
-\cref{fig:background_ang_same_vs_opp_mc} shows the amplitudes of the jet contribution to $C(\Delta\eta, \Delta\phi)$ comparing both $++$ and $--$ to $+-$.
+\Cref{fig:background_ang_same_vs_opp_mc} shows the amplitudes of the jet contribution to $C(\Delta\eta, \Delta\phi)$ comparing both $++$ and $--$ to $+-$.
 The correlation between $\pm\pm$ and $+-$ demonstrates that, at least in principle, the $+-$ correlation functions can constrain the hard-process contribution in $\pm\pm$ correlation functions.
 
-Though some resonances are removed from the $+-$ correlation functions, the effect of jet fragmentation is not the same in same-sign as it is in opposite-sign.
-A mapping must be developed between $+-$ and $\pm\pm$, so the relationship between the two correlation functions is studied in Monte Carlo simulations.
+Though some resonances are removed from the $+-$ correlation functions the effect of jet fragmentation is not identical in same-charge and opposite-charge.
+The relationship between the two correlation functions is studied in \ac{MC} simulations so a mapping can be developed between $+-$ and $\pm\pm$.
 
-To isolate the effect of jet fragmentation, particles from weak decays ($\eta$, $\eta'$, and $\omega$) were excluded.
-Pairs of particles from two-body resonance decays were also neglected, in order to remove mass peaks in the correlation function.
-We also apply the same pair mass cut around the $\rho$ resonance that is used in the data, since the removal of the corresponding region of phase space has a significant effect on the shape of the correlation function.
+To isolate the effect of jet fragmentation particles from weak decays ($\eta$, $\eta'$, and $\omega$) were excluded.
+Pairs of particles from two-body resonance decays were also neglected in order to remove mass peaks in the correlation function.
+The same pair mass cut around the $\rho$ resonance that is used in the data is applied in the \ac{MC}, since the removal of the corresponding region of phase space has a significant effect on the shape of the correlation function.
 
 \subsection{Monte Carlo generators}
 \label{subsec:generators}
@@ -707,27 +707,23 @@ The \Herwig sample is used to compare the variation of certain behavior of the c
 \subsection{Jet fragmentation in Lorentz invariant correlation function}
 \label{subsec:jet_frag_inv}
 
-In order to describe the background satisfactorily, it was found necessary to loosen the assumption of a Gaussian form in \qinv.
-The \qinv correlation functions in \Pythia 8 were fit to
+In order to describe the background satisfactorily it is necessary to loosen the assumption of a Gaussian form in \qinv.
+The \qinv correlation functions in \PYEight were fit to
 \begin{equation} C(q) = 1 + \lbkgd e^{-|\Rbkgd \qinv|^{\abkgd}} \end{equation}
 The results are shown in \cref{fig:background_alpha_pythia8,fig:background_qinv_same_vs_opp_pythia8}.
 
 \begin{figure}[t]
-\begin{minipage}[t]{1.0\textwidth}
 \centering
 \includegraphics{qinv_backAlpha_vs_kt_pythia8.pdf}
-\end{minipage}
 \caption{The tail weight parameter \abkgd of fits to $C^{\pm\pm}(\qinv)$ as a function of \kt in \Pythia 8, in four multiplicity bins. \abkgd is limited by above at 2 (the Gaussian case), and for low \kt bins this is sufficient to describe the background shape. The parameter is fit to a function of the form $\abkgd = 2 - 0.0497 \log \left(1 + e^{50.9(\kt - 0.493)} \right)$, with \kt in GeV.
 }
 \label{fig:background_alpha_pythia8}
 \end{figure}
 
 \begin{figure}[t]
-\begin{minipage}[t]{1.0\textwidth}
 \centering
 \includegraphics[width=.49\linewidth]{qinv_pythia8_backLambda_kt_opp_vs_same.pdf}
 \includegraphics[width=.49\linewidth]{qinv_pythia8_backR_kt_opp_vs_same.pdf}
-\end{minipage}
 \caption{A comparison of same-sign to opposite-sign charged pairs with the amplitude and width of $\alpha$-stable fits in \Pythia 8. Several multiplicities are shown in each colored \kt bin, with the multiplicity bins defined in \cref{fig:background_alpha_pythia8}, and the $++$ and $--$ pairs are separated. The slopes and intercepts of the lines in the left plot are shown in \cref{fig:background_qinv_same_vs_opp_pythia8_fits}. The widths $\Rbkgd$ are fit to a simple ratio $\rho$ (\cref{eq:rho}). In the amplitude plot (left), the widths $\Rbkgd$ are fixed to the value extracted from the right plot.}
 \label{fig:background_qinv_same_vs_opp_pythia8}
 \end{figure}
@@ -770,11 +766,9 @@ The statistical errors on the above parameters are on the order of 10\%.
 \label{subsec:jet_frag_3d}
 
 In the longitudinally co-moving frame of a particle pair produced in a jet, on averate the axis of the jet will be aligned with the ``out'' direction and the plane transverse to the jet's momentum will be spanned by the ``side'' and ``long'' directions. In three dimensions the correlation from jet fragmentation is factorized into components which separately describe the ``out'' direction and both the ``side'' and ``long'' directions:
-
-\begin{align}
+\begin{equation}
 C_{\mathrm{bkgd}}(\mathbf{q}) = 1 + \lbkgd^\mathrm{osl} \exp\left(-\left| R_\mathrm{bkgd}^\mathrm{out} \qout \right|^{\abkgd^\mathrm{out}} - \left| R_\mathrm{bkgd}^\mathrm{sl} \qsl \right|^{\abkgd^\mathrm{sl}}\right) \label{eq:jet_frag_form_3d}
-\end{align}
-
+\end{equation}
 with $\qsl = \sqrt{\qside^2 + \qlong^2}$.
 The shape parameters $\abkgd^\mathrm{out}$ and $\abkgd^\mathrm{sl}$ are fixed to 1.5 and 1.7 respectively, as shown in \cref{fig:pythia_bkgd_alpha}.
 These parameters are not statistically consistent with constants independent of \kt and multiplicity.
@@ -782,13 +776,10 @@ However, at larger \kt, where the jet fragmentation is significant, the values d
 What is lost in precision is gained in the utility of having good control over the remaining parameters.
 A systematic check is performed to investigate the effect of the shape on the results, and the results are seen to be insensitive at the 1\% level to variations of 0.1 in the \abkgd parameters.
 
-
 \begin{figure}[t]
-\begin{minipage}[t]{1.0\textwidth}
 \centering
 \includegraphics[width=.49\linewidth]{canqosl_backAlphaOut_vs_kt.pdf}
 \includegraphics[width=.49\linewidth]{canqosl_backAlpha_vs_kt.pdf}\\
-\end{minipage}
 \caption{The fit results from \Pythia 8 of the shape parameters from \cref{eq:jet_frag_form_3d}. The dashed lines indicate the constant values used in the analysis. While the results are not well-described by a constant function, the difference in the shape of the function is not extreme over the discrepancies observed.}
 \label{fig:pythia_bkgd_alpha}
 \end{figure}
