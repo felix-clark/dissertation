@@ -196,7 +196,7 @@ This difference is also symmetrized, and these two contributions are added in qu
 The two-particle correlation function is defined as the ratio of two-particle to single-particle momentum spectra:
 \begin{equation} \label{eq:corr_deff}
   %% ; \kt, \kys, \kphi
-  C\left(\mathbf{p}^a, \mathbf{p}^b\right) \equiv \dfrac{\left(\dfrac{dN^{ab}}{d^3\mathbf{p}^a d^3\mathbf{p}^b}\right)}{\left(\dfrac{dN^{a}}{d^3\mathbf{p}^a}\right)\left(\dfrac{dN^{b}}{d^3\mathbf{p}^b}\right)} \,,
+  C\left(\mathbf{p}^a, \mathbf{p}^b\right) \equiv \dfrac{\left(\dfrac{dN^{ab}}{d^3\mathbf{p}^a \, d^3\mathbf{p}^b}\right)}{\left(\dfrac{dN^{a}}{d^3\mathbf{p}^a}\right)\left(\dfrac{dN^{b}}{d^3\mathbf{p}^b}\right)} \,,
 \end{equation}
 for pairs of particles with momenta $\mathbf{p}^a$ and $\mathbf{p}^b$.
 The correlation function is expressed as a function of the relative momentum $\mathbf{q} \equiv \mathbf{p}^a - \mathbf{p}^b$ in intervals of the transverse component \kt of the average momentum $\mathbf{k} \equiv \left(\mathbf{p}^a + \mathbf{p}^b\right)/2$.
@@ -288,7 +288,7 @@ Only the 2nd harmonic is corrected in this procedure. Higher-order harmonics, wh
 The combinatoric background $B(q) \equiv \left. dN/dq \right|_{\textrm{mix}}$ is traditionally constructed by event mixing, that is, by selecting one particle from each of two events in the same event class as $A(q)$ as described in \cref{subsec:evt_mixing}.
 However, with an azimuthally-differential analysis the event plane resolution correction precludes event mixing because there is no simple decomposition of a mixed-event distribution into its Fourier components (as there are two independent event planes in each event pair).
 Previous azimuthal femtoscopic measurements have corrected the mixed-event distribution $B$ in the same way that the same-event distribution $A$ is corrected, as suggested in \Ref{\cite{Heinz:2002au}}.
-However, this neglects to account for the fact that the independent smearing of the two event planes changes the shape of the pair distribution, and when projected into $q$-space it cannot be simply corrected bin-by-bin.
+However, this fails to account for the fact that the independent smearing of the two event planes changes the shape of the pair distribution, and when projected into $q$-space it cannot be simply corrected bin-by-bin.
 
 On the other hand it is possible to correct the single-particle momentum distribution in the same way as \cref{eq:a_corr}.
 The dependent variables are \pt and $\eta$ instead of $\mathbf{q}$, and there are many more azimuthal bins (in \Eqn{\ref{eq:xi_def}} the $N_\textrm{bins} = 64$ of $2(\phi - \psit)$ as opposed to 8 bins of $2(\kphi - \psit)$), but the procedure is otherwise identical.
@@ -334,7 +334,7 @@ The background is multiplied by this ratio, which is evaluated as a function of 
 \label{fig:phi_corr_to_uncorr_ratio}
 \end{figure}
 
-The single-particle experimental distribution $N^\mathrm{exp}(\pt, \eta, \tdpp)$ is corrected similarly to the pair distribution $A(q)$ (\cref{eq:a_corr}), however it is also explicitly symmetrized in $\phi$ so there is no sine term added.
+The single-particle experimental distribution $N^\mathrm{exp}[\pt, \eta, \tdpp]$ is corrected similarly to the pair distribution $A(q)$ in \cref{eq:a_corr}, however it is also explicitly symmetrized in $\phi$ so there is no sine term added.
 \begin{equation}
   \label{eq:n_corr}
   N^\textrm{corr}[\pt, \eta, \tdpp] = N^\textrm{exp}_\textrm{symm}\left[\pt, \eta, \tdpp\right] + 2\xi N_\textrm{,c2}(\pt, \eta) \cos\left[\tdpp\right]
@@ -359,7 +359,7 @@ Each event class has a minimum of 100 events, but most have greater than 1000.
 \label{fig:evt_class}
 \end{figure}
 
-Within each event class, tracks are sampled from the histogram of the single-particle distribution $N \left( \pt, \eta, 2(\phi-\psit) \right) $.
+Within each event class, tracks are sampled from the histogram of the single-particle distribution $N \left[ \pt, \eta, 2(\phi-\psit) \right] $.
 A pre-processing step is performed to surjectively assign each bin of the 3D histogram an interval in $(0,1)$ with size proportional to the bin content, representing the cumulative distribution function (CDF) of the histogram distribution at each bin edge.
 For each new track a random number is generated in the uniform distribution $U(0,1)$, and a bin is selected by binary search according to the assignment from the pre-processing step.
 The values of the three kinematic variables are set by generating uniform random variables from a range of each of the corresponding bin edges.
@@ -621,7 +621,7 @@ These correlations have a large impact on the uncertainties of these components 
 
 An additional contribution to the correlation function with a width in \qinv of order 0.5--1 \GeV\ arises from hard processes in the event.
 It is more prominent at high \kt, which suggests that the correlation comes from jet fragmentation.
-This origin of the effect was confirmed by running \Hijing with the minimum \pt for hard scattering turned up to $20 \GeV$ from the default of $2 \GeV$, which causes this feature to diminish (see \cref{fig:hard_process_min_pt}).
+This origin of the effect was confirmed by running \Hijing with the minimum \pt for hard scattering turned up to $20 \GeV$ from the default of $2 \GeV$, which causes this feature to diminish as shown in \cref{fig:hard_process_min_pt}.
 \Hijing has no Coulomb or Bose-Einstein effects, so any effects in \cref{fig:hard_process_min_pt} are from charge/momentum conservation, resonance decays, and jet fragmentation.
 The effect is more pronounced at high \kt and low multiplicities, where particle pairs are more likely to have come from the same mini-jet.
 
@@ -682,7 +682,7 @@ Detector simulation is not run on these samples.
 In each of the following samples, 50 million (250 million for \PYEight) \minbias events are generated at a center of mass energy per nucleon of \pPbenergy.
 
 \begin{enumerate}
-\item \Hijing p+Pb \cite{Gyulassy:1994ew}\\
+\item \Hijing \pPb \cite{Gyulassy:1994ew}\\
   The energy and boost settings are the same as in the nominal \pPb reconstructed simulation, except that the minimum hard-scattering transverse momentum is adjusted as described above.
   Turning off the flow, which shifts the $\phi$ of particles in order to reproduce the flow harmonics $v_n$, was not found to have a significant effect on the momentum-space correlation functions.
   The minimum hard-scattering \pt parameter\footnote{HIPR18} is adjusted to show that the non-femtoscopic background originates from minijets, as described in \cref{fig:hard_process_min_pt}.
@@ -718,7 +718,7 @@ The results are shown in \cref{fig:background_alpha_pythia8,fig:background_qinv_
 \begin{figure}[t]
 \centering
 \includegraphics{qinv_backAlpha_vs_kt_pythia8.pdf}
-\caption{The tail weight parameter \abkgd of fits to $C^{\pm\pm}(\qinv)$ as a function of \kt in \Pythia 8, in four multiplicity bins. \abkgd is limited by above at 2 (the Gaussian case), and for low \kt bins this is sufficient to describe the background shape. The parameter is fit to a function of the form $\abkgd = 2 - 0.0497 \log \left(1 + e^{50.9(\kt - 0.493)} \right)$, with \kt in GeV.
+\caption{The tail weight parameter \abkgd of fits to $C^{\pm\pm}(\qinv)$ as a function of \kt in \PYEight, in four multiplicity bins. \abkgd is limited by above at 2 (the Gaussian case), and for low \kt bins this is sufficient to describe the background shape. The parameter is fit to a function of the form $\abkgd = 2 - 0.0497 \log \left(1 + e^{50.9(\kt - 0.493)} \right)$, with \kt in GeV.
 }
 \label{fig:background_alpha_pythia8}
 \end{figure}
@@ -727,7 +727,7 @@ The results are shown in \cref{fig:background_alpha_pythia8,fig:background_qinv_
 \centering
 \includegraphics[width=.49\linewidth]{qinv_pythia8_backLambda_kt_opp_vs_same.pdf}
 \includegraphics[width=.49\linewidth]{qinv_pythia8_backR_kt_opp_vs_same.pdf}
-\caption{A comparison of same-sign to opposite-sign charged pairs with the amplitude and width of $\alpha$-stable fits in \Pythia 8. Several multiplicities are shown in each colored \kt bin, with the multiplicity bins defined in \cref{fig:background_alpha_pythia8}, and the $++$ and $--$ pairs are separated. The slopes and intercepts of the lines in the left plot are shown in \cref{fig:background_qinv_same_vs_opp_pythia8_fits}. The widths $\Rbkgd$ are fit to a simple ratio $\rho$ (\cref{eq:rho}). In the amplitude plot (left), the widths $\Rbkgd$ are fixed to the value extracted from the right plot.}
+\caption{A comparison of same-sign to opposite-sign charged pairs with the amplitude and width of $\alpha$-stable fits in \PYEight. Several multiplicities are shown in each colored \kt bin, with the multiplicity bins defined in \cref{fig:background_alpha_pythia8}, and the $++$ and $--$ pairs are separated. The slopes and intercepts of the lines in the left plot are shown in \cref{fig:background_qinv_same_vs_opp_pythia8_fits}. The widths $\Rbkgd$ are fit to a simple ratio $\rho$ from \cref{eq:rho}. In the amplitude plot (left), the widths $\Rbkgd$ are fixed to the value extracted from the right plot.}
 \label{fig:background_qinv_same_vs_opp_pythia8}
 \end{figure}
 
@@ -741,7 +741,7 @@ The results are shown in \cref{fig:background_alpha_pythia8,fig:background_qinv_
 \label{fig:background_qinv_same_vs_opp_pythia8_fits}
 \end{figure}
 
-In one attempt to constrain the background, correlation functions were generated in \Pythia 8 (which does not have Bose-Einstein or Coulomb effects) and the width and height of the correlation functions were compared from like-sign to unlike-sign.
+In one attempt to constrain the background, correlation functions were generated in \PYEight (which does not have Bose-Einstein or Coulomb effects) and the width and height of the correlation functions were compared from like-sign to unlike-sign.
 \cref{fig:background_qinv_same_vs_opp_pythia8} shows the comparison for each \kt bin for a few choices of multiplicity ($26 \leq \Nch^{tr} \leq 36$, $37 \leq \Nch^{tr} \leq 48$, $49 \leq \Nch^{tr} \leq64$, $65 \leq \Nch^{tr}$).
 The amplitudes are compared on a log scale and straight lines are fit for each \kt bin.
 The widths $\Rbkgd^{\pm\pm}$ and $\Rbkgd^{+-}$ are taken to be proportional to each other by a constant factor.
@@ -783,7 +783,7 @@ A systematic check is performed to investigate the effect of the shape on the re
 \centering
 \includegraphics[width=.49\linewidth]{canqosl_backAlphaOut_vs_kt.pdf}
 \includegraphics[width=.49\linewidth]{canqosl_backAlpha_vs_kt.pdf}\\
-\caption{The fit results from \Pythia 8 of the shape parameters from \cref{eq:jet_frag_form_3d}. The dashed lines indicate the constant values used in the analysis. While the results are not well-described by a constant function, the difference in the shape of the function is not extreme over the discrepancies observed.}
+\caption{The fit results from \PYEight of the shape parameters from \cref{eq:jet_frag_form_3d}. The dashed lines indicate the constant values used in the analysis. While the results are not well-described by a constant function, the difference in the shape of the function is not extreme over the discrepancies observed.}
 \label{fig:pythia_bkgd_alpha}
 \end{figure}
 
@@ -796,7 +796,7 @@ A systematic check is performed to investigate the effect of the shape on the re
 \includegraphics[width=.49\linewidth]{can_kt_qosl_backLambda_intercept_combined.pdf}
 \end{minipage}
 \caption{
-Top: A comparison of same-sign to opposite-sign charged pairs with the amplitude and width of three-dimensional fits in \Pythia 8. Several multiplicities are shown in each colored \kt bin, with the multiplicity bins defined in \cref{fig:background_alpha_pythia8}, and the $++$ and $--$ pairs are separated. The slopes and intercepts of the fit lines are shown in the bottom left and right subfigures, respectively. The procedure is repeated in both forward (red) and central (blue) rapidity bins, and the difference is used as a systematic variation.}
+Top: A comparison of same-sign to opposite-sign charged pairs with the amplitude and width of three-dimensional fits in \PYEight. Several multiplicities are shown in each colored \kt bin, with the multiplicity bins defined in \cref{fig:background_alpha_pythia8}, and the $++$ and $--$ pairs are separated. The slopes and intercepts of the fit lines are shown in the bottom left and right subfigures, respectively. The procedure is repeated in both forward (red) and central (blue) rapidity bins, and the difference is used as a systematic variation.}
 \label{fig:background_qosl_lambda_same_vs_opp_pythia8}
 \end{figure}
 
@@ -844,15 +844,15 @@ The numerical values used for the mapping the amplitude $\lbkgd^\mathrm{osl}$ (\
 
 \subsection{Difference between collision systems}
 
-The mapping from opposite- to same- sign correlation functions is derived from \Pythia 8, which simulates \pp~collisions but not nuclear collisions.
-Since the background structure is caused primarily by the fragmentation of mini-jets, a large difference is not expected between \pp~and \pPb~systems.
-Nevertheless, the distinction can and should be evaluated.
+The mapping from opposite- to same- sign correlation functions is derived from \PYEight, which simulates \pp collisions but not nuclear collisions.
+Since the background structure is caused primarily by the fragmentation of mini-jets, a large difference is not expected between \pp and \pPb systems.
+Nevertheless the distinction can and should be evaluated.
 
 Since \Hijing uses an old version of \Pythia 6 its description of the fragmentation function is not up-to-date, but \Pythia alone does not simulate the same soft particle production that \Hijing does.
-Thus, \PYEight p+p is used to derive the mapping between $+-$ and $\pm\pm$, then corrected slightly for the difference between p+p and p+Pb observed in \Hijing.
-A comparison of \Hijing p-p and p-Pb correlation functions shows that the ratio of the background width is the same in each, at least a high \kt (about 1.08).
+Thus, \PYEight \pp is used to derive the mapping between $+-$ and $\pm\pm$, then corrected slightly for the difference between \pp and \pPb observed in \Hijing.
+A comparison of \Hijing \pp and \pPb correlation functions shows that the ratio of the background width is the same in each, at least a high \kt (about 1.08).
 This justifies using the width ratio from the updated \PYEight, since it suggests that changing from a proton-proton system to a proton-lead system does not drastically alter the ratio of widths.
-We also see that in \Hijing (with the width ratio is fixed to 1.08) $\log \lbkgd$ is decreased in p-Pb by $0.05$ (high \kt) to $0.2$ (low \kt) (See \cref{fig:background_pp_ppb_comp}). This difference is made more precise in \cref{fig:mu_hijing_pp_pPb}, which quantifies the difference in the amplitudes of the ratios of correlation functions.
+We also see that in \Hijing (with the width ratio is fixed to 1.08) $\log \lbkgd$ is decreased in \pPb by $0.05$ (high \kt) to $0.2$ (low \kt) (See \cref{fig:background_pp_ppb_comp}). This difference is made more precise in \cref{fig:mu_hijing_pp_pPb}, which quantifies the difference in the amplitudes of the ratios of correlation functions.
 The extracted scaling is applied to the background description in the data, and the spread in the attenuation is accounted for as a systematic variation.
 
 \begin{figure}[t]
@@ -864,7 +864,7 @@ The extracted scaling is applied to the background description in the data, and 
 \includegraphics[width=.49\linewidth]{qinv_backAlpha_vs_kt_pPbHijing.pdf}\\
 
 \end{minipage}
-\caption{The background amplitude ratio (top) and the shape parameter (bottom) in \Hijing for both proton-proton (left) and proton-lead (right). The p-Pb has about a 5-20\% attenuation from p-p. For the amplitude comparison the width ratio from opposite to same sign is forced to be a constant 1.08, which the ratio tends to at high \kt in \Hijing for both systems. The shape, parameterized by $\abkgd$, is quite similar between the systems.}
+\caption{The background amplitude ratio (top) and the shape parameter (bottom) in \Hijing for both proton-proton (left) and proton-lead (right). The proton-lead has about a 5-20\% attenuation from proton-proton. For the amplitude comparison the width ratio from opposite to same sign is forced to be a constant 1.08, which the ratio tends to at high \kt in \Hijing for both systems. The shape, parameterized by $\abkgd$, is quite similar between the systems.}
 \label{fig:background_pp_ppb_comp}
 \end{figure}
 
@@ -873,7 +873,7 @@ The extracted scaling is applied to the background description in the data, and 
 \centering
 \includegraphics{mu_hijing_pp_pPb.pdf}
 \end{minipage}
-\caption{A comparison of the attenuation between opposite- and same-sign correlation functions in \Hijing proton-proton and \Hijing proton-lead (all other settings identical). The multiplicity slices in each \kt bin are $26 \leq N_{ch}^{tr} \leq 36$, $37 \leq N_{ch}^{tr} \leq 48$, and $49 \leq N_{ch}^{tr} \leq 64$. The difference between the ratio is slightly more prominent in p+Pb, which is accounted for in the mapping and as a systematic error. The variable $\mu$ is used here because this correction and variation is applied directly into the $\mu$ of equations \cref{eq:lambdaBackPar,eq:mu}.}
+\caption{A comparison of the attenuation between opposite- and same-sign correlation functions in \Hijing proton-proton and \Hijing proton-lead (all other settings identical). The multiplicity slices in each \kt bin are $26 \leq N_{ch}^{tr} \leq 36$, $37 \leq N_{ch}^{tr} \leq 48$, and $49 \leq N_{ch}^{tr} \leq 64$. The difference between the ratio is slightly more prominent in proton-lead, which is accounted for in the mapping and as a systematic error. The variable $\mu$ is used here because this correction and variation is applied directly into the $\mu$ of equations \cref{eq:lambdaBackPar,eq:mu}.}
 \label{fig:mu_hijing_pp_pPb}
 \end{figure}
 
@@ -886,7 +886,7 @@ The extracted scaling is applied to the background description in the data, and 
 \includegraphics[width=.32\linewidth]{Cqinv_cent0_e0_kt0_ys1.pdf}
 \includegraphics[width=.32\linewidth]{Cqinv_cent4_e0_kt4_ys1.pdf}
 \includegraphics[width=.32\linewidth]{Cqinv_cent7_e0_kt6_ys1.pdf}
-\caption{Examples of the background fit to opposite-sign correlation functions in the data. The shape parameter $\abkgd$ is fixed from \Pythia 8, and the amplitude $\lbkgd^{+-}$ and width $\Rbkgd^{+-}$ are left as free parameters. A selection of centrality and \kt bins are chosen to cover a large range of the magnitude of the effect. Some resonances are removed before filling the histograms, which accounts for the gaps and large error bars in some bins.}
+\caption{Examples of the background fit to opposite-sign correlation functions in the data. The shape parameter $\abkgd$ is fixed from \PYEight, and the amplitude $\lbkgd^{+-}$ and width $\Rbkgd^{+-}$ are left as free parameters. A selection of centrality and \kt bins are chosen to cover a large range of the magnitude of the effect. Some resonances are removed before filling the histograms, which accounts for the gaps and large error bars in some bins.}
 \label{fig:background_qinv_opp_example}
 \end{figure}
 
@@ -1010,7 +1010,7 @@ A direct comparison of the two is shown in \cref{fig:comp_herwig_pythia_cent3,fi
 \includegraphics[width=.49\linewidth]{herwig_bkgd_charge_comp_cent7_kt6.pdf}
 \includegraphics[width=.49\linewidth]{pythia8_bkgd_charge_comp_cent7_kt6.pdf}\\
 \end{minipage}
-\caption{A comparison of like and unlike sign correlation functions in \Pythia 8.}
+\caption{A comparison of like and unlike sign correlation functions in \PYEight.}
 \label{fig:herwig_pythia8_cent7_bkgd_charge_comp}
 \end{figure}
 
@@ -1062,7 +1062,7 @@ This is to account for uncertainty arising from the specific choice of \Pythia a
 Both uncertainties are expressed as a scaling factor times $\lbkgd$, so they can be evaluated by scaling $\mu$ (\cref{eq:lambdaBackPar,eq:mu}):
 
 \begin{equation}
-\sigma_{\log \mu} = \sigma^{p+p \rightarrow p+Pb}_{\log \mu} \oplus \sigma^{\Pythia-\Herwig}_{\log \mu} = 0.0413 \oplus 0.116 = 0.123
+\sigma_{\log \mu} = \sigma^{pp \rightarrow p+\mbox{Pb}1}_{\log \mu} \oplus \sigma^{\Pythia-\textrm{\Herwig}}_{\log \mu} = 0.0413 \oplus 0.116 = 0.123
 \end{equation}
 
 The background amplitude \lbkgd is thus scaled up and down by 12.3\% to compute the systematic from the background.
@@ -1116,13 +1116,13 @@ It is required that the event-mixing buffer in a given $z_\textrm{vtx}$ bin be f
 A correlation function of the form
 
 \begin{equation}
-C(q) = \left(1-x_c + x_c K(\qinv)\left( 1 + \lambda e^{-"Rq"} \right) \right) C_{\textrm{bkgd}}(q)
+C(q) = \left[1-x_c + x_c K(\qinv)\left( 1 + \lambda e^{-Rq} \right) \right] \Omega(q)
 \end{equation}
 
 was also considered.
 In this form $\lambda$ takes into account pion impurities, and $x_c$ indicates the fraction of pairs that come from a core (i.e. not from long-lived resonances or weak decays - see \cref{fig:pythia_xc}).
 The region of the correlation function that drives the fit results is both at a larger $\qinv$ than where the Coulomb correction $K(\qinv) \neq 1$ and at smaller $\qinv$ than where $e^{-\Rinv\qinv}$ can be neglected.
-Here the correlation function looks like $C(q) \approx 1 + x_c \lambda e^{-"Rq"} C_{\textrm{bkgd}}(q)$, so the results are mostly dependent only on the product $x_c \lambda$.
+Here the correlation function looks like $C(q) \approx 1 + x_c \lambda e^{-Rq} \Omega(q)$, so the results are mostly dependent only on the product $x_c \lambda$.
 
 The measured radii turn out to be for the most part extremely insensitive to variations in the core fraction $x_c$.
 To emphasize this, $x_c$ is varied between 0.4 and 0.9.
@@ -1141,7 +1141,7 @@ Though a core fraction near 50\% is physically reasonable (as in \cref{fig:pythi
 $\lambda$ should always be less than 1 in order to be interpreted as a coefficient of a Bose-Einstein enhancement.
 There is a redundancy in the description of the correlation function using both $x_c$ and $\lambda$.
 
-To avoid over-parameterizing the fit and to avoid questionable values of $\lambda$, the choice was made to effectively take $\lambda \rightarrow 1$ and rename $x_c \rightarrow \lambda$, to match the typical presentation of the "Bowler-Sinyukov" formula $C(q) = \left( 1-\lambda + \lambda K(\qinv)\left( 1 + e^{-Rq} \right)\right) C_{\textrm{bkgd}}(q)$.
+To avoid over-parameterizing the fit and to avoid questionable values of $\lambda$, the choice was made to effectively take $\lambda \rightarrow 1$ and rename $x_c \rightarrow \lambda$, to match the typical presentation of the "Bowler-Sinyukov" formula $C(q) = \left[ 1-\lambda + \lambda K(\qinv)\left( 1 + e^{-Rq} \right)\right] \Omega(q)$.
 
 \subsection{Effective size for the Coulomb effect}
 The non-zero effective size of the Coulomb correction \Reff should only provide a bin-by-bin difference of a few percent, even up to several fm.
