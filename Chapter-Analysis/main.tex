@@ -656,7 +656,7 @@ In the past a double ratio, i.e. the ratio of the correlation function in data t
 \centering
 \includegraphics[width=.49\linewidth]{ang_lambda_opp_vs_same_MC.pdf}
 \includegraphics[width=.49\linewidth]{ang_lambda_kt_opp_vs_same_MC.pdf}
-\caption{The amplitude of the jet contribution to $C(\Delta\eta, \Delta\phi)$ is largely correlated between like-sign and unlike-sign pairs. The plots are nearly identical, except that one is colored by centrality and the other by \kt. Some points have very large errors (sum of errors > 0.8) and are not shown.}
+\caption{The amplitude of the jet contribution to $C(\Delta\eta, \Delta\phi)$ is largely correlated between like-sign and unlike-sign pairs. The plots are nearly identical, except that one is colored by centrality and the other by \kt. Some points have very large errors (with a sum of errors greater than 0.8) and are not shown.}
 \label{fig:background_ang_same_vs_opp_mc}
 \end{figure}
 
@@ -711,7 +711,7 @@ In order to describe the background satisfactorily it is necessary to loosen the
 The \qinv correlation functions in \PYEight were fit to
 \begin{equation}
   \label{eq:jet_frag_form_inv}
-  \Omega(q) = 1 + \lbkgd e^{-|\Rbkgd \qinv|^{\abkgd}}
+  \Omega(\qinv) = 1 + \lbkgd e^{-|\Rbkgd \qinv|^{\abkgd}}
 \end{equation}
 The results are shown in \cref{fig:background_alpha_pythia8,fig:background_qinv_same_vs_opp_pythia8}.
 
@@ -742,7 +742,7 @@ The results are shown in \cref{fig:background_alpha_pythia8,fig:background_qinv_
 \end{figure}
 
 In one attempt to constrain the background, correlation functions were generated in \Pythia 8 (which does not have Bose-Einstein or Coulomb effects) and the width and height of the correlation functions were compared from like-sign to unlike-sign.
-\cref{fig:background_qinv_same_vs_opp_pythia8} shows the comparison for each \kt bin for a few choices of multiplicity ($26 \leq N_{ch}^{tr} \leq36$, $37 \leq N_{ch}^{tr} \leq48$, $49 \leq N_{ch}^{tr} \leq64$, $65 \leq N_{ch}^{tr}$).
+\cref{fig:background_qinv_same_vs_opp_pythia8} shows the comparison for each \kt bin for a few choices of multiplicity ($26 \leq \Nch^{tr} \leq 36$, $37 \leq \Nch^{tr} \leq 48$, $49 \leq \Nch^{tr} \leq64$, $65 \leq \Nch^{tr}$).
 The amplitudes are compared on a log scale and straight lines are fit for each \kt bin.
 The widths $\Rbkgd^{\pm\pm}$ and $\Rbkgd^{+-}$ are taken to be proportional to each other by a constant factor.
 This assumption is clearly not perfect but becomes increasingly accurate at high \kt, where the background contribution is largest.
@@ -755,7 +755,7 @@ In summary we are requiring that
 \Rbkgd^{\pm\pm} &= \rho \Rbkgd^{+-} \label{eq:rBackPar}
 \end{align}
 
-and fixing $\mu(k_T)$, $\nu(k_T)$, and $\rho$ from the Monte Carlo (results shown in \cref{fig:background_qinv_same_vs_opp_pythia8_fits})):
+and fixing $\mu(k_T)$, $\nu(k_T)$, and $\rho$ from the Monte Carlo with the results shown in \cref{fig:background_qinv_same_vs_opp_pythia8_fits}:
 
 \begin{align}
 \log \mu (\kt [\textrm{GeV}]) &= -2.26 + \frac{1.97}{1 + e^{-10.1 (\kt - 0.383)}} \label{eq:mu}\\
@@ -886,11 +886,11 @@ The extracted scaling is applied to the background description in the data, and 
 \includegraphics[width=.32\linewidth]{Cqinv_cent0_e0_kt0_ys1.pdf}
 \includegraphics[width=.32\linewidth]{Cqinv_cent4_e0_kt4_ys1.pdf}
 \includegraphics[width=.32\linewidth]{Cqinv_cent7_e0_kt6_ys1.pdf}
-\caption{Examples of the background fit to opposite-sign correlation functions in the data. The shape parameter $\abkgd$ is fixed from \Pythia 8, and the amplitude $\lbkgd^{+-}$ and width $\Rbkgd^{+-}$ are left as free parameters. A selection of centrality and \kt bins are chosen to cover a large range of the magnitude of the effect. Note that some resonances are removed before filling the histograms, which accounts for the gaps and large error bars in some bins.}
+\caption{Examples of the background fit to opposite-sign correlation functions in the data. The shape parameter $\abkgd$ is fixed from \Pythia 8, and the amplitude $\lbkgd^{+-}$ and width $\Rbkgd^{+-}$ are left as free parameters. A selection of centrality and \kt bins are chosen to cover a large range of the magnitude of the effect. Some resonances are removed before filling the histograms, which accounts for the gaps and large error bars in some bins.}
 \label{fig:background_qinv_opp_example}
 \end{figure}
 
-\cref{fig:background_qinv_opp_example} shows a few examples of the fit to opposite-sign correlation functions in order to determine the background.
+\Cref{fig:background_qinv_opp_example} shows a few examples of the fit to opposite-sign correlation functions in order to determine the background.
 These fit parameters are then used with the mapping derived from the Monte Carlo to fix the background in same-sign fits.
 The parameters used to describe the background in \qinv are shown in \cref{fig:background_data}.
 
@@ -1302,7 +1302,7 @@ Typical systematic uncertainties are also shown for the 3D radii \Rout (\cref{fi
 \label{fig:syst_losl}
 \end{figure}
 
-\FloatBarrier
+%% \FloatBarrier
 \cref{fig:azi_syst_breakdown} shows the uncertainties contributing to the relative modulation of each of the main HBT radii. The dominant systematic effect is the \ac{PID}. This is partially due to the fact that the \ac{PID} systematic variation is performed by using looser and tighter \ac{PID} cuts, which gives the variation a statistical component as well. There is also a physical element, as different particle species are expected to freeze out at different times in an expanding source's evolution.
 
 \begin{figure}[t]
