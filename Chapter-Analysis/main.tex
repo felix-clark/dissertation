@@ -709,7 +709,10 @@ The \Herwig sample is used to compare the variation of certain behavior of the c
 
 In order to describe the background satisfactorily it is necessary to loosen the assumption of a Gaussian form in \qinv.
 The \qinv correlation functions in \PYEight were fit to
-\begin{equation} C(q) = 1 + \lbkgd e^{-|\Rbkgd \qinv|^{\abkgd}} \end{equation}
+\begin{equation}
+  \label{eq:jet_frag_form_inv}
+  \Omega(q) = 1 + \lbkgd e^{-|\Rbkgd \qinv|^{\abkgd}}
+\end{equation}
 The results are shown in \cref{fig:background_alpha_pythia8,fig:background_qinv_same_vs_opp_pythia8}.
 
 \begin{figure}[t]
@@ -767,7 +770,7 @@ The statistical errors on the above parameters are on the order of 10\%.
 
 In the longitudinally co-moving frame of a particle pair produced in a jet, on averate the axis of the jet will be aligned with the ``out'' direction and the plane transverse to the jet's momentum will be spanned by the ``side'' and ``long'' directions. In three dimensions the correlation from jet fragmentation is factorized into components which separately describe the ``out'' direction and both the ``side'' and ``long'' directions:
 \begin{equation}
-C_{\mathrm{bkgd}}(\mathbf{q}) = 1 + \lbkgd^\mathrm{osl} \exp\left(-\left| R_\mathrm{bkgd}^\mathrm{out} \qout \right|^{\abkgd^\mathrm{out}} - \left| R_\mathrm{bkgd}^\mathrm{sl} \qsl \right|^{\abkgd^\mathrm{sl}}\right) \label{eq:jet_frag_form_3d}
+\Omega(\mathbf{q}) = 1 + \lbkgd^\mathrm{osl} \exp\left(-\left| R_\mathrm{bkgd}^\mathrm{out} \qout \right|^{\abkgd^\mathrm{out}} - \left| R_\mathrm{bkgd}^\mathrm{sl} \qsl \right|^{\abkgd^\mathrm{sl}}\right) \label{eq:jet_frag_form_3d}
 \end{equation}
 with $\qsl = \sqrt{\qside^2 + \qlong^2}$.
 The shape parameters $\abkgd^\mathrm{out}$ and $\abkgd^\mathrm{sl}$ are fixed to 1.5 and 1.7 respectively, as shown in \cref{fig:pythia_bkgd_alpha}.
@@ -1028,12 +1031,12 @@ An example using Lorentz-invariant correlation functions will be shown.
 \begin{figure}[t]
 \centering
 \includegraphics{cqinv_charge_comp_cent6_kt4_kys1.pdf}
-\caption{Correlation functions in proton-lead data for opposite-charge (teal circles) and same-charge (red squares) pairs. The opposite-charge correlation function, with the most prominent resonances removed, is fit to a function of the form in \cref{eq:bkgd_form} (blue dashed line). The violet dotted line is the estimated jet contribution in the same-charge correlation function, also of the form of \cref{eq:bkgd_form}, and the dark red line is the full fit of \cref{eq:correlation_function_full} to the same-charge data.}
+\caption{Correlation functions in proton-lead data for opposite-charge (teal circles) and same-charge (red squares) pairs. The opposite-charge correlation function, with the most prominent resonances removed, is fit to a function of the form in \cref{eq:jet_frag_form_inv} (blue dashed line). The violet dotted line is the estimated jet contribution in the same-charge correlation function, also of the form of \cref{eq:jet_frag_form_inv}, and the dark red line is the full fit of \cref{eq:correlation_function_full} to the same-charge data.}
 \label{fig:hp_example}
 \end{figure}
 
 With $\abkgdinv(\kt)$, $\mu(\kt)$, $\nu(\kt)$, and $\rho$ determined from Monte Carlo generator samples, the mapping can be applied to the \pPb data.
-As illustrated in \cref{fig:hp_example}, the $+-$ correlation function is fit to \cref{eq:bkgd_form} for $\qinv > 0.1~\GeV$, with \abkgd fixed from \PYEight and $\lbkgdinv{}^{+-}$ and $\Rbkgdinv{}^{+-}$ as free parameters.
+As illustrated in \cref{fig:hp_example}, the $+-$ correlation function is fit to \cref{eq:jet_frag_form_inv} for $\qinv > 0.1~\GeV$, with \abkgd fixed from \PYEight and $\lbkgdinv{}^{+-}$ and $\Rbkgdinv{}^{+-}$ as free parameters.
 The $\mu$, $\nu$, and $\rho$ parameters are used to infer $\lbkgdinv{}^{\pm\pm}$ and $\Rbkgdinv{}^{\pm\pm}$, which are fixed before the femtoscopic part of the correlation function is fit to $\pm\pm$ data.
 
 \FloatBarrier
