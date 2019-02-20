@@ -7,8 +7,8 @@
 
 The atomic nucleus was discovered in the early 20th century \cite{Rutherford:1911zz}, and a few years later it was determined that it was composed of protons ($p$).
 An additional, electrically-neutral nuclear constituent particle was proposed soon after and the neutron ($n$) was finally discovered in the early 1930s \cite{Chadwick:1932ma}.
-Clearly some new type of interaction, strong enough to overcome electrostatic repulsion between protons, bound the nucleons ($p$ and $n$) together in the nucleus.
-A particle field was proposed to mediate this strong interaction, dubbed the pion ($\pi^\pm$, $\pi^0$) \cite{Yukawa:1935xg}.
+This indicated that there was some new type of interaction strong enough to overcome electrostatic repulsion between protons that binds nucleons ($p$ and $n$) together in the nucleus.
+A particle field, the pion ($\pi^\pm$, $\pi^0$), was proposed to mediate this strong interaction \cite{Yukawa:1935xg}.
 Since the strong interaction only acts over a length scale of about 2 fm, the mediating pion was predicted to have a mass of about 100 \MeV\footnote{The potential mediated by a boson of mass $m$ is proportional to \( - \exp(-mcr/\hbar)/r\), where $r$ is the separation between a pair of participants. Thus the mass of a mediating boson for a potential with a characteristic cutoff length of $\lambda$ is $m = \hbar/c\lambda = \frac{200 \MeVcc \textrm{fm}}{\lambda}$.}.
 The charged pion was indeed discovered experimentally in 1947 \cite{Lattes:1947mw}.
 Pions can be interpreted as the Nambu-Goldstone bosons corresponding to the spontaneously broken chiral symmetry, which explains their relatively small masses.
@@ -112,7 +112,7 @@ The highly-nontrivial gluon self-interaction is a crucial ingredient in the rich
 %% https://arxiv.org/pdf/1604.08082.pdf
 
 As is the case in all quantum field theories, the na\"ive calculation of higher-order (in $\alpha_s$) loop diagram integrals contain divergences in the amplitudes.
-In many theories, including \qcd \cite{Gross:1973ju}, these infinities can be dealt with with a process called \emph{renormalization}.
+In many theories, including \qcd \cite{Gross:1973ju}, these infinities can be handled using a process called \emph{renormalization}.
 One description of renormalization is the introduction of an energy/momentum cutoff scale.
 Physical calculations cannot depend on any such scales, so amplitude calculations must be organized such that any dependence on the renormalization scale cancels in a physical result, which can be done order-by-order in perturbation theory.
 This process induces a scale dependence of the coupling constant $\alpha_s$ on the arbitrary renormalization scale $\mu$.
@@ -167,12 +167,12 @@ The running of the coupling is demonstrated by the summary of experimental measu
 \subsection{Asymptotic freedom}
 
 The strong coupling constant decreases with rising energy as shown in \cref{eq:running_as} and \cref{fig:running_coupling}.
-This phenomenon is known as \emph{asymptotic freedom} and is necessary to explain Bjorken scaling, since without this feature the interaction between quarks bound in a hadron could not be approximately ignored in a \ac{DIS} process.
+This phenomenon is known as \emph{asymptotic freedom} and is necessary to explain Bjorken scaling since without this feature the interaction between quarks bound in a hadron could not be approximately ignored in a \ac{DIS} process.
 It requires $b_0 > 0$, which for $N_c = 3$ \qcd is true so long as there is no scale at which additional quark fields become relevant such that $N_f > 16$.
-Physically this is understood as arising from the fact that the contributions to $\alpha_s$ from gluon loops dominate those from quark loops \cite{Wilczek:2005az}.
+Physically this is understood as arising from the fact that the contributions to $\alpha_s$ from gluon loops dominate over those from quark loops \cite{Wilczek:2005az}.
 
 Asymptotic freedom is not present in abelian gauge theories like \ac{QED}, where the screening of a bare electric charge causes the effective charge to decrease at large distances, or equivalently the effective electric charge increases at higher energy.
-In \qcd the color field reinforces itself to induce an even stronger field, so the effective field strength does not decrease with increasing separation.
+In \qcd the color field reinforces itself to induce an even stronger field so the effective field strength does not decrease with increasing separation.
 
 The phenomenology of jets relies heavily on asymptotic freedom.
 In high energy hadronic and nuclear collisions, partons from each participant nucleon scatter with large momentum transfer.
@@ -184,10 +184,10 @@ Thus the decay products of these high-energy partons are produced in a \emph{par
 
 In order to be trusted as a fundamental theory of nuclear interactions, \qcd must provide an understanding of the lack of experimental observation of free quarks or gluons.
 Indeed the infrared divergence of $\alpha_s(Q^2)$ suggests that there is some nontrivial behavior as the separation between two colored particles is increased.
-Predictions from \qcd in this region cannot be investigated using perturbation theory, since the rapidly rising coupling constant precludes the convergence of any diagram expansion.
+Predictions from \qcd in this region cannot be investigated using perturbation theory since the rapidly rising coupling constant precludes the convergence of any diagram expansion.
 The numerical approach of \emph{lattice gauge theory} \cite{Aoki:2016frl} is successful at reproducing a number of experimental measurements such as the light hadron mass spectrum \cite{Durr:2008zz}.
 Lattice gauge theory introduces a discrete grid spacing $a$ along both spatial and temporal dimensions, which acts as a regularization parameter.
-An extrapolation of vanish grid spacing $a \rightarrow 0$ is performed in order to recover the continuous theory of \qcd.
+An extrapolation to a vanishing grid spacing $a \rightarrow 0$ is performed in order to recover the continuous theory of \qcd.
 
 \begin{figure}[t]
   \includegraphics{ccbar_potential.png}
@@ -202,8 +202,9 @@ V_{c\bar{c}}(r) = - \frac{A}{r} + \sigma r
 \end{equation}
 with $A = 160 \pm 4 \MeV\,\fm$ and $\sigma = 790 \pm 30 \MeV/\fm$ (\cref{fig:charmonium_potential}).
 The first term has the same form as an attractive Coulomb potential, albeit with a coupling constant about 2 orders of magnitude larger than the \ac{EM} coupling\footnote{where $\alpha_\textrm{EM} \hbar c \approx 1.44 \MeV\,\fm$}.
-The latter term resembles the potential from the force by a string of constant tension $\sigma$, which invokes a description by color ``flux tubes'' between the two quarks of constant energy per length.
-This ``string'' term increases without bound at large separations, so a quark-antiquark pair cannot be separated with a finite amount of energy.
+The latter term resembles the potential from the force by a string of constant tension $\sigma$.
+This invokes a description of the force between the two quarks as color ``flux tubes'' of constant energy per length.
+The ``string'' term $\sigma$ increases without bound at large separations so a quark-antiquark pair cannot be separated with a finite amount of energy.
 At some point it becomes more energetically favorable to produce a quark-antiquark pair out of the vacuum than to maintain a long flux tube (\cref{fig:qqbar_flux}).
 This property is responsible for the phenomenon of \emph{confinement}, which is the absence in nature of bare color charges.
 
@@ -217,7 +218,7 @@ This property is responsible for the phenomenon of \emph{confinement}, which is 
 
 \section{QCD at high temperatures}
 
-Given the observed properties of asymptotic freedom and color confinement, a natural question is whether nuclear matter has a phase transition at large density and/or temperature.
+Given the observed properties of asymptotic freedom and color confinement, a natural question to ask is whether nuclear matter has a phase transition at large density and/or temperature.
 In a system with a low number of quarks, the color connection keeps each bound tightly to others.
 At high densities, however, individual flux tubes are not discernible, and individual color charges are easily balanced by nearby color sources.
 Such a state could exhibit deconfinement, with color charge free to move as electric charge does in a conventional plasma.
@@ -237,9 +238,10 @@ T_c \sim \lqcd \sim 10^{12}~\mathrm{K}\; .
 \cref{fig:qcd_phase} shows a conjectured phase diagram for \qcd matter.
 The transition between hadronic matter and the QGP is a smooth crossover at low baryon density \cite{Aoki:2006we}.
 Above some critical baryon density the transition is hypothesized to be first-order based on a number of model approaches, but this has not been established.
+The existence of such a critical point, along with its temperature and density in the phase diagram, is an objective of experimental measurements particularly at \ac{RHIC}.
 
-\subsection{Thermodynamics of relativistic systems}
-For massless particles the probability of having energy $E$ is calculated by integrating over the constrained phase volume \( \frac{d^3 x \, d^3 p}{(2\pi)^3} \delta\left( E - |\mathbf{p}|\right)\) times the density of states.
+\subsection{Ultrarelativistic thermodynamics}
+For particles of negligible mass the probability of having energy $E$ is calculated by integrating over the constrained phase volume \( \frac{d^3 x \, d^3 p}{(2\pi)^3} \delta\left( E - |\mathbf{p}|\right)\) times the density of states.
 With the statistical factor $\eta=\pm1$ for bosons/fermions and $\eta=0$ for non-identical particles, this gives a probability per unit volume of
 \begin{equation}
 \frac{g E^2}{2\pi^2} \frac{1}{e^{E/T} - \eta}
@@ -249,12 +251,12 @@ where $g$ is a degeneracy factor e.g. for multiple spin values.
 %%   \varepsilon_\textrm{NI} =& g\frac{3T^4}{\pi^2} \\
 %%   n_\textrm{NI} =& g\frac{T^3}{\pi^2}
 %% \end{align}
-For bosons this yields expressions for the energy and number density
+This yields expressions for the energy and number density of bosons
 \begin{align}
   \varepsilon_\textrm{BE} =& g\frac{\pi^2 T^4}{30} \\
   n_\textrm{BE} =& g\frac{\zeta(3) T^3}{\pi^2}
 \end{align}
-and for fermions
+and fermions
 \begin{align}
   \varepsilon_\textrm{FD} =& g\frac{7 \pi^2 T^4}{240} = \frac{7}{8} \varepsilon_\textrm{BE} \\
   n_\textrm{FD} =& g\frac{3 \zeta(3) T^3}{4 \pi^2} = \frac{3}{4} n_\textrm{BE} \; .
@@ -291,7 +293,7 @@ In \ac{QFT} the partition function is represented by the path integral
   \label{eq:z_qft}
   Z = \int \mathcal{D}[\psi] \, e^{i\int d^4 x \, \Lagr(\psi)}
 \end{equation}
-from which amplitudes can be calculated through functional derivatives of source terms $J \cdot \psi$ in the Lagrangian density.
+from which amplitudes can be calculated through functional derivatives of $Z$ with source terms $J \cdot \psi$ in the Lagrangian density.
 At the same time, by analogy with \cref{eq:z_classical} the thermal partition function must look something like
 \begin{equation}
   \label{eq:z_analogy}
@@ -300,11 +302,11 @@ Z \sim \int \mathcal{D}[\psi] \, e^{-\beta \int d^3 \mathbf{x} \, \mathcal{H}(\p
 in terms of the Hamiltonian density $\mathcal{H}$.
 The Lagrangian can be related to the Hamiltonian by a Wick rotation $t \rightarrow -i\tau$ which transforms $\mathcal{L} \rightarrow - \mathcal{H}$.
 With the transformation of the temporal integral in the exponent $i \int dt$ into a periodic domain $\int_0^\beta d\tau$ this analogy can be made precise.
-The fields are periodic such that \(\psi(\beta,\mathbf{x}) = \pm \psi(\beta,\mathbf{x})\) where the sign is determined by whether the field is a boson or fermion.
+The fields are periodic such that \(\psi(\beta,\mathbf{x}) = \pm \psi(0,\mathbf{x})\) where the sign is determined by whether the field is a boson or fermion.
 This periodicity leads to discretization of the allowed energies where $E_n = 2n\pi T$ for bosons and $E_n = (2n+1)\pi T$ for fermions.
 
 With this formalism the full power of perturbation theory can be applied to calculate a number of observables \cite{Gross:1980br}.
-The real-time tree-level propagators pick up absorptive terms proportional to \(2\pi \delta(p^2 - m^2) \frac{1}{e^{\beta |p^0|} \mp 1} \) for bosons/fermions.
+The real-time tree-level propagators pick up absorptive terms proportional to \(2\pi \delta(p^2 - m^2) \frac{1}{e^{|p^0|/T} \mp 1} \) for bosons/fermions.
 For instance, computation of the free energy $ -T \log Z$ leads to a corresponding \ac{LO} correction to \cref{eq:qcd_energy}.
 \begin{equation}
   \label{eq:qcd_energy_lo}
@@ -317,7 +319,7 @@ For instance, computation of the free energy $ -T \log Z$ leads to a correspondi
 
 \begin{figure}[t]
   \includegraphics[width=\linewidth]{lattice_eos.png}
-  \caption{The trace anomaly for several values of lattice spacing $N_\tau = 1/aT$ and the continuum extrapolation (left), and thermodynamic quantities in the continuum limit (right), both shown as a function of temperature \cite{Bazavov:2014pvz}. The solid lines show the predictions from the HRG model, and the Stefan-Boltzmann limit for 3 quark flavors at $19\pi^2/12$ is shown by the straight dashed line.}
+  \caption{The trace anomaly for several values of lattice spacing $N_\tau = 1/aT$ and the continuum extrapolation (left) and thermodynamic quantities in the continuum limit (right), both shown as a function of temperature \cite{Bazavov:2014pvz}. The solid lines show the predictions from the hadron resonance gas model and the Stefan-Boltzmann limit for 3 quark flavors at $19\pi^2/12$ is shown by the straight dashed line.}
   \label{fig:lattice_eos}
 \end{figure}
 
@@ -330,21 +332,20 @@ The pressure is related to the derivative of the trace anomaly up to factors of 
 From there, the remaining combinations of thermodynamic quantities such as $\varepsilon(T)$ and the entropy density $s = \frac{\varepsilon + p}{T}$ are computed, determining the \ac{EoS}.
 
 Recent lattice \qcd results are shown in \cref{fig:lattice_eos}.
-The large step in the ratios $\varepsilon/T^4$ and $s/T^3$ around the critical temperature is an indication of a phase transition indicated by the increase in the effective number of degrees of freedom in \qcd matter.
+The large step in the ratios $\varepsilon/T^4$ and $s/T^3$ around the critical temperature suggests a phase transition indicated by the increase in the effective number of degrees of freedom in \qcd matter.
 A smooth crossover is observed with a critical temperature of \( T_c = 170 \pm 4 \MeV \) \cite{Aoki:2009sc}, which is indeed close to \lqcd as predicted by dimensional analysis.
 Above the critical temperature, clear deviations are shown from the predictions of the \ac{HRG} model.
-The Stefan-Boltzmann limit does not appear to be reached.
-This appears to be consistent with \cref{eq:qcd_energy_lo} which says that perturbative corrections to the energy are negative.
+The Stefan-Boltzmann limit does not appear to be reached, which appears to be consistent with \cref{eq:qcd_energy_lo} which says that perturbative corrections to the energy are negative.
 
 
 \subsection{Heavy ion collisions}
 
-Heavy ions like gold-197 and lead-208 have hundreds of nucleons packed into a spherical volume of radius $\sqrt[3]{A} \approx 6$ times that of a proton.
+Heavy ions, like gold-197 and lead-208, have hundreds of nucleons packed into a spherical volume of radius $\sqrt[3]{A} \approx 6$ times that of a proton.
 This also corresponds to an average transverse areal density of the same factor of 6 times larger than that of a proton.
-In a head-on \AuAu or \PbPb collision, roughly 200 times the energy interacts in a transverse area about 35 times larger than a \pp collisions of the same $\sqrt{s_\mathrm{NN}}$.
-Hydrodynamic modeling suggests a formation time on the order of 1 fm/c, so na\"ively the ultra-relativistic initial products of nuclear collisions have the potential to reach thermalization in \AA collisions.
+In a head-on \AuAu or \PbPb collision, roughly 200 times the matter interacts in a transverse area about 35 times larger than a \pp collisions of the same $\sqrt{s_\mathrm{NN}}$.
+The high densities and temperatures reached in these collisions allow for the potential to produce deconfined \qgp matter.
+%% Hydrodynamic modeling suggests a formation time on the order of 1 fm/c, so na\"ively the ultra-relativistic initial products of nuclear collisions have the potential to reach thermalization in \AA collisions.
 
-%% \subsubsection{Glauber model} %% don't really need an extra subsection label?
 \begin{figure}[t]
   \includegraphics{hi_collision_geo.png}
   \caption{Diagram of the Glauber model nucleus-nucleus geometry with transverse (a) and longitudinal (b) perspectives \cite{Miller:2007ri}.}
@@ -376,7 +377,7 @@ For two nuclei with mass numbers $A$ and $B$ colliding with impact parameter $\m
 T_{AB}(\mathbf{b}) = \int d^2 b \, T_A(\mathbf{s}) T_B(\mathbf{s} - \mathbf{b}) \;,
 \end{equation}
 which has units of inverse area.
-The expected number of nucleon-nucleon collisions \Ncoll is obtained by multiplying the thickness function by the inelastic nucleon-nucleon cross-section\footnote{More rigorously, the probability distribution of \Ncoll for a given impact parameter $b$ is the binomial distribution with $n = AB$ and $p = \frac{T_{AB}(b) \sigma^{NN}_\mathrm{inel}}{AB}$. }
+The expected number of nucleon-nucleon collisions \Ncoll is obtained by multiplying the thickness function by the inelastic nucleon-nucleon cross-section\footnote{More rigorously, the probability distribution of \Ncoll for a given impact parameter $b$ is the binomial distribution $B(n,p)$ with $n = AB$ and $p = \frac{T_{AB}(b) \sigma^{NN}_\mathrm{inel}}{AB}$. }
 \begin{equation}
   \langle\Ncoll(b)\rangle = T_{AB}(b) \sigma^{NN}_\mathrm{inel} \;.
 \end{equation}
@@ -445,9 +446,10 @@ Results presented in this thesis will provide additional support for the \ac{GGC
   \label{fig:dijet_asym}
 \end{figure}
 
-The observation of jet quenching in \PbPb collisions, shown in \cref{fig:dijet_asym}, is a signature of the formation of an opaque medium \cite{HION-2012-11}.
-The reduction of the ratio of sub-leading jet \pt to leading jet \pt is drastic in central collisions but not significant in peripheral collisions.
-This matter is likely composed of relatively soft particles since if the suppression was a result of hard scattering alone dijets would be deflected at large angles.
+The observation of jet quenching in \PbPb collisions is a signature of the formation of an opaque medium \cite{HION-2012-11}.
+The reduction of the ratio of sub-leading jet \pt to leading jet \pt indicates that one of the jets travels a greater apparent distance through a medium.
+This effect is drastic in central collisions but not significant in peripheral collisions as shown in \cref{fig:dijet_asym}.
+This matter is likely composed of relatively soft particles since if the energy loss was a result only of repeated hard scattering then dijets would be deflected out of a co-linear plane.
 Dijet asymmetry has not been observed in \pA collisions, but this does not necessarily rule out the formation of a medium because it could have a formation time comparable to the transverse size of the system.
 
 \begin{figure}[t]
@@ -497,7 +499,7 @@ This provides a framework for testing the predictions of dynamical models that d
 For instance, a non-interacting gas model predicts $\langle v_n \rangle = 0$ for $n \geq 2$, with nonzero flow coefficients only from fluctuations, and is ruled out for \AA, \pA, and \pp collisions.
 
 Hydrodynamics is a simple model that only assumes the system can be described by a fluid field with four-velocity $u^\mu(x^\nu)$ and imposes conservation of the stress-energy tensor $T^{\mu\nu}$ and possibly other conserved charges. %%, such that $\nabla_\mu T^{\mu\nu} = 0$.
-The inputs into hydrodynamics are the description of $T^{\mu\nu}$ itself, which typically includes an \ac{EoS} and multiple free parameters.
+The input of hydrodynamics is the specification of $T^{\mu\nu}$ itself, which typically includes an \ac{EoS} and multiple free parameters.
 \Cref{sec:hydro} discusses relativistic hydrodynamic theory in detail.
 The signature feature of fluid dynamics is the fact that accelerations are driven by pressure gradients.
 For instance, in an ideal conformal fluid in $d$ spacetime dimensions
@@ -505,7 +507,7 @@ For instance, in an ideal conformal fluid in $d$ spacetime dimensions
 \dot{\mathbf{u}} = - \frac{1}{d} \boldsymbol{\nabla} \ln p
 \end{equation}
 where $\mathbf{u}$ is the vector part of $u^\mu$ and $p$ is the pressure.
-Thus the shape of the initial energy density has a significant effect on the final particle distribution in \cref{eq:flow_coefficients}, as fluid is pushed from regions of large density to small.
+Thus the shape of the initial energy density has a significant effect on the final particle distribution in \cref{eq:flow_coefficients}, as the fluid is pushed from regions of large density to small.
 
 For the fluid description to be valid, matter must be able to readily interact with nearby fluid.
 If disturbances in the velocity and energy fields are not propagated to nearby locations then the smooth description of the fields breaks down.
@@ -562,7 +564,7 @@ Under the constraints of Lorentz symmetry and neglecting fluctuations, the stres
 T^{\mu\nu}_{(0)} = \varepsilon u^\mu u^\nu - p \Delta^{\mu\nu}
 \end{equation}
 where $\varepsilon$ and $p(\varepsilon)$ are respectively the energy density and pressure in the local rest frame.
-The co-moving time-like and space-like projection operators are $u^\mu u^\nu$ and \( \Delta^{\mu\nu} \equiv g^{\mu\nu} - u^\mu u^\nu \) respectively.
+The co-moving time-like and space-like projection operators are $u^\mu u^\nu$ and \( \Delta^{\mu\nu} \equiv g^{\mu\nu} - u^\mu u^\nu \), respectively.
 In the absence of sources there are four conserved quantities corresponding to energy and three components of momentum.
 \begin{equation}
   \label{eq:em_cons}
@@ -574,7 +576,7 @@ Projecting this equation into time and space components yields the relativistic 
   \left(\varepsilon + p\right)Du^\mu + c_s^2 \nabla_\perp^\mu \varepsilon &= 0 
 \end{align}
 where \(D \equiv u^\mu \nabla_\mu\) is the co-moving time-like derivative, \( \nabla_\perp^\mu \equiv \Delta^{\mu\nu} \nabla_\nu \) is the co-moving space-like derivative, and \(c_s(\varepsilon) \equiv \sqrt{\frac{\partial p}{\partial \varepsilon}} \) can be identified with the speed of sound.
-With a toy \ac{EoS} $p = c_s^2 \varepsilon$ the Euler equation is written %% conformal/ultrarelativistic if c_s^2 = 1/3, e.g. photon gas
+With a toy \ac{EoS} $p = c_s^2 \varepsilon$ the Euler equation is written as %% conformal/ultrarelativistic if c_s^2 = 1/3, e.g. photon gas
 \begin{equation}
 \dot{u}^\mu = \frac{c_s^2}{1+c_s^2} \frac{\nabla^\mu p}{p}
 \end{equation}
@@ -584,7 +586,7 @@ The assumption of perfect fluidity is relaxed with the addition of the terms
 \begin{equation}
 T^{\mu\nu} = T^{\mu\nu}_{(0)} + \pi^{\mu\nu} + \Delta^{\mu\nu}\Pi
 \end{equation}
-where $\pi^{\mu\nu}$ and $\Pi$ are the shear stress and bulk stress and split the corrections into a traceless and trace part respectively.
+where $\pi^{\mu\nu}$ and $\Pi$ are the shear stress and bulk stress that split the corrections into a traceless and trace part respectively.
 To first order in gradients of $u^\mu$ and $\varepsilon$,
 \begin{align}
   \label{eq:shear_stress}
@@ -597,7 +599,7 @@ with
   \label{eq:sigma_tensor}
   \sigma^{\mu\nu} \equiv \nabla_\perp^\mu u^\nu + \nabla_\perp^\nu u^\mu - \frac{2}{3} \Delta^{\mu\nu}\nabla^\perp_\alpha u^\alpha \; ,
 \end{equation}
-and $\eta$ and $\zeta$ are the first order \emph{transport coefficients} and are called respectively the shear viscosity and bulk viscosity.
+and $\eta$ and $\zeta$ are the first order \emph{transport coefficients} which are called the shear viscosity and bulk viscosity, respectively.
 Applying energy-momentum conservation (\cref{eq:em_cons}) with these 1st-order corrections yields the relativistic Navier-Stokes equations
 \begin{align}
   D\varepsilon + \left(\varepsilon + p\right)\nabla^\perp_\mu u^\mu &= \frac{\eta}{2}\sigma^{\mu\nu}\sigma_{\mu\nu} + \zeta \left( \nabla^\perp_\mu u^\mu \right)^2 \\
@@ -642,14 +644,15 @@ The Knudsen number in heavy ion simulations is not typically orders of magnitude
 
 Recent work has shown that the hydrodynamic expansion can be Borel-resummed \cite{Romatschke:2016hle,Romatschke:2017vte}, a method that produces an analytic continuation of the series.
 The stress-energy tensor is split into a hydrodynamic attractor and a non-hydrodynamic component, with the cost that the transport coefficients become explicit functions of $\varepsilon$ and the gradients of $\varepsilon$ and $u^\mu$.
-The condition for the applicability of hydrodynamics is weakened from thermal equilibrium to the statement that these non-hydro modes are negligible.
-It appears in many examples that the non-hydro modes decrease exponentially quickly, which potentially explains the ``unreasonable success'' of viscous hydrodynamics.
+In this framework the condition for the applicability of hydrodynamics is weakened from thermal equilibrium to the requirement that these non-hydro modes are negligible.
+%% The condition for the applicability of hydrodynamics is weakened from thermal equilibrium to the statement that these non-hydro modes are negligible.
+In many examples it appears that the non-hydro modes decrease exponentially quickly, which potentially explains the ``unreasonable success'' of viscous hydrodynamics.
 This also helps to explain the observations of some hydro-like phenomena in \pPb and even \pp collisions, where the small system size results in Knudsen numbers that are often greater than unity.
 
 
 \subsection{Transport coefficients of the QGP} %% was titled ``and the AdS/CFT correspondence''
 
-Hydrodynamics provides the framework for describing the bulk motion of fluid matter, but is not capable of independent determination of the \ac{EoS} or the transport coefficients.
+Hydrodynamics provides the framework for describing the bulk motion of fluid matter but is not capable of an independent determination of the \ac{EoS} or the transport coefficients.
 Assumptions or results from microscopic theory are required to say anything about these quantities.
 The \qcd \ac{EoS} is under control from lattice calculations, as discussed in \cref{subsec:lattice}. %% need to number subsections to have proper section number reference.
 
@@ -675,8 +678,8 @@ The condition for the validity of hydrodynamics from the previous discussion can
   \frac{\eta}{s} \ll LT \;,
 \end{equation}
 which supports the intuition that matter with a small specific viscosity is expected to behave like a perfect fluid.
-A lower bound can be placed on the viscosity based on arguments from the uncertainty principle \cite{Danielewicz:1984ww}, with $\eta \gtrsim 2T^3$.
-With the Stefan-Boltzmann entropy this places a bound on the ratio
+A lower bound can be placed on the viscosity based on arguments from the uncertainty principle \cite{Danielewicz:1984ww} such that $\eta \gtrsim 2T^3$.
+With the Stefan-Boltzmann entropy, a bound is placed on the specific viscosity
 \begin{equation}
   \label{eq:eta_over_s_uncertainty}
   \frac{\eta}{s} \gtrsim 0.1 \; ,
