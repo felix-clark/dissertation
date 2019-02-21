@@ -711,15 +711,15 @@ The \qgp is quite close to a perfect quantum fluid.
 %% https://indico.cern.ch/event/766194/contributions/3260610/attachments/1777242/2889870/WWND_ykawa_fin.pdf
 
 Space-time correlations between the photons are used in astronomy to measure the size of stellar light sources.
-These Hanbury Brown and Twiss (HBT) correlations \cite{HanburyBrown:1954,HanburyBrown:1956} are a consequence of Bose-Einstein statistics and manifest as increased probability for two photons to arrive at two detectors at similar times.
+These \ac{HBT} correlations \cite{HanburyBrown:1954,HanburyBrown:1956} are a consequence of Bose-Einstein statistics and manifest as increased probability for two photons to arrive at two detectors at similar times.
 The width of the correlation in time difference is inversely proportional to the size of the distant star.
 This process is called \emph{second-order interferometry}, as it requires a decoherent source in contrast to the type of interferometry exhibited in a classic double-slit experiment.
 
 The procedure can be adapted to the tiny sources encountered in hadronic collisions using correlations in relative momentum space \cite{Goldhaber:1960sf}.
-Though Bose-Einstein interactions are the simplest to take advantage of, in principle any non-trivial interaction can be used to image the source density.
+Though Bose-Einstein interactions are the simplest to leverage, in principle any non-trivial interaction can be used to image the source density.
 The term \emph{femtoscopy} is used to refer to any measurement that provides spatio-temporal information of a hadronic source.
 
-The measured \emph{HBT radii} represent the dimensions of a nuclear source at freeze-out, after all interactions between a final-state particle and the bulk are finished.
+The measured \emph{\ac{HBT} radii} represent the dimensions of a nuclear source at freeze-out after all interactions between a final-state particle and the bulk are finished.
 They are therefore sensitive to predictions regarding hydrodynamic expansion of an initial state.
 The results of femtoscopic measurements in \pPb systems are of significant interest because they can shed light on the extent to which hydrodynamics applies in such small systems.
 
@@ -727,8 +727,8 @@ The results of femtoscopic measurements in \pPb systems are of significant inter
 Momentum space correlation functions can be written out in terms of source density functions, as detailed in the review in \Ref{\cite{Lisa:2005dd}}.
 Particles are emitted on a freeze-out hypersurface denoted by $\partial\Sigma$.
 The generation and interactions of $n$ particles before this hypersurface is described by a source density function $s_n(p_1, x_1;\ldots; p_n, x_n)$ of outgoing particle momenta $p_i$ and initial spacetime coordinates $x_i$.
-The hypersurface $\partial\Sigma$ is not a region where each particle is created at, but rather the surface of final interaction of the emitted particles with the bulk.
-Though we only integrate $s_n$ over $\partial\Sigma$, the interactions before freeze-out are swept into the definition of $s_n$.
+The hypersurface $\partial\Sigma$ is not a region where each particle is created, but rather the surface of final interaction of the emitted particles with the bulk.
+Though $s_n$ is only integrated over $\partial\Sigma$, the interactions before freeze-out are swept into the definition of $s_n$.
 For two particles the following is written out:
 \begin{equation}
   \begin{split}
@@ -743,23 +743,31 @@ This normalization $S_2$ of $s_2$ is defined as follows:
 \begin{equation} S_{2, \mathbf{k}} (\mathbf{r}) \equiv \frac{\iint_{\partial\Sigma} d^3 x_a \, d^3 x_b \, s_2 \left(\frac{m_a}{m_a+m_b}\mathbf{k}, x_a; \frac{m_b}{m_a+m_b}\mathbf{k}, x_b\right) \, \delta^3(\mathbf{r} - \mathbf{x}_a + \mathbf{x}_b)}{\int_{\partial\Sigma} d^3 x_a \, s_1 \left(\frac{m_a}{m_a+m_b}\mathbf{k}, x_a\right) \, \int_{\partial\Sigma} d^3 x_b \, s_1\left(\frac{m_b}{m_a+m_b}\mathbf{k}, x_b\right)}\end{equation}
 If the resonances and other higher-order effects are ignored or removed, one can make the approximation that $s_2 (p_a, x_a; p_b, x_b) \approx s_1(p_a, x_a) s_1(p_b, x_b)$ which imposes the normalization constraint $\int d^3 r \, S_{2,\mathbf{k}}(\mathbf{r}) = 1$.
 
-The correlation function can now be written in a simple and suggestive form.
+%% The correlation function can now be written in a simple and suggestive form.
 Assuming that the center-of-mass motion is irrelevant after emission, the overall phase $e^{i\mathbf{k}\cdot(\mathbf{x}_a+\mathbf{x}_b)}$ can be factored out of the wavefunction (as in the example of \cref{eq:free_particle_wavefunction}), leaving only the relative part.
 \begin{equation} \label{eq:wavefunction_kernel}
 C_\mathbf{k}(\mathbf{q}) - 1 = \int d^3 r \, S_{2,\mathbf{k}}(\mathbf{r}) \left(\left|\braket{\mathbf{q}|\mathbf{r}}\right|^2 - 1 \right)
 \end{equation}
-Thus the wavefunction is a kernel that transforms the (appropriately normalized) source density function to final-state correlation functions.
-For identical bosons, the resolving power is particularly strong, due to wavefunction symmetrization.
-In the approximation that all particles of a given charge are pions, that they are created in a fully chaotic source, and that they have no final-state interactions, the wavefunctions are simple plane waves and the resulting enhancement is the Fourier transform of the source density (the kernel is only non-zero for interacting particles):
-\begin{align}
-\braket{\mathbf{k}|\mathbf{q}}{\mathbf{x}_a, \mathbf{x}_b} &= \frac{1}{\sqrt{2}}\left(e^{i\mathbf{p}_a \cdot \mathbf{x}_a + i\mathbf{p}_b \cdot \mathbf{x}_b} + e^{i\mathbf{p}_b \cdot \mathbf{x}_a + i\mathbf{p}_a \cdot \mathbf{x}_b}\right)\\
-&= \frac{1}{\sqrt{2}}e^{i\mathbf{k} \cdot (\mathbf{x}_a+ \mathbf{x}_b)}\left(e^{i\mathbf{q} \cdot (\mathbf{x}_a - \mathbf{x}_b)/2} + e^{- i\mathbf{q} \cdot (\mathbf{x}_a - \mathbf{x}_b)/2}\right) \label{eq:free_particle_wavefunction}
-\end{align}
-Plugging this back into the expression for the correlation function yields:
-\begin{align}
+This shows that the wavefunction is a kernel that transforms the source density function into the final-state correlation function.
+The wavefunction kernel is only non-zero for interacting particles such that $\left|\braket{\mathbf{q}|\mathbf{r}}\right| = 1$.
+For identical bosons, the resolving power is particularly strong due to wavefunction symmetrization.
+In the approximation that all particles of a given charge are pions, that they are created in a fully chaotic source, and that they have no final-state interactions, the wavefunctions are simple plane waves and the resulting enhancement is the Fourier transform of the source density:
+\begin{equation}
+  \begin{split}
+    \label{eq:free_particle_wavefunction}
+\braket{\mathbf{k},\mathbf{q} | \mathbf{x}_a,\mathbf{x}_b} &= \frac{1}{\sqrt{2}}\left(e^{i\mathbf{p}_a \cdot \mathbf{x}_a + i\mathbf{p}_b \cdot \mathbf{x}_b} + e^{i\mathbf{p}_b \cdot \mathbf{x}_a + i\mathbf{p}_a \cdot \mathbf{x}_b}\right)\\
+&= \frac{1}{\sqrt{2}} e^{i\mathbf{k} \cdot (\mathbf{x}_a+ \mathbf{x}_b)}\left(e^{i\mathbf{q} \cdot (\mathbf{x}_a - \mathbf{x}_b)/2} + e^{- i\mathbf{q} \cdot (\mathbf{x}_a - \mathbf{x}_b)/2}\right)\\
+&= \sqrt{2}  e^{i\mathbf{k} \cdot (\mathbf{x}_a+ \mathbf{x}_b)} \cos\left( \frac{\mathbf{q} \cdot \Delta\mathbf{x}}{2} \right)\\
+  \end{split}
+\end{equation}
+Plugging this back into the expression for the correlation function yields
+\begin{equation}
+  \begin{split}
 C_{\mathbf{k}}(\mathbf{q}) - 1 &= \int d^3 r \, S_{\pi\pi,\mathbf{k}}(\mathbf{r}) \cos\left(\mathbf{q}\cdot\mathbf{r}\right)
 \\&= \mathcal{F}\left[{S}_{\pi\pi,\mathbf{k}}\right] (\mathbf{q})
-\end{align}
+  \end{split}
+\end{equation}
+with the integration variable $\mathbf{r} = \Delta\mathbf{x}$.
 
 In principle, any two interacting particle species can be used to image the source density.
 The stronger the interaction, the more powerful the kernel is at resolving the source.
@@ -776,34 +784,38 @@ For these the $\left(\left|\braket{\mathbf{q}|\mathbf{r}}\right|^2 - 1\right)$ t
   \begin{split}
     C_\mathbf{k}(\mathbf{q}) &= 1 + \lambda \int d^3 r \, S_{\mathbf{k}}(\mathbf{r}) \left(\left|\braket{\mathbf{q}|\mathbf{r}}\right|^2 - 1 \right)\\
     &= (1-\lambda) + \lambda \int d^3 r \, S_{\mathbf{k}}(\mathbf{r}) \left|\braket{\mathbf{q}|\mathbf{r}}\right|^2\\
-    &= (1-\lambda) + \lambda \int d^3 r \, S_{\mathbf{k}}(\mathbf{r}) K(\mathbf{q},\mathbf{r}) \left(1 + s \cos\left(\mathbf{q}\cdot\mathbf{r}\right)\right)
+    &= (1-\lambda) + \lambda \int d^3 r \, S_{\mathbf{k}}(\mathbf{r}) K(\mathbf{q},\mathbf{r}) \left(1 + \eta \cos\left(\mathbf{q}\cdot\mathbf{r}\right)\right)
   \end{split}
 \end{equation}
-where we have written the wavefunction as $\braket{\mathbf{q}|\mathbf{r}} = \sqrt{K(\mathbf{q},\mathbf{r})} \braket{\mathbf{q}|\mathbf{r}}_{\textrm{free}}$, with $K$ representing corrections to the free-particle wavefunction, and where $s$ is a spin factor such that $s = \pm 1$ for bosons/fermions and $0$ for distinct particles.
-For instance, $K = G(q)$ where $G(\qinv)$ is the Gamow factor accounts for Coulomb interactions between the final-state pions.
+where we have written the wavefunction as $\braket{\mathbf{q}|\mathbf{r}} = \sqrt{K(\mathbf{q},\mathbf{r})} \braket{\mathbf{q}|\mathbf{r}}_{\textrm{free}}$, with $K$ representing corrections to the free particle wavefunction, and where $\eta$ is the spin factor such that $\eta = \pm 1$ for bosons/fermions and $0$ for non-identical particles.
+For instance, $K(\mathbf{q}) = G(\qinv)$ where $G(\qinv)$ is the Gamow factor accounts for Coulomb interactions between the final-state pions.
 It is convenient to allow $K$ to be a function only of $q$, thus factoring it out of the integral.
 This approximation is reasonable so long as the size of the source is small compared to the characteristic interaction length of the pair.
 The particular choice for $K$, which includes a correction for the non-zero source size, is discussed in \cref{subsec:coulomb}.
 With this simplification the correlation function can be expressed in a fairly general form as a function of the Fourier transform of the pair source density.
-\begin{equation} \label{eq:correlation_function}
-C_\mathbf{k}(\mathbf{q}) = (1-\lambda) + \lambda K(\mathbf{q})\left\{ 1 + s \mathcal{F} \left[ S_\mathbf{k} \right](\mathbf{q}) \right\}
+\begin{equation}
+  \label{eq:correlation_function}
+  C_\mathbf{k}(\mathbf{q}) = (1-\lambda) + \lambda K(\mathbf{q})\left\{ 1 + \eta \mathcal{F} \left[ S_\mathbf{k} \right](\mathbf{q}) \right\}
 \end{equation}
 
 
 \subsection{Parameterization of the correlation function}
+\Cref{eq:correlation_function} relates an experimentally measured correlation function to the description of the source function encoded in its Fourier transform $\mathcal{F}[S_\mathbf{k}](\mathbf{q})$.
+Extracting the source function $S_\mathbf{k}(\mathbf{r})$ directly from $C(q)$ by attempting to invert the Fourier integral transform $\mathcal{F}$ is impractical due to the noise in the measured correlation function.
+\todo{here}
 
 \subsubsection{L\'evy parameter}
 
-A choice must be made to parameterize the description of $\mathcal{F}[S_\mathbf{k}]$.
+%% A choice must be made to parameterize the description of $\mathcal{F}[S_\mathbf{k}]$.
 When a generalization of the central limit theorem is considered, for which the requirement for finite variance is relaxed, one can derive the L\'evy-stable distributions \cite{Csorgo:2003uv}.
 Their characteristic functions\footnote{i.e. Fourier transforms} are stretched exponentials, which are able to be expressed in terms of elementary functions and thus lend themselves readily to fitting.
 In the approximation of ellipsoidal symmetry of the source, the Bose-Einstein part of the identical-pion correlation function can then be expressed as
-\begin{equation} C_{\textrm{BE}}(\mathbf{q}) = 1 + \mathcal{F}[S_\mathbf{k}](\mathbf{q}) = 1 + e^{- \left|R \mathbf{q} \right|^{\alpha} } \end{equation}
-where $R$ is a symmetric matrix whose components are the \emph{HBT radii}.
+\begin{equation} C_{\textrm{BE}}(\mathbf{q}) = 1 + \mathcal{F}[S_\mathbf{k}](\mathbf{q}) = 1 + e^{- \left\lVert R \mathbf{q} \right\rVert^{\alpha} } \end{equation}
+where $R$ is a symmetric matrix whose components are the \ac{HBT} radii.
 The L\'evy parameter $\alpha$ determines the tail weight of the underlying source density - the lower it is, the heavier the tails are.
 Two particular cases are worth noting.
 If $\alpha = 2$, the correlation function is a Gaussian and so is the source density, which is proportional to \( \exp\left(-\frac{1}{2} \mathbf{x} R^{-2} \mathbf{x}\right) \).
-If $\alpha = 1$, the correlation function is a generalized exponential, and the source density is Cauchy proportional to \( \left( 1 + \mathbf{x} R^{-2} \mathbf{x} \right)^{-1} \).
+If $\alpha = 1$ the correlation function is a generalized exponential and the source density is Cauchy, proportional to \( \left( 1 + \mathbf{x} R^{-2} \mathbf{x} \right)^{-1} \).
 It is common practice to fix $\alpha$ to one of these two values\footnote{The source densities corresponding to these stable functions have infinite variance if $\alpha < 2$, but the positive moments of the stable function itself are finite.
 In $d$ spatial dimensions, the normalized $n^\textrm{th}$ $|q|$-moment of the correlation function's enhancement is given by
 \begin{equation}
@@ -834,7 +846,7 @@ In a longitudinally-expanding hydrodynamic system this coordinate system is the 
   \label{fig:hbt_outsidelong}
 \end{figure}
 
-The full HBT matrix is written out in this coordinate system as
+The full \ac{HBT} matrix is written out in this coordinate system as
 \begin{equation}
   \label{eq:r_matrix_full}
   R = \left( \begin{array}{ccc}
@@ -843,7 +855,7 @@ The full HBT matrix is written out in this coordinate system as
   \Rol & \Rsl & \Rlong
   \end{array} \right) \; .
 \end{equation}
-The main HBT radii are the diagonal terms of this matrix, illustrated in \cref{fig:hbt_outsidelong}.
+The main \ac{HBT} radii are the diagonal terms of this matrix, illustrated in \cref{fig:hbt_outsidelong}.
 The outwards radius \Rout represents the radial depth of the region of homogeneity as seen by the pair.
 In hydrodynamic models the value of \Rout depends on the transverse velocity and the lifetime of the source.
 The sideways radius \Rside is the transverse size of the source in the direction perpendicular to \kt.
@@ -908,7 +920,7 @@ The longitudinal radius is then determined by the expected emission time
   \Rlong \approx v_\textrm{thermal} \langle t \rangle \; .
 \end{equation}
 The thermal velocity scales with $\sqrt{T/\mt}$ at large \mt where $\mt = \sqrt{m^2 + \pt^2}$ is the transverse mass.
-However, because particles with larger \mt are typically emitted earlier \Rlong may be expected to decrease more rapidly than $1/\sqrt{\mt}$.
+However, because particles with larger \mt are typically emitted earlier, \Rlong may be expected to decrease more rapidly than $1/\sqrt{\mt}$.
 
 Transverse expansion is generated by the particular dynamics of the system, so the dependence of the transverse radii on \mt depends on the choice of blast wave model.
 Generally a similar decrease with \mt is predicted for \Rout and \Rside as well as \Rlong, as shown in \cref{fig:hbt_flow}. Generally the decrease of femtoscopic radii with rising pair \kt is interpreted as a signature of collective expansion \cite{Kolb:2003dz}.
@@ -918,15 +930,16 @@ Generally a similar decrease with \mt is predicted for \Rout and \Rside as well 
 
 \subsection{Motivation for femtoscopy in proton-lead collisions}
 Femtoscopic measurements have already been made in \pPb collisions \cite{Abelev:2014pja,Adam:2015pya} but there is space for advancement.
-The \kt-dependence of these measured HBT radii suggests collective expansion even in peripheral collisions.
+The \kt-dependence of these measured \ac{HBT} radii suggests collective expansion even in peripheral collisions.
 However, this pattern is faked by the increasing relevance of jet fragmentation correlations at larger \kt and in peripheral collisions, and the method used to account for this background is susceptible to this bias.
 Thus increasing sophistication in the methods used to constrain this background are desirable.
 In addition, rapidity-dependent measurements of the radii have the potential to have nontrivial behavior in an asymmetric \pA system, and ATLAS is particularly well-suited to such a measurement with an inner detector covering 5 units of pseudorapidity.
 
 Because femtoscopy provides a measurement of the source's spatial dimensions, it is particularly useful for probing the hydrodynamic prediction that spatial anisotropies lead to complementary momentum anisotropies.
-Elliptic modulation of the freeze-out shape has been observed in \AuAu \cite{Adams:2003ra,Adare:2014vax,Adamczyk:2014mxp} and \PbPb \cite{Adamova:2017opl} collisions, which show that the transverse radii are reduced along the event plane axis compared to out-of-plane.
+Elliptic modulation of the freeze-out shape has been observed in \AuAu \cite{Adams:2003ra,Adare:2014vax,Adamczyk:2014mxp} and \PbPb \cite{Adamova:2017opl} collisions.
+These measurements show that the transverse radii are reduced along the event plane axis compared to out-of-plane.
 The second-order Fourier coefficient of \Rside is shown in \cref{fig:rside_v2_aa} for \AuAu and \PbPb systems as a function of the initial ellipticity computed in the MC Glauber model.
-The final source ellipticity indicated by $\Rside{}_{,c2} / \Rside{}_{,0}$ has the same sign as the initial ellipticity but with a reduced magnitude.
+The final source ellipticity, indicated by $\Rside{}_{,c2} / \Rside{}_{,0}$, has the same sign as the initial ellipticity but with a reduced magnitude.
 This is consistent with an elliptic transverse source profile that expands more along the minor axis but not enough to overtake the length of the major axis.
 
 \begin{figure}[t]
@@ -937,4 +950,4 @@ This is consistent with an elliptic transverse source profile that expands more 
 
 Azimuthal measurements are challenging outside of \AA collisions because the resolution of the event plane \psit depends heavily on the event activity.
 ATLAS has a reasonably high event plane resolution in central \pPb events with reasonably large elliptic flow.
-An observation of the same type of azimuthal dependence of the HBT radii that is observed in \AA collisions would provide compelling evidence for the hydrodynamic behavior of central \pPb collisions.
+An observation of the same type of azimuthal dependence of the \ac{HBT} radii that is observed in \AA collisions would provide compelling evidence for the hydrodynamic behavior of central \pPb collisions.
