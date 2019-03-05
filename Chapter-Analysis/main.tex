@@ -16,7 +16,7 @@ The \ac{HighET} trigger sampled a total luminosity of $41.4~\mu\textrm{b}^{-1}$ 
 Events from this trigger are only included in the 0--1\% centrality interval, where the \ac{HighET} trigger is fully efficient.
 
 Several \acp{HMT} are included to boost the sample used in the azimuthal analysis, with offline \Nch cutoffs at 100, 130, 150, 180, 200, and 225 tracks.
-These \acp{HMT} provide a crucial 6.7 million events, as the \minbias triggers provide only 200 000 events at $\Nch > 150$.
+These \acp{HMT} provide a crucial 6.7 million events, as the \minbias triggers provide only 200 000 events at $\Nch \geq 150$.
 
 All events are required to pass a set of \minbias selection criteria.
 Events are required to be included in the latest Good Runs List from ATLAS, which rejects events recorded in conjunction with a technical difficulty in the detector.
@@ -34,12 +34,12 @@ In addition, events are discarded if an error flag is recorded in the \ac{LAr} o
 
 \begin{figure}[t]
 \includegraphics{fcal_et_total.pdf}
-\caption{The distribution of the total transverse energy in the \ac{FCal} in the Pb-going direction (\sumETPb) for the events used in the centrality-dependent analysis. Dashed lines are shown at the boundaries of the centrality intervals, and the discontinuity at $\sumETPb = 91.08~\GeV$ corresponds to the lower \sumETPb boundary of the 0--1\% centrality interval.}
+\caption{The distribution of the total transverse energy in the \ac{FCal} in the Pb-going direction (\sumETPb) for the events used in the centrality-dependent analysis. Dashed lines are shown at the boundaries of the centrality intervals, and the discontinuity at $\sumETPb = 91.08~\GeV$ corresponds to the lower \sumETPb boundary of the 0--1\% centrality interval. Negative values can occur because the mean noise is subtracted from each calorimeter cell.}
 \label{fig:fcal_et}
 \end{figure}
 
 The centralities of the \pPb\ events are characterized following the procedures described in \Ref{\cite{HION-2012-15}}, using the total transverse energy in the Pb-going side of the \ac{FCal}, \sumETPb.
-The use of the \ac{FCal} for measuring centrality has the advantage that it is not sensitive to multiplicity flvuctuations in the kinematic region covered by the inner detector, where the measurements are performed.
+The use of the \ac{FCal} for measuring centrality has the advantage that it is not sensitive to multiplicity fluctuations in the kinematic region covered by the inner detector, where the measurements are performed.
 Measurements are presented in this paper for the centrality intervals listed in \cref{table:npart}.
 The events selected using the \ac{HighET} trigger are used only in the 0--1\% centrality interval.
 \cref{fig:fcal_et} shows the distribution of \sumETPb\ values obtained from events included in this
@@ -59,7 +59,7 @@ The values and uncertainties from this procedure are listed in \cref{table:npart
 \begin{figure}[t]
 \centering
 \includegraphics{can_nch.pdf}
-\caption{The charged-particle multiplicity \Nch of tracks with $\pt > 0.4$ GeV. Each of the 4 cutoffs corresponds to additional triggers used in the analysis. The distribution scaled down to match the scale of the events from the MinBias trigger is also shown by the dashed blue line.}
+\caption{The charged-particle multiplicity \Nch of tracks with $\pt > 0.4$ GeV. Each of the four cutoffs corresponds to additional triggers used in the analysis. The distribution scaled down to match the scale of the events from the MinBias trigger is also shown by the dashed blue line.}
 \label{fig:nch}
 \end{figure}
 
@@ -140,7 +140,7 @@ This multiplication removes the skew from the \qt distribution and causes it to 
 \includegraphics[width=.49\linewidth]{can_qxx.eps}
 \includegraphics[width=.49\linewidth]{can_qyy.eps}\\
 \includegraphics[width=.49\linewidth]{can_qxy.eps}
-\caption{The average components of the $<\qt{}_i \qt{}_j>$ matrix for each run. Runs up to 218589 are from period A, and use $\eta > 2.5$, while runs after this are from period B and use $\eta < -2.5$.}
+\caption{The average components of the $<\qt{}_i\ \qt{}_j>$ matrix for each run. Runs up to 218589 are from period A, and use $\eta > 2.5$, while runs after this are from period B and use $\eta < -2.5$.}
 \label{fig:mean_q2_cov}
 \end{figure}
 
@@ -185,7 +185,7 @@ The event plane resolution of the nominal subdetector can be calculated with the
 Here $\psit^A$ refers to the event plane measured using calorimeters with $-2 < \eta< -0.5$ and $\psit^B$ refers to that with $0 < \eta < 1.5$.
 Each of these additional subevents has first- and second-order corrections applied that are derived for each region of the detector in the same way that the corrections are derived for the nominal subdetector with $\eta < -2.5$.
 Systematic uncertainties in the event plane resolution are taken from two sources.
-The alternate subdetectors are shifted by $\Delta\eta = +0.5$ and the difference in the EP resolution is symmetrized.
+The alternate subdetectors are shifted by $\Delta\eta = +0.5$ and the difference in the event plane resolution is symmetrized.
 Also, the alternate subdetectors are calculated using the \qt from tracks weighted by their \pt.
 This difference is also symmetrized, and these two contributions are added in quadrature.
 
@@ -250,7 +250,7 @@ The event-mixed background $B(q) \equiv \left. dN/dq \right|_{\textrm{mix}}$ is 
 This approach has the useful property that most single-particle efficiency, acceptance, and resolution effects cancel in the ratio.
 This event mixing approach is therefore used when possible except in the azimuthally-dependent analysis where it is precluded by the event plane resolution correction.
 
-Each particle in the background fulfills the same selection requirements as those used in the same-event distribution.
+Each particle in the background satisfies the same selection requirements as those used in the same-event distribution.
 Event classes are categorized by centrality so that events are only compared to others with similar multiplicities and momentum distributions.
 Events are also sorted by the longitudinal position of the primary vertex $z_\textrm{PV}$ so that the background distribution is constructed with pairs of tracks originating from nearby space points, which is necessary for $B(q)$ to accurately represent the as-installed detector.
 The $A(q)$ and $B(q)$ distributions are combined over $z_\textrm{PV}$ intervals in such a way that each of them represents the same $z_\textrm{PV}$ distribution.
@@ -286,7 +286,7 @@ and $\Nbins = 8$ is the number of azimuthal bins.
 Only the 2nd harmonic is corrected in this procedure. Higher-order harmonics, while potentially of physical interest, are more difficult to measure and are not considered in this analysis.
 
 The combinatoric background $B(q) \equiv \left. dN/dq \right|_{\textrm{mix}}$ is traditionally constructed by event mixing, that is, by selecting one particle from each of two events in the same event class as $A(q)$ as described in \cref{subsec:evt_mixing}.
-However, with an azimuthally-differential analysis the event plane resolution correction precludes event mixing because there is no simple decomposition of a mixed-event distribution into its Fourier components (as there are two independent event planes in each event pair).
+However, with an azimuthally-differential analysis the event plane resolution correction precludes event mixing because there is no simple decomposition of a mixed-event distribution into its Fourier components (as there are two independent event plane in each event pair).
 Previous azimuthal femtoscopic measurements have corrected the mixed-event distribution $B$ in the same way that the same-event distribution $A$ is corrected, as suggested in \Ref{\cite{Heinz:2002au}}.
 However, this fails to account for the fact that the independent smearing of the two event planes changes the shape of the pair distribution, and when projected into $q$-space it cannot be simply corrected bin-by-bin.
 
@@ -384,9 +384,9 @@ Without this correction for sampling-without-replacement, there is a small but s
 \FloatBarrier
 
 The physical \pt distribution has a steep slope in many places, and the detector response is relatively smooth as a function of \pt.
-By contrast, the sampled distribution from the histogram of the single-particle distribution will have sharp jumps at bin edges, so where the slope is large the value of the sampling distribution can be far from that of a smooth one near a bin edge (see \cref{fig:sample_slope_corr}, right).
+By contrast, the sampled distribution from the histogram of the single-particle distribution will have sharp jumps at bin edges, so where the slope is large the value of the sampling distribution can be far from that of a smooth one near a bin edge, as illustrated in \cref{fig:pt_fits}.
 A correction procedure is applied to remove these sharp edges in the \pt profile of the sampled distribution. In each event class, the \pt distribution is fit to a 4-parameter gamma distribution in four intervals (with boundaries corresponding to changes in the \sct hit requirements).
-A first-order correction is performed to transform the a random \pt value to another one in the same bin, to account for the slope of the probability distribution in that bin.
+A first-order correction is performed to transform the random \pt value to another one in the same bin, to account for the slope of the probability distribution in that bin.
 The slope used for this procedure is that computed from the fit function in the \pt interval.
 The adjusted \pt is given by
 \begin{equation}
@@ -394,9 +394,9 @@ The adjusted \pt is given by
 \end{equation}
 where the bin edges of the \pt bin are $a$ and $b$ and the approximate numeric derivative of the probability distribution is $f'$.
 The result of this process is illustrated in \cref{fig:sample_slope_corr} on a toy distribution.
-Samples are drawn from a course-binned distribution, and the distribution of the modified random variable accounts for the underlying slope.
+Samples are drawn from a coarse-binned distribution, and the distribution of the modified random variable accounts for the underlying slope.
 
-\begin{figure}[htb]
+\begin{figure}[t]
 \centering
 \includegraphics[width=.49\linewidth]{testMomHistSampler.png}
 \includegraphics[width=.49\linewidth]{testMomHistSamplerZoom.png}\\
@@ -469,7 +469,7 @@ Corresponding expressions for the confluent hypergeometric function appearing in
   {}_1F_1 \left( 1; \frac{3}{2}; z \right) \approx \sum_{n=1}^{n < |z| + 3/2} \frac{(2n-3)!!}{2^n |z|^n} \; \textrm{for } z \rightarrow -\infty\;.
 \end{equation}
 
-To apply the Coulomb correction in 3D out-side-long coordinates, the average \kt in each bin is used to contract compute \qinv from $\mathbf{q}$.
+To apply the Coulomb correction in 3D out-side-long coordinates, the average \kt in each bin is used to determine \qinv from $\mathbf{q}$.
 The following expression takes advantage of working in the \ac{LCMF} so that $k_L = 0$.
 \begin{equation}
 \qinv^2 = |\mathbf{q}|^2 - \Gamma^2 + \sqrt{\Gamma^4 - 4 |\mathbf{k}_\mathrm{T}|^2 \qout^2} \label{eq:q3_to_qinv}
@@ -498,7 +498,7 @@ A likelihood for the correlation function can be derived by assuming a flat Baye
     &= \frac{(A+B+1)! C^A}{A! B! (1+C)^{A+B+2}}
   \end{split}
 \end{equation}
-The choice of $C$ that maximizes this this likelihood is not simply the ratio $A/B$, but rather
+The choice of $C$ that maximizes this likelihood is not simply the ratio $A/B$, but rather
 \begin{equation}
   C_{\textrm{max}} = \frac{A}{B+2} \; .
 \end{equation}
@@ -598,7 +598,7 @@ The azimuthal correlations between each radii observable are then computed direc
 The correlation is fit to a function of the form of \cref{eq:corr_coeff_matrix}, deriving an actual $\xi_\textrm{toy}$ from the naive value $\xi_\textrm{naive}$.
 The correlation matrix is shown for the three main radii in \cref{fig:rho_dphi}, along with the monomorphism for the $\xi$ parameter.
 Conveniently the correlations between all independent observables (i.e. 1D and 3D, both amplitude and radii) can be described by the same function $\xi_\textrm{toy}\left(\xi_\textrm{naive}\right)$.
-The parameterization that is chosen for this data is $ \xi_\textrm{toy} = 0.3310 (\xi_\textrm{naive})^{1.246} $.
+A power-law parameterization is chosen for this data with a fit of $ \xi_\textrm{toy} = 0.3310 (\xi_\textrm{naive})^{1.246} $.
 Uncertainties in the $\xi$ parameter are not rigorously evaluated because the value of this parameterization only effects the statistical uncertainties in the radii, not the central points.
 
 \begin{figure}[t]
@@ -689,7 +689,7 @@ In each of the following samples, 50 million (250 million for \PYEight) \minbias
 
 \item \Hijing \pp\\
   The simulation is run at $\sqrt{s} = 5 \TeV$ with all of the same settings as the \pPb sample, except that both incoming particles are protons.
-  No rapidity boost is not applied, because the collision system is symmetric.
+  No rapidity boost is applied because the collision system is symmetric.
 
 \item \Pythia 8.2 \pp \cite{Sjostrand:2007gs}\\
 The default ATLAS tune "UE AU2-CTEQ6L1" is used with \PYEight at $\sqrt{s} = 5.02 \TeV$.
@@ -833,7 +833,7 @@ Just as is done for the \qinv correlation functions, the amplitudes for three di
 \Rbkgd^{\mathrm{out},\pm\pm} &= \Rbkgd^{\mathrm{out}+-} + \Delta\Rbkgd^{\mathrm{out}}(\kt) \label{eq:rBackParOut}
 \end{align}
 
-The numerical values used for the mapping the amplitude $\lbkgd^\mathrm{osl}$ (\cref{fig:background_qosl_lambda_same_vs_opp_pythia8}), fragmentation width colinear with the jet axis $\Rbkgd^\mathrm{out}$ (\cref{fig:background_qosl_Rout_same_vs_opp_pythia8}), and fragmentation width transverse to the jet axis $\Rbkgd^\mathrm{sl}$ (\cref{fig:background_qosl_R_same_vs_opp_pythia8}) are as follows:
+The numerical values used for mapping the amplitude $\lbkgd^\mathrm{osl}$ (\cref{fig:background_qosl_lambda_same_vs_opp_pythia8}), fragmentation width colinear with the jet axis $\Rbkgd^\mathrm{out}$ (\cref{fig:background_qosl_Rout_same_vs_opp_pythia8}), and fragmentation width transverse to the jet axis $\Rbkgd^\mathrm{sl}$ (\cref{fig:background_qosl_R_same_vs_opp_pythia8}) are as follows:
 
 \begin{align}
 \log \mu (\kt [\textrm{GeV}]) &= -3.9 + 9.5 \kt - 6.4 \kt^2 \label{eq:mu_osl}\\
@@ -850,7 +850,7 @@ Nevertheless the distinction can and should be evaluated.
 
 Since \Hijing uses an old version of \Pythia 6 its description of the fragmentation function is not up-to-date, but \Pythia alone does not simulate the same soft particle production that \Hijing does.
 Thus, \PYEight \pp is used to derive the mapping between $+-$ and $\pm\pm$, then corrected slightly for the difference between \pp and \pPb observed in \Hijing.
-A comparison of \Hijing \pp and \pPb correlation functions shows that the ratio of the background width is the same in each, at least a high \kt (about 1.08).
+A comparison of \Hijing \pp and \pPb correlation functions shows that the ratio of the background width is the same in each, at least at high \kt (about 1.08).
 This justifies using the width ratio from the updated \PYEight, since it suggests that changing from a proton-proton system to a proton-lead system does not drastically alter the ratio of widths.
 We also see that in \Hijing (with the width ratio is fixed to 1.08) $\log \lbkgd$ is decreased in \pPb by $0.05$ (high \kt) to $0.2$ (low \kt) (See \cref{fig:background_pp_ppb_comp}). This difference is made more precise in \cref{fig:mu_hijing_pp_pPb}, which quantifies the difference in the amplitudes of the ratios of correlation functions.
 The extracted scaling is applied to the background description in the data, and the spread in the attenuation is accounted for as a systematic variation.
@@ -914,6 +914,7 @@ The parameters used to describe the background in \qinv are shown in \cref{fig:b
 
 This section will show examples of how well the stretched exponential form fits the correlation functions in \PYEight.
 The parameters extracted from these fits are used to form the mapping from opposite sign to same sign in the background description of the data.
+A moderate multiplicity bin is shown in \cref{fig:pythia_bkgd_fit_cent3} and a lower multiplicity in \cref{fig:pythia_bkgd_fit_cent7}.
 
 \begin{figure}[t]
 \begin{minipage}[t]{1.0\textwidth}
@@ -926,7 +927,7 @@ The parameters extracted from these fits are used to form the mapping from oppos
 \includegraphics[width=.49\linewidth]{Cqinv_pythia_cent3_e1_kt6.pdf}\\
 \end{minipage}
 \caption{Fits of the stretched exponential to correlation functions from \PYEight events.}
-\label{fig:pythia_bckg_fit_cent3}
+\label{fig:pythia_bkgd_fit_cent3}
 \end{figure}
 
 \begin{figure}[t]
@@ -940,7 +941,7 @@ The parameters extracted from these fits are used to form the mapping from oppos
 \includegraphics[width=.49\linewidth]{Cqinv_pythia_cent7_e1_kt6.pdf}\\
 \end{minipage}
 \caption{Fits of the stretched exponential to correlation functions from \PYEight events.}
-\label{fig:pythia_bckg_fit_cent7}
+\label{fig:pythia_bkgd_fit_cent7}
 \end{figure}
 
 
@@ -1098,8 +1099,8 @@ The background parameters $\abkgd^\mathrm{inv}$, $\abkgd^\mathrm{out}$, and $\ab
 The typical effect on the \ac{HBT} radii was seen to be on order 0.5\%, and this variation is not included in the reported systematic errors.
 
 \subsection{Pion identification}
-The \ac{PID} definition used for the nominal result is the "Middle" cut level defined in \cref{sec:pid}.
-Systematic uncertainties from imperfections in the particle identification are evaluated by repeating the analysis with both the "Loose" and "Tight" cut levels.
+The \ac{PID} definition used for the nominal result is the ``Middle'' cut level defined in \cref{sec:pid}.
+Systematic uncertainties from imperfections in the particle identification are evaluated by repeating the analysis with both the ``Loose'' and ``Tight'' cut levels.
 The effect on the radii is around 1--2\% for the lower \kt bins, but becomes more significant at higher momentum bins (presumably because they are relatively more populated with kaons and protons).
 
 \subsection{Charge asymmetry}

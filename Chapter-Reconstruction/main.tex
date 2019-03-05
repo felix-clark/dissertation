@@ -106,7 +106,7 @@ These selection criteria are the following:
   A track with $\pt \geq $ 0.1/0.2/0.3 \GeV must have at least 2/4/6 \sct hits.
   These transverse momentum cutoffs correspond approximately to thresholds after which the track is expected to pass through the next \sct layer.
 \item
-  At least one physical pixel hit is required, and if a B-Layer hit is expected based on the trajectory then there is at least one physical B-Layer hit.
+  At least one pixel hit is required, and if a B-Layer hit is expected based on the trajectory then there is at least one B-Layer hit.
 \item
   The transverse and longitudinal impact parameters with respect to the \ac{PV} must satisfy $|d_0^\textrm{PV}| < 1.5 \textrm{ mm}$ and $|z_0^\textrm{PV} \sin\theta| < 1.5 \textrm{ mm}$.
 \item
@@ -117,7 +117,7 @@ These selection criteria are the following:
 \section{Track reconstruction performance}
 
 High-energy \pp and heavy ion collisions are generated with \mc simulations to study the performance of the track reconstruction algorithm.
-Proton-lead collision events are produces with the \Hijing Monte Carlo event generator \cite{Gyulassy:1994ew} and the detector material is simulated with \GEANTFour \cite{Agostinelli:2002hh}.
+Proton-lead collision events are produced with the \Hijing Monte Carlo event generator \cite{Gyulassy:1994ew} and the detector material is simulated with \GEANTFour \cite{Agostinelli:2002hh}.
 These simulations are able to provide a very precise description of many track properties, such as the silicon hits per track shown in \cref{fig:trk_si_hits}.
 The track reconstruction efficiency is studied in these \mc samples, with results shown in \cref{fig:trk_eff}.
 The probability to reconstruct a track with $\pt > 500 \MeV$ is roughly constant in the range of 75--80\%.
@@ -145,8 +145,8 @@ A nominal selection is chosen, and a looser selection (with high efficiency) and
 The variables used for \pid are defined in \Ref{\cite{ATLAS-CONF-2011-016}}: $L(X)$ is the likelihood of the particle being species $X$ where $X$ is $\pi$, $K$, or $p$, and we define $P(X) \equiv \frac{L(X)}{L(\pi^{\pm}) + L(K^{\pm}) +L(p^{\pm})}$.
 Note that $P(X)$ are not probabilities per se, but are effective quantities to use in the selections.
 
-For all cut levels it is required that the likelihood be positive for each particle species, as a negative value indicates an error in the attempt to assign a likelihood to that track.
-It is also required that the track has at least 1 good pixel \dEdx hit.
+For all cut levels it is required that the likelihood be positive for each particle species, as a negative value represents an error code in the attempt to assign a likelihood to that track.
+It is also required that the track has at least one good pixel \dEdx hit.
 
 \subsection{PID selection definitions}
 
@@ -176,7 +176,7 @@ The ``Middle'' cut level is defined by:
 \item
   $\frac{dE}{dx} \; [\MeV \textrm{ g}^{-1} \textrm{ cm}^{2}]< 1.1 + \frac{0.2~\GeV^2}{\left|\mathbf{p}\right|^{2}}$
 \end{itemize}
-The Middle level is used as the nominal selection in the analysis. It achieves a higher purity than the Loose definition without maintaining a reasonably high pion efficiency.
+The Middle level is used as the nominal selection in the analysis. It achieves a higher purity than the Loose definition while maintaining a reasonably high pion efficiency.
 
 The ``Tight'' selection is defined by:
 \begin{itemize}
