@@ -52,7 +52,7 @@ Finally, the remaining silicon hits that have not been used in the inside-out or
 Charged particles with $\pt < 400 \MeV$ do not necessarily pass through every layer of the \sct.
 These tracks can have a transverse momentum as low as 100 \MeV~ so their transverse radius of curvature is small.
 Without a trajectory that is close to a straight line in the transverse plane a larger set of possible track seeds must be evaluated, so it is only computationally feasible to seed the low-\pt tracking with leftover space-points from the other two tracking algorithms.
-The efficiency below $\pt = 400 \MeV$ begins to fall rapidly with decreasing \pt, but a significant fraction of particles in this kinematic region are reconstructed.
+The efficiency below $\pt = 400 \MeV$ begins to fall rapidly with decreasing \pt, but a significant fraction of particles in this kinematic region are reconstructed, as shown in \cref{sec:trk_reco_perf}.
 
 \subsection{Track extension and fitting}
 
@@ -103,7 +103,7 @@ These selection criteria are the following:
 \item
   The track must have $\pt \geq 0.1 \GeV$ and $|\eta| < 2.5$.
 \item
-  A track with $\pt \geq $ 0.1/0.2/0.3 \GeV must have at least 2/4/6 \sct hits.
+  A track with $\pt \geq $ 0.1/0.2/0.3 \GeV\ must have at least 2/4/6 \sct hits.
   These transverse momentum cutoffs correspond approximately to thresholds after which the track is expected to pass through the next \sct layer.
 \item
   At least one pixel hit is required, and if a B-Layer hit is expected based on the trajectory then there is at least one B-Layer hit.
@@ -115,6 +115,7 @@ These selection criteria are the following:
 
 
 \section{Track reconstruction performance}
+\label{sec:trk_reco_perf}
 
 High-energy \pp and heavy ion collisions are generated with \mc simulations to study the performance of the track reconstruction algorithm.
 Proton-lead collision events are produced with the \Hijing Monte Carlo event generator \cite{Gyulassy:1994ew} and the detector material is simulated with \GEANTFour \cite{Agostinelli:2002hh}.
@@ -187,19 +188,16 @@ The ``Tight'' selection is defined by:
 \item
   $P(\pi^{\pm}) > 0.6$
 \end{itemize}
-The Tight definition prioritizes getting a sample with a high concentration of pions.
+The Tight definition prioritizes getting a sample with a concentration of pions that is around 98\% for most of the charged particles in the analysis.
 
 The $P(X)$ variables described above are shown in this section as a function of momentum, along with lines defining the above cuts.
 Data is taken from reconstructed \Hijing \pPb data and the truth matching is done by requiring a truth matching probability greater than $0.5$.
 
 \begin{figure}[t]
-\begin{minipage}[t]{1.0\textwidth}
-\centering
-\includegraphics[width=.32\linewidth]{P_pion_pi.png}
-\includegraphics[width=.32\linewidth]{P_kaon_pi.png}
-\includegraphics[width=.32\linewidth]{P_proton_pi.png}
-\end{minipage}
-\caption{The normalized pion likelihood $P(\pi)$ for tracks truth-matched to pions, kaons, and protons, respectively. The Loose cut level takes everything above the blue line, the Middle level takes all of these that are also in between the violet lines, and the Tight level picks tracks in the red outline at the top.}
+\includegraphics[width=.49\linewidth]{P_pion_pi.png}
+\includegraphics[width=.49\linewidth]{P_kaon_pi.png}\\
+\includegraphics[width=.49\linewidth]{P_proton_pi.png}
+\caption{The normalized pion likelihood $P(\pi)$ for tracks truth-matched to pions, kaons, protons, respectively. The Loose cut level takes everything above the blue line, the Middle level takes all of these that are also in between the violet lines, and the Tight level picks tracks in the red outline at the top.}
 \label{fig:prob_pi}
 \end{figure}
 
@@ -208,12 +206,9 @@ Since this quantity is associated with pions, it is required to be above a certa
 Lines are drawn to indicate the selection for each cut level, which include the $\left|\mathbf{p}\right|$ cuts for each selection.
 
 \begin{figure}[t]
-\begin{minipage}[t]{1.0\textwidth}
-\centering
-\includegraphics[width=.32\linewidth]{P_pion_K.png}
-\includegraphics[width=.32\linewidth]{P_kaon_K.png}
-\includegraphics[width=.32\linewidth]{P_proton_K.png}
-\end{minipage}
+\includegraphics[width=.49\linewidth]{P_pion_K.png}
+\includegraphics[width=.49\linewidth]{P_kaon_K.png}\\
+\includegraphics[width=.49\linewidth]{P_proton_K.png}
 \caption{The normalized kaon likelihood $P(K)$ for tracks truth-matched to pions, kaons, and protons, respectively. The Loose and Middle cut levels have identical cuts on this variable: both selections reject tracks in the box outlined in blue. The Tight cut level does not select directly on this variable, but the limit that is implied from the cut on $P(\pi)$ is included in red.}
 \label{fig:prob_k}
 \end{figure}
@@ -222,12 +217,9 @@ In \cref{fig:prob_k} $P(K)$ is plotted the same manner.
 The cut on this variable is used to reject some low-momentum kaons but is not intended to dominate the selection.
 
 \begin{figure}[t]
-%% \begin{minipage}[t]{1.0\textwidth}
-%% \centering
-\includegraphics[width=.32\linewidth]{P_pion_p.png}
-\includegraphics[width=.32\linewidth]{P_kaon_p.png}
-\includegraphics[width=.32\linewidth]{P_proton_p.png}
-%% \end{minipage}
+\includegraphics[width=.49\linewidth]{P_pion_p.png}
+\includegraphics[width=.49\linewidth]{P_kaon_p.png}\\
+\includegraphics[width=.49\linewidth]{P_proton_p.png}
 \caption{The normalized proton likelihood $P(p)$ for tracks truth-matched to pions, kaons, and protons, respectively. The Loose and Middle cut levels both reject tracks above the parabola, but the Loose level only applies the cut for $P(p) > 0.5$. As in \cref{fig:prob_k}, the Tight cut level does not select directly on this variable, but the limit that is implied from the cut on $P(\pi)$ is included in red.}
 \label{fig:prob_p}
 \end{figure}
@@ -236,9 +228,9 @@ The cut on this variable is used to reject some low-momentum kaons but is not in
 The momentum-dependent cut is intended to cut out a large number of protons along the edge of the upper band without rejecting too many pions.
 
 \begin{figure}[t]
-\includegraphics[width=.32\linewidth]{dedx_loose.png}
-\includegraphics[width=.32\linewidth]{dedx_mid.png}
-\includegraphics[width=.32\linewidth]{dedx_tight.png}
+\includegraphics[width=.49\linewidth]{dedx_loose.png}
+\includegraphics[width=.49\linewidth]{dedx_mid.png}\\
+\includegraphics[width=.49\linewidth]{dedx_tight.png}
 \caption{Ionization energy loss \dEdx as a function of $qp$ for the Loose (left) and Middle (center) cut levels without their explicit cuts on \dEdx, which are shown in red. The \dEdx after the Tight selection is shown in the right panel.}
 \label{fig:dedx}
 \end{figure}
@@ -252,21 +244,15 @@ The Tight level requires no such additional cut on \dEdx, as the requirement tha
 \subsection{PID Performance}
 
 \begin{figure}[t]
-%% \begin{minipage}[t]{1.0\textwidth}
-%% \centering
 \includegraphics[width=.49\linewidth]{pid_eff_pt.pdf}
 \includegraphics[width=.49\linewidth]{pid_eff_eta.pdf}\\
-%% \end{minipage}
-\caption{The fraction of truth-identified pions and non-pions that pass each \pid cut level, as a function of \pt (left) and $\eta$ (right). The fractions are constructed from tracks that otherwise pass all cuts.}
+\caption{The fraction of truth-identified pions and non-pions that pass each PID cut level, as a function of \pt (left) and $\eta$ (right). The fractions are constructed from tracks that otherwise pass all cuts.}
 \label{fig:pid_eff}
 \end{figure}
 
 \begin{figure}[t]
-\begin{minipage}[t]{1.0\textwidth}
-\centering
 \includegraphics[width=.49\linewidth]{pid_purity_pt.pdf}
 \includegraphics[width=.49\linewidth]{pid_purity_eta.pdf}\\
-\end{minipage}
 \caption{The pion purity from each PID cut level as a function of \pt and $\eta$.}
 \label{fig:pid_purity}
 \end{figure}
@@ -280,28 +266,22 @@ While the Loose cut only improves the purity slightly and mostly at low \pt and 
 In interpreting these purities, it is important to keep in mind that the majority of tracks that pass the single-particle and pair cuts have $\pt < 1 \GeV$ and all of them are $\lesssim 1.5 \GeV$, due to the upper \kt bin ending at $0.8 \GeV$.
 
 \begin{figure}[t]
-\begin{minipage}[t]{1.0\textwidth}
-\centering
 \includegraphics[width=.49\linewidth]{pid_eff_loose_pions.pdf}
 \includegraphics[width=.49\linewidth]{pid_eff_loose_not_pions.pdf}\\
 \includegraphics[width=.49\linewidth]{pid_eff_mid_pions.pdf}
 \includegraphics[width=.49\linewidth]{pid_eff_mid_not_pions.pdf}\\
 \includegraphics[width=.49\linewidth]{pid_eff_tight_pions.pdf}
 \includegraphics[width=.49\linewidth]{pid_eff_tight_not_pions.pdf}\\
-\end{minipage}
 \caption{The cut efficiency from each PID cut level for pions and all other particles.}
 \label{fig:pid_eff_2d}
 \end{figure}
 
 
 \begin{figure}[t]
-\begin{minipage}[t]{1.0\textwidth}
-\centering
 \includegraphics[width=.49\linewidth]{pid_pur_all.pdf}
 \includegraphics[width=.49\linewidth]{pid_pur_loose.pdf}\\
 \includegraphics[width=.49\linewidth]{pid_pur_mid.pdf}
 \includegraphics[width=.49\linewidth]{pid_pur_tight.pdf}\\
-\end{minipage}
 \caption{The pion purity from each PID cut level as a function of \pt and $\eta$.}
 \label{fig:pid_purity_2d}
 \end{figure}
@@ -311,11 +291,10 @@ In interpreting these purities, it is important to keep in mind that the majorit
 \centering
 \includegraphics[width=.49\linewidth]{pid_pur_loose_kt_eta.pdf}
 \includegraphics[width=.49\linewidth]{pid_pur_tight_kt_eta.pdf}\\
-\includegraphics[width=.6\linewidth]{pid_pur_mid_kt_eta.pdf}\\
-\caption{Purity of identified pion pairs with the loose (top left), tight (top right), and nominal (bottom) \pid selections. The purities are estimated using fully simulated \Hijing proton-lead events, as a function of the pair's average transverse momentum \kt and rapidity \kys. The rapidity is calculated using the pion mass for both reconstructed charged particles.}
+\includegraphics{pid_pur_mid_kt_eta.pdf}\\
+\caption{Purity of identified pion pairs with the loose (top left), tight (top right), and nominal (bottom) PID selections. The purities are estimated using fully simulated \Hijing proton-lead events, as a function of the pair's average transverse momentum \kt and rapidity \kys. The rapidity is calculated using the pion mass for both reconstructed charged particles.}
 \label{fig:pid_purity_kt_eta}
 \end{figure}
 
 The efficiency of each PID selection level for pions and other particles are shown in \cref{fig:pid_eff_2d}, and the purity in \cref{fig:pid_purity_2d}.
 The purity of pairs (i.e. fraction of pairs in which both particles are pions) is shown in \cref{fig:pid_purity_kt_eta}.
-
