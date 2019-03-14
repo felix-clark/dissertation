@@ -717,7 +717,7 @@ The width of the correlation in time difference is inversely proportional to the
 This process is called \emph{second-order interferometry}, as it requires a decoherent source in contrast to the type of interferometry exhibited in a classic double-slit experiment.
 
 The procedure can be adapted to the tiny sources encountered in hadronic collisions using correlations in relative momentum space \cite{Goldhaber:1960sf}.
-Though Bose-Einstein interactions are the simplest to leverage, in principle any non-trivial interaction can be used to image the source density.
+Though Bose-Einstein interactions yield the strongest resolution, in principle any non-trivial interaction can be used to image the source density.
 The term \emph{femtoscopy} is used to refer to any measurement that provides spatio-temporal information of a hadronic source.
 
 The measured \emph{\ac{HBT} radii} represent the dimensions of a nuclear source at freeze-out after all interactions between a final-state particle and the bulk are finished.
@@ -809,7 +809,7 @@ The measured correlation function is then fit to a functional form to extract th
 \subsubsection{L\'evy parameter}
 
 %% A choice must be made to parameterize the description of $\mathcal{F}[S_\mathbf{k}]$.
-When a generalization of the central limit theorem is considered, for which the requirement for finite variance is relaxed, one can derive the L\'evy-stable distributions \cite{Csorgo:2003uv}.
+When a generalization of the central limit theorem is considered, for which the requirement for finite variance is relaxed, the L\'evy-stable distributions can be derived \cite{Csorgo:2003uv}.
 Their characteristic functions\footnote{i.e. Fourier transforms} are stretched exponentials, which are able to be expressed in terms of elementary functions and thus lend themselves readily to fitting.
 In the approximation of ellipsoidal symmetry of the source, the Bose-Einstein part of the identical-pion correlation function can then be expressed as
 \begin{equation} C_{\textrm{BE}}(\mathbf{q}) = 1 + \mathcal{F}[S_\mathbf{k}](\mathbf{q}) = 1 + e^{- \left\lVert R \mathbf{q} \right\rVert^{\alpha} } \end{equation}
@@ -894,7 +894,7 @@ Fortunately a comparison is simple when the cross-terms are relatively small, as
   \Rout^2 & \Ros(\Rout+\Rside) & \Rol(\Rout+\Rlong) \\
   \Ros(\Rout+\Rside) & \Rside^2 & 0 \\
   \Rol(\Rout+\Rlong) & 0 & \Rlong^2
-  \end{array} \right) + \bigo{ \Ros^2, \Rol^2, \Ros \Rol }
+  \end{array} \right) + \bigo{ R_{ij,i \neq j}^2 } %%\bigo{ \Ros^2, \Rol^2, \Ros \Rol }
 \end{equation}
 with $\Rsl = 0$.
 
@@ -902,7 +902,7 @@ with $\Rsl = 0$.
 
 The femtoscopic radii are not equivalent to the total size of the source but rather indicate the size of the region of homogeneity.
 This volume is the effective size of the source with which particles have equilibrium.
-Collective expansion makes it more difficult for two regions of the source to equilibrate as they are pushed apart from each other.
+Collective expansion makes it more difficult for separate regions of the source to equilibrate as they are pushed apart from each other.
 In an infinite volume the size of the region of homogeneity is set by the length scale at which collective velocity overcomes thermal velocity \cite{Lisa:2005dd} so
 \begin{equation}
 R_i \sim \frac{v_\textrm{thermal}}{\frac{du}{dx_i}}
