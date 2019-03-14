@@ -931,15 +931,31 @@ Generally a similar decrease with \mt is predicted for \Rout and \Rside as well 
 
 
 \subsection{Motivation for femtoscopy in proton-lead collisions}
+
+\begin{figure}[t]
+  \includegraphics{phenix_npart_mult.png}
+  \caption{Summary of HBT radii as a function of the number of nucleon participants \Npart and of the average multiplicity. The linear scaling of each radius with the cube root of \Npart suggests that the final volume scales linearly with the initial size.}
+  \label{fig:hbt_npart_mult}
+\end{figure}
+
+Past measurements of the HBT radii exhibit a scaling of each radius with the cube root of \Npart, as shown in \cref{fig:hbt_npart_mult}, although the intercepts are positive and different for each system.
+This indicates that the freeze-out size grows with the initial size, because the volume immediately following the collision is proportional to \Npart.
+
 Femtoscopic measurements have already been made in \pPb collisions \cite{Abelev:2014pja,Adam:2015pya} but there is space for advancement.
 The \kt-dependence of these measured \ac{HBT} radii suggests collective expansion even in peripheral collisions.
 However, this pattern is faked by the increasing relevance of jet fragmentation correlations at larger \kt and in peripheral collisions, and the method used to account for this background is susceptible to this bias.
 Thus increasing sophistication in the methods used to constrain this background are desirable.
 In addition, rapidity-dependent measurements of the radii have the potential to have nontrivial behavior in an asymmetric \pA system, and ATLAS is particularly well-suited to such a measurement with an inner detector covering 5 units of pseudorapidity.
 
+\begin{figure}[t]
+  \includegraphics{star_azi_hbt_centrality.png}
+  \caption{HBT radii in gold-gold collisions as a function of azimuthal angle from the second-order event plane. The source is contracted in-plane and extended out-of-plane, consistent with the expectations from hydrodynamics \cite{Adams:2004wz}.}
+  \label{fig:star_azi_hbt}
+\end{figure}
+
 Because femtoscopy provides a measurement of the source's spatial dimensions, it is particularly useful for probing the hydrodynamic prediction that spatial anisotropies lead to complementary momentum anisotropies.
 Elliptic modulation of the freeze-out shape has been observed in \AuAu \cite{Adams:2003ra,Adare:2014vax,Adamczyk:2014mxp} and \PbPb \cite{Adamova:2017opl} collisions.
-These measurements show that the transverse radii are reduced along the event plane axis compared to out-of-plane.
+These measurements show that the transverse radii are reduced along the event plane axis compared to out-of-plane, as shown in \cref{fig:star_azi_hbt}, consistent with the expectations from hydrodynamics.
 The second-order Fourier coefficient of \Rside is shown in \cref{fig:rside_v2_aa} for \AuAu and \PbPb systems as a function of the initial ellipticity computed in the MC Glauber model.
 The final source ellipticity, indicated by $\Rside{}_{,c2} / \Rside{}_{,0}$, has the same sign as the initial ellipticity but with a reduced magnitude.
 This is consistent with an elliptic transverse source profile that expands more along the minor axis but not enough to overtake the length of the major axis.
@@ -949,6 +965,7 @@ This is consistent with an elliptic transverse source profile that expands more 
   \caption{The relative second-order Fourier coefficient of \Rside in nucleus-nucleus collisions compared to the initial source eccentricity calculated from the MC Glauber model \cite{Adamova:2017opl}.}
   \label{fig:rside_v2_aa}
 \end{figure}
+
 
 Azimuthal measurements are challenging outside of \AA collisions because the resolution of the event plane \psit depends heavily on the event activity.
 ATLAS has a reasonably high event plane resolution in central \pPb events with reasonably large elliptic flow.
