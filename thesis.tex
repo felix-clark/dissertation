@@ -119,7 +119,7 @@
 %-------------------------------------------------------------------------------
 
 % Author and title for the PDF file
-\hypersetup{pdftitle={ATLAS Thesis},pdfauthor={Michael (Felix) Clark}}
+\hypersetup{pdftitle={ATLAS Thesis},pdfauthor={Michael Clark}}
 
 %-------------------------------------------------------------------------------
 % Content
@@ -154,7 +154,7 @@
 \pagestyle{plain} %Put page numbers at the bottom-center for the whole dissertation. Columbia's dissertation office requires that the numbers appear at this location on the page throughout the document.
 
 \newcommand{\thesisTitle}{Femtoscopic signatures of small QGP droplets in proton-lead collisions at the Large Hadron Collider}
-\newcommand{\myName}{Felix Michael Clark}
+\newcommand{\myName}{Michael Clark}
 \newcommand{\abstractText}{
   \input{abstract}
 }
@@ -230,6 +230,8 @@ All rights reserved
 \listoffigures
 \newpage
 \listoftables
+\include{acronyms}
+
 
 %Here I need an acknowledgments page.
 %\newpage
@@ -266,12 +268,11 @@ All rights reserved
 \printbibliography %Print the bibliography. Your bibliography file is defined as Bibliography.bib earlier in this document by the command \addbibresource. It should be kept in the same folder as this file.
 
 \DoubleSpacing %Set roomier body text throughout your writing. The dissertation office requires that you use double-spacing throughout your main body text.
-\appendix
-\begin{appendices}
-\include{acronyms}
+% \appendix
+% \begin{appendices}
 %% \include{./Appendix/Appendix-AdditionalN-1Plots-CR/appendix}
 %% \include{./Appendix/Appendix-AdditionalN-1Plots/appendix}
-\end{appendices}
+% \end{appendices}
 
 \backmatter
 
